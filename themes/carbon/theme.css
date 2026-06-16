@@ -1,0 +1,266 @@
+/* ==========================================================================
+   Carbon Bootstrap 5 Theme
+   Inspired by IBM Carbon Design System.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette - Light (Gray 10 / White) */
+  --bs-body-bg: #f4f4f4;
+  --bs-body-color: #161616;
+  --bs-tertiary-bg: #ffffff;
+  --bs-secondary-color: #525252;
+  --bs-border-color: #e0e0e0;
+
+  --bs-primary: #0f62fe;
+  --bs-secondary: #525252;
+  --bs-success: #24a148;
+  --bs-info: #0072c3;
+  --bs-warning: #f1c21b;
+  --bs-danger: #da1e28;
+  --bs-light: #f4f4f4;
+  --bs-dark: #161616;
+
+  /* Typography */
+  --bs-font-sans-serif: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --bs-body-font-size: 14px;
+  --bs-body-line-height: 1.5;
+
+  /* Global Sharp Corners */
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-2xl: 0;
+  --bs-border-radius-pill: 0;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-color: #0f62fe;
+  --bs-focus-ring-box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0f62fe;
+
+  /* UI Tracking */
+  --carbon-ui-tracking: 0.16px;
+  --carbon-badge-tracking: 0.32px;
+
+  /* Internal Carbon Tokens */
+  --carbon-navbar-bg: #262626;
+  --carbon-navbar-color: #f4f4f4;
+  --carbon-table-header-bg: #e0e0e0;
+  --carbon-input-border-bottom: #8d8d8d;
+  --carbon-btn-primary-hover: #0353e9;
+  --carbon-btn-secondary-hover: #393939;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+body {
+  letter-spacing: var(--carbon-ui-tracking);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 400;
+  color: var(--bs-body-color);
+}
+
+label {
+  font-weight: 400;
+  letter-spacing: var(--carbon-ui-tracking);
+}
+
+/* --------------------------------------------------------------------------
+   3. Focus Styles
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: var(--bs-focus-ring-width) solid var(--bs-primary) !important;
+  outline-offset: 1px !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  border-radius: var(--bs-border-radius);
+  font-weight: 400;
+  letter-spacing: var(--carbon-ui-tracking);
+  border: 1px solid transparent;
+  transition: none;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--carbon-btn-primary-hover);
+  border-color: var(--carbon-btn-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--carbon-btn-secondary-hover);
+  border-color: var(--carbon-btn-secondary-hover);
+}
+
+/* --------------------------------------------------------------------------
+   5. Forms
+   -------------------------------------------------------------------------- */
+.form-control,
+.form-select {
+  border-radius: var(--bs-border-radius);
+  border-color: var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  border-bottom: 1px solid var(--carbon-input-border-bottom);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: none;
+  border-bottom-width: 2px;
+  outline: none !important;
+}
+
+.form-check-input {
+  border-radius: var(--bs-border-radius);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   6. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  box-shadow: none;
+}
+
+.card-header,
+.card-footer {
+  background-color: transparent;
+  border-color: var(--bs-border-color);
+}
+
+/* --------------------------------------------------------------------------
+   7. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--carbon-navbar-bg) !important;
+}
+
+.navbar .nav-link {
+  color: var(--carbon-navbar-color) !important;
+}
+
+.navbar .nav-link {
+  position: relative;
+}
+
+.navbar .nav-link.active {
+  color: var(--bs-white) !important;
+}
+
+.navbar .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: var(--bs-body-bg);
+  --bs-table-border-color: var(--bs-border-color);
+}
+
+.table th {
+  font-weight: 600;
+  background-color: var(--carbon-table-header-bg);
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+}
+
+/* --------------------------------------------------------------------------
+   9. Badges
+   -------------------------------------------------------------------------- */
+.badge {
+  border-radius: var(--bs-border-radius);
+  text-transform: uppercase;
+  letter-spacing: var(--carbon-badge-tracking);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   10. Dark mode
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #161616;
+  --bs-body-color: #f4f4f4;
+  --bs-tertiary-bg: #262626;
+  --bs-secondary-color: #a8a8a8;
+  --bs-border-color: #393939;
+
+  --bs-light: #262626;
+  --bs-dark: #161616;
+
+  --bs-focus-ring-box-shadow: 0 0 0 2px #161616, 0 0 0 4px #0f62fe;
+
+  --carbon-navbar-bg: #000000;
+  --carbon-table-header-bg: #393939;
+  --carbon-input-border-bottom: #6f6f6f;
+}
+
+[data-bs-theme="dark"] .table {
+  --bs-table-striped-bg: #262626;
+}
+
+/* Ensure no roundness on anything else */
+.dropdown-menu,
+.accordion-item,
+.accordion-button,
+.alert,
+.progress,
+.progress-bar,
+.modal-content,
+.offcanvas,
+.toast,
+.popover,
+.tooltip-inner,
+.page-link {
+  border-radius: var(--bs-border-radius) !important;
+}
+
+.page-link:focus {
+  box-shadow: none;
+  outline: var(--bs-focus-ring-width) solid var(--bs-primary);
+  outline-offset: 1px;
+}
