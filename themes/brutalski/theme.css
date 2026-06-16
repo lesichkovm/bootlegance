@@ -365,6 +365,96 @@ h1, h2, h3, h4, h5, h6,
   flex: 1 0 auto;
 }
 
+/* --------------------------------------------------------------------------
+   17. Accordion
+   -------------------------------------------------------------------------- */
+.accordion {
+  border: 3px solid var(--cf-black);
+  box-shadow: var(--cf-shadow);
+}
+
+.accordion-item {
+  border: none;
+  border-bottom: 3px solid var(--cf-black);
+  background-color: transparent;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-button {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  color: var(--cf-black);
+  border-radius: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--cf-indigo);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: var(--cf-black);
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   18. Toasts
+   -------------------------------------------------------------------------- */
+.toast {
+  border: 3px solid var(--cf-black);
+  box-shadow: var(--cf-shadow);
+  border-radius: 0;
+  background-color: #fff;
+}
+
+.toast-header {
+  border-bottom: 2px solid var(--cf-black);
+  background-color: #fff;
+  color: var(--cf-black);
+}
+
+/* --------------------------------------------------------------------------
+   19. Offcanvas
+   -------------------------------------------------------------------------- */
+.offcanvas {
+  border: 3px solid var(--cf-black);
+  box-shadow: var(--cf-shadow-lg);
+}
+
+.offcanvas-header {
+  border-bottom: 3px solid var(--cf-black);
+}
+
+/* --------------------------------------------------------------------------
+   20. Tooltips & Popovers
+   -------------------------------------------------------------------------- */
+.tooltip-inner {
+  border: 2px solid var(--cf-black);
+  box-shadow: 2px 2px 0px var(--cf-black);
+  border-radius: 0;
+  background-color: var(--cf-black);
+  font-weight: 700;
+}
+
+.popover {
+  border: 3px solid var(--cf-black);
+  box-shadow: var(--cf-shadow);
+  border-radius: 0;
+}
+
+.popover-header {
+  border-bottom: 2px solid var(--cf-black);
+  background-color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .cf-footer {
   border-top: 3px solid var(--cf-black);
   background: #fff;
@@ -372,7 +462,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* --------------------------------------------------------------------------
-   17. Dark mode
+   21. Dark mode
    -------------------------------------------------------------------------- */
 [data-bs-theme="dark"] {
   --bs-body-bg: #0f172a;
@@ -429,4 +519,58 @@ h1, h2, h3, h4, h5, h6,
 
 [data-bs-theme="dark"] .dropdown-item:hover {
   background-color: #334155;
+}
+
+[data-bs-theme="dark"] .accordion {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .accordion-item {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .accordion-button {
+  color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #6366f1;
+}
+
+[data-bs-theme="dark"] .toast {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .toast-header {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+  color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .offcanvas {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .offcanvas-header {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .popover {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .popover-header {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+  color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .tooltip-inner {
+  border-color: #f8fafc;
+  background-color: #1e293b;
+  color: #f8fafc;
 }
