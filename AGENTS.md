@@ -19,6 +19,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Theme      | Slug         | Status  |
 |------------|--------------|---------|
 | Brutalski  | `brutalski`  | Planned |
+| Vanguard   | `vanguard`   | Available |
 | Midnight   | `midnight`   | Planned |
 | Sunrise    | `sunrise`    | Planned |
 | Ocean      | `ocean`      | Planned |

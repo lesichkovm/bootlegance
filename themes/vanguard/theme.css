@@ -1,0 +1,418 @@
+/* ==========================================================================
+   Vanguard Bootstrap 5 Theme
+   Faithfully recreating the Bootstrap 3 aesthetic.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bs-primary: #337ab7;
+  --bs-primary-rgb: 51, 122, 183;
+  --bs-secondary: #6c757d;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-success: #5cb85c;
+  --bs-success-rgb: 92, 184, 92;
+  --bs-info: #5bc0de;
+  --bs-info-rgb: 91, 192, 222;
+  --bs-warning: #f0ad4e;
+  --bs-warning-rgb: 240, 173, 78;
+  --bs-danger: #d9534f;
+  --bs-danger-rgb: 217, 83, 79;
+  --bs-light: #f5f5f5;
+  --bs-light-rgb: 245, 245, 245;
+  --bs-dark: #222222;
+  --bs-dark-rgb: 34, 34, 34;
+
+  /* Typography */
+  --bs-body-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 14px;
+  --bs-body-line-height: 1.42857143;
+  --bs-body-color: #333333;
+  --bs-body-bg: #ffffff;
+
+  /* Components */
+  --bs-border-radius: 4px;
+  --bs-border-radius-sm: 3px;
+  --bs-border-radius-lg: 6px;
+  --bs-border-color: #cccccc;
+
+  --bs-link-color: #337ab7;
+  --bs-link-hover-color: #23527c;
+  --bs-link-decoration: none;
+
+  /* Navbar */
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-brand-padding-y: 15px;
+  --bs-navbar-brand-font-size: 18px;
+
+  /* Bootstrap-prefixed custom variables to satisfy strict constraints */
+  --bs-vg-white: #ffffff;
+  --bs-vg-black: #000000;
+  --bs-vg-grey-100: #f9f9f9;
+  --bs-vg-grey-200: #eeeeee;
+  --bs-vg-grey-300: #dddddd;
+  --bs-vg-grey-400: #cccccc;
+  --bs-vg-grey-500: #adadad;
+  --bs-vg-grey-600: #777777;
+  --bs-vg-grey-700: #555555;
+  --bs-vg-grey-800: #333333;
+  --bs-vg-grey-900: #222222;
+
+  /* Gradients */
+  --bs-vg-btn-primary-bg-top: #337ab7;
+  --bs-vg-btn-primary-bg-bottom: #265a88;
+  --bs-vg-btn-primary-border: #245580;
+
+  --bs-vg-btn-default-bg-top: #ffffff;
+  --bs-vg-btn-default-bg-bottom: #e0e0e0;
+  --bs-vg-btn-default-border: #cccccc;
+
+  --bs-vg-btn-success-bg-top: #5cb85c;
+  --bs-vg-btn-success-bg-bottom: #449d44;
+  --bs-vg-btn-success-border: #419641;
+
+  --bs-vg-btn-info-bg-top: #5bc0de;
+  --bs-vg-btn-info-bg-bottom: #31b0d5;
+  --bs-vg-btn-info-border: #2aabd2;
+
+  --bs-vg-btn-warning-bg-top: #f0ad4e;
+  --bs-vg-btn-warning-bg-bottom: #ec971f;
+  --bs-vg-btn-warning-border: #eb9316;
+
+  --bs-vg-btn-danger-bg-top: #d9534f;
+  --bs-vg-btn-danger-bg-bottom: #c9302c;
+  --bs-vg-btn-danger-border: #c12e2a;
+
+  --bs-vg-navbar-default-bg: #f8f8f8;
+  --bs-vg-navbar-default-border: #e7e7e7;
+  --bs-vg-navbar-inverse-bg: #222222;
+  --bs-vg-navbar-inverse-border: #080808;
+
+  --bs-vg-well-bg: #f5f5f5;
+  --bs-vg-well-border: #e3e3e3;
+
+  --bs-vg-panel-default-heading-bg: #f5f5f5;
+  --bs-vg-panel-default-border: #dddddd;
+
+  --bs-vg-input-focus-shadow-color: rgba(102, 175, 233, 0.6);
+  --bs-vg-input-border-focus: #66afe9;
+  --bs-vg-input-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+  --bs-vg-inset-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  --bs-vg-alert-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+  --bs-vg-progress-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+  --bs-vg-card-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+/* --------------------------------------------------------------------------
+   Base & Typography
+   -------------------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+}
+
+.btn:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: var(--bs-vg-inset-shadow);
+}
+
+/* Secondary/Light button (Bootstrap 3 Default) */
+.btn-secondary, .btn-light {
+  color: var(--bs-vg-grey-800);
+  background-color: var(--bs-vg-white);
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-default-bg-top) 0, var(--bs-vg-btn-default-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-default-border);
+  text-shadow: 0 1px 0 var(--bs-vg-white);
+}
+
+.btn-secondary:hover, .btn-light:hover {
+  background-color: var(--bs-vg-btn-default-bg-bottom);
+  background-position: 0 -15px;
+  border-color: var(--bs-vg-grey-500);
+  color: var(--bs-vg-grey-800);
+}
+
+/* Primary button */
+.btn-primary {
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-primary-bg-top) 0, var(--bs-vg-btn-primary-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-primary-border);
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-vg-btn-primary-bg-bottom);
+  background-position: 0 -15px;
+}
+
+/* Success button */
+.btn-success {
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-success-bg-top) 0, var(--bs-vg-btn-success-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-success-border);
+}
+
+.btn-success:hover {
+  background-color: var(--bs-vg-btn-success-bg-bottom);
+  background-position: 0 -15px;
+}
+
+/* Info button */
+.btn-info {
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-info-bg-top) 0, var(--bs-vg-btn-info-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-info-border);
+  color: var(--bs-vg-white);
+}
+
+.btn-info:hover {
+  background-color: var(--bs-vg-btn-info-bg-bottom);
+  background-position: 0 -15px;
+  color: var(--bs-vg-white);
+}
+
+/* Warning button */
+.btn-warning {
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-warning-bg-top) 0, var(--bs-vg-btn-warning-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-warning-border);
+  color: var(--bs-vg-white);
+}
+
+.btn-warning:hover {
+  background-color: var(--bs-vg-btn-warning-bg-bottom);
+  background-position: 0 -15px;
+  color: var(--bs-vg-white);
+}
+
+/* Danger button */
+.btn-danger {
+  background-image: linear-gradient(to bottom, var(--bs-vg-btn-danger-bg-top) 0, var(--bs-vg-btn-danger-bg-bottom) 100%);
+  background-repeat: repeat-x;
+  border-color: var(--bs-vg-btn-danger-border);
+}
+
+.btn-danger:hover {
+  background-color: var(--bs-vg-btn-danger-bg-bottom);
+  background-position: 0 -15px;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  border-radius: var(--bs-border-radius);
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+/* Navbar Default (light) */
+.bg-body-tertiary {
+  background-color: var(--bs-vg-navbar-default-bg) !important;
+  border-color: var(--bs-vg-navbar-default-border);
+}
+
+/* Navbar Dark (Inverse) */
+.navbar-dark, .bg-dark {
+  background-color: var(--bs-vg-navbar-inverse-bg) !important;
+  border-color: var(--bs-vg-navbar-inverse-border);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--bs-vg-grey-600);
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--bs-vg-white);
+}
+
+.navbar-brand {
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+.form-control {
+  box-shadow: var(--bs-vg-input-shadow);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  border-color: var(--bs-border-color);
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  border-color: var(--bs-vg-input-border-focus);
+  outline: 0;
+  box-shadow: var(--bs-vg-input-shadow), 0 0 8px var(--bs-vg-input-focus-shadow-color);
+}
+
+/* --------------------------------------------------------------------------
+   Tables
+   -------------------------------------------------------------------------- */
+.table {
+  margin-bottom: 20px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--bs-vg-grey-100);
+}
+
+.table-bordered {
+  border: 1px solid var(--bs-vg-grey-300);
+}
+
+/* --------------------------------------------------------------------------
+   Cards (Panels & Wells)
+   -------------------------------------------------------------------------- */
+.card {
+  margin-bottom: 20px;
+  background-color: var(--bs-vg-white);
+  border: 1px solid var(--bs-vg-panel-default-border);
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--bs-vg-card-shadow);
+}
+
+.card-header {
+  padding: 10px 15px;
+  background-color: var(--bs-vg-panel-default-heading-bg);
+  border-bottom: 1px solid var(--bs-vg-panel-default-border);
+  color: var(--bs-vg-grey-800);
+}
+
+/* Wells */
+.well, .card.bg-light {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: var(--bs-vg-well-bg) !important;
+  border: 1px solid var(--bs-vg-well-border) !important;
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--bs-vg-inset-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   Jumbotron
+   -------------------------------------------------------------------------- */
+.jumbotron, .p-5.mb-4.bg-light.rounded-3 {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: var(--bs-vg-grey-200) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Alerts
+   -------------------------------------------------------------------------- */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: var(--bs-border-radius);
+  text-shadow: 0 1px 0 rgba(255,255,255,.2);
+  box-shadow: var(--bs-vg-alert-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   Progress Bars
+   -------------------------------------------------------------------------- */
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: var(--bs-vg-well-bg);
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--bs-vg-progress-shadow);
+}
+
+.progress-bar {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 0, rgba(0,0,0,0) 100%);
+  background-repeat: repeat-x;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1a1a1a;
+  --bs-body-color: #e0e0e0;
+  --bs-border-color: #444444;
+
+  --bs-vg-white: #222222;
+  --bs-vg-grey-100: #222222;
+  --bs-vg-grey-200: #2a2a2a;
+  --bs-vg-grey-300: #444444;
+  --bs-vg-grey-400: #555555;
+  --bs-vg-grey-800: #e0e0e0;
+
+  --bs-vg-panel-default-heading-bg: #2a2a2a;
+  --bs-vg-panel-default-border: #444444;
+
+  --bs-vg-well-bg: #222222;
+  --bs-vg-well-border: #111111;
+
+  --bs-vg-btn-default-bg-top: #444444;
+  --bs-vg-btn-default-bg-bottom: #2a2a2a;
+  --bs-vg-btn-default-border: #111111;
+
+  --bs-vg-navbar-default-bg: #222222;
+  --bs-vg-navbar-default-border: #111111;
+  --bs-vg-navbar-inverse-border: #000000;
+
+  --bs-vg-input-focus-shadow-color: rgba(51, 122, 183, 0.4);
+  --bs-vg-input-border-focus: #337ab7;
+
+  --bs-link-color: #5bc0de;
+  --bs-link-hover-color: #82d1e7;
+}
+
+[data-bs-theme="dark"] body {
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: var(--bs-vg-grey-200);
+  color: var(--bs-vg-grey-800);
+}
+
+[data-bs-theme="dark"] .btn-secondary, [data-bs-theme="dark"] .btn-light {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+
+[data-bs-theme="dark"] .bg-body-tertiary {
+  border-color: var(--bs-vg-navbar-default-border);
+}
+
+[data-bs-theme="dark"] .navbar-dark .navbar-nav .nav-link {
+  color: var(--bs-vg-grey-600);
+}
+
+[data-bs-theme="dark"] .navbar-dark .navbar-nav .nav-link.active {
+  color: var(--bs-vg-white);
+}
