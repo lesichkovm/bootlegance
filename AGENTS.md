@@ -43,22 +43,25 @@ Each theme must include an `index.html` preview page demonstrating all major Boo
 
 ### Required Sections (in order)
 
-1. **Navbar** — light and dark variants
-2. **Buttons** — all contextual variants (primary, secondary, success, info, warning, danger, light, dark), sizes, and states
-3. **Typography** — headings (h1–h6), body text, emphasis classes, blockquotes
-4. **Tables** — default and contextual row colors
-5. **Forms** — inputs, selects, textarea, checkboxes, radios, switches, ranges, validation states, floating labels
-6. **Navs** — tabs, pills, breadcrumbs, pagination, underline
-7. **Alerts** — all contextual variants
-8. **Badges** — inline and pill
-9. **Progress bars** — basic, contextual, striped, animated, stacked
-10. **List groups** — default, flush, linked
-11. **Cards** — all contextual variants, image cap, header/footer
-12. **Accordions**
-13. **Modals**
-14. **Offcanvas**
-15. **Popovers and Tooltips**
-16. **Toasts**
+1. **Navbar** — light, dark, and primary variants
+2. **Buttons** — all contextual variants, outline variants, sizes, and states; Button groups
+3. **Typography** — headings, body text, display headings, emphasis classes, blockquotes
+4. **Tables** — striped, hovered, bordered, and all contextual variants
+5. **Forms** — controls, selects, checks/radios, switches, ranges, input groups, floating labels, validation states, color picker
+6. **Navs & Tabs** — tabs, pills, underline, breadcrumbs, pagination
+7. **Alerts** — all contextual variants, with dismiss buttons
+8. **Badges** — contextual variants, pills, position-relative badges
+9. **Progress & Spinners** — basic, contextual, striped, animated, stacked; border and grow spinners
+10. **List groups** — default, active, linked, flush
+11. **Cards** — all contextual and border variants, image cap, header/footer, with list groups
+12. **Accordions** — default and flush variants
+13. **Carousel**
+14. **Modals** — default and static backdrop
+15. **Offcanvas** — multiple directions (start, top)
+16. **Popovers and Tooltips**
+17. **Toasts** — live and static
+18. **Placeholders**
+19. **Misc** — Close buttons, standalone Dropdowns
 
 ### HTML Template Structure
 
@@ -110,7 +113,7 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 ## Validation Checklist (before PR)
 
 - [ ] `theme.css` loads after Bootstrap without errors
-- [ ] All 16 preview sections render correctly in `index.html`
+- [ ] All 19 preview sections render correctly in `index.html`
 - [ ] Light mode and dark mode (`data-bs-theme="dark"`) both look intentional
 - [ ] No Bootstrap source files are bundled or committed
 - [ ] Theme slug directory name is lowercase and hyphenated
