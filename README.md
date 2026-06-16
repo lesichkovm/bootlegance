@@ -4,6 +4,8 @@ Elegant Bootstrap themes that redefine your project's aesthetic.
 
 Bootlegance is a collection of carefully crafted Bootstrap 5 themes designed to elevate the look and feel of your projects. From bold brutalist designs to refined minimalism, each theme is built to make your applications stand out.
 
+[**View Theme Gallery**](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/docs/index.html)
+
 ## Features
 
 - **Native Dark Mode Support** — Built on Bootstrap 5.3+ with automatic light/dark mode switching via `data-bs-theme`
@@ -49,9 +51,9 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 
 ## Available Themes
 
-| Theme | Description | Best For |
-|---|---|---|
-| **Brutalski** | Bold, raw, geometric brutalism | Developers, tech-forward projects, design portfolios |
+| Theme | Description | Preview | Best For |
+|---|---|---|---|
+| **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
 | **Midnight** | Dark, sophisticated, professional | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | Finance, corporate, professional services |
