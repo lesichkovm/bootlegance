@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Seneca Bootstrap 5 Theme
+   Inspired by ExtJS Classic and Neptune themes.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root,
+[data-bs-theme="light"] {
+  /* ExtJS Color Palette */
+  --bs-primary: #157fcc;
+  --bs-primary-rgb: 21, 127, 204;
+  --bs-secondary: #666666;
+  --bs-secondary-rgb: 102, 102, 102;
+  --bs-success: #73a839;
+  --bs-success-rgb: 115, 168, 57;
+  --bs-info: #1d9fd8;
+  --bs-info-rgb: 29, 159, 216;
+  --bs-warning: #dd9a00;
+  --bs-warning-rgb: 221, 154, 0;
+  --bs-danger: #c43c35;
+  --bs-danger-rgb: 196, 60, 53;
+  --bs-light: #f0f0f0;
+  --bs-light-rgb: 240, 240, 240;
+  --bs-dark: #2a4f6e;
+  --bs-dark-rgb: 42, 79, 110;
+
+  /* Typography */
+  --bs-body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 13px;
+  --bs-body-line-height: 1.4;
+  --bs-body-color: #222222;
+  --bs-body-bg: #f0f0f0;
+
+  --bs-heading-color: #2a4f6e;
+  --bs-heading-font-weight: 700;
+
+  /* Global Overrides */
+  --bs-border-radius: 3px;
+  --bs-border-radius-sm: 2px;
+  --bs-border-radius-lg: 4px;
+  --bs-border-color: #d0d0d0;
+
+  /* Seneca Specific Internal Variables */
+  --bs-sn-white: #ffffff;
+  --bs-sn-black: #000000;
+  --bs-sn-text-primary: #222222;
+  --bs-sn-text-secondary: #666666;
+  --bs-sn-text-light: #ffffff;
+  --bs-sn-header-text: #333333;
+  --bs-sn-label-color: #444444;
+
+  --bs-sn-surface: #ffffff;
+  --bs-sn-toolbar-bg-top: #ededed;
+  --bs-sn-toolbar-bg-bottom: #e0e0e0;
+  --bs-sn-panel-header-bg-top: #3d7ead;
+  --bs-sn-panel-header-bg-bottom: #2a6099;
+  --bs-sn-input-border: #c0c0c0;
+  --bs-sn-table-header-bg-top: #ededed;
+  --bs-sn-table-header-bg-bottom: #e0e0e0;
+  --bs-sn-table-border: #d8d8d8;
+  --bs-sn-table-zebra: #f5f5f5;
+  --bs-sn-table-hover: #dde9f6;
+
+  /* Button Gradients */
+  --bs-sn-btn-primary-bg-top: #4e9fd8;
+  --bs-sn-btn-primary-bg-bottom: #2a7fc0;
+  --bs-sn-btn-primary-border: #1c6ea4;
+  --bs-sn-btn-secondary-bg-top: #e8e8e8;
+  --bs-sn-btn-secondary-bg-bottom: #d4d4d4;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 4px;
+  --bs-focus-ring-color: rgba(21, 127, 204, 0.4);
+
+  /* Shadows & Shorthands */
+  --bs-sn-btn-text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  --bs-sn-btn-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  --bs-sn-card-box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  --bs-sn-btn-active-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1a1a1a;
+  --bs-body-color: #e0e0e0;
+  --bs-tertiary-bg: #2a2a2a;
+  --bs-border-color: #444444;
+
+  --bs-sn-white: #2a2a2a;
+  --bs-sn-black: #000000;
+  --bs-sn-text-primary: #e0e0e0;
+  --bs-sn-text-secondary: #a0a0a0;
+  --bs-sn-text-light: #ffffff;
+  --bs-sn-header-text: #f0f0f0;
+  --bs-sn-label-color: #bbb;
+
+  --bs-sn-surface: #242424;
+  --bs-sn-toolbar-bg-top: #333333;
+  --bs-sn-toolbar-bg-bottom: #222222;
+  --bs-sn-panel-header-bg-top: #1c3e5a;
+  --bs-sn-panel-header-bg-bottom: #12283a;
+  --bs-sn-input-border: #555555;
+  --bs-sn-table-header-bg-top: #333333;
+  --bs-sn-table-header-bg-bottom: #222222;
+  --bs-sn-table-border: #444444;
+  --bs-sn-table-zebra: #1e1e1e;
+  --bs-sn-table-hover: #2a3f5a;
+
+  --bs-heading-color: #a0c4e0;
+
+  --bs-sn-btn-primary-bg-top: #2a7fc0;
+  --bs-sn-btn-primary-bg-bottom: #1c4e75;
+  --bs-sn-btn-secondary-bg-top: #444444;
+  --bs-sn-btn-secondary-bg-bottom: #333333;
+
+  --bs-sn-btn-text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  --bs-sn-btn-box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  --bs-sn-card-box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* --------------------------------------------------------------------------
+   Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--bs-heading-color);
+}
+
+label {
+  font-weight: 700;
+  color: var(--bs-sn-label-color);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  border-radius: var(--bs-border-radius);
+  font-size: var(--bs-body-font-size);
+  padding: 4px 12px;
+  transition: none;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom, var(--bs-sn-btn-primary-bg-top), var(--bs-sn-btn-primary-bg-bottom));
+  border-color: var(--bs-sn-btn-primary-border);
+  color: var(--bs-sn-text-light);
+  text-shadow: var(--bs-sn-btn-text-shadow);
+  box-shadow: var(--bs-sn-btn-box-shadow);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-image: linear-gradient(to bottom, var(--bs-sn-btn-primary-bg-top), var(--bs-sn-btn-primary-bg-bottom));
+  filter: brightness(1.1);
+  border-color: var(--bs-sn-btn-primary-border);
+  color: var(--bs-sn-text-light);
+}
+
+.btn-primary:active, .btn-primary.active {
+  background-image: linear-gradient(to top, var(--bs-sn-btn-primary-bg-top), var(--bs-sn-btn-primary-bg-bottom));
+  box-shadow: var(--bs-sn-btn-active-shadow);
+}
+
+.btn-secondary, .btn-light {
+  background-image: linear-gradient(to bottom, var(--bs-sn-btn-secondary-bg-top), var(--bs-sn-btn-secondary-bg-bottom));
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.btn-secondary:active, .btn-secondary.active {
+  background-image: linear-gradient(to top, var(--bs-sn-btn-secondary-bg-top), var(--bs-sn-btn-secondary-bg-bottom));
+}
+
+/* --------------------------------------------------------------------------
+   Navbar (ExtJS Toolbar)
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-image: linear-gradient(to bottom, var(--bs-sn-toolbar-bg-top), var(--bs-sn-toolbar-bg-bottom)) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+  padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link {
+  color: var(--bs-sn-header-text);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link.active {
+  background-color: var(--bs-sn-white);
+  color: var(--bs-primary) !important;
+  border-radius: var(--bs-border-radius);
+}
+
+/* --------------------------------------------------------------------------
+   Cards (ExtJS Panels)
+   -------------------------------------------------------------------------- */
+.card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  background-color: var(--bs-sn-surface);
+  box-shadow: var(--bs-sn-card-box-shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  background-image: linear-gradient(to bottom, var(--bs-sn-panel-header-bg-top), var(--bs-sn-panel-header-bg-bottom));
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--bs-sn-panel-header-bg-bottom);
+}
+
+.card-header, .card-header .card-title, .card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5, .card-header h6 {
+  color: var(--bs-sn-text-light) !important;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+.form-control, .form-select {
+  border: 1px solid var(--bs-sn-input-border);
+  border-radius: var(--bs-border-radius);
+  padding: 4px 6px;
+  font-size: 13px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 4px var(--bs-focus-ring-color);
+}
+
+/* --------------------------------------------------------------------------
+   Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: var(--bs-sn-table-zebra);
+  --bs-table-hover-bg: var(--bs-sn-table-hover);
+  --bs-table-border-color: var(--bs-sn-table-border);
+  border: 1px solid var(--bs-sn-table-border);
+}
+
+.table thead th {
+  background-image: linear-gradient(to bottom, var(--bs-sn-table-header-bg-top), var(--bs-sn-table-header-bg-bottom));
+  color: var(--bs-sn-header-text);
+  font-weight: 700;
+  border-bottom: 1px solid var(--bs-sn-table-border);
+}
+
+/* --------------------------------------------------------------------------
+   Misc Components to match Seneca aesthetic
+   -------------------------------------------------------------------------- */
+.alert {
+  border-left-width: 4px;
+}
+
+.nav-tabs .nav-link {
+  border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+}
+
+.nav-tabs .nav-link.active {
+  border-top: 3px solid var(--bs-primary);
+}

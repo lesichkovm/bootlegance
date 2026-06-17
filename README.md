@@ -54,6 +54,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | Theme | Description | Preview | Best For |
 |---|---|---|---|
 | **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
+| **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/seneca/index.html) | Enterprise apps, internal dashboards, complex data UIs |
 | **Midnight** | Dark, sophisticated, professional | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | Finance, corporate, professional services |
