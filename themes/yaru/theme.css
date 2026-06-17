@@ -1,0 +1,319 @@
+/* ==========================================================================
+   Yaru Bootstrap 5 Theme
+   Inspired by Ubuntu's Yaru design system.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Ubuntu Yaru Color Palette */
+  --yaru-orange: #E95420;
+  --yaru-orange-dark: #c34113;
+  --yaru-aubergine: #77216F;
+  --yaru-aubergine-dark: #8c2783;
+  --yaru-aubergine-light: #9b3d97;
+  --yaru-warm-grey: #f6f5f4;
+  --yaru-inkstone: #1e1e1e;
+  --yaru-jet: #2d2d2d;
+  --yaru-slate: #3d3d3d;
+  --yaru-porcelain: #ffffff;
+  --yaru-graphite: #2e2e2e;
+  --yaru-ash: #e0ddd8;
+  --yaru-silk: #6c6c6c;
+  --yaru-sand: #d8d6d3;
+  --yaru-shell: #ebebeb;
+  --yaru-canal: #262626;
+
+  /* Bootstrap Primary Overrides */
+  --bs-primary: var(--yaru-orange);
+  --bs-primary-rgb: 233, 84, 32;
+  --bs-secondary: var(--yaru-aubergine);
+  --bs-secondary-rgb: 119, 33, 111;
+  --bs-success: #0e8420;
+  --bs-success-rgb: 14, 132, 32;
+  --bs-info: #18b0b0;
+  --bs-info-rgb: 24, 176, 176;
+  --bs-warning: #f4a100;
+  --bs-warning-rgb: 244, 161, 0;
+  --bs-danger: #c7162b;
+  --bs-danger-rgb: 199, 22, 43;
+  --bs-light: var(--yaru-warm-grey);
+  --bs-light-rgb: 246, 245, 244;
+  --bs-dark: var(--yaru-inkstone);
+  --bs-dark-rgb: 30, 30, 30;
+
+  /* Body & Surface */
+  --bs-body-bg: var(--yaru-warm-grey);
+  --bs-body-color: var(--yaru-graphite);
+  --bs-secondary-color: var(--yaru-silk);
+  --bs-tertiary-bg: var(--yaru-porcelain);
+  --bs-border-color: var(--yaru-sand);
+
+  /* Typography */
+  --bs-font-sans-serif: 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.5;
+
+  /* Components Globals */
+  --bs-border-radius: 6px;
+  --bs-border-radius-sm: 4px;
+  --bs-border-radius-lg: 8px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 3px;
+  --bs-focus-ring-color: rgba(var(--bs-primary-rgb), 0.5);
+
+  /* Navbar */
+  --bs-navbar-bg: var(--yaru-shell);
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: var(--yaru-inkstone);
+  --bs-body-color: var(--yaru-ash);
+  --bs-tertiary-bg: var(--yaru-jet);
+  --bs-border-color: var(--yaru-slate);
+
+  --bs-secondary: var(--yaru-aubergine-light);
+  --bs-secondary-rgb: 155, 61, 151;
+
+  --bs-light: var(--yaru-jet);
+  --bs-dark: var(--yaru-inkstone);
+
+  --bs-navbar-bg: var(--yaru-canal);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 400;
+  transition: none;
+  border-radius: var(--bs-border-radius);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--yaru-orange);
+  --bs-btn-border-color: var(--yaru-orange);
+  --bs-btn-hover-bg: var(--yaru-orange-dark);
+  --bs-btn-hover-border-color: var(--yaru-orange-dark);
+  --bs-btn-active-bg: var(--yaru-orange-dark);
+  --bs-btn-active-border-color: var(--yaru-orange-dark);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: var(--yaru-aubergine-dark);
+  --bs-btn-hover-border-color: var(--yaru-aubergine-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--yaru-orange);
+  --bs-btn-border-color: var(--yaru-orange);
+  --bs-btn-hover-bg: var(--yaru-orange);
+  --bs-btn-hover-border-color: var(--yaru-orange);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bs-navbar-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.navbar .nav-link {
+  color: var(--bs-body-color);
+  font-weight: 400;
+}
+
+.navbar .nav-link.active {
+  color: var(--bs-primary) !important;
+  position: relative;
+}
+
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   5. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--bs-border-radius-lg);
+  border: 1px solid var(--bs-border-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  border-bottom: 1px solid var(--bs-border-color);
+  font-weight: 500;
+}
+
+[data-bs-theme="dark"] .card-header {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   6. Forms
+   -------------------------------------------------------------------------- */
+.form-control, .form-select {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--yaru-sand);
+  background-color: var(--bs-tertiary-bg);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  border-color: var(--yaru-slate);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.form-check-input {
+  border-color: var(--bs-border-color);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.35);
+  border-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Progress Bars
+   -------------------------------------------------------------------------- */
+.progress {
+  height: 8px;
+  background-color: var(--yaru-sand);
+  border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .progress {
+  background-color: var(--yaru-slate);
+}
+
+.progress-bar {
+  background-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: var(--yaru-warm-grey);
+  --bs-table-hover-bg: rgba(var(--bs-primary-rgb), 0.05);
+  --bs-table-border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .table {
+  --bs-table-striped-bg: var(--yaru-canal);
+}
+
+.table thead th {
+  background-color: var(--yaru-shell);
+  border-bottom: 2px solid var(--bs-border-color);
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .table thead th {
+  background-color: var(--yaru-jet);
+}
+
+/* --------------------------------------------------------------------------
+   9. Badges
+   -------------------------------------------------------------------------- */
+.badge {
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   10. Alerts
+   -------------------------------------------------------------------------- */
+.alert {
+  border: 1px solid var(--bs-border-color);
+  border-left: 4px solid var(--bs-primary);
+  border-radius: var(--bs-border-radius);
+}
+
+.alert-primary { border-left-color: var(--bs-primary); }
+.alert-secondary { border-left-color: var(--bs-secondary); }
+.alert-success { border-left-color: var(--bs-success); }
+.alert-danger { border-left-color: var(--bs-danger); }
+.alert-warning { border-left-color: var(--bs-warning); }
+.alert-info { border-left-color: var(--bs-info); }
+
+/* --------------------------------------------------------------------------
+   11. Other Components
+   -------------------------------------------------------------------------- */
+.list-group-item.active {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--bs-primary);
+}
+
+.pagination {
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+}
+
+.page-link {
+  color: var(--bs-primary);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  color: var(--bs-primary);
+}
+
+.accordion-button:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
