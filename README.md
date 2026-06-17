@@ -131,4 +131,4 @@ Bootlegance themes are built on [Bootstrap](https://getbootstrap.com/), the worl
 
 ---
 
-Made with elegance. 🎨
+Made with elegance.🎨
