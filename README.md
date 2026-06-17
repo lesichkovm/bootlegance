@@ -24,11 +24,11 @@ Bootlegance is a collection of carefully crafted Bootstrap 5 themes designed to 
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Load latest WebJS from CDN -->
-<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/dist/themes/{theme-name}/theme.css"></script>
+<!-- Load latest theme CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/themes/{theme-name}/theme.css">
 
-<!-- Load specific version of WebJS from CDN -->
-<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@v2.9.0/dist/themes/{theme-name}/theme.css"></script>
+<!-- Load specific version of theme CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@v2.9.0/themes/{theme-name}/theme.css">
 ```
 
 3. That's it! Your Bootstrap components now have the Bootlegance theme applied.
@@ -54,11 +54,9 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | Theme | Description | Preview | Best For |
 |---|---|---|---|
 | **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
-| **Midnight** | Dark, sophisticated, professional | Corporate apps, SaaS, modern tech |
-| **Sunrise** | Warm, energetic, light | Creative portfolios, startups, inviting projects |
-| **Ocean** | Cool, calm, trustworthy | Finance, corporate, professional services |
-| **Forest** | Natural, earthy, organic | Eco-conscious brands, wellness, sustainability |
-| **Slate** | Minimal, neutral, clean | Content-heavy sites, reading, simplicity |
+| **Carbon** | IBM-inspired, clinical enterprise design | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise dashboards, dev tools, IBM fans |
+| **Vanguard** | High-contrast, premium modernist | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vanguard/index.html) | Modern portfolios, boutique brands, editorial |
+| **Whitehall** | Clinical, high-accessibility UI | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/whitehall/index.html) | Public sector, high-accessibility, clinical apps |
 
 *More themes coming soon.*
 

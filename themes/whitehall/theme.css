@@ -1,6 +1,6 @@
 /* ==========================================================================
    Whitehall Bootstrap 5 Theme
-   Inspired by the GOV.UK Design System.
+   Inspired by the Whitehall Design System.
    Include AFTER bootstrap.min.css.
    ========================================================================== */
 
@@ -21,6 +21,14 @@
   --bs-light: #f3f2f1;
   --bs-dark: #0b0c0c;
 
+  /* Whitehall specific additions (for shadows, hovers, etc.) */
+  --bs-whitehall-btn-shadow: #002d18;
+  --bs-whitehall-btn-hover: #005a30;
+  --bs-whitehall-btn-secondary-shadow: #505a5f;
+  --bs-whitehall-btn-secondary-hover: #dbdad9;
+  --bs-whitehall-link-hover: #003078;
+  --bs-whitehall-surface-dark: #1d1d1b;
+
   /* Typography */
   --bs-font-sans-serif: "GDS Transport", Arial, sans-serif;
   --bs-body-font-size: 1rem; /* 16px */
@@ -37,7 +45,6 @@
   /* Focus Ring */
   --bs-focus-ring-width: 3px;
   --bs-focus-ring-color: #fd0;
-  /* Custom property for the offset color since we can't easily do offset with just box-shadow in a single var that Bootstrap uses */
 }
 
 /* --------------------------------------------------------------------------
@@ -57,33 +64,41 @@ h1, h2, h3, h4, h5, h6,
 a {
   color: var(--bs-primary);
   text-decoration: underline;
-  text-underline-offset: 0.1em;
+  text-underline-offset: 0.125em;
 }
 
 a:hover {
-  color: #003078;
+  color: var(--bs-whitehall-link-hover);
   text-decoration-thickness: 3px;
 }
 
 /* --------------------------------------------------------------------------
-   2. Focus Styles (Iconic GOV.UK style)
+   2. Focus Styles (Iconic Whitehall style)
    -------------------------------------------------------------------------- */
+/* Refined focus to avoid breaking non-interactive elements */
 :focus {
   outline: 3px solid var(--bs-warning) !important;
   outline-offset: 0 !important;
   box-shadow: inset 0 0 0 2px var(--bs-dark) !important;
-  background-color: var(--bs-warning) !important;
-  color: var(--bs-dark) !important;
 }
 
-/* For elements where background-color change is unwanted (like large blocks) */
+/* Only change background on specific interactive elements where it is standard for Whitehall */
+a:focus,
 button:focus,
 .btn:focus,
+.dropdown-item:focus,
+.nav-link:focus {
+  background-color: var(--bs-warning) !important;
+  color: var(--bs-dark) !important;
+  box-shadow: inset 0 0 0 2px var(--bs-dark) !important;
+}
+
+/* For form controls, keep background readable */
 .form-control:focus,
 .form-select:focus,
 .form-check-input:focus {
-  background-color: inherit !important;
-  color: inherit !important;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
   box-shadow: 0 0 0 2px var(--bs-dark), 0 0 0 5px var(--bs-warning) !important;
   outline: none !important;
 }
@@ -96,29 +111,29 @@ button:focus,
   border-width: 2px;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  box-shadow: 0 2px 0 #002d18; /* Success/Primary shadow */
+  box-shadow: 0 2px 0 var(--bs-whitehall-btn-shadow);
 }
 
 .btn-primary {
-  background-color: var(--bs-success); /* GOV.UK primary is green */
+  background-color: var(--bs-success); /* Whitehall primary is green */
   border-color: var(--bs-success);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-primary:hover {
-  background-color: #005a30;
-  border-color: #005a30;
+  background-color: var(--bs-whitehall-btn-hover);
+  border-color: var(--bs-whitehall-btn-hover);
 }
 
 .btn-secondary {
-  background-color: #f3f2f1;
-  border-color: #b1b4b6;
+  background-color: var(--bs-light);
+  border-color: var(--bs-border-color);
   color: var(--bs-body-color);
-  box-shadow: 0 2px 0 #505a5f;
+  box-shadow: 0 2px 0 var(--bs-whitehall-btn-secondary-shadow);
 }
 
 .btn-secondary:hover {
-  background-color: #dbdad9;
+  background-color: var(--bs-whitehall-btn-secondary-hover);
 }
 
 /* --------------------------------------------------------------------------
@@ -134,10 +149,19 @@ button:focus,
   font-weight: 700;
 }
 
-/* Error state: red left border */
+/* Error state: red left border on inputs and form groups */
 .is-invalid,
-.was-validated .form-control:invalid {
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
   border-left: 4px solid var(--bs-danger) !important;
+}
+
+/* Whitehall-style form group error marker using :has() for modern browsers */
+.mb-3:has(.is-invalid),
+.mb-3:has(:invalid) {
+  border-left: 4px solid var(--bs-danger);
+  padding-left: 15px;
+  margin-left: -19px;
 }
 
 .form-check-input {
@@ -162,18 +186,18 @@ button:focus,
 }
 
 .navbar-brand {
-  color: #fff !important;
+  color: var(--bs-white) !important;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
 .navbar .nav-link {
-  color: #fff !important;
-  text-decoration: none;
+  color: var(--bs-white) !important;
+  text-decoration: underline !important; /* Whitehall links always underlined */
 }
 
 .navbar .nav-link:hover {
-  text-decoration: underline;
+  text-decoration-thickness: 3px !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -182,7 +206,7 @@ button:focus,
 .card {
   border: 1px solid var(--bs-border-color);
   border-left: 5px solid var(--bs-primary);
-  background-color: #fff;
+  background-color: var(--bs-white);
 }
 
 /* --------------------------------------------------------------------------
@@ -237,28 +261,26 @@ button:focus,
 
   --bs-light: #1d1d1b;
   --bs-dark: #000000;
-}
 
-[data-bs-theme="dark"] a {
-  color: var(--bs-primary);
+  --bs-whitehall-surface-dark: #1d1d1b;
 }
 
 [data-bs-theme="dark"] .card {
-  background-color: #1d1d1b;
-  border-color: #505a5f;
+  background-color: var(--bs-whitehall-surface-dark);
+  border-color: var(--bs-border-color);
 }
 
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
-  border-color: #ffffff;
-  background-color: #0b0c0c;
-  color: #ffffff;
+  border-color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 
 [data-bs-theme="dark"] .btn-secondary {
-  background-color: #1d1d1b;
-  border-color: #505a5f;
-  color: #fff;
+  background-color: var(--bs-whitehall-surface-dark);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
 }
 
 /* Ensure global squareness */
