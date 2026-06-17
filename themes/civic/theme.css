@@ -162,6 +162,7 @@ div.is-invalid {
 
 /* Navbar */
 .navbar {
+  background-color: var(--bs-navbar-bg);
   --bs-navbar-bg: var(--bs-dark);
   --bs-navbar-color: rgba(255, 255, 255, 0.75);
   --bs-navbar-hover-color: var(--usa-white);
