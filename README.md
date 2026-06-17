@@ -58,6 +58,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Carbon** | Clinical, precise, enterprise-ready | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise apps, dashboards, developer tools |
 | **Civic** | Inspired by the U.S. Web Design System (USWDS) | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/civic/index.html) | Government, digital services, accessibility-first |
 | **Whitehall** | Clinical, high-accessibility UI | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/whitehall/index.html) | Public sector, high-accessibility, clinical apps |
+| **Yaru** | Ubuntu Yaru inspired theme. Warm, approachable, and human-centric. | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/yaru/index.html) | Open-source projects, personal blogs, friendly interfaces |
 | **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/seneca/index.html) | Enterprise apps, internal dashboards, complex data UIs |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |

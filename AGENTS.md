@@ -24,6 +24,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Seneca     | `seneca`     | Available |
 | Vanguard   | `vanguard`   | Available |
 | Whitehall  | `whitehall`  | Available |
+| Yaru       | `yaru`       | Available |
 | Midnight   | `midnight`   | Planned |
 | Sunrise    | `sunrise`    | Planned |
 | Ocean      | `ocean`      | Planned |
