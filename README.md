@@ -57,6 +57,11 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Carbon** | IBM-inspired, clinical enterprise design | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise dashboards, dev tools, IBM fans |
 | **Vanguard** | High-contrast, premium modernist | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vanguard/index.html) | Modern portfolios, boutique brands, editorial |
 | **Whitehall** | Clinical, high-accessibility UI | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/whitehall/index.html) | Public sector, high-accessibility, clinical apps |
+| **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
+| **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
+| **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |
+| **Forest** | Natural, earthy, organic | | Eco-conscious brands, wellness, sustainability |
+| **Slate** | Minimal, neutral, clean | | Content-heavy sites, reading, simplicity |
 
 *More themes coming soon.*
 
