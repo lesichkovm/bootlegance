@@ -24,11 +24,11 @@ Bootlegance is a collection of carefully crafted Bootstrap 5 themes designed to 
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Load latest WebJS from CDN -->
-<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/dist/themes/{theme-name}/theme.css"></script>
+<!-- Load latest theme CSS from CDN -->
+<link href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/themes/{theme-name}/theme.css" rel="stylesheet">
 
-<!-- Load specific version of WebJS from CDN -->
-<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@v2.9.0/dist/themes/{theme-name}/theme.css"></script>
+<!-- Load specific version of theme CSS from CDN -->
+<link href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@v2.9.0/themes/{theme-name}/theme.css" rel="stylesheet">
 ```
 
 3. That's it! Your Bootstrap components now have the Bootlegance theme applied.
@@ -54,6 +54,9 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | Theme | Description | Preview | Best For |
 |---|---|---|---|
 | **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
+| **Vanguard** | Faithfully recreated Bootstrap 3 aesthetic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vanguard/index.html) | Legacy projects, nostalgia, familiarity |
+| **Carbon** | Clinical, precise, enterprise-ready | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise apps, dashboards, developer tools |
+| **Civic** | Inspired by the U.S. Web Design System (USWDS) | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/civic/index.html) | Government, digital services, accessibility-first |
 | **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/seneca/index.html) | Enterprise apps, internal dashboards, complex data UIs |
 | **Midnight** | Dark, sophisticated, professional | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | Creative portfolios, startups, inviting projects |
@@ -127,5 +130,4 @@ Bootlegance themes are built on [Bootstrap](https://getbootstrap.com/), the worl
 
 ---
 
-Made with elegance. 🎨
-```
+Made with elegance.
