@@ -54,8 +54,9 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | Theme | Description | Preview | Best For |
 |---|---|---|---|
 | **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
-| **Carbon** | IBM-inspired, clinical enterprise design | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise dashboards, dev tools, IBM fans |
-| **Vanguard** | High-contrast, premium modernist | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vanguard/index.html) | Modern portfolios, boutique brands, editorial |
+| **Carbon** | Clinical, precise, enterprise-ready | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/carbon/index.html) | Enterprise apps, dashboards, developer tools |
+| **Civic** | Inspired by the U.S. Web Design System (USWDS) | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/civic/index.html) | Government, digital services, accessibility-first |
+| **Vanguard** | Faithfully recreated Bootstrap 3 aesthetic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vanguard/index.html) | Legacy projects, nostalgia, familiarity |
 | **Whitehall** | Clinical, high-accessibility UI | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/whitehall/index.html) | Public sector, high-accessibility, clinical apps |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
@@ -130,4 +131,3 @@ Bootlegance themes are built on [Bootstrap](https://getbootstrap.com/), the worl
 ---
 
 Made with elegance. 🎨
-```
