@@ -18,22 +18,34 @@
   <!-- 1. Navbar -->
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
     <div class="container">
-      <a class="navbar-brand" href="#">Vanguard</a>
+      <a class="navbar-brand" href="../../docs/index.html">Vanguard</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarDefault">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../../docs/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
+          <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#SectionTypography">Typography</a></li>
+              <li><a class="dropdown-item" href="#SectionTables">Tables</a></li>
+              <li><a class="dropdown-item" href="#SectionNavs">Navs</a></li>
+              <li><a class="dropdown-item" href="#SectionAlerts">Alerts</a></li>
+              <li><a class="dropdown-item" href="#SectionBadges">Badges</a></li>
+              <li><a class="dropdown-item" href="#SectionProgress">Progress</a></li>
+              <li><a class="dropdown-item" href="#SectionList-groups">List groups</a></li>
+
+              <li><a class="dropdown-item" href="#SectionAccordions">Accordions</a></li>
+              <li><a class="dropdown-item" href="#SectionCarousel">Carousel</a></li>
+              <li><a class="dropdown-item" href="#SectionModals">Modals</a></li>
+              <li><a class="dropdown-item" href="#SectionOffcanvas">Offcanvas</a></li>
+              <li><a class="dropdown-item" href="#SectionPopovers">Popovers</a></li>
+              <li><a class="dropdown-item" href="#SectionToasts">Toasts</a></li>
+              <li><a class="dropdown-item" href="#SectionPlaceholders">Placeholders</a></li>
+              <li><a class="dropdown-item" href="#SectionMisc">Misc</a></li>
             </ul>
           </li>
         </ul>
@@ -42,18 +54,24 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Vanguard Theme</h1>
-        <p class="col-md-8 fs-4">A faithfully recreated Bootstrap 3 aesthetic for Bootstrap 5.3+. Classic gradients, familiar colors, and that iconic "web 2.5" feel.</p>
-        <button class="btn btn-primary btn-lg" type="button">Learn more</button>
+  <section id="SectionHero">
+    <div class="container">
+      <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Vanguard Theme</h1>
+          <p class="col-md-8 fs-4">A faithfully recreated Bootstrap 3 aesthetic for Bootstrap 5.3+. Classic gradients, familiar colors, and that iconic "web 2.5" feel.</p>
+          <button class="btn btn-primary btn-lg" type="button">Learn more</button>
+        </div>
       </div>
     </div>
+  </section>
+
+  <div class="container">
 
     <!-- 1. Navbar -->
-    <div id="navbar">
-      <h2 class="section-title">Navbar</h2>
+    <section id="SectionNavbar">
+      <div class="container">
+      <h2 class="section-title">Navbar example</h2>
       <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
@@ -63,7 +81,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="../../docs/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -99,8 +117,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarDark">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+              <li class="nav-item"><a class="nav-link active" href="../../docs/index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
             </ul>
           </div>
         </div>
@@ -114,17 +132,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarPrimary">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+              <li class="nav-item"><a class="nav-link active" href="../../docs/index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
+    </section>
 
     <!-- 2. Buttons -->
-    <div id="buttons">
-      <h2 class="section-title">Buttons</h2>
+    <section id="SectionButtons">
+      <div class="container">
+      <h2 class="section-title">Buttons example</h2>
       <div class="d-flex flex-wrap gap-2 mb-4">
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-secondary">Secondary</button>
@@ -174,10 +194,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 3. Typography -->
-    <div id="typography">
-      <h2 class="section-title">Typography</h2>
+    <section id="SectionTypography">
+      <div class="container">
+      <h2 class="section-title">Typography example</h2>
       <div class="row">
         <div class="col-lg-4">
           <h1>Heading 1</h1>
@@ -215,10 +237,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 4. Tables -->
-    <div id="tables">
-      <h2 class="section-title">Tables</h2>
+    <section id="SectionTables">
+      <div class="container">
+      <h2 class="section-title">Tables example</h2>
       <div class="table-responsive">
         <table class="table table-hover table-striped table-bordered">
           <thead>
@@ -273,10 +297,12 @@
         </table>
       </div>
     </div>
+    </section>
 
     <!-- 5. Forms -->
-    <div id="forms">
-      <h2 class="section-title">Forms</h2>
+    <section id="SectionForms">
+      <div class="container">
+      <h2 class="section-title">Forms example</h2>
       <div class="row">
         <div class="col-lg-6">
           <form>
@@ -384,18 +410,20 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 6. Navs -->
-    <div id="navs">
+    <section id="SectionNavs">
+      <div class="container">
       <h2 class="section-title">Navs, Tabs & Pagination</h2>
       <ul class="nav nav-tabs mb-3">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../../docs/index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
       </ul>
       <ul class="nav nav-pills mb-3">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../../docs/index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
       </ul>
@@ -408,7 +436,7 @@
       <h3 class="mb-3">Breadcrumbs</h3>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="../../docs/index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="#">Library</a></li>
           <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
@@ -432,10 +460,12 @@
         </ul>
       </nav>
     </div>
+    </section>
 
     <!-- 7. Alerts -->
-    <div id="alerts">
-      <h2 class="section-title">Alerts</h2>
+    <section id="SectionAlerts">
+      <div class="container">
+      <h2 class="section-title">Alerts example</h2>
       <div class="row">
         <div class="col-lg-6">
           <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -459,10 +489,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 8. Badges -->
-    <div id="badges">
-      <h2 class="section-title">Badges</h2>
+    <section id="SectionBadges">
+      <div class="container">
+      <h2 class="section-title">Badges example</h2>
       <div class="d-flex flex-wrap gap-2 mb-3">
         <span class="badge bg-primary">Primary</span>
         <span class="badge bg-secondary">Secondary</span>
@@ -485,9 +517,11 @@
         </button>
       </div>
     </div>
+    </section>
 
     <!-- 9. Progress bars -->
-    <div id="progress">
+    <section id="SectionProgress">
+      <div class="container">
       <h2 class="section-title">Progress & Spinners</h2>
       <div class="mb-3">
         <div class="progress mb-2" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -511,9 +545,11 @@
         <div class="spinner-grow text-danger" role="status"><span class="visually-hidden">Loading...</span></div>
       </div>
     </div>
+    </section>
 
     <!-- 10. List groups -->
-    <div id="list-groups">
+    <section id="SectionList-groups">
+      <div class="container">
       <h2 class="section-title">List groups</h2>
       <div class="row">
         <div class="col-lg-4">
@@ -540,10 +576,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 11. Cards -->
-    <div id="cards">
-      <h2 class="section-title">Cards</h2>
+    <section id="SectionCards">
+      <div class="container">
+      <h2 class="section-title">Cards example</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-3">
@@ -590,10 +628,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 12. Accordions -->
-    <div id="accordions">
-      <h2 class="section-title">Accordions</h2>
+    <section id="SectionAccordions">
+      <div class="container">
+      <h2 class="section-title">Accordions example</h2>
       <div class="accordion mb-3" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -634,10 +674,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 13. Carousel -->
-    <div id="carousel">
-      <h2 class="section-title">Carousel</h2>
+    <section id="SectionCarousel">
+      <div class="container">
+      <h2 class="section-title">Carousel example</h2>
       <div id="carouselExample" class="carousel slide mb-3" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -661,10 +703,12 @@
         </button>
       </div>
     </div>
+    </section>
 
     <!-- 14. Modals -->
-    <div id="modals">
-      <h2 class="section-title">Modals</h2>
+    <section id="SectionModals">
+      <div class="container">
+      <h2 class="section-title">Modals example</h2>
       <div class="d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Launch demo modal
@@ -710,10 +754,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 15. Offcanvas -->
-    <div id="offcanvas">
-      <h2 class="section-title">Offcanvas</h2>
+    <section id="SectionOffcanvas">
+      <div class="container">
+      <h2 class="section-title">Offcanvas example</h2>
       <div class="d-flex flex-wrap gap-2">
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
           Open Offcanvas (left)
@@ -745,9 +791,11 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 16. Popovers & Tooltips -->
-    <div id="popovers">
+    <section id="SectionPopovers">
+      <div class="container">
       <h2 class="section-title">Popovers & Tooltips</h2>
       <div class="d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
@@ -756,10 +804,12 @@
         <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">Tooltip on right</button>
       </div>
     </div>
+    </section>
 
     <!-- 17. Toasts -->
-    <div id="toasts">
-      <h2 class="section-title">Toasts</h2>
+    <section id="SectionToasts">
+      <div class="container">
+      <h2 class="section-title">Toasts example</h2>
       <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 
       <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -785,10 +835,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 18. Placeholders -->
-    <div id="placeholders">
-      <h2 class="section-title">Placeholders</h2>
+    <section id="SectionPlaceholders">
+      <div class="container">
+      <h2 class="section-title">Placeholders example</h2>
       <div class="card" aria-hidden="true">
         <div class="card-body">
           <h5 class="card-title placeholder-glow">
@@ -805,10 +857,12 @@
         </div>
       </div>
     </div>
+    </section>
 
     <!-- 19. Close Buttons & Dropdowns -->
-    <div id="misc">
-      <h2 class="section-title">Misc (Close & Dropdowns)</h2>
+    <section id="SectionMisc">
+      <div class="container">
+      <h2 class="section-title">Misc example</h2>
       <div class="d-flex gap-3 mb-3">
         <button type="button" class="btn-close" aria-label="Close"></button>
         <button type="button" class="btn-close" disabled aria-label="Close"></button>
@@ -825,9 +879,11 @@
         </ul>
       </div>
     </div>
+  </section>
 
     <footer class="mt-5 py-4 border-top">
-      <p>&copy; 2024 Bootlegance - Vanguard Theme</p>
+      <p>&copy; 2026 Bootlegance - Vanguard Theme</p>
+      <p><a href="../../docs/index.html">Back to Catalogue</a></p>
     </footer>
   </div>
 

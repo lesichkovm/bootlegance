@@ -19,7 +19,7 @@
     <!-- 1. Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top border-bottom">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../../docs/index.html">
                 <strong>SENECA</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -27,9 +27,28 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Inventory</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#SectionButtons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionCards">Cards</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#SectionTypography">Typography</a>
+                            <a class="dropdown-item" href="#SectionNavs">Navs</a>
+                            <a class="dropdown-item" href="#SectionAlerts">Alerts</a>
+                            <a class="dropdown-item" href="#SectionBadges">Badges</a>
+                            <a class="dropdown-item" href="#SectionProgress">Progress</a>
+                            <a class="dropdown-item" href="#SectionList-groups">List groups</a>
+                            <a class="dropdown-item" href="#SectionAccordions">Accordions</a>
+                            <a class="dropdown-item" href="#SectionCarousel">Carousel</a>
+                            <a class="dropdown-item" href="#SectionModals">Modals</a>
+                            <a class="dropdown-item" href="#SectionOffcanvas">Offcanvas</a>
+                            <a class="dropdown-item" href="#SectionPopovers">Popovers</a>
+                            <a class="dropdown-item" href="#SectionToasts">Toasts</a>
+                            <a class="dropdown-item" href="#SectionPlaceholders">Placeholders</a>
+                            <a class="dropdown-item" href="#SectionMisc">Misc</a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="d-flex">
                     <button class="btn btn-outline-dark btn-sm" id="theme-toggle">Switch Theme</button>
@@ -38,18 +57,21 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container text-center">
-            <h1 class="display-4">Seneca Aesthetic</h1>
-            <p class="lead">Enterprise UI inspired by ExtJS Classic & Neptune.</p>
+    <section id="SectionHero">
+        <div class="container">
+            <header class="hero text-center">
+                <h1 class="display-4">Seneca Aesthetic</h1>
+                <p class="lead">Enterprise UI inspired by ExtJS Classic & Neptune.</p>
+            </header>
         </div>
-    </header>
+    </section>
 
     <div class="container pb-5">
 
         <!-- 1. Navbar variants -->
-        <section id="navbar">
-            <h2 class="section-title">1. Navbar</h2>
+        <section id="SectionNavbar">
+            <div class="container">
+            <h2 class="section-title">Navbar example</h2>
             <nav class="navbar navbar-expand-lg mb-3 border">
                 <div class="container-fluid">
                     <span class="navbar-brand">Light Toolbar</span>
@@ -63,7 +85,7 @@
         </section>
 
         <!-- 2. Buttons -->
-        <section id="buttons">
+        <section id="SectionButtons">
             <h2 class="section-title">2. Buttons & Button Groups</h2>
             <div class="d-flex flex-wrap gap-2 mb-4">
                 <button class="btn btn-primary">Primary</button>
@@ -94,7 +116,7 @@
         </section>
 
         <!-- 3. Typography -->
-        <section id="typography">
+        <section id="SectionTypography">
             <h2 class="section-title">3. Typography</h2>
             <div class="row">
                 <div class="col-md-6">
@@ -117,7 +139,7 @@
         </section>
 
         <!-- 4. Tables -->
-        <section id="tables">
+        <section id="SectionTables">
             <h2 class="section-title">4. Tables</h2>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
@@ -152,7 +174,7 @@
         </section>
 
         <!-- 5. Forms -->
-        <section id="forms">
+        <section id="SectionForms">
             <h2 class="section-title">5. Forms</h2>
             <div class="row">
                 <div class="col-md-6">
@@ -217,7 +239,7 @@
         </section>
 
         <!-- 6. Navs, Tabs, etc -->
-        <section id="navs">
+        <section id="SectionNavs">
             <h2 class="section-title">6. Navs, Tabs & Pagination</h2>
             <ul class="nav nav-tabs mb-4">
               <li class="nav-item"><a class="nav-link active" href="#">General</a></li>
@@ -248,7 +270,7 @@
         </section>
 
         <!-- 7. Alerts -->
-        <section id="alerts">
+        <section id="SectionAlerts">
             <h2 class="section-title">7. Alerts</h2>
             <div class="alert alert-primary alert-dismissible fade show" role="alert">
                 A simple primary alert—check it out!
@@ -261,7 +283,7 @@
         </section>
 
         <!-- 8. Badges -->
-        <section id="badges">
+        <section id="SectionBadges">
             <h2 class="section-title">8. Badges</h2>
             <span class="badge bg-primary">Primary</span>
             <span class="badge bg-secondary">Secondary</span>
@@ -281,7 +303,7 @@
         </section>
 
         <!-- 9. Progress & Spinners -->
-        <section id="progress">
+        <section id="SectionProgress">
             <h2 class="section-title">9. Progress & Spinners</h2>
             <div class="progress mb-3" style="height: 12px;">
               <div class="progress-bar" style="width: 60%"></div>
@@ -296,7 +318,7 @@
         </section>
 
         <!-- 10. List Groups -->
-        <section id="list-groups">
+        <section id="SectionList-groups">
             <h2 class="section-title">10. List Groups</h2>
             <div class="row">
                 <div class="col-md-6">
@@ -316,7 +338,7 @@
         </section>
 
         <!-- 11. Cards -->
-        <section id="cards">
+        <section id="SectionCards">
             <h2 class="section-title">11. Cards</h2>
             <div class="row">
                 <div class="col-md-4">
@@ -350,7 +372,7 @@
         </section>
 
         <!-- 12. Accordions -->
-        <section id="accordions">
+        <section id="SectionAccordions">
             <h2 class="section-title">12. Accordions</h2>
             <div class="accordion" id="accordionEx">
               <div class="accordion-item">
@@ -381,7 +403,7 @@
         </section>
 
         <!-- 13. Carousel -->
-        <section id="carousel">
+        <section id="SectionCarousel">
             <h2 class="section-title">13. Carousel</h2>
             <div id="carEx" class="carousel slide border" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -404,7 +426,7 @@
         </section>
 
         <!-- 14. Modals -->
-        <section id="modals">
+        <section id="SectionModals">
             <h2 class="section-title">14. Modals</h2>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEx">
               Launch Modal
@@ -429,7 +451,7 @@
         </section>
 
         <!-- 15. Offcanvas -->
-        <section id="offcanvas">
+        <section id="SectionOffcanvas">
             <h2 class="section-title">15. Offcanvas</h2>
             <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offEx">
               Open Sidebar
@@ -446,7 +468,7 @@
         </section>
 
         <!-- 16. Popovers & Tooltips -->
-        <section id="popovers">
+        <section id="SectionPopovers">
             <h2 class="section-title">16. Popovers & Tooltips</h2>
             <div class="d-flex gap-2">
                 <button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-title="Info" data-bs-content="Critical system info.">Popover</button>
@@ -455,7 +477,7 @@
         </section>
 
         <!-- 17. Toasts -->
-        <section id="toasts">
+        <section id="SectionToasts">
             <h2 class="section-title">17. Toasts</h2>
             <div class="toast show" role="alert">
               <div class="toast-header">
@@ -469,7 +491,7 @@
         </section>
 
         <!-- 18. Placeholders -->
-        <section id="placeholders">
+        <section id="SectionPlaceholders">
             <h2 class="section-title">18. Placeholders</h2>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -485,7 +507,7 @@
         </section>
 
         <!-- 19. Misc -->
-        <section id="misc">
+        <section id="SectionMisc">
             <h2 class="section-title">19. Misc</h2>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -496,6 +518,7 @@
                 <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
               <button type="button" class="btn-close ms-3"></button>
+            </div>
             </div>
         </section>
 
@@ -517,5 +540,12 @@
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
     </script>
+
+    <footer class="mt-5 py-4 border-top">
+        <div class="container text-center">
+            <p>&copy; 2026 Bootlegance - Seneca Theme</p>
+            <p><a href="../../docs/index.html">Back to Catalogue</a></p>
+        </div>
+    </footer>
 </body>
 </html>
