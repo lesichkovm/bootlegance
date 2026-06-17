@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic - Bootlegance Theme</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Civic Theme CSS -->
+    <link href="theme.css" rel="stylesheet">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { padding-top: 80px; }
+        .section-title { margin-top: 4rem; margin-bottom: 2rem; border-bottom: 1px solid var(--bs-border-color); padding-bottom: 0.5rem; font-weight: 700; }
+        .hero { padding: 4rem 0; background-color: var(--bs-secondary-bg-subtle); border-bottom: 1px solid var(--bs-border-color); }
+    </style>
+</head>
+<body>
+
+    <!-- USWDS Banner -->
+    <div class="usa-banner fixed-top w-100">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <img src="https://designsystem.digital.gov/assets/img/us_flag_small.png" alt="US Flag" class="me-2" style="height: 12px;">
+                <span>An official website of the United States government</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top border-bottom mt-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <strong>CIVIC</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light btn-sm" id="theme-toggle">Switch Theme</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4">Civic Theme</h1>
+            <p class="lead">A Bootstrap 5.3 theme inspired by the US Web Design System (USWDS). Accessible, trustworthy, and plain-spoken.</p>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+
+        <!-- 1. Navbar variants -->
+        <section id="navbar">
+            <h2 class="section-title">Navbar</h2>
+            <nav class="navbar navbar-expand-lg mb-3">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Dark (Default)</span>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg bg-primary mb-3" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Primary</span>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg bg-light mb-3" data-bs-theme="light">
+                <div class="container-fluid">
+                    <span class="navbar-brand text-dark">Light</span>
+                </div>
+            </nav>
+        </section>
+
+        <!-- 2. Buttons -->
+        <section id="buttons">
+            <h2 class="section-title">Buttons & Button Groups</h2>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary (USWDS Style)</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info text-white">Info</button>
+                <button class="btn btn-light">Light</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-link">Link Button</button>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-outline-primary">Outline Primary</button>
+                <button class="btn btn-outline-secondary">Outline Secondary</button>
+                <button class="btn btn-outline-success">Outline Success</button>
+                <button class="btn btn-outline-danger">Outline Danger</button>
+            </div>
+            <div class="mb-4">
+                <button class="btn btn-primary btn-lg">Large Button</button>
+                <button class="btn btn-primary btn-sm">Small Button</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">Left</button>
+                <button type="button" class="btn btn-primary">Middle</button>
+                <button type="button" class="btn btn-primary">Right</button>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="typography">
+            <h2 class="section-title">Typography</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Lead paragraph showcasing Source Sans Pro.</p>
+                    <p>Body text with a line-height of 1.6 for enhanced readability. <a href="#">This is a link</a> and <a href="#" class="visited">this is a visited link</a> (if visited).</p>
+                    <p class="text-muted">Muted text for less emphasis.</p>
+                    <blockquote class="blockquote border-start ps-3">
+                      <p>Accessibility is not a feature, it's a right.</p>
+                      <footer class="blockquote-footer">USWDS Principles</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="mt-4">
+                <p class="display-1">Display 1</p>
+                <p class="display-4">Display 4</p>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="tables">
+            <h2 class="section-title">Tables</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Agency</th>
+                        <th>Status</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Department of State</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>contact@state.gov</td>
+                    </tr>
+                    <tr>
+                        <td>Environmental Protection Agency</td>
+                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                        <td>info@epa.gov</td>
+                    </tr>
+                    <tr>
+                        <td>Social Security Administration</td>
+                        <td><span class="badge bg-info text-white">Review</span></td>
+                        <td>support@ssa.gov</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="forms">
+            <h2 class="section-title">Forms</h2>
+            <form class="was-validated">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe" required>
+                            <div class="invalid-feedback">Please provide your name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" value="invalid-email" required>
+                            <div class="invalid-feedback">Please provide a valid email.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Select Department</label>
+                            <select class="form-select" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>Agriculture</option>
+                                <option>Commerce</option>
+                                <option>Defense</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check1" checked>
+                                <label class="form-check-label" for="check1">I agree to the terms</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="switch1" checked>
+                                <label class="form-check-label" for="switch1">Receive updates</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Application Status (Range)</label>
+                            <input type="range" class="form-range" id="range1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">gov.us/</span>
+                            <input type="text" class="form-control" placeholder="unique-id">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Color Picker</label>
+                            <input type="color" class="form-control form-control-color" value="#005ea2">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Floating Password</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- 6. Navs, Tabs, etc -->
+        <section id="navs">
+            <h2 class="section-title">Navs, Tabs & Pagination</h2>
+            <ul class="nav nav-tabs mb-4">
+              <li class="nav-item"><a class="nav-link active" href="#">Overview</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Documents</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">History</a></li>
+            </ul>
+            <ul class="nav nav-pills mb-4">
+              <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+            </ul>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Benefits</a></li>
+                <li class="breadcrumb-item active">Education</li>
+              </ol>
+            </nav>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="alerts">
+            <h2 class="section-title">Alerts</h2>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <strong>Information:</strong> This is a primary alert with a left border.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <div class="alert alert-success" role="alert"><strong>Success:</strong> Your application has been submitted.</div>
+            <div class="alert alert-danger" role="alert"><strong>Error:</strong> Please check the highlighted fields.</div>
+            <div class="alert alert-warning" role="alert"><strong>Warning:</strong> Session will expire in 5 minutes.</div>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="badges">
+            <h2 class="section-title">Badges</h2>
+            <div class="d-flex gap-2">
+                <span class="badge bg-primary">Primary</span>
+                <span class="badge bg-secondary">Secondary</span>
+                <span class="badge bg-success">Success</span>
+                <span class="badge bg-danger">Danger</span>
+                <span class="badge rounded-pill bg-primary">Pill</span>
+                <button type="button" class="btn btn-primary position-relative btn-sm">
+                  Inbox
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
+                  </span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="progress">
+            <h2 class="section-title">Progress & Spinners</h2>
+            <div class="progress mb-3" style="height: 12px;">
+              <div class="progress-bar" style="width: 25%"></div>
+            </div>
+            <div class="progress mb-3" style="height: 12px;">
+              <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+            </div>
+            <div class="d-flex gap-3 align-items-center">
+                <div class="spinner-border text-primary" role="status"></div>
+                <div class="spinner-grow text-secondary" role="status"></div>
+                <div class="spinner-border spinner-border-sm text-success" role="status"></div>
+            </div>
+        </section>
+
+        <!-- 10. List Groups -->
+        <section id="list-groups">
+            <h2 class="section-title">List Groups</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                      <li class="list-group-item active">Active agency</li>
+                      <li class="list-group-item">Secondary agency</li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Notifications
+                        <span class="badge bg-primary rounded-pill">14</span>
+                      </li>
+                      <li class="list-group-item disabled">Disabled agency</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action active">Linked Item Active</a>
+                      <a href="#" class="list-group-item list-group-item-action">Linked Item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-success">Success Item</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="cards">
+            <h2 class="section-title">Cards</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-header">Official Document</div>
+                      <div class="card-body">
+                        <h5 class="card-title">Annual Report 2023</h5>
+                        <p class="card-text">Detailed statistics on federal digital service usage and accessibility compliance.</p>
+                        <a href="#" class="btn btn-primary">Download PDF</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-primary">
+                      <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Project Alpha</h5>
+                        <p class="card-text">Modernizing legacy systems.</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Status: In Progress</li>
+                        <li class="list-group-item">Priority: High</li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Federal Blue Card</h5>
+                            <p class="card-text">Important highlight with primary background.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="accordions">
+            <h2 class="section-title">Accordions</h2>
+            <div class="accordion" id="accordionEx">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc1">
+                    What is the Civic theme?
+                  </button>
+                </h2>
+                <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#accordionEx">
+                  <div class="accordion-body">
+                    It's a Bootstrap 5 override that brings USWDS aesthetics to any project.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2">
+                    How do I use it?
+                  </button>
+                </h2>
+                <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#accordionEx">
+                  <div class="accordion-body">
+                    Simply include theme.css after bootstrap.min.css.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion accordion-flush mt-3" id="accordionFlushEx">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush1">
+                            Flush Accordion Item
+                        </button>
+                    </h2>
+                    <div id="flush1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushEx">
+                        <div class="accordion-body">Placeholder content for the flush accordion.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="carousel">
+            <h2 class="section-title">Carousel</h2>
+            <div id="carEx" class="carousel slide border bg-dark" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carEx" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carEx" data-bs-slide-to="1"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active p-5 text-center text-white">
+                  <h3>Federal Accessibility</h3>
+                  <p>Building for everyone, regardless of ability.</p>
+                </div>
+                <div class="carousel-item p-5 text-center text-white">
+                  <h3>Trust & Transparency</h3>
+                  <p>Clear communication through design.</p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carEx" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carEx" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+        </section>
+
+        <!-- 14. Modals -->
+        <section id="modals">
+            <h2 class="section-title">Modals</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEx">
+              Open Confirmation Modal
+            </button>
+            <div class="modal fade" id="modalEx" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Confirm Submission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to submit your application?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- 15. Offcanvas -->
+        <section id="offcanvas">
+            <h2 class="section-title">Offcanvas</h2>
+            <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offEx">
+              Open Navigation Drawer
+            </button>
+            <div class="offcanvas offcanvas-start" id="offEx">
+              <div class="offcanvas-header">
+                <h5>Navigation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+              </div>
+              <div class="offcanvas-body">
+                Links and additional resources.
+              </div>
+            </div>
+        </section>
+
+        <!-- 16. Popovers & Tooltips -->
+        <section id="popovers">
+            <h2 class="section-title">Popovers & Tooltips</h2>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-title="Security Warning" data-bs-content="Unauthorized access is prohibited.">Popover Info</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="Helpful context here">Hover for Tooltip</button>
+            </div>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="toasts">
+            <h2 class="section-title">Toasts</h2>
+            <div class="toast show" role="alert">
+              <div class="toast-header">
+                <strong class="me-auto">Notification</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+              </div>
+              <div class="toast-body">
+                Update successfully applied.
+              </div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="placeholders">
+            <h2 class="section-title">Placeholders</h2>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                        <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6"></span>
+                    </p>
+                    <a href="#" class="btn btn-primary disabled placeholder col-6"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="misc">
+            <h2 class="section-title">Misc</h2>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Filter by Agency
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All Agencies</a></li>
+                    <li><a class="dropdown-item" href="#">Cabinet Level</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Independent</a></li>
+                  </ul>
+                </div>
+                <button type="button" class="btn-close"></button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-bs-theme');
+            html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+            themeToggle.classList.toggle('btn-outline-light');
+            themeToggle.classList.toggle('btn-outline-dark');
+        });
+
+        // Initialize components
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    </script>
+</body>
+</html>
