@@ -342,6 +342,13 @@ h1, h2, h3, h4, h5, h6,
   border-color: var(--cf-black);
 }
 
+.page-link:focus {
+  box-shadow: 4px 4px 0px var(--cf-black);
+  transform: translate(-1px, -1px);
+  border-color: var(--cf-black);
+  outline: none;
+}
+
 /* --------------------------------------------------------------------------
    15. Brand icon (used in navbar logo)
    -------------------------------------------------------------------------- */
@@ -506,6 +513,35 @@ h1, h2, h3, h4, h5, h6,
 [data-bs-theme="dark"] .btn-outline-dark:hover {
   background-color: #f8fafc;
   color: #0f172a;
+}
+
+[data-bs-theme="dark"] .page-link {
+  color: #f8fafc;
+  border-color: #f8fafc;
+  background-color: #1e293b;
+}
+
+[data-bs-theme="dark"] .page-link:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .page-item.active .page-link {
+  background-color: var(--bs-primary);
+  border-color: #f8fafc;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .page-item.disabled .page-link {
+  color: #64748b;
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+[data-bs-theme="dark"] .page-link:focus {
+  box-shadow: 4px 4px 0px #f8fafc;
+  border-color: #f8fafc;
 }
 
 [data-bs-theme="dark"] .dropdown-menu {
