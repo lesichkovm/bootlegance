@@ -283,6 +283,18 @@ button:focus,
   color: var(--bs-body-color);
 }
 
+/* Focus box-shadows use var(--bs-dark) (#000) which is invisible on the dark
+   body bg (#0b0c0c). Override to use --bs-body-color (white) for the inner ring. */
+[data-bs-theme="dark"] :focus {
+  box-shadow: inset 0 0 0 2px var(--bs-body-color) !important;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus,
+[data-bs-theme="dark"] .form-check-input:focus {
+  box-shadow: 0 0 0 2px var(--bs-body-color), 0 0 0 5px var(--bs-warning) !important;
+}
+
 /* Ensure global squareness */
 .dropdown-menu,
 .accordion-item,

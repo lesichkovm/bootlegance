@@ -476,6 +476,12 @@ h1, h2, h3, h4, h5, h6,
   --bs-body-color: #f8fafc;
   --bs-primary: #6366f1;
   --bs-primary-rgb: 99, 102, 241;
+  /* Remap shadow vars to light so brutalist drop-shadows stay visible on dark bg.
+     --cf-black itself is NOT remapped because several components use it as a
+     background with hardcoded light text (e.g. .btn-dark, .tooltip-inner);
+     those get explicit overrides below instead. */
+  --cf-shadow: 4px 4px 0px 0px #f8fafc;
+  --cf-shadow-lg: 8px 8px 0px 0px #f8fafc;
 }
 
 [data-bs-theme="dark"] body {
@@ -503,6 +509,11 @@ h1, h2, h3, h4, h5, h6,
   background-color: #1e293b;
   color: #f8fafc;
   border-color: #f8fafc;
+  box-shadow: 4px 4px 0px rgba(248, 250, 252, 0.1);
+}
+
+[data-bs-theme="dark"] .form-control-lg {
+  box-shadow: 6px 6px 0px rgba(248, 250, 252, 0.1);
 }
 
 [data-bs-theme="dark"] .btn-outline-dark {
@@ -547,6 +558,7 @@ h1, h2, h3, h4, h5, h6,
 [data-bs-theme="dark"] .dropdown-menu {
   background-color: #1e293b;
   border-color: #f8fafc;
+  box-shadow: 4px 4px 0px #f8fafc;
 }
 
 [data-bs-theme="dark"] .dropdown-item {
@@ -567,6 +579,10 @@ h1, h2, h3, h4, h5, h6,
 
 [data-bs-theme="dark"] .accordion-button {
   color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .accordion-button:focus {
+  border-color: #f8fafc;
 }
 
 [data-bs-theme="dark"] .accordion-button:not(.collapsed) {
@@ -609,4 +625,132 @@ h1, h2, h3, h4, h5, h6,
   border-color: #f8fafc;
   background-color: #1e293b;
   color: #f8fafc;
+  box-shadow: 2px 2px 0px #f8fafc;
+}
+
+/* --------------------------------------------------------------------------
+   21b. Dark mode — gap fixes for components whose borders/shadows use
+   var(--cf-black) directly and had no dark override. Without these, the
+   brutalist borders and drop-shadows vanish (dark-on-dark) in dark mode.
+   -------------------------------------------------------------------------- */
+
+/* Buttons — border + shadow visibility. .btn-dark flips to a light button
+   because its bg is var(--cf-black) (dark) which is invisible on a dark page. */
+[data-bs-theme="dark"] .btn {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .btn:hover {
+  box-shadow: 8px 8px 0px #f8fafc;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .btn:active,
+[data-bs-theme="dark"] .btn:focus {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .btn-primary,
+[data-bs-theme="dark"] .btn-primary:hover {
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .btn-dark,
+[data-bs-theme="dark"] .btn-dark:hover {
+  background-color: #f8fafc;
+  border-color: #f8fafc;
+  color: #0f172a;
+}
+
+[data-bs-theme="dark"] .btn-dark:hover {
+  background-color: #e2e8f0;
+}
+
+[data-bs-theme="dark"] .btn-sm {
+  box-shadow: 3px 3px 0px #f8fafc;
+}
+
+[data-bs-theme="dark"] .btn-sm:hover {
+  box-shadow: 6px 6px 0px #f8fafc;
+}
+
+/* Tables — borders were dark-on-dark. Bootstrap 5.3 handles table bg/color
+   via its own dark vars, but our border override wins, so override it too. */
+[data-bs-theme="dark"] .table,
+[data-bs-theme="dark"] .table thead th,
+[data-bs-theme="dark"] .table td,
+[data-bs-theme="dark"] .table th {
+  border-color: #f8fafc;
+}
+
+/* Modal — border + bg. Bootstrap dark handles text color. */
+[data-bs-theme="dark"] .modal-content {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .modal-header {
+  border-bottom-color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .modal-footer {
+  border-top-color: #f8fafc;
+}
+
+/* List group — border + bg + text. */
+[data-bs-theme="dark"] .list-group-item {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+  color: #f8fafc;
+}
+
+/* Alert — border visibility (shadow auto via --cf-shadow remap). */
+[data-bs-theme="dark"] .alert {
+  border-color: #f8fafc;
+}
+
+/* Progress — border + bg + shadow (shadow uses literal var, not the remap). */
+[data-bs-theme="dark"] .progress {
+  background-color: #334155;
+  border-color: #f8fafc;
+  box-shadow: 2px 2px 0px #f8fafc;
+}
+
+/* Navbar toggler — border + shadow (literal var). */
+[data-bs-theme="dark"] .navbar-toggler {
+  border-color: #f8fafc;
+  box-shadow: 2px 2px 0px #f8fafc;
+}
+
+/* Brand icon — border + shadow (literal var). */
+[data-bs-theme="dark"] .brand-icon {
+  border-color: #f8fafc;
+  box-shadow: 4px 4px 0px #f8fafc;
+}
+
+/* Dropdown divider — border-top uses literal var. */
+[data-bs-theme="dark"] .dropdown-divider {
+  border-top-color: #f8fafc;
+}
+
+/* Form control focus — shadow + border + bg (literal var). */
+[data-bs-theme="dark"] .form-control:focus {
+  background-color: #1e293b;
+  border-color: #f8fafc;
+  box-shadow: 4px 4px 0px #f8fafc;
+}
+
+[data-bs-theme="dark"] .form-control-lg:focus {
+  box-shadow: 6px 6px 0px #f8fafc;
+}
+
+/* Card hover — shadow uses literal var(--cf-black). */
+[data-bs-theme="dark"] .card:hover {
+  box-shadow: 10px 10px 0px #f8fafc;
+}
+
+/* Footer — top shadow uses literal var(--cf-black); bg/border already
+   overridden above, this completes it. */
+[data-bs-theme="dark"] .cf-footer {
+  box-shadow: 0px -4px 0px #f8fafc;
 }

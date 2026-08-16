@@ -88,6 +88,8 @@
   --bs-link-hover-color: #d9e8f6;
 
   --bs-focus-ring-color: #2491ff;
+
+  --bs-dark: #2d2e2f;
 }
 
 /* Component Overrides */
@@ -227,4 +229,11 @@ div.is-invalid {
 
 [data-bs-theme="dark"] .usa-banner {
   background-color: var(--bs-tertiary-bg);
+}
+
+/* Form control borders use var(--bs-dark) which is too close to the dark body bg.
+   Override to use --bs-border-color which is clearly visible. */
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  border-color: var(--bs-border-color);
 }
