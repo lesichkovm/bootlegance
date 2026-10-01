@@ -67,6 +67,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Catppuccin** | Official Catppuccin palette, 4 flavours | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/catppuccin/index.html) | Developer tools, terminals, editors, cozy apps |
 | **Nord** | Arctic-based, 4 official styles | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/nord/index.html) | Professional tools, dashboards, long-session work |
 | **Gruvbox** | Retro-groove earthy palette, dark & light | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/gruvbox/index.html) | Developer tools, terminals, code-heavy UIs |
+| **Dracula** | Vibrant neon palette, 3 styles + glow layer | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/dracula/index.html) | Editor-adjacent apps, terminals, striking dashboards |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |
