@@ -1,16 +1,16 @@
 /* ==========================================================================
-   Dracula — Bootstrap 5 Theme
-   Inspired by the Dracula theme (draculatheme.com).
+   Dracula Soft — Bootstrap 5 Theme
+   Inspired by the Dracula theme (draculatheme.com), softened.
    Include AFTER bootstrap.min.css.
 
    Dracula is built on 11 colours and exactly two modes: dark (default) and
    light. An opt-in neon glow layer is also available:
 
-       <html data-bs-theme="dark" data-neon>    canonical Dracula + glow
+       <html data-bs-theme="dark" data-neon>    soft Dracula + glow
        <html data-bs-theme="light">             light, accents re-mixed
 
-   Additional looks are separate themes rather than extra modes: see
-   themes/dracula-soft for the softened counterpart, which likewise ships
+   Dracula Soft is a sibling theme, not a third mode: themes/dracula holds the
+   canonical neon palette, this one its calmer counterpart. Both ship exactly
    one dark and one light mode.
    ========================================================================== */
 
@@ -36,45 +36,45 @@
    2. Dark mode (default) roles
    -------------------------------------------------------------------------- */
 :root {
-  --dr-bg: var(--dr-background);
-  --dr-bg-rgb: var(--dr-background-rgb);
-  --dr-surface: #21222c;
-  --dr-surface-raised: var(--dr-current-line);
-  --dr-surface-raised-rgb: var(--dr-current-line-rgb);
-  --dr-border: var(--dr-current-line);
-  --dr-border-soft: rgba(248, 248, 242, 0.1);
-  --dr-fg: var(--dr-foreground);
-  --dr-fg-rgb: var(--dr-foreground-rgb);
+  --dr-bg: #1c1d26;
+  --dr-bg-rgb: 28, 29, 38;
+  --dr-surface: #23242f;
+  --dr-surface-raised: #2f313d;
+  --dr-surface-raised-rgb: 47, 49, 61;
+  --dr-border: #3a3d4c;
+  --dr-border-soft: rgba(248, 248, 242, 0.08);
+  --dr-fg: #e6e6ea;
+  --dr-fg-rgb: 230, 230, 234;
   --dr-fg-strong: var(--dr-foreground);
-  --dr-fg-muted: var(--dr-comment);
-  --dr-fg-muted-rgb: var(--dr-comment-rgb);
-  --dr-accent: var(--dr-purple);
-  --dr-accent-rgb: var(--dr-purple-rgb);
-  --dr-accent-hover: var(--dr-pink);
-  --dr-accent-hover-rgb: var(--dr-pink-rgb);
-  --dr-accent-soft: rgba(189, 147, 249, 0.18);
-  --dr-on-accent: var(--dr-background);
-  --dr-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-  --dr-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
-  --dr-code-bg: #1e1f29;
+  --dr-fg-muted: #7d8ab5;
+  --dr-fg-muted-rgb: 125, 138, 181;
+  --dr-accent: #a78bfa;
+  --dr-accent-rgb: 167, 139, 250;
+  --dr-accent-hover: #c084fc;
+  --dr-accent-hover-rgb: 192, 132, 252;
+  --dr-accent-soft: rgba(167, 139, 250, 0.16);
+  --dr-on-accent: #14151c;
+  --dr-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  --dr-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --dr-code-bg: #191a22;
 }
 
-/* Dark mode uses the palette verbatim */
+/* Dark mode uses the softened accents */
 :root {
-  --dr-purple-role: var(--dr-purple);
-  --dr-purple-role-rgb: var(--dr-purple-rgb);
-  --dr-cyan-role: var(--dr-cyan);
-  --dr-cyan-role-rgb: var(--dr-cyan-rgb);
-  --dr-green-role: var(--dr-green);
-  --dr-green-role-rgb: var(--dr-green-rgb);
-  --dr-orange-role: var(--dr-orange);
-  --dr-orange-role-rgb: var(--dr-orange-rgb);
-  --dr-pink-role: var(--dr-pink);
-  --dr-pink-role-rgb: var(--dr-pink-rgb);
-  --dr-red-role: var(--dr-red);
-  --dr-red-role-rgb: var(--dr-red-rgb);
-  --dr-yellow-role: var(--dr-yellow);
-  --dr-yellow-role-rgb: var(--dr-yellow-rgb);
+  --dr-purple-role: #a78bfa;
+  --dr-purple-role-rgb: 167, 139, 250;
+  --dr-cyan-role: #79c6d8;
+  --dr-cyan-role-rgb: 121, 198, 216;
+  --dr-green-role: #7ecb98;
+  --dr-green-role-rgb: 126, 203, 152;
+  --dr-orange-role: #e0a878;
+  --dr-orange-role-rgb: 224, 168, 120;
+  --dr-pink-role: #dd8fc0;
+  --dr-pink-role-rgb: 221, 143, 192;
+  --dr-red-role: #e07a7a;
+  --dr-red-role-rgb: 224, 122, 122;
+  --dr-yellow-role: #d8cc86;
+  --dr-yellow-role-rgb: 216, 204, 134;
 }
 
 /* Soft — the same hues with the neon pulled back, easier on the eyes */
@@ -82,43 +82,43 @@
 /* Light — Dracula's background flipped; accents re-mixed toward the dark
    foreground so they keep their hue but regain contrast on white. */
 [data-bs-theme="light"] {
-  --dr-bg: var(--dr-foreground);
-  --dr-bg-rgb: var(--dr-foreground-rgb);
-  --dr-surface: #ffffff;
-  --dr-surface-raised: #ececf1;
-  --dr-surface-raised-rgb: 236, 236, 241;
-  --dr-border: #d6d6de;
-  --dr-border-soft: rgba(40, 42, 54, 0.12);
-  --dr-fg: #3a3d4f;
-  --dr-fg-rgb: 58, 61, 79;
+  --dr-bg: #f2f1f6;
+  --dr-bg-rgb: 242, 241, 246;
+  --dr-surface: #fbfbfd;
+  --dr-surface-raised: #e7e6ee;
+  --dr-surface-raised-rgb: 231, 230, 238;
+  --dr-border: #d2d1dc;
+  --dr-border-soft: rgba(28, 29, 38, 0.12);
+  --dr-fg: #3f4152;
+  --dr-fg-rgb: 63, 65, 82;
   --dr-fg-strong: var(--dr-background);
-  --dr-fg-muted: #6a6f9a;
-  --dr-fg-muted-rgb: 106, 111, 154;
-  --dr-accent: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
-  --dr-accent-rgb: 134, 106, 202;
-  --dr-accent-hover: color-mix(in srgb, var(--dr-pink) 68%, var(--dr-background));
-  --dr-accent-hover-rgb: 197, 106, 158;
-  --dr-accent-soft: rgba(134, 106, 202, 0.14);
+  --dr-fg-muted: #6b7098;
+  --dr-fg-muted-rgb: 107, 112, 152;
+  --dr-accent: #6f57c4;
+  --dr-accent-rgb: 111, 87, 196;
+  --dr-accent-hover: #a3559a;
+  --dr-accent-hover-rgb: 163, 85, 154;
+  --dr-accent-soft: rgba(111, 87, 196, 0.14);
   --dr-on-accent: #ffffff;
-  --dr-shadow: 0 1px 0 rgba(40, 42, 54, 0.1);
-  --dr-shadow-lg: 0 12px 28px rgba(40, 42, 54, 0.22);
-  --dr-code-bg: #f1f1f6;
+  --dr-shadow: 0 1px 0 rgba(28, 29, 38, 0.08);
+  --dr-shadow-lg: 0 12px 28px rgba(28, 29, 38, 0.2);
+  --dr-code-bg: #eceaf2;
 
   /* Accent roles re-mixed for a light surface */
-  --dr-cyan-role: color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background));
-  --dr-cyan-role-rgb: 81, 158, 170;
-  --dr-green-role: color-mix(in srgb, var(--dr-green) 62%, var(--dr-background));
-  --dr-green-role-rgb: 60, 165, 86;
-  --dr-orange-role: color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background));
-  --dr-orange-role-rgb: 168, 124, 77;
-  --dr-pink-role: color-mix(in srgb, var(--dr-pink) 62%, var(--dr-background));
-  --dr-pink-role-rgb: 168, 85, 133;
-  --dr-red-role: color-mix(in srgb, var(--dr-red) 62%, var(--dr-background));
-  --dr-red-role-rgb: 168, 62, 62;
-  --dr-yellow-role: color-mix(in srgb, var(--dr-yellow) 62%, var(--dr-background));
-  --dr-yellow-role-rgb: 159, 165, 97;
-  --dr-purple-role: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
-  --dr-purple-role-rgb: 134, 106, 202;
+  --dr-cyan-role: #2c7c8e;
+  --dr-cyan-role-rgb: 44, 124, 142;
+  --dr-green-role: #3a8c56;
+  --dr-green-role-rgb: 58, 140, 86;
+  --dr-orange-role: #a86b2a;
+  --dr-orange-role-rgb: 168, 107, 42;
+  --dr-pink-role: #a34f83;
+  --dr-pink-role-rgb: 163, 79, 131;
+  --dr-red-role: #a83f3f;
+  --dr-red-role-rgb: 168, 63, 63;
+  --dr-yellow-role: #8d7f24;
+  --dr-yellow-role-rgb: 141, 127, 36;
+  --dr-purple-role: #6f57c4;
+  --dr-purple-role-rgb: 111, 87, 196;
 }
 
 /* Neon glow layer — opt-in via data-neon */
@@ -133,7 +133,7 @@
 }
 
 ::selection {
-  background-color: var(--dr-selection);
+  background-color: #3a3d4c;
   color: var(--dr-foreground);
 }
 
@@ -1192,7 +1192,7 @@ pre.dr-code .dr-op { color: var(--dr-pink); }
    Tokens that assume a dark foreground are re-pointed for the light style.
    -------------------------------------------------------------------------- */
 [data-bs-theme="light"] ::selection {
-  background-color: var(--dr-selection);
+  background-color: #d7d6e0;
   color: var(--dr-background);
 }
 

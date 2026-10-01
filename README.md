@@ -51,6 +51,9 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 
 ## Available Themes
 
+> Every theme ships exactly **two modes** — light and dark. A different palette is a
+> separate theme (e.g. Dracula and Dracula Soft), not an extra mode.
+
 | Theme | Description | Preview | Best For |
 |---|---|---|---|
 | **Brutalski** | Bold, raw, geometric brutalism | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/brutalski/index.html) | Developers, tech-forward projects, design portfolios |
@@ -67,7 +70,8 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Catppuccin** | Official Catppuccin palette, 4 flavours | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/catppuccin/index.html) | Developer tools, terminals, editors, cozy apps |
 | **Nord** | Arctic-based, 4 official styles | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/nord/index.html) | Professional tools, dashboards, long-session work |
 | **Gruvbox** | Retro-groove earthy palette, dark & light | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/gruvbox/index.html) | Developer tools, terminals, code-heavy UIs |
-| **Dracula** | Vibrant neon palette, 3 styles + glow layer | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/dracula/index.html) | Editor-adjacent apps, terminals, striking dashboards |
+| **Dracula** | Vibrant neon palette with an optional glow layer | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/dracula/index.html) | Editor-adjacent apps, terminals, striking dashboards |
+| **Dracula Soft** | The same eleven colours, softened | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/dracula-soft/index.html) | Long sessions, calmer workspaces, shared screens |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |

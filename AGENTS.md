@@ -33,6 +33,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Nord      | `nord`       | Available |
 | Gruvbox   | `gruvbox`    | Available |
 | Dracula   | `dracula`    | Available |
+| Dracula Soft | `dracula-soft` | Available |
 | Midnight   | `midnight`   | Planned |
 | Sunrise    | `sunrise`    | Planned |
 | Ocean      | `ocean`      | Planned |
@@ -47,6 +48,24 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 - Must NOT import or bundle Bootstrap itself — it is loaded externally
 - Must support Bootstrap 5.3+ light/dark mode via `data-bs-theme`
 - Filename is always `theme.css` (lowercase)
+
+### Modes: exactly two, no more
+
+A theme ships **exactly two modes**: `data-bs-theme="light"` and `data-bs-theme="dark"`.
+
+- Do **not** add further colour styles as extra modes inside a theme
+  (no `data-variant`, `data-style` or `data-flavour` palette switching)
+- A visually distinct look — a different palette, accent family or contrast level —
+  is a **separate theme** in its own directory, which itself has dark and light modes
+  (e.g. `dracula` and `dracula-soft`, `nord` and `nord-aurora`)
+- Opt-in *presentation* toggles that do not change the palette identity are still
+  allowed: `data-bold` background, `data-density`, `data-neon` glow,
+  `data-contrast="high"` accessibility mode, `data-panels="float"`
+- Sibling themes should be near-copies: same structure and component overrides,
+  differing only in their palette tokens
+
+Naming: lowercase and hyphenated, with a variant suffix
+(`dracula-soft`, `nord-aurora`).
 
 ---
 
@@ -128,5 +147,6 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 - [ ] `theme.css` loads after Bootstrap without errors
 - [ ] All 19 preview sections render correctly in `index.html`
 - [ ] Light mode and dark mode (`data-bs-theme="dark"`) both look intentional
+- [ ] Exactly two modes — no palette variants inside the theme
 - [ ] No Bootstrap source files are bundled or committed
 - [ ] Theme slug directory name is lowercase and hyphenated
