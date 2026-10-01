@@ -15,6 +15,9 @@
    1. Base surfaces & neutrals (shared by all variants)
    -------------------------------------------------------------------------- */
 :root {
+  --vix-bg: #f4f5f7;
+  --vix-bg-rgb: 244, 245, 247;
+
   --vix-accent: #007aff;
   --vix-accent-rgb: 0, 122, 255;
   --vix-accent-hi: #0062cc;
@@ -54,6 +57,8 @@
 }
 
 [data-bs-theme="dark"] {
+  --vix-bg: #15171c;
+  --vix-bg-rgb: 21, 23, 28;
   --vix-surface: rgba(40, 40, 43, 0.72);
   --vix-surface-solid: #1e1e20;
   --vix-surface-muted: rgba(118, 118, 128, 0.22);
@@ -138,7 +143,8 @@
   --bs-dark: var(--vix-ink);
   --bs-dark-rgb: 29, 29, 31;
 
-  --bs-body-bg: var(--vix-surface-muted);
+  --bs-body-bg: var(--vix-bg);
+  --bs-body-bg-rgb: var(--vix-bg-rgb);
   --bs-body-color: var(--vix-ink);
   --bs-emphasis-color: var(--vix-ink);
   --bs-secondary-color: var(--vix-ink-2);
@@ -188,6 +194,10 @@
 /* --------------------------------------------------------------------------
    4. Base & typography
    -------------------------------------------------------------------------- */
+html {
+  background-color: var(--vix-bg);
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

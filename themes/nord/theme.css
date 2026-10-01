@@ -73,6 +73,59 @@
 /* Snow Storm — the light Nord theme */
 /* Aurora — Nord's alternative colour scheme */
 /* --------------------------------------------------------------------------
+   2b. Light mode — Snow Storm
+   -------------------------------------------------------------------------- */
+[data-bs-theme="light"] {
+  --nd-bg: var(--nd-nord6);
+  --nd-bg-rgb: var(--nd-nord6-rgb);
+  --nd-surface: var(--nd-nord4);
+  --nd-surface-rgb: var(--nd-nord4-rgb);
+  --nd-surface-raised: var(--nd-nord5);
+  --nd-border: #c2cad8;
+  --nd-border-soft: rgba(46, 52, 64, 0.12);
+  --nd-fg: #3b4252;
+  --nd-fg-strong: var(--nd-nord0);
+  --nd-fg-muted: #626c7d;
+  --nd-accent: var(--nd-nord10);
+  --nd-accent-rgb: var(--nd-nord10-rgb);
+  --nd-accent-hover: var(--nd-nord9);
+  --nd-accent-hover-rgb: var(--nd-nord9-rgb);
+  --nd-accent-soft: rgba(94, 129, 172, 0.14);
+  --nd-on-accent: var(--nd-nord6);
+  --nd-shadow: 0 1px 2px rgba(46, 52, 64, 0.1);
+  --nd-shadow-lg: 0 12px 28px rgba(46, 52, 64, 0.16);
+  --nd-code-bg: var(--nd-nord4);
+
+  /* light-mode control overrides */
+  --nd-control-border: #b6bfcd;
+  --nd-progress-track: #d5dbe5;
+}
+
+[data-bs-theme="light"] .form-check-input {
+  border-color: var(--nd-control-border);
+}
+
+[data-bs-theme="light"] .form-switch .form-check-input {
+  background-color: var(--nd-control-border);
+}
+
+[data-bs-theme="light"] .form-range::-webkit-slider-runnable-track {
+  background-color: var(--nd-progress-track);
+}
+
+[data-bs-theme="light"] .form-range::-moz-range-track {
+  background-color: var(--nd-progress-track);
+}
+
+[data-bs-theme="light"] .breadcrumb {
+  --bs-breadcrumb-divider-color: var(--nd-control-border);
+}
+
+[data-bs-theme="light"] .progress {
+  --bs-progress-bg: var(--nd-progress-track);
+}
+
+/* --------------------------------------------------------------------------
    3. Semantic mapping
    -------------------------------------------------------------------------- */
 :root {
