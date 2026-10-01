@@ -62,6 +62,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/seneca/index.html) | Enterprise apps, internal dashboards, complex data UIs |
 | **WhiteSur** | macOS-inspired, frosted glass and vibrancy | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/whitesur/index.html) | Consumer apps, dashboards, polished product UIs |
 | **Vimix** | macOS-inspired GNOME theme with 9 colour variants | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/vimix/index.html) | Ubuntu/ GNOME apps, desktops, multi-brand products |
+| **Adwaita** | Neutral GNOME/libadwaita foundation, adaptive | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/adwaita/index.html) | Enterprise/desktop apps, accessibility-first, Linux |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |

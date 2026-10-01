@@ -27,6 +27,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Yaru       | `yaru`       | Available |
 | WhiteSur   | `whitesur`   | Available |
 | Vimix     | `vimix`      | Available |
+| Adwaita   | `adwaita`    | Available |
 | Midnight   | `midnight`   | Planned |
 | Sunrise    | `sunrise`    | Planned |
 | Ocean      | `ocean`      | Planned |

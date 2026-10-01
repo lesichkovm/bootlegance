@@ -1,0 +1,1420 @@
+/* ==========================================================================
+   Adwaita — Bootstrap 5 Theme
+   Inspired by Adwaita, the default GNOME theme, and libadwaita.
+   Include AFTER bootstrap.min.css.
+
+   Extra opt-in modes, set on <html> or any ancestor:
+
+       data-bs-theme="light|dark"   Bootstrap light / dark mode
+       data-contrast="high"         Adwaita high-contrast palette
+       data-density="compact"       libadwaita compact spacing scale
+
+   Neutral by design: a subtle gray and blue palette, generous rounded
+   corners, a consistent 6px spacing rhythm and high-contrast typography.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Palette, spacing scale & geometry
+   -------------------------------------------------------------------------- */
+:root {
+  /* Spacing rhythm — every component below uses these, never ad-hoc values */
+  --adw-space-1: 0.25rem;   /*  4px */
+  --adw-space-2: 0.375rem;  /*  6px — libadwaita base unit */
+  --adw-space-3: 0.75rem;   /* 12px */
+  --adw-space-4: 1.125rem;  /* 18px */
+  --adw-space-5: 1.5rem;    /* 24px */
+  --adw-space-6: 2.25rem;   /* 36px */
+
+  /* Radii */
+  --adw-radius-xs: 0.1875rem;
+  --adw-radius-sm: 0.4375rem;
+  --adw-radius-md: 0.75rem;
+  --adw-radius-lg: 1rem;
+  --adw-radius-pill: 50rem;
+
+  /* Bar height, matching the GNOME HeaderBar */
+  --adw-headerbar-height: 2.875rem;
+
+  /* Surfaces (light) */
+  --adw-bg: #fafafa;
+  --adw-surface: #ffffff;
+  --adw-surface-alt: #f6f5f4;
+  --adw-surface-sunken: #ebebeb;
+  --adw-overlay: rgba(255, 255, 255, 0.9);
+  --adw-border: #deddda;
+  --adw-border-strong: #b6b5b2;
+  --adw-foreground: #2e3436;
+  --adw-foreground-strong: #1b1e20;
+  --adw-foreground-muted: #5f5e62;
+  --adw-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --adw-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --adw-shadow-3: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  /* Accents (light) */
+  --adw-accent: #3584e4;
+  --adw-accent-rgb: 53, 132, 228;
+  --adw-accent-hover: #1c71d8;
+  --adw-accent-hover-rgb: 28, 113, 216;
+  --adw-accent-soft: rgba(53, 132, 228, 0.14);
+  --adw-on-accent: #ffffff;
+
+  --adw-green: #26a269;
+  --adw-green-rgb: 38, 162, 105;
+  --adw-yellow: #e9a00e;
+  --adw-yellow-rgb: 233, 160, 14;
+  --adw-red: #e01b24;
+  --adw-red-rgb: 224, 27, 36;
+  --adw-orange: #ed5b00;
+  --adw-orange-rgb: 237, 91, 0;
+  --adw-gray: #6f6f73;
+  --adw-gray-rgb: 111, 111, 115;
+}
+
+[data-bs-theme="dark"] {
+  --adw-bg: #1d1d1d;
+  --adw-surface: #242424;
+  --adw-surface-alt: #2f2f2f;
+  --adw-surface-sunken: #171717;
+  --adw-overlay: rgba(36, 36, 36, 0.92);
+  --adw-border: #3a3a3a;
+  --adw-border-strong: #565656;
+  --adw-foreground: #ffffff;
+  --adw-foreground-strong: #ffffff;
+  --adw-foreground-muted: #c8c6c4;
+  --adw-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --adw-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --adw-shadow-3: 0 10px 28px rgba(0, 0, 0, 0.65);
+
+  --adw-accent: #62a0ea;
+  --adw-accent-rgb: 98, 160, 234;
+  --adw-accent-hover: #1a5fb4;
+  --adw-accent-hover-rgb: 26, 95, 180;
+  --adw-accent-soft: rgba(98, 160, 234, 0.2);
+  --adw-on-accent: #1d1d1d;
+
+  --adw-green: #3ddc84;
+  --adw-green-rgb: 61, 220, 132;
+  --adw-yellow: #ffbe6f;
+  --adw-yellow-rgb: 255, 190, 111;
+  --adw-red: #ff6a69;
+  --adw-red-rgb: 255, 106, 105;
+  --adw-orange: #ff8c29;
+  --adw-orange-rgb: 255, 140, 41;
+  --adw-gray: #99968f;
+  --adw-gray-rgb: 153, 150, 143;
+}
+
+/* High contrast — Adwaita's accessibility palette */
+[data-contrast="high"] {
+  --adw-bg: #ffffff;
+  --adw-surface: #ffffff;
+  --adw-surface-alt: #ffffff;
+  --adw-surface-sunken: #ffffff;
+  --adw-overlay: #ffffff;
+  --adw-border: #000000;
+  --adw-border-strong: #000000;
+  --adw-foreground: #000000;
+  --adw-foreground-strong: #000000;
+  --adw-foreground-muted: #000000;
+  --adw-shadow-1: none;
+  --adw-shadow-2: none;
+  --adw-shadow-3: none;
+  --adw-accent: #1c71d8;
+  --adw-accent-rgb: 28, 113, 216;
+  --adw-accent-hover: #0b3f91;
+  --adw-accent-hover-rgb: 11, 63, 145;
+  --adw-accent-soft: rgba(28, 113, 216, 0.16);
+  --adw-on-accent: #ffffff;
+}
+
+[data-bs-theme="dark"][data-contrast="high"] {
+  --adw-bg: #000000;
+  --adw-surface: #000000;
+  --adw-surface-alt: #000000;
+  --adw-surface-sunken: #000000;
+  --adw-overlay: #000000;
+  --adw-border: #ffffff;
+  --adw-border-strong: #ffffff;
+  --adw-foreground: #ffffff;
+  --adw-foreground-strong: #ffffff;
+  --adw-foreground-muted: #ffffff;
+  --adw-accent: #62a0ea;
+  --adw-accent-rgb: 98, 160, 234;
+  --adw-accent-hover: #a0c4f4;
+  --adw-accent-hover-rgb: 160, 196, 244;
+  --adw-accent-soft: rgba(98, 160, 234, 0.24);
+  --adw-on-accent: #000000;
+}
+
+/* Compact density — the libadwaita "compact" spacing scale */
+[data-density="compact"] {
+  --adw-space-1: 0.125rem;
+  --adw-space-2: 0.25rem;
+  --adw-space-3: 0.5rem;
+  --adw-space-4: 0.75rem;
+  --adw-space-5: 1rem;
+  --adw-space-6: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. Bootstrap variable overrides
+   -------------------------------------------------------------------------- */
+:root {
+  --bs-primary: var(--adw-accent);
+  --bs-primary-rgb: var(--adw-accent-rgb);
+  --bs-secondary: var(--adw-gray);
+  --bs-secondary-rgb: var(--adw-gray-rgb);
+  --bs-success: var(--adw-green);
+  --bs-success-rgb: var(--adw-green-rgb);
+  --bs-info: var(--adw-accent);
+  --bs-info-rgb: var(--adw-accent-rgb);
+  --bs-warning: var(--adw-yellow);
+  --bs-warning-rgb: var(--adw-yellow-rgb);
+  --bs-danger: var(--adw-red);
+  --bs-danger-rgb: var(--adw-red-rgb);
+  --bs-light: var(--adw-surface-alt);
+  --bs-light-rgb: 246, 245, 244;
+  --bs-dark: var(--adw-foreground);
+  --bs-dark-rgb: 46, 52, 54;
+
+  --bs-body-bg: var(--adw-bg);
+  --bs-body-color: var(--adw-foreground);
+  --bs-emphasis-color: var(--adw-foreground-strong);
+  --bs-secondary-color: var(--adw-foreground-muted);
+  --bs-tertiary-color: var(--adw-foreground-muted);
+  --bs-secondary-bg: var(--adw-surface-alt);
+  --bs-tertiary-bg: var(--adw-surface);
+  --bs-body-color-rgb: 46, 52, 54;
+  --bs-border-color: var(--adw-border);
+  --bs-border-color-translucent: var(--adw-border);
+
+  /* Adwaita Sans falls back to Cantarell, then the platform UI font */
+  --bs-font-sans-serif: "Adwaita Sans", "Cantarell", "Segoe UI", system-ui,
+    -apple-system, Roboto, "Helvetica Neue", sans-serif;
+  --bs-font-monospace: "Adwaita Mono", "Ubuntu Mono", ui-monospace, Menlo,
+    Consolas, monospace;
+  --bs-body-font-size: 0.9375rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+
+  --bs-border-radius: var(--adw-radius-sm);
+  --bs-border-radius-sm: var(--adw-radius-xs);
+  --bs-border-radius-lg: var(--adw-radius-md);
+  --bs-border-radius-xl: var(--adw-radius-lg);
+  --bs-border-radius-pill: var(--adw-radius-pill);
+
+  --bs-focus-ring-width: 0.125rem;
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: var(--adw-accent);
+  --bs-focus-ring-blur: 0;
+
+  --bs-link-color: var(--adw-accent);
+  --bs-link-hover-color: var(--adw-accent-hover);
+  --bs-link-decoration: underline;
+  --bs-link-hover-decoration: underline;
+  --bs-code-color: var(--adw-foreground);
+}
+
+[data-bs-theme="dark"] {
+  --bs-light-rgb: 47, 47, 47;
+  --bs-dark-rgb: 255, 255, 255;
+  --bs-body-color-rgb: 255, 255, 255;
+}
+
+/* --------------------------------------------------------------------------
+   3. Base & typography
+   -------------------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  color: var(--adw-foreground-strong);
+  letter-spacing: -0.01em;
+}
+
+/* libadwaita "title" and "display" scales */
+.adw-display {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--adw-foreground-strong);
+}
+
+.adw-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--adw-foreground-strong);
+}
+
+.adw-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--adw-foreground-strong);
+}
+
+.adw-body { font-size: 0.9375rem; line-height: 1.5; }
+
+.adw-caption {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--adw-foreground-muted);
+}
+
+/* Numeric labels (menu accelerators, counters) */
+.adw-numeric {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.adw-mono {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.875em;
+}
+
+a {
+  color: var(--adw-accent);
+}
+
+a:hover {
+  color: var(--adw-accent-hover);
+}
+
+code, kbd, samp, pre {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.875em;
+}
+
+kbd {
+  background-color: var(--adw-surface-alt);
+  border: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-xs);
+  padding: 0.1em 0.4em;
+  box-shadow: 0 1px 0 var(--adw-border);
+}
+
+blockquote {
+  border-inline-start: 3px solid var(--adw-border-strong);
+  padding-inline-start: var(--adw-space-3);
+  font-style: normal;
+}
+
+hr {
+  border-color: var(--adw-border);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header bars — the GNOME HeaderBar
+   -------------------------------------------------------------------------- */
+.headerbar {
+  display: flex;
+  align-items: center;
+  gap: var(--adw-space-2);
+  min-height: var(--adw-headerbar-height);
+  padding: var(--adw-space-2) var(--adw-space-3);
+  background-color: var(--adw-overlay);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-md) var(--adw-radius-md) 0 0;
+}
+
+.headerbar-title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerbar-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--adw-foreground-muted);
+}
+
+.headerbar > .btn {
+  flex: 0 0 auto;
+}
+
+/* A whole Adwaita window: rounded frame, titlebar, content */
+.adw-window {
+  background-color: var(--adw-bg);
+  border: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-md);
+  overflow: hidden;
+}
+
+.adw-window > .headerbar + * {
+  border-radius: 0;
+}
+
+.adw-window-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--adw-space-2);
+  padding: var(--adw-space-3);
+  background-color: var(--adw-surface-alt);
+  border-top: 1px solid var(--adw-border);
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  --bs-btn-font-weight: 700;
+  --bs-btn-border-radius: var(--adw-radius-sm);
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-padding-x: var(--adw-space-4);
+  --bs-btn-font-size: 0.875rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--adw-space-2);
+  box-shadow: none;
+  transition: background-color 0.1s ease, border-color 0.1s ease,
+    color 0.1s ease;
+}
+
+.btn-sm {
+  min-height: 1.875rem;
+  --bs-btn-padding-y: 0.1875rem;
+  --bs-btn-padding-x: var(--adw-space-3);
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  min-height: 2.75rem;
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: var(--adw-space-5);
+  font-size: 1rem;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--adw-accent);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--adw-accent);
+  --bs-btn-border-color: var(--adw-accent);
+  --bs-btn-hover-bg: var(--adw-accent-hover);
+  --bs-btn-hover-border-color: var(--adw-accent-hover);
+  --bs-btn-active-bg: var(--adw-accent-hover);
+  --bs-btn-active-border-color: var(--adw-accent-hover);
+  --bs-btn-disabled-bg: var(--adw-border-strong);
+  --bs-btn-disabled-border-color: var(--adw-border-strong);
+  --bs-btn-color: var(--adw-on-accent);
+  --bs-btn-hover-color: var(--adw-on-accent);
+  --bs-btn-active-color: var(--adw-on-accent);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--adw-gray);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-foreground-muted);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-foreground-muted);
+  --bs-btn-color: var(--adw-on-accent);
+  --bs-btn-hover-color: var(--adw-on-accent);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--adw-green);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-green);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-green);
+  --bs-btn-color: var(--adw-on-accent);
+  --bs-btn-hover-color: var(--adw-on-accent);
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--adw-red);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-red);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-red);
+  --bs-btn-color: var(--adw-on-accent);
+  --bs-btn-hover-color: var(--adw-on-accent);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--adw-yellow);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-yellow);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-yellow);
+  --bs-btn-color: var(--adw-foreground-strong);
+  --bs-btn-hover-color: var(--adw-foreground-strong);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--adw-accent);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-accent-hover);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-accent-hover);
+  --bs-btn-color: var(--adw-on-accent);
+  --bs-btn-hover-color: var(--adw-on-accent);
+}
+
+.btn-light {
+  --bs-btn-bg: var(--adw-surface-alt);
+  --bs-btn-border-color: var(--adw-border);
+  --bs-btn-hover-bg: var(--adw-surface-sunken);
+  --bs-btn-hover-border-color: var(--adw-border-strong);
+  --bs-btn-active-bg: var(--adw-surface-sunken);
+  --bs-btn-active-border-color: var(--adw-border-strong);
+  --bs-btn-color: var(--adw-foreground);
+  --bs-btn-hover-color: var(--adw-foreground);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--adw-foreground);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--adw-foreground-strong);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--adw-foreground-strong);
+  --bs-btn-color: var(--adw-bg);
+  --bs-btn-hover-color: var(--adw-bg);
+}
+
+.btn-link {
+  --bs-btn-color: var(--adw-accent);
+  --bs-btn-hover-color: var(--adw-accent-hover);
+  min-height: auto;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* Adwaita "suggested" and "destructive" roles */
+.btn.suggested-action {
+  background-color: var(--adw-accent);
+  border-color: var(--adw-accent);
+  color: var(--adw-on-accent);
+}
+
+.btn.suggested-action:hover {
+  background-color: var(--adw-accent-hover);
+  border-color: var(--adw-accent-hover);
+  color: var(--adw-on-accent);
+}
+
+.btn.destructive-action {
+  background-color: var(--adw-red);
+  border-color: var(--adw-red);
+  color: var(--adw-on-accent);
+}
+
+.btn.destructive-action:hover {
+  filter: brightness(0.92);
+  color: var(--adw-on-accent);
+}
+
+.btn.pill {
+  border-radius: var(--adw-radius-pill);
+  min-height: 2rem;
+  --bs-btn-padding-x: var(--adw-space-4);
+}
+
+.btn.flat {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.btn.flat:hover {
+  background-color: var(--adw-surface-sunken);
+}
+
+.btn-group > .btn { border-radius: 0; }
+.btn-group > .btn:first-child {
+  border-start-start-radius: var(--adw-radius-sm);
+  border-end-start-radius: var(--adw-radius-sm);
+}
+.btn-group > .btn:last-child {
+  border-start-end-radius: var(--adw-radius-sm);
+  border-end-end-radius: var(--adw-radius-sm);
+}
+
+.btn-close {
+  border-radius: var(--adw-radius-xs);
+  opacity: 0.55;
+}
+
+.btn-close:hover {
+  opacity: 1;
+  background-color: var(--adw-surface-sunken);
+}
+
+/* --------------------------------------------------------------------------
+   6. Toolbar, navbar & menus
+   -------------------------------------------------------------------------- */
+.navbar {
+  --bs-navbar-padding-y: var(--adw-space-2);
+  min-height: var(--adw-headerbar-height);
+  background-color: var(--adw-overlay) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--adw-border);
+  box-shadow: none;
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+}
+
+.navbar .nav-link {
+  --bs-nav-link-color: var(--adw-foreground-muted);
+  --bs-nav-link-hover-color: var(--adw-foreground);
+  --bs-nav-link-active-color: var(--adw-accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--adw-radius-sm);
+  padding-inline: var(--adw-space-3);
+}
+
+.navbar .navbar-toggler {
+  border: 1px solid var(--adw-border);
+  box-shadow: none;
+  border-radius: var(--adw-radius-sm);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--adw-space-2);
+  padding: var(--adw-space-2) var(--adw-space-3);
+  background-color: var(--adw-surface-alt);
+  border-bottom: 1px solid var(--adw-border);
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--adw-surface);
+  --bs-dropdown-color: var(--adw-foreground);
+  --bs-dropdown-border-color: var(--adw-border);
+  --bs-dropdown-link-color: var(--adw-foreground);
+  --bs-dropdown-link-hover-color: var(--adw-foreground);
+  --bs-dropdown-link-hover-bg: var(--adw-accent-soft);
+  --bs-dropdown-link-active-color: var(--adw-foreground);
+  --bs-dropdown-link-active-bg: var(--adw-accent-soft);
+  --bs-dropdown-link-disabled-color: var(--adw-foreground-muted);
+  --bs-dropdown-border-radius: var(--adw-radius-sm);
+  --bs-dropdown-link-border-radius: var(--adw-radius-xs);
+  --bs-dropdown-padding-y: var(--adw-space-2);
+  padding: var(--adw-space-2);
+  box-shadow: var(--adw-shadow-3);
+  font-size: 0.875rem;
+}
+
+.dropdown-item {
+  padding: var(--adw-space-2) var(--adw-space-3);
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--adw-space-2);
+}
+
+.dropdown-item:active {
+  background-color: var(--adw-accent-soft);
+  color: var(--adw-foreground);
+}
+
+.dropdown-divider {
+  border-color: var(--adw-border);
+  margin: var(--adw-space-2) 0;
+}
+
+.dropdown-header {
+  color: var(--adw-foreground-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   7. Forms
+   -------------------------------------------------------------------------- */
+.form-label {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  margin-bottom: var(--adw-space-1);
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--adw-surface);
+  border: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-sm);
+  color: var(--adw-foreground);
+  min-height: 2.25rem;
+  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.form-control,
+.form-select {
+  padding: 0.375rem var(--adw-space-3);
+}
+
+.form-control::placeholder { color: var(--adw-foreground-muted); }
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--adw-accent);
+  box-shadow: 0 0 0 2px var(--adw-accent-soft);
+  outline: none;
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: var(--adw-surface-alt);
+  color: var(--adw-foreground-muted);
+}
+
+.input-group-text {
+  background-color: var(--adw-surface-alt);
+  color: var(--adw-foreground-muted);
+  border-color: var(--adw-border);
+}
+
+.input-group > :not(:first-child) { margin-left: -1px; }
+.input-group .form-control,
+.input-group .form-select,
+.input-group .btn { border-radius: 0; }
+.input-group > :first-child {
+  border-start-start-radius: var(--adw-radius-sm);
+  border-end-start-radius: var(--adw-radius-sm);
+}
+.input-group > :last-child {
+  border-start-end-radius: var(--adw-radius-sm);
+  border-end-end-radius: var(--adw-radius-sm);
+}
+
+.form-check-input {
+  border-color: var(--adw-border-strong);
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--adw-accent);
+  border-color: var(--adw-accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--adw-accent);
+  box-shadow: 0 0 0 2px var(--adw-accent-soft);
+}
+
+.form-check-label {
+  font-size: 0.875rem;
+}
+
+/* Adwaita switch — a flat track with a round handle */
+.form-switch { padding-left: 2.75rem; }
+
+.form-switch .form-check-input {
+  width: 2.5rem;
+  height: 1.5rem;
+  margin-left: -2.75rem;
+  border: none;
+  background-color: var(--adw-border-strong);
+  box-shadow: inset 0 0 0 1px var(--adw-border);
+  transition: background-color 0.1s ease;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--adw-accent);
+  border-color: var(--adw-accent);
+  box-shadow: none;
+}
+
+.form-switch .form-check-input:focus {
+  box-shadow: 0 0 0 2px var(--adw-accent-soft);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--adw-accent);
+  border: none;
+}
+
+.form-range::-moz-range-thumb {
+  background-color: var(--adw-accent);
+  border: none;
+}
+
+.form-range::-webkit-slider-runnable-track { background-color: var(--adw-border-strong); }
+.form-range::-moz-range-track { background-color: var(--adw-border-strong); }
+
+.form-text,
+.invalid-feedback,
+.valid-feedback {
+  font-size: 0.8125rem;
+}
+
+.form-text { color: var(--adw-foreground-muted); }
+
+.form-control-color {
+  width: 2.75rem;
+  height: 2.375rem;
+  padding: var(--adw-space-1);
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+  border-radius: var(--adw-radius-sm);
+  height: calc(3.5rem + 2px);
+}
+
+.form-floating > label {
+  color: var(--adw-foreground-muted);
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Cards, AdwaitaCard & preferences pages
+   -------------------------------------------------------------------------- */
+.card {
+  --bs-card-bg: var(--adw-surface);
+  --bs-card-border-color: var(--adw-border);
+  --bs-card-cap-bg: transparent;
+  --bs-card-border-radius: var(--adw-radius-md);
+  box-shadow: none;
+  padding: var(--adw-space-3);
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--adw-border);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: var(--adw-space-3);
+  margin: calc(var(--adw-space-3) * -1) calc(var(--adw-space-3) * -1) var(--adw-space-3);
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--adw-border);
+  padding: var(--adw-space-3);
+  margin: var(--adw-space-3) calc(var(--adw-space-3) * -1) calc(var(--adw-space-3) * -1);
+}
+
+.card-body { padding: 0; }
+
+.card-title {
+  font-weight: 700;
+  color: var(--adw-foreground-strong);
+}
+
+/* A card with a big title + subtitle, like Adwaita preferences groups */
+.adw-card-group {
+  display: grid;
+  gap: var(--adw-space-3);
+}
+
+.adw-card-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.adw-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--adw-foreground-muted);
+}
+
+/* Framed "boxed" list used all over libadwaita preferences */
+.adw-boxed-list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--adw-surface);
+  border: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-md);
+  overflow: hidden;
+}
+
+.adw-boxed-list > * + * {
+  border-top: 1px solid var(--adw-border);
+}
+
+.adw-action-row {
+  display: flex;
+  align-items: center;
+  gap: var(--adw-space-3);
+  padding: var(--adw-space-3);
+  min-height: 3rem;
+}
+
+.adw-action-row .adw-action-row-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.adw-action-row-title {
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.adw-action-row-subtitle {
+  font-size: 0.8125rem;
+  color: var(--adw-foreground-muted);
+}
+
+.adw-action-row-icon {
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--adw-radius-sm);
+  background-color: var(--adw-accent-soft);
+  color: var(--adw-accent);
+  font-weight: 700;
+}
+
+/* Status / empty-state page */
+.adw-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--adw-space-2);
+  padding: var(--adw-space-6) var(--adw-space-4);
+  color: var(--adw-foreground-muted);
+}
+
+.adw-status-icon {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--adw-surface-alt);
+  color: var(--adw-accent);
+  margin-bottom: var(--adw-space-2);
+}
+
+/* --------------------------------------------------------------------------
+   9. Adaptive layout helpers (libadwaita style)
+   -------------------------------------------------------------------------- */
+.adw-adaptive {
+  container-type: inline-size;
+  container-name: adw;
+}
+
+.adw-adaptive-row {
+  display: flex;
+  gap: var(--adw-space-4);
+  flex-wrap: wrap;
+}
+
+.adw-adaptive-row > * {
+  flex: 1 1 16rem;
+}
+
+@container adw (max-width: 32rem) {
+  .adw-adaptive-row {
+    flex-direction: column;
+    gap: var(--adw-space-3);
+  }
+
+  .adw-adaptive-row > * {
+    flex: 1 1 auto;
+  }
+
+  .adw-adaptive-collapse .adw-hide-narrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 44rem) {
+  .adw-hide-narrow { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   10. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: var(--adw-surface);
+  --bs-table-color: var(--adw-foreground);
+  --bs-table-border-color: var(--adw-border);
+  --bs-table-striped-bg: var(--adw-surface-alt);
+  --bs-table-striped-color: var(--adw-foreground);
+  --bs-table-hover-bg: var(--adw-accent-soft);
+  --bs-table-hover-color: var(--adw-foreground);
+  border-color: var(--adw-border);
+  border-radius: var(--adw-radius-md);
+  overflow: hidden;
+}
+
+.table > :not(caption) > * > * {
+  padding: var(--adw-space-2) var(--adw-space-3);
+}
+
+.table thead th {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--adw-foreground-muted);
+  background-color: var(--adw-surface-alt);
+  border-bottom: 1px solid var(--adw-border);
+}
+
+.table > :not(caption) > * > * + * { border-left-width: 0; }
+
+/* --------------------------------------------------------------------------
+   11. Navs, tabs & pagination
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--adw-border);
+  --bs-nav-tabs-link-active-color: var(--adw-accent);
+  --bs-nav-tabs-link-active-bg: var(--adw-surface);
+  --bs-nav-tabs-link-active-border-color: var(--adw-border);
+  border-bottom: 1px solid var(--adw-border);
+  gap: var(--adw-space-1);
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--adw-foreground-muted);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: var(--adw-space-2) var(--adw-space-3);
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom-color: var(--adw-accent);
+  background-color: transparent;
+  color: var(--adw-accent);
+}
+
+.nav-pills {
+  gap: var(--adw-space-1);
+}
+
+.nav-pills .nav-link {
+  border-radius: var(--adw-radius-sm);
+  color: var(--adw-foreground);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: var(--adw-surface-alt);
+  color: var(--adw-foreground);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--adw-accent);
+  color: var(--adw-on-accent);
+}
+
+.nav-underline {
+  border-bottom: 1px solid var(--adw-border);
+  gap: var(--adw-space-2);
+}
+
+.nav-underline .nav-link {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--adw-foreground-muted);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-underline .nav-link.active {
+  color: var(--adw-accent);
+  border-bottom-color: var(--adw-accent);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: var(--adw-foreground-muted);
+  --bs-breadcrumb-item-active-color: var(--adw-foreground-muted);
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item a { color: var(--adw-accent); }
+
+.pagination {
+  --bs-pagination-color: var(--adw-foreground);
+  --bs-pagination-bg: var(--adw-surface);
+  --bs-pagination-border-color: var(--adw-border);
+  --bs-pagination-hover-color: var(--adw-foreground);
+  --bs-pagination-hover-bg: var(--adw-surface-alt);
+  --bs-pagination-active-bg: var(--adw-accent);
+  --bs-pagination-active-border-color: var(--adw-accent);
+  --bs-pagination-active-color: var(--adw-on-accent);
+  --bs-pagination-disabled-color: var(--adw-foreground-muted);
+  --bs-pagination-disabled-bg: var(--adw-surface);
+  --bs-pagination-disabled-border-color: var(--adw-border);
+  gap: var(--adw-space-1);
+}
+
+.page-link {
+  border-radius: var(--adw-radius-sm) !important;
+  font-weight: 700;
+  min-width: 2.25rem;
+  text-align: center;
+}
+
+.page-link:focus {
+  outline: 2px solid var(--adw-accent);
+  outline-offset: 1px;
+}
+
+.page-item.active .page-link {
+  border-color: var(--adw-accent);
+}
+
+/* --------------------------------------------------------------------------
+   12. Alerts, badges & list groups
+   -------------------------------------------------------------------------- */
+.alert {
+  --bs-alert-bg: var(--adw-surface);
+  --bs-alert-border-color: var(--adw-border);
+  --bs-alert-color: var(--adw-foreground);
+  border-radius: var(--adw-radius-sm);
+  padding: var(--adw-space-3);
+  font-size: 0.875rem;
+}
+
+.alert-primary {
+  --bs-alert-color: var(--adw-accent);
+  --bs-alert-bg: var(--adw-accent-soft);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-success {
+  --bs-alert-bg: rgba(var(--adw-green-rgb), 0.14);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-danger {
+  --bs-alert-bg: rgba(var(--adw-red-rgb), 0.14);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-warning {
+  --bs-alert-bg: rgba(var(--adw-yellow-rgb), 0.18);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-info {
+  --bs-alert-bg: var(--adw-accent-soft);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-heading { font-weight: 700; }
+
+.badge {
+  --bs-badge-font-weight: 700;
+  --bs-badge-padding-y: 0.25em;
+  --bs-badge-padding-x: 0.55em;
+  border-radius: var(--adw-radius-sm);
+  font-size: 0.75rem;
+}
+
+.badge.badge-pill { border-radius: var(--adw-radius-pill); }
+
+.badge.bg-primary { background-color: var(--adw-accent); color: var(--adw-on-accent); }
+.badge.bg-secondary { background-color: var(--adw-gray); color: #ffffff; }
+.badge.bg-success { background-color: var(--adw-green); color: var(--adw-on-accent); }
+.badge.bg-danger { background-color: var(--adw-red); color: var(--adw-on-accent); }
+.badge.bg-warning { background-color: var(--adw-yellow); color: var(--adw-foreground-strong); }
+.badge.bg-info { background-color: var(--adw-accent); color: var(--adw-on-accent); }
+.badge.bg-light { background-color: var(--adw-surface-alt); color: var(--adw-foreground); border: 1px solid var(--adw-border); }
+.badge.bg-dark { background-color: var(--adw-foreground); color: var(--adw-bg); }
+
+.list-group {
+  --bs-list-group-bg: var(--adw-surface);
+  --bs-list-group-color: var(--adw-foreground);
+  --bs-list-group-border-color: var(--adw-border);
+  --bs-list-group-border-radius: var(--adw-radius-md);
+  --bs-list-group-action-hover-bg: var(--adw-surface-alt);
+  --bs-list-group-action-hover-color: var(--adw-foreground);
+  --bs-list-group-action-active-bg: var(--adw-accent);
+  --bs-list-group-action-active-color: var(--adw-on-accent);
+  --bs-list-group-disabled-color: var(--adw-foreground-muted);
+  border-radius: var(--adw-radius-md);
+  overflow: hidden;
+}
+
+.list-group-item {
+  padding: var(--adw-space-3);
+  background-color: var(--adw-surface);
+  border-color: var(--adw-border);
+}
+
+.list-group-item.active {
+  background-color: var(--adw-accent);
+  border-color: var(--adw-accent);
+  color: var(--adw-on-accent);
+}
+
+.list-group-inset {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   13. Progress & spinners
+   -------------------------------------------------------------------------- */
+.progress {
+  --bs-progress-bg: var(--adw-surface-sunken);
+  --bs-progress-bar-bg: var(--adw-accent);
+  --bs-progress-border-radius: var(--adw-radius-pill);
+  height: 0.5rem;
+  box-shadow: none;
+}
+
+.progress-bar {
+  background-color: var(--adw-accent);
+  border-radius: var(--adw-radius-pill);
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.25) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.25) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+.spinner-border,
+.spinner-grow { --bs-spinner-border-width: 0.1875rem; }
+
+.spinner-border { border-radius: 50%; }
+.spinner-grow { border-radius: var(--adw-radius-pill); }
+
+/* --------------------------------------------------------------------------
+   14. Accordions
+   -------------------------------------------------------------------------- */
+.accordion {
+  --bs-accordion-bg: var(--adw-surface);
+  --bs-accordion-border-color: var(--adw-border);
+  --bs-accordion-border-radius: var(--adw-radius-md);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 2px var(--adw-accent-soft);
+  --bs-accordion-active-bg: var(--adw-surface);
+  --bs-accordion-active-color: var(--adw-accent);
+  gap: var(--adw-space-2);
+}
+
+.accordion-item {
+  overflow: hidden;
+  border-radius: var(--adw-radius-md) !important;
+  background-color: var(--adw-surface);
+}
+
+.accordion-button {
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: var(--adw-space-3);
+  background-color: var(--adw-surface);
+  color: var(--adw-foreground);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--adw-surface);
+  color: var(--adw-accent);
+  box-shadow: inset 0 -1px 0 var(--adw-border);
+}
+
+.accordion-button::after {
+  background-size: 1rem;
+  opacity: 0.6;
+}
+
+.accordion-body {
+  padding: var(--adw-space-3);
+  font-size: 0.875rem;
+  background-color: var(--adw-surface);
+  color: var(--adw-foreground);
+}
+
+.accordion-flush { background-color: transparent; }
+
+/* --------------------------------------------------------------------------
+   15. Modals & offcanvas (Adwaita dialogs)
+   -------------------------------------------------------------------------- */
+.modal {
+  --bs-modal-bg: var(--adw-surface);
+  --bs-modal-border-color: var(--adw-border);
+  --bs-modal-border-radius: var(--adw-radius-md);
+  --bs-modal-header-border-color: transparent;
+  --bs-modal-footer-border-color: transparent;
+}
+
+.modal-content {
+  border: 1px solid var(--adw-border);
+  border-radius: var(--adw-radius-md);
+  box-shadow: var(--adw-shadow-3);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: block;
+  padding: var(--adw-space-5) var(--adw-space-5) var(--adw-space-3);
+  border-bottom: none;
+}
+
+/* Adwaita dialogs use a large title, not a caption-sized one */
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--adw-foreground-strong);
+}
+
+.modal-body {
+  padding: 0 var(--adw-space-5) var(--adw-space-5);
+  font-size: 0.9375rem;
+  color: var(--adw-foreground);
+}
+
+.modal-footer {
+  padding: var(--adw-space-3) var(--adw-space-5) var(--adw-space-5);
+  gap: var(--adw-space-2);
+}
+
+.modal-backdrop {
+  --bs-backdrop-bg: 0;
+  --bs-backdrop-opacity: 0.4;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: var(--adw-surface);
+  --bs-offcanvas-border-color: var(--adw-border);
+  --bs-offcanvas-width: 22rem;
+}
+
+.offcanvas-header {
+  padding: var(--adw-space-3) var(--adw-space-4);
+  border-bottom: 1px solid var(--adw-border);
+}
+
+.offcanvas-title { font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   16. Popovers & tooltips
+   -------------------------------------------------------------------------- */
+.popover {
+  --bs-popover-bg: var(--adw-surface);
+  --bs-popover-border-color: var(--adw-border);
+  --bs-popover-body-color: var(--adw-foreground);
+  --bs-popover-header-bg: transparent;
+  --bs-popover-header-color: var(--adw-foreground-strong);
+  --bs-popover-border-radius: var(--adw-radius-sm);
+  box-shadow: var(--adw-shadow-3);
+  font-size: 0.8125rem;
+}
+
+.popover-header {
+  font-weight: 700;
+  border-bottom: 1px solid var(--adw-border);
+}
+
+.tooltip {
+  --bs-tooltip-bg: var(--adw-foreground);
+  --bs-tooltip-color: var(--adw-bg);
+  --bs-tooltip-border-radius: var(--adw-radius-xs);
+  font-size: 0.75rem;
+  padding: var(--adw-space-1) var(--adw-space-2);
+}
+
+/* --------------------------------------------------------------------------
+   17. Toasts, carousel & placeholders
+   -------------------------------------------------------------------------- */
+.toast {
+  --bs-toast-bg: var(--adw-surface);
+  --bs-toast-border-color: var(--adw-border);
+  --bs-toast-header-bg: transparent;
+  --bs-toast-header-color: var(--adw-foreground);
+  --bs-toast-border-radius: var(--adw-radius-md);
+  box-shadow: var(--adw-shadow-3);
+  font-size: 0.875rem;
+}
+
+.toast-header {
+  font-weight: 700;
+  border-bottom: 1px solid var(--adw-border);
+}
+
+.toast-body { padding: var(--adw-space-3); }
+
+.carousel-item {
+  border-radius: var(--adw-radius-md);
+  overflow: hidden;
+}
+
+.carousel-caption { text-shadow: none; }
+
+.carousel-indicators [data-bs-target] {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+.carousel-indicators .active { opacity: 1; }
+
+.placeholder {
+  background-color: currentColor;
+  border-radius: var(--adw-radius-xs);
+  opacity: 0.15;
+}
+
+.placeholder-wave {
+  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-size: 200% 100%;
+}
+
+.placeholder-glow .placeholder {
+  animation: adw-placeholder-glow 2s ease-in-out infinite;
+}
+
+@keyframes adw-placeholder-glow {
+  50% { opacity: 0.3; }
+}
+
+/* --------------------------------------------------------------------------
+   18. Utilities
+   -------------------------------------------------------------------------- */
+.text-secondary { color: var(--adw-foreground-muted) !important; }
+
+.shadow-sm { box-shadow: var(--adw-shadow-1) !important; }
+.shadow { box-shadow: var(--adw-shadow-2) !important; }
+.shadow-lg { box-shadow: var(--adw-shadow-3) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-close,
+  .form-control,
+  .form-select,
+  .form-check-input {
+    transition: none;
+  }
+}
