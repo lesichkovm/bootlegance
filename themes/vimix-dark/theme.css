@@ -1,0 +1,1232 @@
+/* ==========================================================================
+   Vimix — Bootstrap 5 Theme
+   Inspired by the Vimix GNOME/GTK theme by justonceplaying (macOS-inspired).
+   Include AFTER bootstrap.min.css.
+
+   Vimix dark — Bootstrap 5 Theme
+   A colour sibling of the Vimix theme: one accent preset, two modes.
+   Include AFTER bootstrap.min.css.
+
+       <html data-bs-theme="dark">    dark accent on dark surfaces
+       <html data-bs-theme="light">   dark accent on light surfaces
+   =+ */
+
+/* --------------------------------------------------------------------------
+   1. Base surfaces & neutrals (shared by all variants)
+   -------------------------------------------------------------------------- */
+:root {
+  --vix-accent: #007aff;
+  --vix-accent-rgb: 0, 122, 255;
+  --vix-accent-hi: #0062cc;
+  --vix-accent-hi-rgb: 0, 98, 204;
+  --vix-accent-soft: rgba(0, 122, 255, 0.14);
+  --vix-on-accent: #ffffff;
+  --vix-on-accent-rgb: 255, 255, 255;
+
+  --vix-purple: #af52de;
+  --vix-pink: #ff375f;
+  --vix-red: #ff3b30;
+  --vix-orange: #ff9500;
+  --vix-yellow: #ffcc00;
+  --vix-green: #28c840;
+  --vix-teal: #00b3c7;
+  --vix-gray: #8e8e93;
+
+  --vix-surface: rgba(255, 255, 255, 0.72);
+  --vix-surface-solid: #ffffff;
+  --vix-surface-muted: rgba(120, 120, 128, 0.09);
+  --vix-surface-muted-2: rgba(120, 120, 128, 0.16);
+  --vix-sidebar: rgba(240, 240, 245, 0.66);
+  --vix-hairline: rgba(60, 60, 67, 0.16);
+  --vix-hairline-2: rgba(60, 60, 67, 0.28);
+  --vix-ink: #1d1d1f;
+  --vix-ink-2: rgba(60, 60, 67, 0.6);
+  --vix-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --vix-shadow-2: 0 4px 14px rgba(0, 0, 0, 0.09), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --vix-shadow-3: 0 18px 44px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+  --vix-blur: saturate(180%) blur(20px);
+  --vix-blur-lg: saturate(180%) blur(30px);
+
+  --vix-radius: 0.5rem;
+  --vix-radius-sm: 0.375rem;
+  --vix-radius-lg: 0.75rem;
+  --vix-radius-xl: 1rem;
+}
+
+[data-bs-theme="dark"] {
+  --vix-surface: rgba(40, 40, 43, 0.72);
+  --vix-surface-solid: #1e1e20;
+  --vix-surface-muted: rgba(118, 118, 128, 0.22);
+  --vix-surface-muted-2: rgba(118, 118, 128, 0.34);
+  --vix-sidebar: rgba(48, 48, 51, 0.6);
+  --vix-hairline: rgba(84, 84, 88, 0.6);
+  --vix-hairline-2: rgba(96, 96, 100, 0.9);
+  --vix-ink: #f2f2f5;
+  --vix-ink-2: rgba(235, 235, 245, 0.6);
+  --vix-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --vix-shadow-2: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --vix-shadow-3: 0 20px 48px rgba(0, 0, 0, 0.65);
+
+  --vix-purple: #da8fff;
+  --vix-pink: #ff6482;
+  --vix-red: #ff453a;
+  --vix-orange: #ff9f0a;
+  --vix-yellow: #ffd60a;
+  --vix-green: #32d74b;
+  --vix-teal: #40c8e0;
+  --vix-gray: #98989f;
+}
+
+/* --------------------------------------------------------------------------
+   2. Colour variants
+   -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark mode tints every variant brighter for contrast on dark surfaces */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------
+   3. Bootstrap variable overrides
+   -------------------------------------------------------------------------- */
+:root {
+  --bs-primary: var(--vix-accent);
+  --bs-primary-rgb: var(--vix-accent-rgb);
+  --bs-secondary: var(--vix-gray);
+  --bs-secondary-rgb: 142, 142, 147;
+  --bs-success: var(--vix-green);
+  --bs-success-rgb: 40, 200, 64;
+  --bs-info: var(--vix-teal);
+  --bs-info-rgb: 0, 179, 199;
+  --bs-warning: var(--vix-orange);
+  --bs-warning-rgb: 255, 149, 0;
+  --bs-danger: var(--vix-red);
+  --bs-danger-rgb: 255, 59, 48;
+  --bs-light: var(--vix-surface-muted);
+  --bs-light-rgb: 236, 236, 236;
+  --bs-dark: var(--vix-ink);
+  --bs-dark-rgb: 29, 29, 31;
+
+  --bs-body-bg: var(--vix-surface-muted);
+  --bs-body-color: var(--vix-ink);
+  --bs-emphasis-color: var(--vix-ink);
+  --bs-secondary-color: var(--vix-ink-2);
+  --bs-tertiary-color: var(--vix-ink-2);
+  --bs-secondary-bg: var(--vix-surface-muted);
+  --bs-tertiary-bg: var(--vix-surface-solid);
+  --bs-body-color-rgb: 29, 29, 31;
+  --bs-border-color: var(--vix-hairline);
+  --bs-border-color-translucent: var(--vix-hairline);
+
+  --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Ubuntu", "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --bs-font-monospace: "SF Mono", "Ubuntu Mono", ui-monospace, Menlo, Consolas,
+    monospace;
+  --bs-body-font-size: 0.9375rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-letter-spacing: -0.006em;
+
+  --bs-border-radius: var(--vix-radius);
+  --bs-border-radius-sm: var(--vix-radius-sm);
+  --bs-border-radius-lg: var(--vix-radius-lg);
+  --bs-border-radius-xl: var(--vix-radius-xl);
+  --bs-border-radius-pill: 50rem;
+
+  --bs-focus-ring-width: 0.1875rem;
+  --bs-focus-ring-opacity: 0.4;
+  --bs-focus-ring-color: rgba(var(--vix-accent-rgb), 0.4);
+
+  --bs-link-color: var(--vix-accent);
+  --bs-link-hover-color: var(--vix-accent-hi);
+  --bs-code-color: var(--vix-accent);
+}
+
+[data-bs-theme="dark"] {
+  --bs-secondary-rgb: 152, 152, 159;
+  --bs-success-rgb: 50, 215, 75;
+  --bs-info-rgb: 64, 200, 224;
+  --bs-warning-rgb: 255, 159, 10;
+  --bs-danger-rgb: 255, 69, 58;
+  --bs-light-rgb: 44, 44, 46;
+  --bs-dark-rgb: 242, 242, 245;
+  --bs-body-color-rgb: 242, 242, 245;
+  --bs-emphasis-color: var(--vix-ink);
+}
+
+/* --------------------------------------------------------------------------
+   4. Base & typography
+   -------------------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--bs-body-letter-spacing);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1, .h1,
+.display-1, .display-2, .display-3,
+.display-4, .display-5, .display-6 {
+  font-weight: 700;
+  letter-spacing: -0.028em;
+}
+
+a {
+  color: var(--vix-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.85em;
+}
+
+kbd {
+  background-color: var(--vix-surface-solid);
+  border: 1px solid var(--vix-hairline);
+  border-radius: var(--vix-radius-sm);
+  box-shadow: 0 1px 0 var(--vix-hairline-2);
+}
+
+blockquote {
+  border-inline-start: 3px solid var(--vix-hairline-2);
+  padding-inline-start: 1rem;
+  font-style: normal;
+}
+
+hr {
+  border-color: var(--vix-hairline);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  --bs-btn-font-weight: 500;
+  --bs-btn-border-radius: var(--vix-radius);
+  --bs-btn-padding-y: 0.4375rem;
+  --bs-btn-padding-x: 1rem;
+  letter-spacing: -0.01em;
+  box-shadow: none;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.08s ease;
+}
+
+.btn:active {
+  transform: scale(0.975);
+  box-shadow: none !important;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) rgba(var(--vix-accent-rgb), 0.4);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--vix-accent);
+  --bs-btn-border-color: var(--vix-accent);
+  --bs-btn-hover-bg: var(--vix-accent-hi);
+  --bs-btn-hover-border-color: var(--vix-accent-hi);
+  --bs-btn-active-bg: var(--vix-accent-hi);
+  --bs-btn-active-border-color: var(--vix-accent-hi);
+  --bs-btn-disabled-bg: var(--vix-gray);
+  --bs-btn-disabled-border-color: var(--vix-gray);
+  --bs-btn-color: var(--vix-on-accent);
+  --bs-btn-hover-color: var(--vix-on-accent);
+  --bs-btn-active-color: var(--vix-on-accent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(var(--vix-accent-rgb), 0.32);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--vix-gray);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-surface-muted-2);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-surface-muted-2);
+  --bs-btn-color: var(--vix-ink);
+  --bs-btn-hover-color: var(--vix-ink);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--vix-green);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-green);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-green);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--vix-red);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-red);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-red);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--vix-yellow);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-orange);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-orange);
+  --bs-btn-color: var(--vix-ink);
+  --bs-btn-hover-color: var(--vix-ink);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--vix-teal);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-teal);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-teal);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--vix-surface-muted);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-surface-muted-2);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-surface-muted-2);
+  --bs-btn-color: var(--vix-ink);
+  --bs-btn-hover-color: var(--vix-ink);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--vix-ink);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--vix-ink);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--vix-ink);
+  --bs-btn-color: var(--bs-body-bg);
+  --bs-btn-hover-color: var(--bs-body-bg);
+}
+
+.btn-link {
+  --bs-btn-color: var(--vix-accent);
+  --bs-btn-hover-color: var(--vix-accent-hi);
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--vix-accent);
+  --bs-btn-border-color: var(--vix-accent);
+  --bs-btn-hover-bg: var(--vix-accent);
+  --bs-btn-hover-border-color: var(--vix-accent);
+  --bs-btn-active-bg: var(--vix-accent);
+  --bs-btn-active-border-color: var(--vix-accent);
+  --bs-btn-hover-color: var(--vix-on-accent);
+  --bs-btn-active-color: var(--vix-on-accent);
+}
+
+.btn-group > .btn { border-radius: 0; }
+.btn-group > .btn:first-child {
+  border-start-start-radius: var(--vix-radius);
+  border-end-start-radius: var(--vix-radius);
+}
+.btn-group > .btn:last-child {
+  border-start-end-radius: var(--vix-radius);
+  border-end-end-radius: var(--vix-radius);
+}
+
+.btn-group > .btn-check:checked + .btn {
+  background-color: var(--vix-accent-soft);
+  border-color: var(--vix-accent-soft);
+  color: var(--vix-accent);
+}
+
+.btn-close {
+  border-radius: var(--vix-radius-sm);
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+  background-color: var(--vix-surface-muted-2);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navbar / top panel
+   -------------------------------------------------------------------------- */
+.navbar {
+  --bs-navbar-padding-y: 0.5rem;
+  min-height: 3.25rem;
+  background-color: var(--vix-surface) !important;
+  -webkit-backdrop-filter: var(--vix-blur);
+  backdrop-filter: var(--vix-blur);
+  border-bottom: 1px solid var(--vix-hairline);
+  box-shadow: var(--vix-shadow-1);
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  --bs-nav-link-color: var(--vix-ink-2);
+  --bs-nav-link-hover-color: var(--vix-accent);
+  --bs-nav-link-active-color: var(--vix-accent);
+  font-weight: 500;
+  border-radius: var(--vix-radius-sm);
+  padding-inline: 0.625rem;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+  box-shadow: none;
+  border-radius: var(--vix-radius-sm);
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) rgba(var(--vix-accent-rgb), 0.4);
+}
+
+/* GNOME-style rounded window controls (decorative, opt-in) */
+.window-controls {
+  display: inline-flex;
+  gap: 8px;
+  margin-inline-end: 0.75rem;
+}
+
+.window-controls span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.window-controls .close { background-color: var(--vix-red); }
+.window-controls .minimize { background-color: var(--vix-yellow); }
+.window-controls .maximize { background-color: var(--vix-green); }
+
+/* Ubuntu dock (opt-in) */
+.vimix-dock {
+  background-color: var(--vix-sidebar);
+  -webkit-backdrop-filter: var(--vix-blur);
+  backdrop-filter: var(--vix-blur);
+  border-inline-end: 1px solid var(--vix-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   7. Forms
+   -------------------------------------------------------------------------- */
+.form-label {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--vix-surface-solid);
+  border: 1px solid var(--vix-hairline);
+  border-radius: var(--vix-radius);
+  color: var(--bs-body-color);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control,
+.form-select {
+  padding: 0.4375rem 0.75rem;
+}
+
+.form-control::placeholder { color: var(--vix-ink-2); opacity: 0.85; }
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vix-accent);
+  box-shadow: 0 0 0 3px rgba(var(--vix-accent-rgb), 0.22);
+  outline: none;
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: var(--vix-surface-muted);
+  color: var(--vix-ink-2);
+}
+
+.input-group-text {
+  background-color: var(--vix-surface-muted);
+  color: var(--vix-ink-2);
+  border-color: var(--vix-hairline);
+}
+
+.input-group > :not(:first-child) { margin-left: -1px; }
+.input-group .form-control,
+.input-group .form-select,
+.input-group .btn { border-radius: 0; }
+.input-group > :first-child {
+  border-start-start-radius: var(--vix-radius);
+  border-end-start-radius: var(--vix-radius);
+}
+.input-group > :last-child {
+  border-start-end-radius: var(--vix-radius);
+  border-end-end-radius: var(--vix-radius);
+}
+
+.form-control-rounded { border-radius: var(--bs-border-radius-pill); }
+
+/* Rounded pill switch */
+.form-switch { padding-left: 3rem; }
+
+.form-switch .form-check-input {
+  width: 2.75rem;
+  height: 1.5rem;
+  margin-left: -3rem;
+  border: none;
+  background-color: var(--vix-surface-muted-2);
+  box-shadow: inset 0 0 0 1px var(--vix-hairline);
+  transition: background-color 0.2s ease;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--vix-accent);
+  border-color: var(--vix-accent);
+  box-shadow: none;
+}
+
+.form-switch .form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(var(--vix-accent-rgb), 0.3);
+}
+
+.form-check-input {
+  border-color: var(--vix-hairline-2);
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--vix-accent);
+  border-color: var(--vix-accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--vix-accent);
+  box-shadow: 0 0 0 3px rgba(var(--vix-accent-rgb), 0.22);
+}
+
+.form-check-label { font-size: 0.875rem; }
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--vix-surface-solid);
+  border: 1px solid var(--vix-hairline-2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form-range::-moz-range-thumb {
+  background-color: var(--vix-surface-solid);
+  border: 1px solid var(--vix-hairline-2);
+}
+
+.form-range::-webkit-slider-runnable-track { background-color: var(--vix-surface-muted-2); }
+.form-range::-moz-range-track { background-color: var(--vix-surface-muted-2); }
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: calc(3.5rem + 2px);
+  border-radius: var(--vix-radius);
+}
+
+.form-floating > label {
+  color: var(--vix-ink-2);
+  font-size: 0.8125rem;
+}
+
+.form-text,
+.invalid-feedback,
+.valid-feedback {
+  font-size: 0.75rem;
+}
+
+.form-text { color: var(--vix-ink-2); }
+
+.form-control-color {
+  width: 2.75rem;
+  height: 2.375rem;
+  padding: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  --bs-card-bg: var(--vix-surface-solid);
+  --bs-card-border-color: var(--vix-hairline);
+  --bs-card-cap-bg: transparent;
+  --bs-card-border-radius: var(--vix-radius-lg);
+  box-shadow: var(--vix-shadow-1);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover { box-shadow: var(--vix-shadow-2); }
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--vix-hairline);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1rem;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--vix-hairline);
+  padding: 0.75rem 1rem;
+}
+
+.card-title { font-weight: 600; }
+
+.card-glass {
+  --bs-card-bg: var(--vix-surface);
+  -webkit-backdrop-filter: var(--vix-blur-lg);
+  backdrop-filter: var(--vix-blur-lg);
+  border-color: var(--vix-hairline);
+  box-shadow: var(--vix-shadow-2);
+}
+
+.card-img-top {
+  border-top-left-radius: var(--vix-radius-lg);
+  border-top-right-radius: var(--vix-radius-lg);
+}
+
+/* --------------------------------------------------------------------------
+   9. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-border-color: var(--vix-hairline);
+  --bs-table-striped-bg: var(--vix-surface-muted);
+  --bs-table-striped-color: var(--bs-body-color);
+  --bs-table-hover-bg: var(--vix-accent-soft);
+  --bs-table-hover-color: var(--bs-body-color);
+  border-color: var(--vix-hairline);
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.625rem 0.75rem;
+}
+
+.table thead th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--vix-ink-2);
+  border-bottom: 1px solid var(--vix-hairline-2);
+  background-color: transparent;
+}
+
+.table > :not(caption) > * > * + * { border-left-width: 0; }
+
+.table-rounded {
+  overflow: hidden;
+  border: 1px solid var(--vix-hairline);
+  border-radius: var(--vix-radius-lg);
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--vix-surface-solid);
+}
+
+/* --------------------------------------------------------------------------
+   10. Navs, tabs & pagination
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--vix-hairline);
+  --bs-nav-tabs-link-active-color: var(--vix-ink);
+  --bs-nav-tabs-link-active-bg: var(--vix-surface-solid);
+  --bs-nav-tabs-link-active-border-color: var(--vix-hairline);
+  border-bottom: 1px solid var(--vix-hairline);
+  gap: 0.25rem;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--vix-radius-sm) var(--vix-radius-sm) 0 0;
+  color: var(--vix-ink-2);
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--bs-body-color);
+  border-bottom-color: var(--vix-hairline-2);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: var(--vix-accent);
+  color: var(--vix-accent);
+}
+
+/* Segmented control */
+.nav-segmented {
+  display: inline-flex;
+  padding: 2px;
+  gap: 2px;
+  background-color: var(--vix-surface-muted);
+  border-radius: var(--vix-radius);
+}
+
+.nav-segmented .nav-link {
+  border-radius: calc(var(--vix-radius) - 2px);
+  color: var(--vix-ink-2);
+  font-weight: 500;
+  padding: 0.3125rem 0.875rem;
+}
+
+.nav-segmented .nav-link.active {
+  background-color: var(--vix-surface-solid);
+  color: var(--vix-ink);
+  box-shadow: var(--vix-shadow-1);
+}
+
+.nav-underline {
+  border-bottom: 1px solid var(--vix-hairline);
+  gap: 0.5rem;
+}
+
+.nav-underline .nav-link {
+  color: var(--vix-ink-2);
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-underline .nav-link.active {
+  color: var(--vix-accent);
+  border-bottom-color: var(--vix-accent);
+}
+
+.nav-pills { gap: 0.375rem; }
+
+.nav-pills .nav-link {
+  border-radius: var(--bs-border-radius-pill);
+  color: var(--vix-ink-2);
+  font-weight: 500;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: var(--vix-surface-muted);
+  color: var(--bs-body-color);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--vix-accent);
+  color: var(--vix-on-accent);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: var(--vix-ink-2);
+  --bs-breadcrumb-item-active-color: var(--vix-ink-2);
+  font-size: 0.8125rem;
+}
+
+.breadcrumb-item a { color: var(--vix-accent); }
+
+.pagination {
+  --bs-pagination-color: var(--vix-accent);
+  --bs-pagination-bg: var(--vix-surface-solid);
+  --bs-pagination-border-color: var(--vix-hairline);
+  --bs-pagination-hover-color: var(--vix-accent-hi);
+  --bs-pagination-hover-bg: var(--vix-surface-muted);
+  --bs-pagination-active-bg: var(--vix-accent);
+  --bs-pagination-active-border-color: var(--vix-accent);
+  --bs-pagination-disabled-bg: var(--vix-surface-solid);
+  --bs-pagination-disabled-border-color: var(--vix-hairline);
+  --bs-pagination-border-radius: var(--vix-radius);
+  gap: 0.25rem;
+}
+
+.page-link {
+  border-radius: var(--vix-radius) !important;
+  font-weight: 500;
+  min-width: 2.25rem;
+  text-align: center;
+}
+
+.page-item.active .page-link {
+  box-shadow: 0 2px 6px rgba(var(--vix-accent-rgb), 0.3);
+}
+
+.page-link:focus {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) rgba(var(--vix-accent-rgb), 0.4);
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   11. Alerts & badges
+   -------------------------------------------------------------------------- */
+.alert {
+  --bs-alert-bg: var(--vix-surface-solid);
+  --bs-alert-border-color: var(--vix-hairline);
+  --bs-alert-color: var(--bs-body-color);
+  border-radius: var(--vix-radius-lg);
+  box-shadow: var(--vix-shadow-1);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.alert-primary {
+  --bs-alert-color: var(--vix-accent);
+  --bs-alert-bg: var(--vix-accent-soft);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-success {
+  --bs-alert-bg: rgba(40, 200, 64, 0.16);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-danger {
+  --bs-alert-bg: rgba(255, 59, 48, 0.16);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-warning {
+  --bs-alert-bg: rgba(255, 149, 0, 0.18);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-info {
+  --bs-alert-bg: rgba(0, 179, 199, 0.16);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-heading { font-weight: 600; }
+
+.badge {
+  --bs-badge-font-weight: 500;
+  --bs-badge-padding-y: 0.3em;
+  --bs-badge-padding-x: 0.6em;
+  border-radius: var(--bs-border-radius-pill);
+  letter-spacing: 0.01em;
+}
+
+.badge.bg-primary { background-color: var(--vix-accent); color: var(--vix-on-accent); }
+.badge.bg-secondary { background-color: var(--vix-gray); }
+.badge.bg-success { background-color: var(--vix-green); color: #ffffff; }
+.badge.bg-danger { background-color: var(--vix-red); color: #ffffff; }
+.badge.bg-warning { background-color: var(--vix-yellow); color: var(--vix-ink); }
+.badge.bg-info { background-color: var(--vix-teal); color: #ffffff; }
+.badge.bg-light { background-color: var(--vix-surface-muted-2); color: var(--vix-ink); }
+.badge.bg-dark { background-color: var(--vix-ink); color: var(--bs-body-bg); }
+
+.list-group {
+  --bs-list-group-bg: var(--vix-surface-solid);
+  --bs-list-group-color: var(--bs-body-color);
+  --bs-list-group-border-color: var(--vix-hairline);
+  --bs-list-group-border-radius: var(--vix-radius-lg);
+  --bs-list-group-action-hover-bg: var(--vix-surface-muted);
+  --bs-list-group-action-hover-color: var(--bs-body-color);
+  --bs-list-group-action-active-bg: var(--vix-accent);
+  --bs-list-group-action-active-color: var(--vix-on-accent);
+  --bs-list-group-disabled-color: var(--vix-ink-2);
+  box-shadow: var(--vix-shadow-1);
+}
+
+.list-group-item {
+  padding: 0.625rem 1rem;
+  background-color: var(--vix-surface-solid);
+  border-color: var(--vix-hairline);
+}
+
+.list-group-item.active {
+  background-color: var(--vix-accent);
+  border-color: var(--vix-accent);
+  color: var(--vix-on-accent);
+}
+
+.list-group-item-primary {
+  background-color: var(--vix-accent-soft);
+  color: var(--vix-accent);
+  border-color: transparent;
+}
+
+.list-group-item-danger {
+  background-color: rgba(255, 59, 48, 0.14);
+  color: var(--vix-red);
+  border-color: transparent;
+}
+
+.list-group-inset {
+  background-color: var(--vix-surface-muted);
+  border: none;
+  border-radius: var(--vix-radius-lg);
+  padding: 0.25rem;
+  box-shadow: none;
+}
+
+.list-group-inset > .list-group-item {
+  border: none;
+  border-radius: var(--vix-radius);
+  background-color: var(--vix-surface-solid);
+}
+
+.list-group-inset > .list-group-item + .list-group-item { margin-top: 0.25rem; }
+
+/* --------------------------------------------------------------------------
+   12. Progress & spinners
+   -------------------------------------------------------------------------- */
+.progress {
+  --bs-progress-bg: var(--vix-surface-muted-2);
+  --bs-progress-bar-bg: var(--vix-accent);
+  --bs-progress-border-radius: var(--bs-border-radius-pill);
+  height: 0.5rem;
+  box-shadow: none;
+}
+
+.progress-bar {
+  background-color: var(--vix-accent);
+  border-radius: var(--bs-border-radius-pill);
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.22) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.22) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+.spinner-border,
+.spinner-grow { --bs-spinner-border-width: 0.1875rem; }
+
+.spinner-border {
+  border-width: 2px;
+  border-radius: 50%;
+}
+
+.spinner-grow {
+  border-radius: var(--bs-border-radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   13. Dropdowns / menus
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+  --bs-dropdown-bg: var(--vix-surface);
+  --bs-dropdown-color: var(--bs-body-color);
+  --bs-dropdown-border-color: var(--vix-hairline);
+  --bs-dropdown-link-color: var(--bs-body-color);
+  --bs-dropdown-link-hover-color: var(--vix-on-accent);
+  --bs-dropdown-link-hover-bg: var(--vix-accent);
+  --bs-dropdown-link-active-color: var(--vix-on-accent);
+  --bs-dropdown-link-active-bg: var(--vix-accent);
+  --bs-dropdown-link-disabled-color: var(--vix-ink-2);
+  --bs-dropdown-border-radius: var(--vix-radius);
+  --bs-dropdown-link-border-radius: var(--vix-radius-sm);
+  --bs-dropdown-padding-y: 0.375rem;
+  -webkit-backdrop-filter: var(--vix-blur-lg);
+  backdrop-filter: var(--vix-blur-lg);
+  box-shadow: var(--vix-shadow-3);
+  font-size: 0.875rem;
+  padding: 0.375rem;
+}
+
+.dropdown-item {
+  padding: 0.3125rem 0.625rem;
+  border-radius: var(--vix-radius-sm);
+}
+
+.dropdown-item:active,
+.dropdown-item:hover {
+  background-color: var(--vix-accent);
+  color: var(--vix-on-accent);
+}
+
+.dropdown-divider {
+  border-color: var(--vix-hairline);
+  margin: 0.375rem 0.25rem;
+}
+
+.dropdown-header {
+  color: var(--vix-ink-2);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   14. Accordions
+   -------------------------------------------------------------------------- */
+.accordion {
+  --bs-accordion-bg: var(--vix-surface-solid);
+  --bs-accordion-border-color: var(--vix-hairline);
+  --bs-accordion-border-radius: var(--vix-radius-lg);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(var(--vix-accent-rgb), 0.22);
+  --bs-accordion-active-bg: var(--vix-accent-soft);
+  --bs-accordion-active-color: var(--vix-accent);
+  gap: 0.5rem;
+}
+
+.accordion-item {
+  overflow: hidden;
+  box-shadow: var(--vix-shadow-1);
+}
+
+.accordion-button {
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  background-color: var(--vix-surface-solid);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--vix-accent-soft);
+  color: var(--vix-accent);
+  box-shadow: inset 0 -1px 0 var(--vix-hairline);
+}
+
+.accordion-button::after {
+  background-size: 1rem;
+  opacity: 0.6;
+}
+
+.accordion-body {
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  background-color: var(--vix-surface-solid);
+}
+
+.accordion-flush { background-color: transparent; }
+
+.accordion-flush .accordion-item {
+  background-color: var(--vix-surface-solid);
+  border: 1px solid var(--vix-hairline);
+  border-radius: var(--vix-radius-lg);
+}
+
+/* --------------------------------------------------------------------------
+   15. Modals, offcanvas, popovers, toasts
+   -------------------------------------------------------------------------- */
+.modal {
+  --bs-modal-bg: var(--vix-surface-solid);
+  --bs-modal-border-color: var(--vix-hairline);
+  --bs-modal-border-radius: var(--vix-radius-lg);
+  --bs-modal-header-border-color: var(--vix-hairline);
+  --bs-modal-footer-border-color: transparent;
+}
+
+.modal-content {
+  border: 1px solid var(--vix-hairline);
+  border-radius: var(--vix-radius-lg);
+  box-shadow: var(--vix-shadow-3);
+  overflow: hidden;
+}
+
+.modal-header,
+.modal-footer { padding: 0.875rem 1.25rem; }
+.modal-body { padding: 1.25rem; font-size: 0.875rem; }
+.modal-title { font-weight: 600; }
+
+.modal-backdrop {
+  --bs-backdrop-bg: 0;
+  --bs-backdrop-opacity: 0.3;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: var(--vix-surface-solid);
+  --bs-offcanvas-border-color: var(--vix-hairline);
+  --bs-offcanvas-width: 320px;
+}
+
+.offcanvas-header { border-bottom: 1px solid var(--vix-hairline); }
+.offcanvas-title { font-weight: 600; }
+
+.popover {
+  --bs-popover-bg: var(--vix-surface);
+  --bs-popover-border-color: var(--vix-hairline);
+  --bs-popover-body-color: var(--bs-body-color);
+  --bs-popover-header-bg: transparent;
+  --bs-popover-header-color: var(--bs-body-color);
+  --bs-popover-border-radius: var(--vix-radius);
+  -webkit-backdrop-filter: var(--vix-blur-lg);
+  backdrop-filter: var(--vix-blur-lg);
+  box-shadow: var(--vix-shadow-3);
+  font-size: 0.8125rem;
+}
+
+.popover-header {
+  font-weight: 600;
+  border-bottom: 1px solid var(--vix-hairline);
+}
+
+.tooltip {
+  --bs-tooltip-bg: var(--vix-surface-solid);
+  --bs-tooltip-color: var(--bs-body-color);
+  --bs-tooltip-border-color: var(--vix-hairline);
+  --bs-tooltip-border-radius: var(--vix-radius-sm);
+  box-shadow: var(--vix-shadow-2);
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+  -webkit-backdrop-filter: var(--vix-blur);
+  backdrop-filter: var(--vix-blur);
+}
+
+.toast {
+  --bs-toast-bg: var(--vix-surface);
+  --bs-toast-border-color: var(--vix-hairline);
+  --bs-toast-header-bg: transparent;
+  --bs-toast-header-color: var(--bs-body-color);
+  --bs-toast-border-radius: var(--vix-radius-lg);
+  -webkit-backdrop-filter: var(--vix-blur-lg);
+  backdrop-filter: var(--vix-blur-lg);
+  box-shadow: var(--vix-shadow-3);
+  font-size: 0.875rem;
+}
+
+.toast-header {
+  font-weight: 600;
+  border-bottom: 1px solid var(--vix-hairline);
+}
+
+.toast-body { padding: 0.75rem 1rem; }
+
+/* --------------------------------------------------------------------------
+   16. Carousel & placeholders
+   -------------------------------------------------------------------------- */
+.carousel-item {
+  border-radius: var(--vix-radius-lg);
+  overflow: hidden;
+}
+
+.carousel-caption { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45); }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem;
+  opacity: 0.6;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+.carousel-indicators .active { opacity: 1; }
+
+.placeholder {
+  background-color: currentColor;
+  border-radius: var(--vix-radius-sm);
+  opacity: 0.18;
+}
+
+.placeholder-wave {
+  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-size: 200% 100%;
+}
+
+.placeholder-glow .placeholder {
+  animation: vix-placeholder-glow 2s ease-in-out infinite;
+}
+
+@keyframes vix-placeholder-glow {
+  50% { opacity: 0.34; }
+}
+
+/* --------------------------------------------------------------------------
+   17. Utilities & misc
+   -------------------------------------------------------------------------- */
+.text-secondary { color: var(--vix-ink-2) !important; }
+
+.shadow-sm { box-shadow: var(--vix-shadow-1) !important; }
+.shadow { box-shadow: var(--vix-shadow-2) !important; }
+.shadow-lg { box-shadow: var(--vix-shadow-3) !important; }
+
+.rounded-4 { border-radius: var(--vix-radius-lg) !important; }
+.rounded-5 { border-radius: var(--vix-radius-xl) !important; }
+
+.window-glass {
+  background-color: var(--vix-surface);
+  -webkit-backdrop-filter: var(--vix-blur);
+  backdrop-filter: var(--vix-blur);
+  border-bottom: 1px solid var(--vix-hairline);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card,
+  .btn-close {
+    transition: none;
+  }
+
+  .btn:active { transform: none; }
+}
+/* --------------------------------------------------------------------------
+   Accent preset: dark
+   -------------------------------------------------------------------------- */
+:root {
+  --vix-accent: #4b4b52; --vix-accent-rgb: 75, 75, 82;
+    --vix-accent-hi: #3a3a40; --vix-accent-hi-rgb: 58, 58, 64;
+    --vix-accent-soft: rgba(75, 75, 82, 0.16);
+    --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
+}
+
+[data-bs-theme="dark"] {
+  --vix-accent: #7a7a84; --vix-accent-rgb: 122, 122, 132;
+    --vix-accent-hi: #96969f; --vix-accent-hi-rgb: 150, 150, 159;
+    --vix-accent-soft: rgba(122, 122, 132, 0.24);
+}

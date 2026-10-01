@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-variant="blue" data-panels="float" data-density="regular">
+<html lang="en" data-bs-theme="light" data-panels="float" data-density="regular">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,20 +130,7 @@
         <!-- Accent presets -->
         <section id="SectionPresets">
             <h2 class="section-title">Accent presets</h2>
-            <p class="hero-sub">Ten presets, each with a light and dark tone, selected with a single <code>data-variant</code> attribute.</p>
-            <div class="orchis-swatches mb-3" id="variant-picker">
-                <button type="button" class="orchis-swatch variant-btn" data-variant="blue"><i class="sw-blue"></i>Blue</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="green"><i class="sw-green"></i>Green</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="purple"><i class="sw-purple"></i>Purple</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="sage"><i class="sw-sage"></i>Sage</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="slate"><i class="sw-slate"></i>Slate</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="orange"><i class="sw-orange"></i>Orange</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="pink"><i class="sw-pink"></i>Pink</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="red"><i class="sw-red"></i>Red</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="yellow"><i class="sw-yellow"></i>Yellow</button>
-                <button type="button" class="orchis-swatch variant-btn" data-variant="cyan"><i class="sw-cyan"></i>Cyan</button>
-            </div>
-            <p class="mb-0 hero-sub">Active: <strong id="active-variant-label">Blue</strong> · <code id="active-variant-code">data-variant="blue"</code></p>
+            
 
             <h3 class="h6 mt-4 mb-2">Floating window</h3>
             <div class="orchis-window mb-3">
@@ -832,7 +819,7 @@
                     <div class="carousel-item slide-c">
                         <div class="p-5 text-center">
                             <h3>Ten presets</h3>
-                            <p>Match any brand with <code>data-variant</code>.</p>
+                            <p>One accent, two modes, endless brands.</p>
                         </div>
                     </div>
                 </div>
@@ -1116,7 +1103,7 @@
             </div>
 
             <h3 class="h6 text-secondary">Usage</h3>
-            <p class="text-secondary mb-0">Preset: <code>&lt;html data-variant="purple"&gt;</code> ·
+            <p class="text-secondary mb-0">Preset: <code>&lt;html&gt;</code> ·
                 Floating panels: <code>data-panels="float"</code> ·
                 Density: <code>data-density="compact"</code> ·
                 Mode: <code>data-bs-theme="dark"</code></p>
@@ -1138,8 +1125,6 @@
         const themeToggle = document.getElementById('theme-toggle');
         const panelsToggle = document.getElementById('panels-toggle');
         const densityToggle = document.getElementById('density-toggle');
-        const variantLabel = document.getElementById('active-variant-label');
-        const variantCode = document.getElementById('active-variant-code');
         const liveToast = document.getElementById('liveToast');
         const liveToastBody = document.getElementById('liveToastBody');
 
@@ -1153,16 +1138,6 @@
             themeToggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
             const appearanceSwitch = document.getElementById('switchDark');
             if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
-        }
-
-        function applyVariant(name, notify) {
-            html.setAttribute('data-variant', name);
-            variantLabel.textContent = name.charAt(0).toUpperCase() + name.slice(1);
-            variantCode.textContent = 'data-variant="' + name + '"';
-            document.querySelectorAll('.variant-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.variant === name);
-            });
-            if (notify) announce('Accent preset switched to ' + name + '.');
         }
 
         function applyPanels(mode, notify) {
@@ -1184,7 +1159,6 @@
         }
 
         applyTheme('light');
-        applyVariant('blue', false);
         applyPanels('float', false);
         applyDensity('regular', false);
 
@@ -1206,10 +1180,6 @@
             applyTheme(e.target.checked ? 'dark' : 'light');
         });
 
-        document.getElementById('variant-picker').addEventListener('click', (e) => {
-            const btn = e.target.closest('.variant-btn');
-            if (btn) applyVariant(btn.dataset.variant, true);
-        });
 
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));

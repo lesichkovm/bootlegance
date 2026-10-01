@@ -117,7 +117,7 @@ button:focus,
 .btn-primary {
   background-color: var(--bs-success); /* Whitehall primary is green */
   border-color: var(--bs-success);
-  color: var(--bs-white);
+  color: #fff;
 }
 
 .btn-primary:hover {
@@ -186,13 +186,13 @@ button:focus,
 }
 
 .navbar-brand {
-  color: var(--bs-white) !important;
+  color: #fff !important;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
 .navbar .nav-link {
-  color: var(--bs-white) !important;
+  color: #fff !important;
   text-decoration: underline !important; /* Whitehall links always underlined */
 }
 
@@ -206,7 +206,7 @@ button:focus,
 .card {
   border: 1px solid var(--bs-border-color);
   border-left: 5px solid var(--bs-primary);
-  background-color: var(--bs-white);
+  background-color: #fff;
 }
 
 /* --------------------------------------------------------------------------

@@ -3,12 +3,11 @@
    Inspired by the retro-groove Gruvbox palette (morhetz/gruvbox).
    Include AFTER bootstrap.min.css.
 
-   Two official styles plus an optional bold background, all driven by
-   attributes on <html>:
+   One palette, two modes, plus an optional bold background:
 
-       <html data-bs-theme="dark"  data-variant="dark">   Gruvbox dark (default)
-       <html data-bs-theme="light" data-variant="light">  Gruvbox light
-       <html data-bs-theme="dark"  data-variant="dark" data-bold>  bold bg
+       <html data-bs-theme="dark">            Gruvbox dark
+       <html data-bs-theme="light">           Gruvbox light
+       <html data-bs-theme="dark" data-bold>  bold bg0_hard background
 
    Warm, earthy tones (browns, oranges, muted greens) with the high contrast
    and readability the palette is known for.
@@ -17,7 +16,7 @@
 /* --------------------------------------------------------------------------
    1. Palette
    -------------------------------------------------------------------------- */
-[data-variant="dark"] {
+:root {
   --gb-dark-bg0: #282828; --gb-dark-bg0-rgb: 40, 40, 40;
   --gb-dark-bg0-hard: #1d2021; --gb-dark-bg0-hard-rgb: 29, 32, 33;
   --gb-dark-bg0-soft: #32302f; --gb-dark-bg0-soft-rgb: 50, 48, 47;
@@ -47,7 +46,7 @@
   --gb-dark-neutral-orange: #d65d0e; --gb-dark-neutral-orange-rgb: 214, 93, 14;
 }
 
-[data-variant="light"] {
+[data-bs-theme="light"] {
   --gb-light-bg0: #fbf1c7; --gb-light-bg0-rgb: 251, 241, 199;
   --gb-light-bg0-hard: #f9f5d7; --gb-light-bg0-hard-rgb: 249, 245, 215;
   --gb-light-bg0-soft: #f2e5bc; --gb-light-bg0-soft-rgb: 242, 229, 188;
@@ -80,7 +79,7 @@
 /* --------------------------------------------------------------------------
    2. Roles — Gruvbox dark
    -------------------------------------------------------------------------- */
-[data-variant="dark"] {
+:root {
   --gb-bg: var(--gb-dark-bg0);
   --gb-bg-rgb: var(--gb-dark-bg0-rgb);
   --gb-surface: var(--gb-dark-bg1);
@@ -107,7 +106,7 @@
 }
 
 /* Gruvbox light */
-[data-variant="light"] {
+[data-bs-theme="light"] {
   --gb-bg: var(--gb-light-bg0);
   --gb-bg-rgb: var(--gb-light-bg0-rgb);
   --gb-surface: var(--gb-light-bg0-hard);
@@ -134,7 +133,7 @@
 }
 
 /* Bold background — the palette's harder, higher-contrast variant */
-[data-variant="dark"][data-bold] {
+[data-bold] {
   --gb-bg: var(--gb-dark-bg0-hard);
   --gb-bg-rgb: var(--gb-dark-bg0-hard-rgb);
   --gb-surface: var(--gb-dark-bg0);
@@ -143,7 +142,7 @@
   --gb-border: var(--gb-dark-bg2);
 }
 
-[data-variant="light"][data-bold] {
+[data-bs-theme="light"][data-bold] {
   --gb-bg: var(--gb-light-bg0-hard);
   --gb-bg-rgb: var(--gb-light-bg0-hard-rgb);
   --gb-surface: var(--gb-light-bg0);
@@ -211,7 +210,7 @@
   --bs-code-color: var(--gb-accent-info);
 }
 
-[data-variant="dark"] {
+:root {
   --gb-accent-success: var(--gb-dark-bright-green);
   --gb-accent-success-rgb: var(--gb-dark-bright-green-rgb);
   --gb-accent-warning: var(--gb-dark-bright-yellow);
@@ -230,7 +229,7 @@
   --gb-danger-deep: var(--gb-dark-neutral-red);
 }
 
-[data-variant="light"] {
+[data-bs-theme="light"] {
   --gb-accent-success: var(--gb-light-bright-green);
   --gb-accent-success-rgb: var(--gb-light-bright-green-rgb);
   --gb-accent-warning: var(--gb-light-bright-yellow);
@@ -1204,12 +1203,12 @@ pre.gb-code .gb-type { color: var(--gb-accent); }
 .gb-bg-bright-aqua { background-color: var(--gb-bright-aqua) !important; }
 .gb-bg-bright-orange { background-color: var(--gb-accent) !important; }
 
-[data-variant="dark"] {
+:root {
   --gb-bright-aqua: var(--gb-dark-bright-aqua);
   --gb-aqua-fg: var(--gb-dark-bg0-hard);
 }
 
-[data-variant="light"] {
+[data-bs-theme="light"] {
   --gb-bright-aqua: var(--gb-light-bright-aqua);
   --gb-aqua-fg: var(--gb-light-bg0);
 }

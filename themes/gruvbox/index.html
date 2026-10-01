@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" data-variant="dark">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -116,21 +116,8 @@
 
         <!-- Styles & palette -->
         <section id="SectionPalette">
-            <h2 class="section-title">Styles</h2>
-            <p class="hero-sub">Two official styles, plus a bold background for maximum contrast. Switching a style also sets <code>data-bs-theme</code>.</p>
-            <div class="style-pick mb-3" id="style-picker">
-                <button type="button" class="style-btn style-btn" data-variant="dark">
-                    <span class="style-preview"><span style="background:#282828"></span><span style="background:#3c3836"></span><span style="background:#ebdbb2"></span><span style="background:#fe8019"></span></span>
-                    <strong>Gruvbox Dark</strong><code>data-variant="dark"</code>
-                </button>
-                <button type="button" class="style-btn style-btn" data-variant="light">
-                    <span class="style-preview"><span style="background:#fbf1c7"></span><span style="background:#ebdbb2"></span><span style="background:#3c3836"></span><span style="background:#af3a03"></span></span>
-                    <strong>Gruvbox Light</strong><code>data-variant="light"</code>
-                </button>
-            </div>
-            <p class="mb-4">Active: <strong id="active-style">Gruvbox Dark</strong> ·
-                <code id="active-style-code">data-variant="dark"</code> ·
-                bold: <code id="active-bold-code">off</code></p>
+            <h2 class="section-title">Palette</h2>
+            <p class="mb-4">Bold background: <code id="active-bold-code">off</code> · toggle with the Bold button above.</p>
 
             <h3 class="h6 mb-2">Backgrounds <span class="text-secondary">— dark</span></h3>
             <div class="gb-swatches mb-4">
@@ -382,7 +369,7 @@
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>
-                        <th scope="col">Style</th>
+                        <th scope="col">Mode</th>
                         <th scope="col">Background</th>
                         <th scope="col">Foreground</th>
                         <th scope="col">Accent</th>
@@ -390,7 +377,7 @@
                 </thead>
                 <tbody>
                     <tr><td>Dark</td><td>#282828</td><td>#ebdbb2</td><td>#fe8019</td></tr>
-                    <tr><td>Dark bold</td><td>#1d2021</td><td>#ebdbb2</td><td>#fe8019</td></tr>
+                    <tr><td>Dark + bold</td><td>#1d2021</td><td>#ebdbb2</td><td>#fe8019</td></tr>
                     <tr><td>Light</td><td>#fbf1c7</td><td>#3c3836</td><td>#af3a03</td></tr>
                 </tbody>
             </table>
@@ -415,10 +402,10 @@
                         <input type="text" class="form-control" id="disabledField" value="Read only" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="selectField">Style</label>
+                        <label class="form-label" for="selectField">Appearance</label>
                         <select class="form-select" id="selectField">
-                            <option selected>Gruvbox Dark</option>
-                            <option>Gruvbox Light</option>
+                            <option selected>Dark</option>
+                            <option>Light</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -1145,8 +1132,7 @@
             </div>
 
             <h3 class="h6 text-secondary">Usage</h3>
-            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark" data-variant="dark"&gt;</code> ·
-                Light: <code>data-variant="light"</code> ·
+            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark"&gt;</code> · Light: <code>data-bs-theme="light"</code> ·
                 Bold background: <code>data-bold</code></p>
         </section>
 
@@ -1165,16 +1151,11 @@
         const html = document.documentElement;
         const toggle = document.getElementById('theme-toggle');
         const boldToggle = document.getElementById('bold-toggle');
-        const styleLabel = document.getElementById('active-style');
-        const styleCode = document.getElementById('active-style-code');
-        const boldCode = document.getElementById('active-bold-code');
+                        const boldCode = document.getElementById('active-bold-code');
         const liveToast = document.getElementById('liveToast');
         const liveToastBody = document.getElementById('liveToastBody');
 
-        // Gruvbox ships a dark and a light style.
-        const styleMode = { dark: 'dark', light: 'light' };
-        const styleNames = { dark: 'Gruvbox Dark', light: 'Gruvbox Light' };
-
+        //                 
         function announce(message) {
             liveToastBody.textContent = message;
             bootstrap.Toast.getOrCreateInstance(liveToast).show();
@@ -1185,17 +1166,6 @@
             toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
             const appearanceSwitch = document.getElementById('switchDark');
             if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
-        }
-
-        function applyStyle(name, notify) {
-            html.setAttribute('data-variant', name);
-            applyTheme(styleMode[name]);
-            styleLabel.textContent = styleNames[name];
-            styleCode.textContent = 'data-variant="' + name + '"';
-            document.querySelectorAll('.style-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.variant === name);
-            });
-            if (notify) announce('Switched to ' + styleNames[name] + '.');
         }
 
         function applyBold(isBold, notify) {
@@ -1209,7 +1179,6 @@
             if (notify) announce(isBold ? 'Bold background enabled.' : 'Regular background restored.');
         }
 
-        applyStyle('dark', false);
         applyBold(false, false);
 
         toggle.addEventListener('click', () => {
@@ -1226,10 +1195,6 @@
             applyTheme(e.target.checked ? 'light' : 'dark');
         });
 
-        document.getElementById('style-picker').addEventListener('click', (e) => {
-            const btn = e.target.closest('.style-btn');
-            if (btn) applyStyle(btn.dataset.variant, true);
-        });
 
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));

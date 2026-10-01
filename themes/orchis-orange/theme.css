@@ -1,0 +1,1372 @@
+/* ==========================================================================
+   Orchis — Bootstrap 5 Theme
+   Inspired by the Orchis GTK theme (Material Design × macOS).
+   Include AFTER bootstrap.min.css.
+
+   Orchis modes are opt-in attributes on <html> (or any ancestor):
+
+       data-bs-theme="light|dark"   Light / dark palette
+   Orchis orange — Bootstrap 5 Theme
+   A colour sibling of the Orchis theme: one accent preset, two modes.
+   Include AFTER bootstrap.min.css.
+
+       <html data-bs-theme="dark">    orange accent on dark surfaces
+       <html data-bs-theme="light">   orange accent on light surfaces
+   =+ */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Spacing — Material 4/8pt rhythm */
+  --orchis-space-1: 0.25rem;   /*  4px */
+  --orchis-space-2: 0.5rem;    /*  8px */
+  --orchis-space-3: 0.75rem;   /* 12px */
+  --orchis-space-4: 1rem;      /* 16px */
+  --orchis-space-5: 1.25rem;   /* 20px */
+  --orchis-space-6: 1.5rem;    /* 24px */
+  --orchis-space-7: 2rem;      /* 32px */
+
+  /* Corner rounding — generous, the signature of Orchis */
+  --orchis-radius-xs: 0.375rem;
+  --orchis-radius-sm: 0.625rem;
+  --orchis-radius-md: 0.875rem;
+  --orchis-radius-lg: 1.25rem;
+  --orchis-radius-xl: 1.75rem;
+  --orchis-radius-pill: 50rem;
+
+  /* Elevation — soft, layered shadows */
+  --orchis-elev-0: none;
+  --orchis-elev-1: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --orchis-elev-2: 0 2px 6px rgba(16, 24, 40, 0.07), 0 4px 12px rgba(16, 24, 40, 0.08);
+  --orchis-elev-3: 0 8px 16px rgba(16, 24, 40, 0.08), 0 16px 32px rgba(16, 24, 40, 0.1);
+  --orchis-elev-4: 0 16px 32px rgba(16, 24, 40, 0.1), 0 24px 56px rgba(16, 24, 40, 0.14);
+
+  /* Surfaces (light) */
+  --orchis-bg: #f4f5f7;
+  --orchis-surface: #ffffff;
+  --orchis-surface-alt: #eceef1;
+  --orchis-surface-sunken: #e3e6ea;
+  --orchis-overlay: rgba(255, 255, 255, 0.82);
+  --orchis-hairline: rgba(15, 23, 42, 0.1);
+  --orchis-hairline-2: rgba(15, 23, 42, 0.18);
+  --orchis-ink: #1f2430;
+  --orchis-ink-strong: #141824;
+  --orchis-ink-muted: #5c6474;
+
+  /* Accent (light) — overridden per variant */
+  --orchis-accent: #2a7fd4;
+  --orchis-accent-rgb: 42, 127, 212;
+  --orchis-accent-hover: #1c66b0;
+  --orchis-accent-hover-rgb: 28, 102, 176;
+  --orchis-accent-soft: rgba(42, 127, 212, 0.14);
+  --orchis-accent-tint: #e2eefb;
+  --orchis-on-accent: #ffffff;
+
+  /* Supporting colours */
+  --orchis-green: #3a944a;
+  --orchis-green-rgb: 58, 148, 74;
+  --orchis-yellow: #e9a00e;
+  --orchis-yellow-rgb: 233, 160, 14;
+  --orchis-red: #e01b24;
+  --orchis-red-rgb: 224, 27, 36;
+  --orchis-orange: #ed5b00;
+  --orchis-orange-rgb: 237, 91, 0;
+  --orchis-cyan: #0084a8;
+  --orchis-cyan-rgb: 0, 132, 168;
+  --orchis-slate: #5b6b7c;
+  --orchis-slate-rgb: 91, 107, 124;
+}
+
+[data-bs-theme="dark"] {
+  --orchis-bg: #15171c;
+  --orchis-surface: #1e2129;
+  --orchis-surface-alt: #262a34;
+  --orchis-surface-sunken: #101216;
+  --orchis-overlay: rgba(30, 33, 41, 0.85);
+  --orchis-hairline: rgba(255, 255, 255, 0.1);
+  --orchis-hairline-2: rgba(255, 255, 255, 0.2);
+  --orchis-ink: #e7e9ee;
+  --orchis-ink-strong: #ffffff;
+  --orchis-ink-muted: #a3aab8;
+
+  --orchis-green: #6cc07c;
+  --orchis-green-rgb: 108, 192, 124;
+  --orchis-yellow: #f2c14e;
+  --orchis-yellow-rgb: 242, 193, 78;
+  --orchis-red: #f26d6d;
+  --orchis-red-rgb: 242, 109, 109;
+  --orchis-orange: #ff9b54;
+  --orchis-orange-rgb: 255, 155, 84;
+  --orchis-cyan: #4cc7e8;
+  --orchis-cyan-rgb: 76, 199, 232;
+  --orchis-slate: #9aa8bd;
+  --orchis-slate-rgb: 154, 168, 189;
+
+  --orchis-elev-0: none;
+  --orchis-elev-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --orchis-elev-2: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --orchis-elev-3: 0 10px 24px rgba(0, 0, 0, 0.55);
+  --orchis-elev-4: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
+
+/* --------------------------------------------------------------------------
+   2. Accent presets
+   -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark mode: brighter, pastel-leaning accents */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------
+   3. Bootstrap variable overrides
+   -------------------------------------------------------------------------- */
+:root {
+  --bs-primary: var(--orchis-accent);
+  --bs-primary-rgb: var(--orchis-accent-rgb);
+  --bs-secondary: var(--orchis-slate);
+  --bs-secondary-rgb: var(--orchis-slate-rgb);
+  --bs-success: var(--orchis-green);
+  --bs-success-rgb: var(--orchis-green-rgb);
+  --bs-info: var(--orchis-cyan);
+  --bs-info-rgb: var(--orchis-cyan-rgb);
+  --bs-warning: var(--orchis-yellow);
+  --bs-warning-rgb: var(--orchis-yellow-rgb);
+  --bs-danger: var(--orchis-red);
+  --bs-danger-rgb: var(--orchis-red-rgb);
+  --bs-light: var(--orchis-surface-alt);
+  --bs-light-rgb: 236, 238, 241;
+  --bs-dark: var(--orchis-ink);
+  --bs-dark-rgb: 31, 36, 48;
+
+  --bs-body-bg: var(--orchis-bg);
+  --bs-body-color: var(--orchis-ink);
+  --bs-emphasis-color: var(--orchis-ink-strong);
+  --bs-secondary-color: var(--orchis-ink-muted);
+  --bs-tertiary-color: var(--orchis-ink-muted);
+  --bs-secondary-bg: var(--orchis-surface-alt);
+  --bs-tertiary-bg: var(--orchis-surface);
+  --bs-body-color-rgb: 31, 36, 48;
+  --bs-border-color: var(--orchis-hairline);
+  --bs-border-color-translucent: var(--orchis-hairline);
+
+  --bs-font-sans-serif: "Inter", "Ubuntu", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --bs-font-monospace: "JetBrains Mono", ui-monospace, "SF Mono", Menlo,
+    Consolas, monospace;
+  --bs-body-font-size: 0.9375rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.55;
+  --bs-body-letter-spacing: -0.003em;
+
+  --bs-border-radius: var(--orchis-radius-sm);
+  --bs-border-radius-sm: var(--orchis-radius-xs);
+  --bs-border-radius-lg: var(--orchis-radius-md);
+  --bs-border-radius-xl: var(--orchis-radius-lg);
+  --bs-border-radius-pill: var(--orchis-radius-pill);
+
+  --bs-focus-ring-width: 0.1875rem;
+  --bs-focus-ring-opacity: 0.35;
+  --bs-focus-ring-color: rgba(var(--orchis-accent-rgb), 0.35);
+  --bs-focus-ring-blur: 0;
+
+  --bs-link-color: var(--orchis-accent);
+  --bs-link-hover-color: var(--orchis-accent-hover);
+  --bs-link-decoration: none;
+  --bs-link-hover-decoration: underline;
+  --bs-code-color: var(--orchis-accent);
+}
+
+[data-bs-theme="dark"] {
+  --bs-light-rgb: 38, 42, 52;
+  --bs-dark-rgb: 231, 233, 238;
+  --bs-body-color-rgb: 231, 233, 238;
+}
+
+/* --------------------------------------------------------------------------
+   4. Floating panels — the signature Orchis look
+   -------------------------------------------------------------------------- */
+.panel {
+  background-color: var(--orchis-surface);
+  border: 1px solid var(--orchis-hairline);
+  border-radius: var(--orchis-radius-lg);
+  box-shadow: var(--orchis-elev-1);
+}
+
+.panel-elevated { box-shadow: var(--orchis-elev-2); }
+
+.panel-floating {
+  background-color: var(--orchis-surface);
+  border: 1px solid var(--orchis-hairline);
+  border-radius: var(--orchis-radius-xl);
+  box-shadow: var(--orchis-elev-3);
+  overflow: hidden;
+}
+
+/* Global switch: data-panels="float" detaches surfaces from the background */
+[data-panels="float"] .panel,
+[data-panels="float"] .card,
+[data-panels="float"] .adw-window,
+[data-panels="float"] .orchis-window {
+  box-shadow: var(--orchis-elev-2);
+}
+
+[data-panels="float"] .panel-floating {
+  box-shadow: var(--orchis-elev-4);
+}
+
+[data-panels="float"] .navbar {
+  border-radius: 0;
+}
+
+[data-panels="float"] .dropdown-menu,
+[data-panels="float"] .popover {
+  border-radius: var(--orchis-radius-md);
+}
+
+/* A complete Orchis window: floating header + content + action row */
+.orchis-window {
+  background-color: var(--orchis-surface);
+  border-radius: var(--orchis-radius-xl);
+  box-shadow: var(--orchis-elev-2);
+  overflow: hidden;
+}
+
+.orchis-header {
+  display: flex;
+  align-items: center;
+  gap: var(--orchis-space-2);
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  background-color: var(--orchis-overlay);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--orchis-hairline);
+}
+
+.orchis-header-title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.orchis-header-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--orchis-ink-muted);
+}
+
+.orchis-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--orchis-space-2);
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  background-color: var(--orchis-surface-alt);
+  border-top: 1px solid var(--orchis-hairline);
+}
+
+.orchis-body { padding: var(--orchis-space-4); }
+
+/* Material 3 navigation rail / list tiles */
+.orchis-list-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--orchis-space-3);
+  width: 100%;
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  border: none;
+  background: transparent;
+  border-radius: var(--orchis-radius-pill);
+  color: var(--orchis-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: start;
+  transition: background-color 0.15s ease;
+}
+
+.orchis-list-tile:hover { background-color: var(--orchis-surface-alt); }
+
+.orchis-list-tile.active {
+  background-color: var(--orchis-accent-tint);
+  color: var(--orchis-accent);
+}
+
+.orchis-list-tile-icon {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--orchis-radius-pill);
+  background-color: var(--orchis-accent-soft);
+  color: var(--orchis-accent);
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Base & typography
+   -------------------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--bs-body-letter-spacing);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--orchis-ink-strong);
+}
+
+h1, .h1,
+.display-1, .display-2, .display-3,
+.display-4, .display-5, .display-6 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: var(--orchis-accent);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+code, kbd, samp, pre {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.85em;
+}
+
+kbd {
+  background-color: var(--orchis-surface-alt);
+  border: 1px solid var(--orchis-hairline);
+  border-radius: var(--orchis-radius-xs);
+  box-shadow: 0 1px 0 var(--orchis-hairline-2);
+}
+
+blockquote {
+  border-inline-start: 3px solid var(--orchis-accent);
+  padding-inline-start: var(--orchis-space-4);
+  font-style: normal;
+}
+
+hr {
+  border-color: var(--orchis-hairline);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons — Material 3 roles
+   -------------------------------------------------------------------------- */
+.btn {
+  --bs-btn-font-weight: 600;
+  --bs-btn-border-radius: var(--orchis-radius-pill);
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: var(--orchis-space-5);
+  --bs-btn-font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--orchis-space-2);
+  letter-spacing: 0.01em;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease, background-color 0.15s ease,
+    transform 0.1s ease, border-color 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.98); box-shadow: none !important; }
+
+.btn:focus-visible {
+  outline: 2px solid var(--orchis-accent);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--orchis-accent);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-accent-hover);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-accent-hover);
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-disabled-bg: var(--orchis-surface-alt);
+  --bs-btn-disabled-border-color: transparent;
+  --bs-btn-disabled-color: var(--orchis-ink-muted);
+  --bs-btn-color: var(--orchis-on-accent);
+  --bs-btn-hover-color: var(--orchis-on-accent);
+  --bs-btn-active-color: var(--orchis-on-accent);
+  box-shadow: var(--orchis-elev-1);
+}
+
+.btn-primary:hover { box-shadow: var(--orchis-elev-2); }
+
+.btn-secondary {
+  --bs-btn-bg: var(--orchis-slate);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-ink-muted);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-ink-muted);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--orchis-green);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-green);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-green);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--orchis-red);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-red);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-red);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--orchis-yellow);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-yellow);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-yellow);
+  --bs-btn-color: var(--orchis-ink-strong);
+  --bs-btn-hover-color: var(--orchis-ink-strong);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--orchis-cyan);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-cyan);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-cyan);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--orchis-surface-alt);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-surface-sunken);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-surface-sunken);
+  --bs-btn-color: var(--orchis-ink);
+  --bs-btn-hover-color: var(--orchis-ink);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--orchis-ink);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--orchis-ink-strong);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--orchis-ink-strong);
+  --bs-btn-color: var(--orchis-bg);
+  --bs-btn-hover-color: var(--orchis-bg);
+}
+
+.btn-link {
+  --bs-btn-color: var(--orchis-accent);
+  --bs-btn-hover-color: var(--orchis-accent-hover);
+  text-decoration: none;
+}
+
+/* M3 tonal button */
+.btn.tonal,
+.btn-tonal {
+  background-color: var(--orchis-accent-tint);
+  color: var(--orchis-accent);
+  border-color: transparent;
+}
+
+.btn.tonal:hover,
+.btn-tonal:hover {
+  background-color: var(--orchis-accent-soft);
+  color: var(--orchis-accent);
+}
+
+/* M3 elevated button */
+.btn.elevated {
+  background-color: var(--orchis-surface);
+  color: var(--orchis-accent);
+  border-color: transparent;
+  box-shadow: var(--orchis-elev-1);
+}
+
+.btn.elevated:hover { box-shadow: var(--orchis-elev-2); }
+
+/* M3 text button */
+.btn.text,
+.btn-text {
+  background-color: transparent;
+  color: var(--orchis-accent);
+  border-color: transparent;
+  padding-inline: var(--orchis-space-3);
+}
+
+.btn.text:hover,
+.btn-text:hover { background-color: var(--orchis-accent-soft); }
+
+.btn-group > .btn { border-radius: 0; }
+.btn-group > .btn:first-child {
+  border-start-start-radius: var(--orchis-radius-pill);
+  border-end-start-radius: var(--orchis-radius-pill);
+}
+.btn-group > .btn:last-child {
+  border-start-end-radius: var(--orchis-radius-pill);
+  border-end-end-radius: var(--orchis-radius-pill);
+}
+
+.btn-group > .btn-check:checked + .btn {
+  background-color: var(--orchis-accent-tint);
+  border-color: var(--orchis-accent-tint);
+  color: var(--orchis-accent);
+}
+
+.btn-close {
+  border-radius: var(--orchis-radius-pill);
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+  background-color: var(--orchis-surface-alt);
+}
+
+/* --------------------------------------------------------------------------
+   7. Navbar, toolbars & menus
+   -------------------------------------------------------------------------- */
+.navbar {
+  --bs-navbar-padding-y: var(--orchis-space-2);
+  min-height: 3.5rem;
+  background-color: var(--orchis-overlay) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--orchis-hairline);
+  box-shadow: none;
+}
+
+.navbar .navbar-brand { font-weight: 800; letter-spacing: -0.02em; }
+
+.navbar .nav-link {
+  --bs-nav-link-color: var(--orchis-ink-muted);
+  --bs-nav-link-hover-color: var(--orchis-ink);
+  --bs-nav-link-active-color: var(--orchis-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--orchis-radius-pill);
+  padding-inline: var(--orchis-space-3);
+}
+
+.navbar .navbar-toggler {
+  border: none;
+  box-shadow: none;
+  border-radius: var(--orchis-radius-pill);
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--orchis-surface);
+  --bs-dropdown-color: var(--orchis-ink);
+  --bs-dropdown-border-color: var(--orchis-hairline);
+  --bs-dropdown-link-color: var(--orchis-ink);
+  --bs-dropdown-link-hover-color: var(--orchis-accent);
+  --bs-dropdown-link-hover-bg: var(--orchis-accent-soft);
+  --bs-dropdown-link-active-color: var(--orchis-accent);
+  --bs-dropdown-link-active-bg: var(--orchis-accent-soft);
+  --bs-dropdown-link-disabled-color: var(--orchis-ink-muted);
+  --bs-dropdown-border-radius: var(--orchis-radius-md);
+  --bs-dropdown-link-border-radius: var(--orchis-radius-sm);
+  --bs-dropdown-padding-y: var(--orchis-space-2);
+  border: 1px solid var(--orchis-hairline);
+  padding: var(--orchis-space-2);
+  box-shadow: var(--orchis-elev-3);
+  font-size: 0.875rem;
+}
+
+.dropdown-item {
+  padding: var(--orchis-space-2) var(--orchis-space-3);
+  border-radius: var(--orchis-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--orchis-space-2);
+}
+
+.dropdown-item:active {
+  background-color: var(--orchis-accent-soft);
+  color: var(--orchis-accent);
+}
+
+.dropdown-divider {
+  border-color: var(--orchis-hairline);
+  margin: var(--orchis-space-2) 0;
+}
+
+.dropdown-header {
+  color: var(--orchis-ink-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   8. Forms
+   -------------------------------------------------------------------------- */
+.form-label {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  margin-bottom: var(--orchis-space-1);
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--orchis-surface);
+  border: 1px solid var(--orchis-hairline-2);
+  border-radius: var(--orchis-radius-sm);
+  color: var(--orchis-ink);
+  min-height: 2.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.form-control,
+.form-select {
+  padding: 0.5rem var(--orchis-space-4);
+}
+
+/* M3 outlined fields get a floating label treatment on focus */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--orchis-accent);
+  box-shadow: 0 0 0 3px var(--orchis-accent-soft);
+  outline: none;
+  background-color: var(--orchis-surface);
+}
+
+.form-control::placeholder { color: var(--orchis-ink-muted); opacity: 0.75; }
+
+.form-control:disabled,
+.form-select:disabled {
+  background-color: var(--orchis-surface-alt);
+  color: var(--orchis-ink-muted);
+}
+
+.input-group-text {
+  background-color: var(--orchis-surface-alt);
+  color: var(--orchis-ink-muted);
+  border-color: var(--orchis-hairline-2);
+}
+
+.input-group > :not(:first-child) { margin-left: -1px; }
+.input-group .form-control,
+.input-group .form-select,
+.input-group .btn { border-radius: 0; }
+.input-group > :first-child {
+  border-start-start-radius: var(--orchis-radius-sm);
+  border-end-start-radius: var(--orchis-radius-sm);
+}
+.input-group > :last-child {
+  border-start-end-radius: var(--orchis-radius-sm);
+  border-end-end-radius: var(--orchis-radius-sm);
+}
+
+.form-check {
+  padding-left: 1.75rem;
+  min-height: 1.5rem;
+}
+
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: -1.75rem;
+  margin-top: 0.125rem;
+  border: 2px solid var(--orchis-hairline-2);
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--orchis-accent);
+  border-color: var(--orchis-accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--orchis-accent);
+  box-shadow: 0 0 0 3px var(--orchis-accent-soft);
+}
+
+.form-check-label { font-size: 0.875rem; }
+
+/* M3 switch */
+.form-switch { padding-left: 3.25rem; }
+
+.form-switch .form-check-input {
+  width: 3rem;
+  height: 1.75rem;
+  margin-left: -3.25rem;
+  border: 2px solid var(--orchis-hairline-2);
+  background-color: var(--orchis-surface-sunken);
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--orchis-accent);
+  border-color: var(--orchis-accent);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--orchis-accent);
+  border: 3px solid var(--orchis-surface);
+  box-shadow: var(--orchis-elev-1);
+}
+
+.form-range::-moz-range-thumb {
+  background-color: var(--orchis-accent);
+  border: 3px solid var(--orchis-surface);
+}
+
+.form-range::-webkit-slider-runnable-track { background-color: var(--orchis-accent-tint); }
+.form-range::-moz-range-track { background-color: var(--orchis-accent-tint); }
+
+.form-text,
+.invalid-feedback,
+.valid-feedback { font-size: 0.75rem; }
+
+.form-text { color: var(--orchis-ink-muted); }
+
+.form-control-color {
+  width: 2.75rem;
+  height: 2.5rem;
+  padding: var(--orchis-space-1);
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: calc(3.75rem + 2px);
+  border-radius: var(--orchis-radius-sm);
+}
+
+.form-floating > label {
+  color: var(--orchis-ink-muted);
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  --bs-card-bg: var(--orchis-surface);
+  --bs-card-border-color: var(--orchis-hairline);
+  --bs-card-cap-bg: transparent;
+  --bs-card-border-radius: var(--orchis-radius-lg);
+  box-shadow: var(--orchis-elev-1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--orchis-elev-2);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--orchis-hairline);
+  border-radius: var(--orchis-radius-lg) var(--orchis-radius-lg) 0 0 !important;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+}
+
+.card-footer {
+  background-color: var(--orchis-surface-alt);
+  border-top: 1px solid var(--orchis-hairline);
+  border-radius: 0 0 var(--orchis-radius-lg) var(--orchis-radius-lg) !important;
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+}
+
+.card-body { padding: var(--orchis-space-4); }
+
+.card-title { font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   10. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: var(--orchis-surface);
+  --bs-table-color: var(--orchis-ink);
+  --bs-table-border-color: var(--orchis-hairline);
+  --bs-table-striped-bg: var(--orchis-surface-alt);
+  --bs-table-striped-color: var(--orchis-ink);
+  --bs-table-hover-bg: var(--orchis-accent-soft);
+  --bs-table-hover-color: var(--orchis-ink);
+  border-color: var(--orchis-hairline);
+  border-radius: var(--orchis-radius-md);
+  overflow: hidden;
+}
+
+.table > :not(caption) > * > * {
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+}
+
+.table thead th {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--orchis-ink-muted);
+  background-color: var(--orchis-surface-alt);
+  border-bottom: 1px solid var(--orchis-hairline);
+}
+
+.table > :not(caption) > * > * + * { border-left-width: 0; }
+
+/* --------------------------------------------------------------------------
+   11. Navs, tabs & pagination
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--orchis-hairline);
+  --bs-nav-tabs-link-active-color: var(--orchis-accent);
+  --bs-nav-tabs-link-active-bg: var(--orchis-surface);
+  --bs-nav-tabs-link-active-border-color: var(--orchis-hairline);
+  border-bottom: 1px solid var(--orchis-hairline);
+  gap: var(--orchis-space-1);
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--orchis-radius-sm) var(--orchis-radius-sm) 0 0;
+  color: var(--orchis-ink-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: var(--orchis-accent);
+  color: var(--orchis-accent);
+}
+
+.nav-segmented {
+  display: inline-flex;
+  gap: var(--orchis-space-1);
+  padding: var(--orchis-space-1);
+  background-color: var(--orchis-surface-alt);
+  border-radius: var(--orchis-radius-pill);
+}
+
+.nav-segmented .nav-link {
+  border-radius: var(--orchis-radius-pill);
+  color: var(--orchis-ink-muted);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: var(--orchis-space-1) var(--orchis-space-4);
+}
+
+.nav-segmented .nav-link.active {
+  background-color: var(--orchis-surface);
+  color: var(--orchis-accent);
+  box-shadow: var(--orchis-elev-1);
+}
+
+.nav-pills { gap: var(--orchis-space-1); }
+
+.nav-pills .nav-link {
+  border-radius: var(--orchis-radius-pill);
+  color: var(--orchis-ink-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: var(--orchis-surface-alt);
+  color: var(--orchis-ink);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--orchis-accent);
+  color: var(--orchis-on-accent);
+}
+
+.nav-underline {
+  border-bottom: 1px solid var(--orchis-hairline);
+  gap: var(--orchis-space-3);
+}
+
+.nav-underline .nav-link {
+  color: var(--orchis-ink-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-underline .nav-link.active {
+  color: var(--orchis-accent);
+  border-bottom-color: var(--orchis-accent);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: var(--orchis-ink-muted);
+  --bs-breadcrumb-item-active-color: var(--orchis-ink-muted);
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item a { color: var(--orchis-accent); }
+
+.pagination {
+  --bs-pagination-color: var(--orchis-ink);
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-color: transparent;
+  --bs-pagination-hover-color: var(--orchis-accent);
+  --bs-pagination-hover-bg: var(--orchis-accent-soft);
+  --bs-pagination-active-bg: var(--orchis-accent);
+  --bs-pagination-active-border-color: transparent;
+  --bs-pagination-active-color: var(--orchis-on-accent);
+  --bs-pagination-disabled-color: var(--orchis-ink-muted);
+  --bs-pagination-disabled-bg: transparent;
+  --bs-pagination-disabled-border-color: transparent;
+  gap: var(--orchis-space-1);
+}
+
+.page-link {
+  border-radius: var(--orchis-radius-pill) !important;
+  font-weight: 600;
+  min-width: 2.25rem;
+  text-align: center;
+}
+
+.page-item.active .page-link { box-shadow: var(--orchis-elev-1); }
+
+.page-link:focus {
+  outline: 2px solid var(--orchis-accent);
+  outline-offset: 1px;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   12. Alerts, badges & list groups
+   -------------------------------------------------------------------------- */
+.alert {
+  --bs-alert-bg: var(--orchis-surface);
+  --bs-alert-border-color: var(--orchis-hairline);
+  --bs-alert-color: var(--orchis-ink);
+  border-radius: var(--orchis-radius-md);
+  box-shadow: var(--orchis-elev-1);
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  font-size: 0.875rem;
+}
+
+.alert-primary {
+  --bs-alert-color: var(--orchis-accent);
+  --bs-alert-bg: var(--orchis-accent-tint);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-success {
+  --bs-alert-bg: rgba(var(--orchis-green-rgb), 0.14);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-danger {
+  --bs-alert-bg: rgba(var(--orchis-red-rgb), 0.14);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-warning {
+  --bs-alert-bg: rgba(var(--orchis-yellow-rgb), 0.18);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-info {
+  --bs-alert-bg: rgba(var(--orchis-cyan-rgb), 0.14);
+  --bs-alert-border-color: transparent;
+}
+
+.alert-heading { font-weight: 700; }
+
+.badge {
+  --bs-badge-font-weight: 600;
+  --bs-badge-padding-y: 0.3em;
+  --bs-badge-padding-x: 0.6em;
+  border-radius: var(--orchis-radius-pill);
+  font-size: 0.75rem;
+}
+
+.badge.bg-primary { background-color: var(--orchis-accent); color: var(--orchis-on-accent); }
+.badge.bg-secondary { background-color: var(--orchis-slate); color: #ffffff; }
+.badge.bg-success { background-color: var(--orchis-green); color: #ffffff; }
+.badge.bg-danger { background-color: var(--orchis-red); color: #ffffff; }
+.badge.bg-warning { background-color: var(--orchis-yellow); color: var(--orchis-ink-strong); }
+.badge.bg-info { background-color: var(--orchis-cyan); color: #ffffff; }
+.badge.bg-light { background-color: var(--orchis-surface-alt); color: var(--orchis-ink); border: 1px solid var(--orchis-hairline); }
+.badge.bg-dark { background-color: var(--orchis-ink); color: var(--orchis-bg); }
+
+.list-group {
+  --bs-list-group-bg: var(--orchis-surface);
+  --bs-list-group-color: var(--orchis-ink);
+  --bs-list-group-border-color: var(--orchis-hairline);
+  --bs-list-group-border-radius: var(--orchis-radius-md);
+  --bs-list-group-action-hover-bg: var(--orchis-surface-alt);
+  --bs-list-group-action-hover-color: var(--orchis-ink);
+  --bs-list-group-action-active-bg: var(--orchis-accent);
+  --bs-list-group-action-active-color: var(--orchis-on-accent);
+  --bs-list-group-disabled-color: var(--orchis-ink-muted);
+  border-radius: var(--orchis-radius-md);
+  overflow: hidden;
+  box-shadow: var(--orchis-elev-1);
+}
+
+.list-group-item {
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  background-color: var(--orchis-surface);
+  border-color: var(--orchis-hairline);
+}
+
+.list-group-item.active {
+  background-color: var(--orchis-accent);
+  border-color: var(--orchis-accent);
+  color: var(--orchis-on-accent);
+}
+
+.list-group-inset {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   13. Progress & spinners
+   -------------------------------------------------------------------------- */
+.progress {
+  --bs-progress-bg: var(--orchis-surface-alt);
+  --bs-progress-bar-bg: var(--orchis-accent);
+  --bs-progress-border-radius: var(--orchis-radius-pill);
+  height: 0.5rem;
+  box-shadow: none;
+}
+
+.progress-bar {
+  background-color: var(--orchis-accent);
+  border-radius: var(--orchis-radius-pill);
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.22) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.22) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+.spinner-border,
+.spinner-grow { --bs-spinner-border-width: 0.1875rem; }
+
+.spinner-border { border-radius: 50%; }
+.spinner-grow { border-radius: var(--orchis-radius-pill); }
+
+/* --------------------------------------------------------------------------
+   14. Accordions
+   -------------------------------------------------------------------------- */
+.accordion {
+  --bs-accordion-bg: var(--orchis-surface);
+  --bs-accordion-border-color: var(--orchis-hairline);
+  --bs-accordion-border-radius: var(--orchis-radius-md);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 3px var(--orchis-accent-soft);
+  --bs-accordion-active-bg: var(--orchis-accent-tint);
+  --bs-accordion-active-color: var(--orchis-accent);
+  gap: var(--orchis-space-2);
+}
+
+.accordion-item {
+  overflow: hidden;
+  border-radius: var(--orchis-radius-md) !important;
+  box-shadow: var(--orchis-elev-1);
+}
+
+.accordion-button {
+  font-weight: 600;
+  padding: var(--orchis-space-3) var(--orchis-space-4);
+  background-color: var(--orchis-surface);
+  color: var(--orchis-ink);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--orchis-accent-tint);
+  color: var(--orchis-accent);
+  box-shadow: inset 0 -1px 0 var(--orchis-hairline);
+}
+
+.accordion-button::after {
+  background-size: 1.125rem;
+  opacity: 0.6;
+}
+
+.accordion-body {
+  padding: var(--orchis-space-4);
+  font-size: 0.875rem;
+  background-color: var(--orchis-surface);
+  color: var(--orchis-ink);
+}
+
+.accordion-flush { background-color: transparent; }
+
+.accordion-flush .accordion-item {
+  background-color: var(--orchis-surface);
+  border: 1px solid var(--orchis-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   15. Modals, offcanvas, popovers & toasts
+   -------------------------------------------------------------------------- */
+.modal {
+  --bs-modal-bg: var(--orchis-surface);
+  --bs-modal-border-color: var(--orchis-hairline);
+  --bs-modal-border-radius: var(--orchis-radius-xl);
+  --bs-modal-header-border-color: transparent;
+  --bs-modal-footer-border-color: transparent;
+}
+
+.modal-content {
+  border: 1px solid var(--orchis-hairline);
+  border-radius: var(--orchis-radius-xl);
+  box-shadow: var(--orchis-elev-4);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: var(--orchis-space-5) var(--orchis-space-5) var(--orchis-space-3);
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.modal-body {
+  padding: 0 var(--orchis-space-5) var(--orchis-space-4);
+  font-size: 0.9375rem;
+}
+
+.modal-footer {
+  padding: var(--orchis-space-2) var(--orchis-space-5) var(--orchis-space-5);
+  gap: var(--orchis-space-2);
+}
+
+.modal-backdrop {
+  --bs-backdrop-bg: 0;
+  --bs-backdrop-opacity: 0.42;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: var(--orchis-surface);
+  --bs-offcanvas-border-color: var(--orchis-hairline);
+  --bs-offcanvas-width: 22rem;
+}
+
+.offcanvas-header {
+  padding: var(--orchis-space-4);
+  border-bottom: 1px solid var(--orchis-hairline);
+}
+
+.offcanvas-title { font-weight: 700; }
+
+.popover {
+  --bs-popover-bg: var(--orchis-surface);
+  --bs-popover-border-color: var(--orchis-hairline);
+  --bs-popover-body-color: var(--orchis-ink);
+  --bs-popover-header-bg: transparent;
+  --bs-popover-header-color: var(--orchis-ink-strong);
+  --bs-popover-border-radius: var(--orchis-radius-md);
+  box-shadow: var(--orchis-elev-3);
+  font-size: 0.8125rem;
+}
+
+.popover-header {
+  font-weight: 700;
+  border-bottom: 1px solid var(--orchis-hairline);
+}
+
+.tooltip {
+  --bs-tooltip-bg: var(--orchis-ink);
+  --bs-tooltip-color: var(--orchis-bg);
+  --bs-tooltip-border-radius: var(--orchis-radius-xs);
+  font-size: 0.75rem;
+  padding: var(--orchis-space-1) var(--orchis-space-2);
+}
+
+.toast {
+  --bs-toast-bg: var(--orchis-surface);
+  --bs-toast-border-color: var(--orchis-hairline);
+  --bs-toast-header-bg: transparent;
+  --bs-toast-header-color: var(--orchis-ink);
+  --bs-toast-border-radius: var(--orchis-radius-lg);
+  box-shadow: var(--orchis-elev-3);
+  font-size: 0.875rem;
+}
+
+.toast-header {
+  font-weight: 700;
+  border-bottom: 1px solid var(--orchis-hairline);
+}
+
+.toast-body { padding: var(--orchis-space-3) var(--orchis-space-4); }
+
+/* --------------------------------------------------------------------------
+   16. Carousel & placeholders
+   -------------------------------------------------------------------------- */
+.carousel-item {
+  border-radius: var(--orchis-radius-lg);
+  overflow: hidden;
+}
+
+.carousel-caption { text-shadow: none; }
+
+.carousel-indicators [data-bs-target] {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--orchis-radius-pill);
+  border: none;
+  background-color: #ffffff;
+  opacity: 0.45;
+}
+
+.carousel-indicators .active { opacity: 1; }
+
+.placeholder {
+  background-color: currentColor;
+  border-radius: var(--orchis-radius-xs);
+  opacity: 0.15;
+}
+
+.placeholder-wave {
+  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-size: 200% 100%;
+}
+
+.placeholder-glow .placeholder {
+  animation: orchis-placeholder-glow 2s ease-in-out infinite;
+}
+
+@keyframes orchis-placeholder-glow {
+  50% { opacity: 0.3; }
+}
+
+/* --------------------------------------------------------------------------
+   17. Density, utilities & motion
+   -------------------------------------------------------------------------- */
+[data-density="compact"] {
+  --orchis-space-1: 0.125rem;
+  --orchis-space-2: 0.375rem;
+  --orchis-space-3: 0.5rem;
+  --orchis-space-4: 0.75rem;
+  --orchis-space-5: 1rem;
+  --orchis-space-6: 1.25rem;
+  --orchis-space-7: 1.5rem;
+}
+
+[data-density="compact"] .btn { --bs-btn-padding-y: 0.3125rem; }
+[data-density="compact"] .form-control,
+[data-density="compact"] .form-select,
+[data-density="compact"] .form-control,
+[data-density="compact"] .form-select { min-height: 2rem; }
+
+.text-secondary { color: var(--orchis-ink-muted) !important; }
+
+.shadow-sm { box-shadow: var(--orchis-elev-1) !important; }
+.shadow { box-shadow: var(--orchis-elev-2) !important; }
+.shadow-lg { box-shadow: var(--orchis-elev-3) !important; }
+
+.rounded-4 { border-radius: var(--orchis-radius-lg) !important; }
+.rounded-5 { border-radius: var(--orchis-radius-xl) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card,
+  .btn-close,
+  .form-control,
+  .form-select,
+  .form-check-input {
+    transition: none;
+  }
+
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+/* --------------------------------------------------------------------------
+   Accent preset: orange
+   -------------------------------------------------------------------------- */
+:root {
+  --orchis-accent: #ed5b00; --orchis-accent-rgb: 237, 91, 0;
+    --orchis-accent-hover: #c94900; --orchis-accent-hover-rgb: 201, 73, 0;
+    --orchis-accent-soft: rgba(237, 91, 0, 0.16); --orchis-accent-tint: #fdeade;
+    --orchis-on-accent: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+  --orchis-accent: #ffa869; --orchis-accent-rgb: 255, 168, 105;
+    --orchis-accent-hover: #ffbf90; --orchis-accent-hover-rgb: 255, 191, 144;
+    --orchis-accent-soft: rgba(255, 168, 105, 0.2); --orchis-accent-tint: #33231a;
+    --orchis-on-accent: #10161f;
+}

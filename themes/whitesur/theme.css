@@ -976,7 +976,7 @@ hr {
   --bs-dropdown-border-color: var(--ws-hairline);
   --bs-dropdown-link-color: var(--bs-body-color);
   --bs-dropdown-link-hover-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-bg: var(--bs-blue);
+  --bs-dropdown-link-hover-bg: var(--bs-primary);
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: var(--bs-primary);
   --bs-dropdown-link-disabled-color: var(--ws-text-secondary);

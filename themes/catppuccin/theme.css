@@ -1,130 +1,20 @@
 /* ==========================================================================
-   Catppuccin — Bootstrap 5 Theme
+   Mocha — Bootstrap 5 Theme
    Built on the official Catppuccin palette (catppuccin.com/palette).
    Include AFTER bootstrap.min.css.
 
-   Catppuccin is a flavour-first theme: pick a flavour and the entire UI —
-   surfaces, text, borders and accents — is derived from it.
+   One flavour, two modes:
 
-       <html data-bs-theme="dark" data-variant="mocha">     (default)
-       <html data-bs-theme="dark" data-variant="macchiato">
-       <html data-bs-theme="dark" data-variant="frappe">
-       <html data-bs-theme="light" data-variant="latte">
+       <html data-bs-theme="dark">    Mocha dark surfaces
+       <html data-bs-theme="light">   Mocha accents on Latte surfaces
 
-   Flavour ↔ Bootstrap mode: Latte is the light flavour, the other three are
-   dark. Colour names are exposed as tokens (--ct-mauve, --ct-teal, …) and as
-   utility classes (.ct-text-mauve, .ct-bg-mauve, .ct-chip-mauve).
+   The other flavours are separate themes with identical structure.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Flavours
    -------------------------------------------------------------------------- */
-[data-variant="latte"] {
-  --ct-rose: #dc8a78; --ct-rose-rgb: 220, 138, 120;
-  --ct-flamingo: #dd7878; --ct-flamingo-rgb: 221, 120, 120;
-  --ct-pink: #ea76cb; --ct-pink-rgb: 234, 118, 203;
-  --ct-mauve: #8839ef; --ct-mauve-rgb: 136, 57, 239;
-  --ct-red: #d20f39; --ct-red-rgb: 210, 15, 57;
-  --ct-maroon: #e64553; --ct-maroon-rgb: 230, 69, 83;
-  --ct-peach: #fe640b; --ct-peach-rgb: 254, 100, 11;
-  --ct-yellow: #df8e1d; --ct-yellow-rgb: 223, 142, 29;
-  --ct-green: #40a02b; --ct-green-rgb: 64, 160, 43;
-  --ct-teal: #179299; --ct-teal-rgb: 23, 146, 153;
-  --ct-sky: #04a5e5; --ct-sky-rgb: 4, 165, 229;
-  --ct-sapphire: #209fb5; --ct-sapphire-rgb: 32, 159, 181;
-  --ct-blue: #1e66f5; --ct-blue-rgb: 30, 102, 245;
-  --ct-lavender: #7287fd; --ct-lavender-rgb: 114, 135, 253;
-  --ct-text: #4c4f69; --ct-text-rgb: 76, 79, 105;
-  --ct-subtext1: #5c5f77; --ct-subtext1-rgb: 92, 95, 119;
-  --ct-subtext0: #6c6f85; --ct-subtext0-rgb: 108, 111, 133;
-  --ct-overlay2: #7c7f93; --ct-overlay2-rgb: 124, 127, 147;
-  --ct-overlay1: #8c8fa1; --ct-overlay1-rgb: 140, 143, 161;
-  --ct-overlay0: #9ca0b0; --ct-overlay0-rgb: 156, 160, 176;
-  --ct-surface2: #acb0be; --ct-surface2-rgb: 172, 176, 190;
-  --ct-surface1: #bcc0cc; --ct-surface1-rgb: 188, 192, 204;
-  --ct-surface0: #ccd0da; --ct-surface0-rgb: 204, 208, 218;
-  --ct-base: #eff1f5; --ct-base-rgb: 239, 241, 245;
-  --ct-mantle: #e6e9ef; --ct-mantle-rgb: 230, 233, 239;
-  --ct-crust: #dce0e8; --ct-crust-rgb: 220, 224, 232;
-
-  --ct-accent: var(--ct-mauve);
-  --ct-accent-hi: var(--ct-lavender);
-  --ct-accent-soft: rgba(var(--ct-mauve-rgb), 0.16);
-  --ct-on-accent: #ffffff;
-  --ct-shadow: 0 1px 2px rgba(76, 79, 105, 0.1), 0 4px 12px rgba(76, 79, 105, 0.08);
-}
-
-[data-variant="frappe"] {
-  --ct-rose: #f2cdcd; --ct-rose-rgb: 242, 205, 205;
-  --ct-flamingo: #eebebe; --ct-flamingo-rgb: 238, 190, 190;
-  --ct-pink: #f4b8e4; --ct-pink-rgb: 244, 184, 228;
-  --ct-mauve: #ca9ee6; --ct-mauve-rgb: 202, 158, 230;
-  --ct-red: #e78284; --ct-red-rgb: 231, 130, 132;
-  --ct-maroon: #ea999c; --ct-maroon-rgb: 234, 153, 156;
-  --ct-peach: #ef9f76; --ct-peach-rgb: 239, 159, 118;
-  --ct-yellow: #e5c890; --ct-yellow-rgb: 229, 200, 144;
-  --ct-green: #a6d189; --ct-green-rgb: 166, 209, 137;
-  --ct-teal: #81c8be; --ct-teal-rgb: 129, 200, 190;
-  --ct-sky: #99d1db; --ct-sky-rgb: 153, 209, 219;
-  --ct-sapphire: #85c1dc; --ct-sapphire-rgb: 133, 193, 220;
-  --ct-blue: #8caaee; --ct-blue-rgb: 140, 170, 238;
-  --ct-lavender: #babbf1; --ct-lavender-rgb: 186, 187, 241;
-  --ct-text: #c6d0f5; --ct-text-rgb: 198, 208, 245;
-  --ct-subtext1: #b5bfe2; --ct-subtext1-rgb: 181, 191, 226;
-  --ct-subtext0: #a5adce; --ct-subtext0-rgb: 165, 173, 206;
-  --ct-overlay2: #949cbb; --ct-overlay2-rgb: 148, 156, 187;
-  --ct-overlay1: #838ba7; --ct-overlay1-rgb: 131, 139, 167;
-  --ct-overlay0: #737994; --ct-overlay0-rgb: 115, 121, 148;
-  --ct-surface2: #626880; --ct-surface2-rgb: 98, 104, 128;
-  --ct-surface1: #51576d; --ct-surface1-rgb: 81, 87, 109;
-  --ct-surface0: #414559; --ct-surface0-rgb: 65, 69, 89;
-  --ct-base: #303446; --ct-base-rgb: 48, 52, 70;
-  --ct-mantle: #292c3c; --ct-mantle-rgb: 41, 44, 60;
-  --ct-crust: #232634; --ct-crust-rgb: 35, 38, 52;
-
-  --ct-accent: var(--ct-mauve);
-  --ct-accent-hi: var(--ct-lavender);
-  --ct-accent-soft: rgba(var(--ct-mauve-rgb), 0.2);
-  --ct-on-accent: #232634;
-  --ct-shadow: 0 1px 2px rgba(17, 17, 27, 0.5), 0 4px 12px rgba(17, 17, 27, 0.4);
-}
-
-[data-variant="macchiato"] {
-  --ct-rose: #f6d6d6; --ct-rose-rgb: 246, 214, 214;
-  --ct-flamingo: #f2cdcd; --ct-flamingo-rgb: 242, 205, 205;
-  --ct-pink: #f5bde6; --ct-pink-rgb: 245, 189, 230;
-  --ct-mauve: #c6a0f6; --ct-mauve-rgb: 198, 160, 246;
-  --ct-red: #ed8796; --ct-red-rgb: 237, 135, 150;
-  --ct-maroon: #ee99a0; --ct-maroon-rgb: 238, 153, 160;
-  --ct-peach: #f5a97f; --ct-peach-rgb: 245, 169, 127;
-  --ct-yellow: #eed49f; --ct-yellow-rgb: 238, 212, 159;
-  --ct-green: #a6da95; --ct-green-rgb: 166, 218, 149;
-  --ct-teal: #8bd5ca; --ct-teal-rgb: 139, 213, 202;
-  --ct-sky: #91d7e3; --ct-sky-rgb: 145, 215, 227;
-  --ct-sapphire: #7dc4e4; --ct-sapphire-rgb: 125, 196, 228;
-  --ct-blue: #8aadf4; --ct-blue-rgb: 138, 173, 244;
-  --ct-lavender: #b7bdf8; --ct-lavender-rgb: 183, 189, 248;
-  --ct-text: #cad3f5; --ct-text-rgb: 202, 211, 245;
-  --ct-subtext1: #b8c0e0; --ct-subtext1-rgb: 184, 192, 224;
-  --ct-subtext0: #a5adcb; --ct-subtext0-rgb: 165, 173, 203;
-  --ct-overlay2: #939ab7; --ct-overlay2-rgb: 147, 154, 183;
-  --ct-overlay1: #8087a2; --ct-overlay1-rgb: 128, 135, 162;
-  --ct-overlay0: #6e738d; --ct-overlay0-rgb: 110, 115, 141;
-  --ct-surface2: #5b6078; --ct-surface2-rgb: 91, 96, 120;
-  --ct-surface1: #494d64; --ct-surface1-rgb: 73, 77, 100;
-  --ct-surface0: #363a4f; --ct-surface0-rgb: 54, 58, 79;
-  --ct-base: #24273a; --ct-base-rgb: 36, 39, 58;
-  --ct-mantle: #1e2030; --ct-mantle-rgb: 30, 32, 48;
-  --ct-crust: #181926; --ct-crust-rgb: 24, 25, 38;
-
-  --ct-accent: var(--ct-mauve);
-  --ct-accent-hi: var(--ct-lavender);
-  --ct-accent-soft: rgba(var(--ct-mauve-rgb), 0.2);
-  --ct-on-accent: #181926;
-  --ct-shadow: 0 1px 2px rgba(17, 17, 27, 0.55), 0 4px 12px rgba(17, 17, 27, 0.45);
-}
-
-[data-variant="mocha"] {
+:root {
   --ct-rose: #f5c2e0; --ct-rose-rgb: 245, 194, 224;
   --ct-flamingo: #f2cdcd; --ct-flamingo-rgb: 242, 205, 205;
   --ct-pink: #f5c2e7; --ct-pink-rgb: 245, 194, 231;
@@ -157,6 +47,44 @@
   --ct-accent-soft: rgba(var(--ct-mauve-rgb), 0.2);
   --ct-on-accent: #11111b;
   --ct-shadow: 0 1px 2px rgba(17, 17, 27, 0.6), 0 4px 14px rgba(17, 17, 27, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   2b. Light mode - the official Latte flavour
+   -------------------------------------------------------------------------- */
+[data-bs-theme="light"] {
+  --ct-rose: #dc8a78; --ct-rose-rgb: 220, 138, 120;
+  --ct-flamingo: #dd7878; --ct-flamingo-rgb: 221, 120, 120;
+  --ct-pink: #ea76cb; --ct-pink-rgb: 234, 118, 203;
+  --ct-mauve: #8839ef; --ct-mauve-rgb: 136, 57, 239;
+  --ct-red: #d20f39; --ct-red-rgb: 210, 15, 57;
+  --ct-maroon: #e64553; --ct-maroon-rgb: 230, 69, 83;
+  --ct-peach: #fe640b; --ct-peach-rgb: 254, 100, 11;
+  --ct-yellow: #df8e1d; --ct-yellow-rgb: 223, 142, 29;
+  --ct-green: #40a02b; --ct-green-rgb: 64, 160, 43;
+  --ct-teal: #179299; --ct-teal-rgb: 23, 146, 153;
+  --ct-sky: #04a5e5; --ct-sky-rgb: 4, 165, 229;
+  --ct-sapphire: #209fb5; --ct-sapphire-rgb: 32, 159, 181;
+  --ct-blue: #1e66f5; --ct-blue-rgb: 30, 102, 245;
+  --ct-lavender: #7287fd; --ct-lavender-rgb: 114, 135, 253;
+  --ct-text: #4c4f69; --ct-text-rgb: 76, 79, 105;
+  --ct-subtext1: #5c5f77; --ct-subtext1-rgb: 92, 95, 119;
+  --ct-subtext0: #6c6f85; --ct-subtext0-rgb: 108, 111, 133;
+  --ct-overlay2: #7c7f93; --ct-overlay2-rgb: 124, 127, 147;
+  --ct-overlay1: #8c8fa1; --ct-overlay1-rgb: 140, 143, 161;
+  --ct-overlay0: #9ca0b0; --ct-overlay0-rgb: 156, 160, 176;
+  --ct-surface2: #acb0be; --ct-surface2-rgb: 172, 176, 190;
+  --ct-surface1: #bcc0cc; --ct-surface1-rgb: 188, 192, 204;
+  --ct-surface0: #ccd0da; --ct-surface0-rgb: 204, 208, 218;
+  --ct-base: #eff1f5; --ct-base-rgb: 239, 241, 245;
+  --ct-mantle: #e6e9ef; --ct-mantle-rgb: 230, 233, 239;
+  --ct-crust: #dce0e8; --ct-crust-rgb: 220, 224, 232;
+
+  --ct-accent: var(--ct-mauve);
+  --ct-accent-hi: var(--ct-lavender);
+  --ct-accent-soft: rgba(var(--ct-mauve-rgb), 0.16);
+  --ct-on-accent: #ffffff;
+  --ct-shadow: 0 1px 2px rgba(76, 79, 105, 0.1), 0 4px 12px rgba(76, 79, 105, 0.08);
 }
 
 /* --------------------------------------------------------------------------

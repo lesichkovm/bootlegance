@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-variant="blue">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,19 +108,7 @@
         <!-- Colour variants -->
         <section id="SectionVariants">
             <h2 class="section-title">Colour variants</h2>
-            <p class="text-secondary">Set <code>data-variant</code> on any ancestor — it composes freely with Bootstrap's <code>data-bs-theme="light|dark"</code>.</p>
-            <div class="d-flex flex-wrap gap-2 mb-3" id="variant-picker">
-                <button type="button" class="btn btn-light variant-btn" data-variant="blue"><span class="variant-swatch swatch-blue"></span>Blue</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="dark"><span class="variant-swatch swatch-dark"></span>Dark</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="green"><span class="variant-swatch swatch-green"></span>Green</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="orange"><span class="variant-swatch swatch-orange"></span>Orange</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="pink"><span class="variant-swatch swatch-pink"></span>Pink</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="purple"><span class="variant-swatch swatch-purple"></span>Purple</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="red"><span class="variant-swatch swatch-red"></span>Red</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="teal"><span class="variant-swatch swatch-teal"></span>Teal</button>
-                <button type="button" class="btn btn-light variant-btn" data-variant="yellow"><span class="variant-swatch swatch-yellow"></span>Yellow</button>
-            </div>
-            <p class="mb-0">Active: <strong id="active-variant-label">Blue</strong> · <code id="active-variant-code">data-variant="blue"</code></p>
+            
         </section>
 
         <!-- 1. Navbar variants -->
@@ -789,7 +777,7 @@
                     <div class="carousel-item slide-c">
                         <div class="p-5 text-center">
                             <h3>One attribute</h3>
-                            <p>Switch variants with <code>data-variant</code>.</p>
+                            <p>Two modes: <code>data-bs-theme="light"</code> and <code>data-bs-theme="dark"</code>.</p>
                         </div>
                     </div>
                 </div>
@@ -1077,7 +1065,7 @@
 
             <h3 class="h6 text-secondary">Usage</h3>
             <p class="text-secondary mb-0">Swap the variant at any time — it is a single attribute and needs no extra stylesheet:
-                <code>&lt;html data-bs-theme="dark" data-variant="purple"&gt;</code></p>
+                <code>&lt;html data-bs-theme="dark"&gt;</code></p>
         </section>
 
     </div>
@@ -1094,8 +1082,6 @@
     <script>
         const html = document.documentElement;
         const toggle = document.getElementById('theme-toggle');
-        const variantLabel = document.getElementById('active-variant-label');
-        const variantCode = document.getElementById('active-variant-code');
 
         function applyTheme(mode) {
             html.setAttribute('data-bs-theme', mode);
@@ -1104,23 +1090,7 @@
             if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
         }
 
-        function applyVariant(name, announce) {
-            html.setAttribute('data-variant', name);
-            variantLabel.textContent = name.charAt(0).toUpperCase() + name.slice(1);
-            variantCode.textContent = 'data-variant="' + name + '"';
-            document.querySelectorAll('.variant-btn').forEach(btn => {
-                btn.classList.toggle('btn-primary', btn.dataset.variant === name);
-                btn.classList.toggle('btn-light', btn.dataset.variant !== name);
-            });
-            if (announce) {
-                document.getElementById('liveToastBody').textContent =
-                    'Accent variant switched to ' + name + '.';
-                bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
-            }
-        }
-
         applyTheme('light');
-        applyVariant('blue', false);
 
         toggle.addEventListener('click', () => {
             applyTheme(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
@@ -1130,10 +1100,6 @@
             applyTheme(e.target.checked ? 'dark' : 'light');
         });
 
-        document.getElementById('variant-picker').addEventListener('click', (e) => {
-            const btn = e.target.closest('.variant-btn');
-            if (btn) applyVariant(btn.dataset.variant, true);
-        });
 
         // Popovers & tooltips
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));

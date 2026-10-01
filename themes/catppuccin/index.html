@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" data-variant="mocha">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootlegance — Catppuccin</title>
+    <title>Bootlegance — Catppuccin Mocha</title>
     <!-- 1. Bootstrap CSS (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 2. Theme override -->
@@ -57,7 +57,7 @@
     <!-- 1. Navbar — light, dark, primary -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="../../docs/index.html">Catppuccin</a>
+            <a class="navbar-brand" href="../../docs/index.html">Catppuccin Mocha</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -104,42 +104,7 @@
         <!-- Flavours -->
         <section id="SectionPalette">
             <h2 class="section-title">Flavours</h2>
-            <p class="hero-sub">Pick a flavour with <code>data-variant</code>. Latte is light; Frappé, Macchiato and Mocha are dark.</p>
-            <div class="flavour-pick mb-3" id="flavour-picker">
-                <button type="button" class="flavour-btn flavour-btn" data-variant="latte">
-                    <span class="flavour-preview">
-                        <span style="background:#eff1f5"></span><span style="background:#ccd0da"></span>
-                        <span style="background:#8839ef"></span><span style="background:#40a02b"></span>
-                        <span style="background:#fe640b"></span><span style="background:#1e66f5"></span>
-                    </span>
-                    <span class="flavour-meta"><strong>Latte</strong><code>data-variant="latte"</code></span>
-                </button>
-                <button type="button" class="flavour-btn flavour-btn" data-variant="frappe">
-                    <span class="flavour-preview">
-                        <span style="background:#303446"></span><span style="background:#414559"></span>
-                        <span style="background:#ca9ee6"></span><span style="background:#a6d189"></span>
-                        <span style="background:#ef9f76"></span><span style="background:#8caaee"></span>
-                    </span>
-                    <span class="flavour-meta"><strong>Frappé</strong><code>data-variant="frappe"</code></span>
-                </button>
-                <button type="button" class="flavour-btn flavour-btn" data-variant="macchiato">
-                    <span class="flavour-preview">
-                        <span style="background:#24273a"></span><span style="background:#363a4f"></span>
-                        <span style="background:#c6a0f6"></span><span style="background:#a6da95"></span>
-                        <span style="background:#f5a97f"></span><span style="background:#8aadf4"></span>
-                    </span>
-                    <span class="flavour-meta"><strong>Macchiato</strong><code>data-variant="macchiato"</code></span>
-                </button>
-                <button type="button" class="flavour-btn flavour-btn" data-variant="mocha">
-                    <span class="flavour-preview">
-                        <span style="background:#1e1e2e"></span><span style="background:#313244"></span>
-                        <span style="background:#cba6f7"></span><span style="background:#a6e3a1"></span>
-                        <span style="background:#fab387"></span><span style="background:#89b4fa"></span>
-                    </span>
-                    <span class="flavour-meta"><strong>Mocha</strong><code>data-variant="mocha"</code></span>
-                </button>
-            </div>
-            <p class="mb-4">Active: <strong id="active-flavour">Mocha</strong> · <code id="active-flavour-code">data-variant="mocha"</code></p>
+            
 
             <h3 class="h6 mb-2">Accent colours</h3>
             <div class="ct-swatches mb-4">
@@ -340,32 +305,17 @@
         <section id="SectionTables">
             <h2 class="section-title">Tables</h2>
             <table class="table table-striped table-hover align-middle">
-                <caption class="caption-top text-secondary">Flavours</caption>
+                <caption class="caption-top text-secondary">Modes</caption>
                 <thead>
                     <tr>
-                        <th scope="col">Flavour</th>
-                        <th scope="col">Base</th>
-                        <th scope="col">Mauve</th>
                         <th scope="col">Mode</th>
+                        <th scope="col">Background</th>
+                        <th scope="col">Mauve</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Latte</td><td>#eff1f5</td><td>#8839ef</td>
-                        <td><span class="badge bg-secondary">light</span></td>
-                    </tr>
-                    <tr>
-                        <td>Frappé</td><td>#303446</td><td>#ca9ee6</td>
-                        <td><span class="badge bg-secondary">dark</span></td>
-                    </tr>
-                    <tr>
-                        <td>Macchiato</td><td>#24273a</td><td>#c6a0f6</td>
-                        <td><span class="badge bg-secondary">dark</span></td>
-                    </tr>
-                    <tr>
-                        <td>Mocha</td><td>#1e1e2e</td><td>#cba6f7</td>
-                        <td><span class="badge bg-secondary">dark</span></td>
-                    </tr>
+                    <tr><td>Catppuccin Mocha dark</td><td>#1e1e2e</td><td>#cba6f7</td></tr>
+                    <tr><td>Catppuccin Mocha light</td><td>#eff1f5</td><td>re-mixed</td></tr>
                 </tbody>
             </table>
 
@@ -405,12 +355,10 @@
                         <input type="text" class="form-control" id="disabledField" value="Read only" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="selectField">Flavour</label>
+                        <label class="form-label" for="selectField">Appearance</label>
                         <select class="form-select" id="selectField">
-                            <option selected>Mocha</option>
-                            <option>Macchiato</option>
-                            <option>Frappé</option>
-                            <option>Latte</option>
+                            <option selected>Dark</option>
+                            <option>Light</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -1136,15 +1084,14 @@
             </div>
 
             <h3 class="h6 text-secondary">Usage</h3>
-            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark" data-variant="macchiato"&gt;</code> ·
-                Light: <code>data-bs-theme="light" data-variant="latte"</code></p>
+            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark"&gt;</code> · Light: <code>data-bs-theme="light"</code></p>
         </section>
 
     </div>
 
     <footer class="mt-5 py-4 text-center text-secondary border-top">
         <div class="container">
-            <p class="mb-1">&copy; 2026 Bootlegance — Catppuccin theme · <a href="https://catppuccin.com/palette/" target="_blank" rel="noopener">catppuccin.com/palette</a></p>
+            <p class="mb-1">&copy; 2026 Bootlegance — Catppuccin Mocha theme · <a href="https://catppuccin.com/palette/" target="_blank" rel="noopener">catppuccin.com/palette</a></p>
             <p class="mb-0"><a href="../../docs/index.html">Back to catalogue</a></p>
         </div>
     </footer>
@@ -1154,15 +1101,11 @@
     <script>
         const html = document.documentElement;
         const toggle = document.getElementById('theme-toggle');
-        const flavourLabel = document.getElementById('active-flavour');
-        const flavourCode = document.getElementById('active-flavour-code');
-        const liveToast = document.getElementById('liveToast');
+                        const liveToast = document.getElementById('liveToast');
         const liveToastBody = document.getElementById('liveToastBody');
 
         // Latte is the light flavour; the rest are dark.
-        const flavourMode = { latte: 'light', frappe: 'dark', macchiato: 'dark', mocha: 'dark' };
-        const flavourNames = { latte: 'Latte', frappe: 'Frappé', macchiato: 'Macchiato', mocha: 'Mocha' };
-
+                
         function announce(message) {
             liveToastBody.textContent = message;
             bootstrap.Toast.getOrCreateInstance(liveToast).show();
@@ -1175,18 +1118,6 @@
             if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
         }
 
-        function applyFlavour(name, notify) {
-            html.setAttribute('data-variant', name);
-            applyTheme(flavourMode[name]);
-            flavourLabel.textContent = flavourNames[name];
-            flavourCode.textContent = 'data-variant="' + name + '"';
-            document.querySelectorAll('.flavour-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.variant === name);
-            });
-            if (notify) announce('Switched to ' + flavourNames[name] + '.');
-        }
-
-        applyFlavour('mocha', false);
 
         toggle.addEventListener('click', () => {
             const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
@@ -1198,10 +1129,6 @@
             applyTheme(e.target.checked ? 'light' : 'dark');
         });
 
-        document.getElementById('flavour-picker').addEventListener('click', (e) => {
-            const btn = e.target.closest('.flavour-btn');
-            if (btn) applyFlavour(btn.dataset.variant, true);
-        });
 
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));

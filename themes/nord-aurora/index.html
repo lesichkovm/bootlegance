@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootlegance — Nord Aurora</title>
+    <!-- 1. Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. Theme override -->
+    <link href="theme.css" rel="stylesheet">
+    <style>
+        body { padding-top: 3rem; }
+        .section-title {
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--nd-border);
+            font-weight: 600;
+            font-family: var(--bs-font-monospace);
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--nd-fg-muted);
+        }
+        .hero {
+            padding: 3.25rem 0;
+            text-align: center;
+            background-color: var(--nd-surface);
+            border-bottom: 1px solid var(--nd-border);
+        }
+        .hero-sub { color: var(--nd-fg-muted); }
+        .style-pick {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+            gap: 0.75rem;
+        }
+        .style-btn {
+            padding: 0.625rem;
+            border: 1px solid var(--nd-border);
+            border-radius: var(--bs-border-radius-lg);
+            background-color: var(--nd-surface);
+            color: var(--nd-fg);
+            text-align: left;
+            transition: border-color 0.12s ease, background-color 0.12s ease;
+        }
+        .style-btn:hover { border-color: var(--nd-accent); }
+        .style-btn.active {
+            border-color: var(--nd-accent);
+            background-color: var(--nd-accent-soft);
+        }
+        .style-btn strong { display: block; font-size: 0.875rem; }
+        .style-btn code { font-size: 0.6875rem; color: var(--nd-fg-muted); }
+        .style-preview {
+            display: flex;
+            height: 1.5rem;
+            border-radius: var(--bs-border-radius-sm);
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--nd-border-soft);
+        }
+        .style-preview span { flex: 1; }
+        .navbar-demo-light { background-color: var(--nd-bg) !important; }
+        .navbar-demo-dark { background-color: var(--nd-nord0) !important; border-bottom-color: var(--nd-nord1); }
+        .navbar-demo-primary { background-color: var(--nd-accent) !important; border-bottom-color: transparent; }
+        .btn-close-invert { background-color: rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar — light, dark, primary -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../docs/index.html">Nord Aurora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#SectionHero">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionPalette">Palette</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">Components</h6></li>
+                            <li><a class="dropdown-item" href="#SectionTypography">Typography</a></li>
+                            <li><a class="dropdown-item" href="#SectionTables">Tables</a></li>
+                            <li><a class="dropdown-item" href="#SectionNavs">Navs &amp; Tabs</a></li>
+                            <li><a class="dropdown-item" href="#SectionAlerts">Alerts</a></li>
+                            <li><a class="dropdown-item" href="#SectionBadges">Badges</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#SectionModals">Dialogs</a></li>
+                            <li><a class="dropdown-item" href="#SectionToasts">Toasts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm" id="theme-toggle">Light Mode</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="SectionHero">
+        <header class="hero">
+            <div class="container">
+                <h1 class="display-6">Nord Aurora</h1>
+                <p class="lead hero-sub mb-0">An Arctic-based palette of cool blues and slate grays, built for focus and reduced eye strain. Four official styles from one 16-colour system.</p>
+            </div>
+        </header>
+    </section>
+
+    <div class="container pb-5">
+
+        <!-- Styles -->
+        <section id="SectionPalette">
+            <h2 class="section-title">Styles</h2>
+            
+
+            <h3 class="h6 mb-2">Polar Night <span class="text-secondary">— backgrounds</span></h3>
+            <div class="nd-swatches mb-4">
+                <div class="nd-swatch nd-bg-nord0" style="color:#d8dee9"><strong>nord0</strong>#2e3440</div>
+                <div class="nd-swatch nd-bg-nord1" style="color:#d8dee9"><strong>nord1</strong>#3b4252</div>
+                <div class="nd-swatch nd-bg-nord2" style="color:#d8dee9"><strong>nord2</strong>#434c5e</div>
+                <div class="nd-swatch nd-bg-nord3" style="color:#d8dee9"><strong>nord3</strong>#4c566a</div>
+            </div>
+
+            <h3 class="h6 mb-2">Snow Storm <span class="text-secondary">— text</span></h3>
+            <div class="nd-swatches mb-4">
+                <div class="nd-swatch" style="background:#d8dee9; color:#2e3440"><strong>nord4</strong>#d8dee9</div>
+                <div class="nd-swatch" style="background:#e5e9f0; color:#2e3440"><strong>nord5</strong>#e5e9f0</div>
+                <div class="nd-swatch" style="background:#eceff4; color:#2e3440"><strong>nord6</strong>#eceff4</div>
+            </div>
+
+            <h3 class="h6 mb-2">Frost <span class="text-secondary">— accents</span></h3>
+            <div class="nd-swatches mb-4">
+                <div class="nd-swatch" style="background:#8fbcbb; color:#2e3440"><strong>nord7</strong>#8fbcbb</div>
+                <div class="nd-swatch" style="background:#88c0d0; color:#2e3440"><strong>nord8</strong>#88c0d0</div>
+                <div class="nd-swatch" style="background:#81a1c1; color:#2e3440"><strong>nord9</strong>#81a1c1</div>
+                <div class="nd-swatch" style="background:#5e81ac; color:#eceff4"><strong>nord10</strong>#5e81ac</div>
+            </div>
+
+            <h3 class="h6 mb-2">Aurora <span class="text-secondary">— semantic</span></h3>
+            <div class="nd-swatches mb-4">
+                <div class="nd-swatch" style="background:#bf616a; color:#eceff4"><strong>nord11</strong>#bf616a</div>
+                <div class="nd-swatch" style="background:#d08770; color:#2e3440"><strong>nord12</strong>#d08770</div>
+                <div class="nd-swatch" style="background:#ebcb8b; color:#2e3440"><strong>nord13</strong>#ebcb8b</div>
+                <div class="nd-swatch" style="background:#a3be8c; color:#2e3440"><strong>nord14</strong>#a3be8c</div>
+                <div class="nd-swatch" style="background:#b48ead; color:#2e3440"><strong>nord15</strong>#b48ead</div>
+            </div>
+
+            <h3 class="h6 mb-2">Colour utilities</h3>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="nd-chip"><i style="background:#8fbcbb"></i>nord7</span>
+                <span class="nd-chip"><i style="background:#88c0d0"></i>nord8</span>
+                <span class="nd-chip"><i style="background:#81a1c1"></i>nord9</span>
+                <span class="nd-chip"><i style="background:#5e81ac"></i>nord10</span>
+                <span class="nd-chip"><i style="background:#bf616a"></i>nord11</span>
+                <span class="nd-chip"><i style="background:#ebcb8b"></i>nord13</span>
+                <span class="nd-chip"><i style="background:#a3be8c"></i>nord14</span>
+                <span class="nd-chip"><i style="background:#b48ead"></i>nord15</span>
+            </div>
+
+            <h3 class="h6 mb-2">Code block</h3>
+            <pre class="nd-code"><span class="nd-comment">// palette.rs</span>
+<span class="nd-keyword">use</span> nord::{PolarNight, SnowStorm, Frost, Aurora};
+
+<span class="nd-keyword">const</span> <span class="nd-fn">ACCENT</span>: &amp;str = <span class="nd-string">"#88c0d0"</span>;  <span class="nd-comment">// nord8</span>
+<span class="nd-keyword">const</span> <span class="nd-fn">ERROR</span>: &amp;str = <span class="nd-string">"#bf616a"</span>;   <span class="nd-comment">// nord11</span>
+
+<span class="nd-keyword">fn</span> <span class="nd-fn">main</span>() {
+    <span class="nd-keyword">let</span> style = Frost;
+    <span class="nd-fn">println!</span>(<span class="nd-string">"{} styles, {} colours"</span>, <span class="nd-number">4</span>, <span class="nd-number">16</span>);
+}</pre>
+        </section>
+
+        <!-- 1. Navbar variants -->
+        <section id="SectionNavbar">
+            <h2 class="section-title">Navbar</h2>
+            <nav class="navbar navbar-expand-lg mb-3">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Light</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm">Action</button>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg mb-3 navbar-demo-dark" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Dark</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm">Action</button>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg mb-3 navbar-demo-primary">
+                <div class="container-fluid">
+                    <span class="navbar-brand" style="color: var(--nd-on-accent)">Primary</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" style="color: var(--nd-on-accent)" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: var(--nd-on-accent)" href="#">Link</a></li>
+                    </ul>
+                    <button class="btn btn-light btn-sm">Action</button>
+                </div>
+            </nav>
+        </section>
+
+        <!-- 2. Buttons -->
+        <section id="SectionButtons">
+            <h2 class="section-title">Buttons &amp; Button Groups</h2>
+
+            <h3 class="h6 text-secondary">Contextual variants</h3>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-light">Light</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-link">Link</button>
+            </div>
+
+            <h3 class="h6 text-secondary">Outline variants</h3>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button class="btn btn-outline-primary">Primary</button>
+                <button class="btn btn-outline-secondary">Secondary</button>
+                <button class="btn btn-outline-success">Success</button>
+                <button class="btn btn-outline-danger">Danger</button>
+                <button class="btn btn-outline-warning">Warning</button>
+                <button class="btn btn-outline-info">Info</button>
+                <button class="btn btn-outline-dark">Dark</button>
+            </div>
+
+            <h3 class="h6 text-secondary">Sizes &amp; states</h3>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                <button class="btn btn-primary btn-lg">Large</button>
+                <button class="btn btn-primary">Default</button>
+                <button class="btn btn-primary btn-sm">Small</button>
+                <button class="btn btn-primary" disabled>Disabled</button>
+                <button class="btn btn-outline-primary" disabled>Disabled</button>
+                <button class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="visually-hidden">Loading…</span>
+                </button>
+            </div>
+
+            <h3 class="h6 text-secondary">Button groups</h3>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="btn-group" role="group" aria-label="Basic button group">
+                    <button type="button" class="btn btn-light">Day</button>
+                    <button type="button" class="btn btn-light">Week</button>
+                    <button type="button" class="btn btn-light">Month</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Dropdown button group">
+                    <button type="button" class="btn btn-primary">Share</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Copy link</a></li>
+                        <li><a class="dropdown-item" href="#">Email</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group" role="group" aria-label="Segmented">
+                    <input type="radio" class="btn-check" name="seg" id="seg1" checked>
+                    <label class="btn btn-light" for="seg1">Icons</label>
+                    <input type="radio" class="btn-check" name="seg" id="seg2">
+                    <label class="btn btn-light" for="seg2">List</label>
+                    <input type="radio" class="btn-check" name="seg" id="seg3">
+                    <label class="btn btn-light" for="seg3">Columns</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="SectionTypography">
+            <h2 class="section-title">Typography</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h1>h1. The quick brown fox</h1>
+                    <h2>h2. Jumps over the lazy dog</h2>
+                    <h3>h3. Pack my box with five dozen</h3>
+                    <h4>h4. Dozens of liquor jugs</h4>
+                    <h5>h5. How vexingly quick daft zebras</h5>
+                    <h6>h6. Jump!</h6>
+                    <p class="lead">A lead paragraph set at a larger size for introductory content.</p>
+                    <p>Nord keeps type quiet: one family for prose, one monospace for anything technical.</p>
+                    <p>Inline elements like <a href="#">links</a>, <strong>bold text</strong>, <em>emphasis</em>, <code>inline code</code>,
+                        <kbd>Ctrl</kbd> + <kbd>K</kbd> and <mark>highlighted text</mark>.</p>
+                    <p>Palette colours inline:
+                        <span class="nd-text-nord7">nord7</span> <span class="nd-text-nord8">nord8</span>
+                        <span class="nd-text-nord9">nord9</span> <span class="nd-text-nord10">nord10</span>
+                        <span class="nd-text-nord11">nord11</span> <span class="nd-text-nord13">nord13</span>
+                        <span class="nd-text-nord14">nord14</span> <span class="nd-text-nord15">nord15</span></p>
+                    <hr>
+                    <p class="mb-0"><small>Small print, footnotes and legal text.</small></p>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Display headings</h3>
+                    <p class="display-6">Display 6</p>
+                    <p class="display-5">Display 5</p>
+                    <hr>
+                    <h3 class="h6 text-secondary">Blockquote</h3>
+                    <blockquote class="blockquote">
+                        <p>Calm, cool and focused — an arctic landscape of UI.</p>
+                        <footer class="blockquote-footer text-secondary mt-2">Nord</footer>
+                    </blockquote>
+                    <h3 class="h6 text-secondary mt-4">Lists</h3>
+                    <ul>
+                        <li>Four official styles from one palette</li>
+                        <li>Crisp, barely-rounded geometry</li>
+                        <li>Monospace accents for technical UI</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="SectionTables">
+            <h2 class="section-title">Tables</h2>
+            <table class="table table-striped table-hover align-middle">
+                <caption class="caption-top text-secondary">Nodes</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Host</th>
+                        <th scope="col">Region</th>
+                        <th scope="col">CPU</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>nord-01</td><td>eu-west-1</td><td>8 vCPU</td>
+                        <td><span class="badge bg-success">online</span></td>
+                    </tr>
+                    <tr>
+                        <td>nord-02</td><td>eu-west-2</td><td>4 vCPU</td>
+                        <td><span class="badge bg-primary">active</span></td>
+                    </tr>
+                    <tr>
+                        <td>nord-03</td><td>us-east-1</td><td>16 vCPU</td>
+                        <td><span class="badge bg-warning">degraded</span></td>
+                    </tr>
+                    <tr>
+                        <td>nord-04</td><td>ap-south-1</td><td>2 vCPU</td>
+                        <td><span class="badge bg-secondary">draining</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">Mode</th>
+                        <th scope="col">Background</th>
+                        <th scope="col">Accent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Nord Aurora dark</td><td>#3f4c75</td><td>#88c0d0</td></tr>
+                    <tr><td>Nord Aurora light</td><td>#eceff4</td><td>re-mixed</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="SectionForms">
+            <h2 class="section-title">Forms</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <div class="form-text">We'll never share your address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="pwd">Password</label>
+                        <input type="password" class="form-control" id="pwd" value="nord">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="disabledField">Disabled</label>
+                        <input type="text" class="form-control" id="disabledField" value="Read only" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="selectField">Appearance</label>
+                        <select class="form-select" id="selectField">
+                            <option selected>Dark</option>
+                            <option>Light</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="textareaField">Notes</label>
+                        <textarea class="form-control" id="textareaField" rows="3" placeholder="Anything else?"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="validField">Workspace name</label>
+                        <input type="text" class="form-control is-valid" id="validField" value="Studio">
+                        <div class="valid-feedback">Name is available.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="invalidField">Team slug</label>
+                        <input type="text" class="form-control is-invalid" id="invalidField" value="my team">
+                        <div class="invalid-feedback">Slugs cannot contain spaces.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="accent">Accent colour</label>
+                        <input type="color" class="form-control form-control-color" id="accent" value="#88c0d0">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Search &amp; input groups</h3>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="username" aria-label="Username">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" type="button">Go</button>
+                    </div>
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" aria-label="Amount">
+                        <span class="input-group-text">.00</span>
+                    </div>
+
+                    <h3 class="h6 text-secondary">Checks, radios &amp; switches</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkDefault" checked>
+                        <label class="form-check-label" for="checkDefault">Default checkbox</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkDisabled" disabled>
+                        <label class="form-check-label" for="checkDisabled">Disabled checkbox</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="inlineRadios" id="radio1" checked>
+                        <label class="form-check-label" for="radio1">First radio</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="inlineRadios" id="radio2">
+                        <label class="form-check-label" for="radio2">Second radio</label>
+                    </div>
+                    <div class="form-check form-switch mt-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchDark">
+                        <label class="form-check-label" for="switchDark">Light appearance</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchSound" checked>
+                        <label class="form-check-label" for="switchSound">Dim inactive windows</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled>
+                        <label class="form-check-label" for="switchDisabled">Disabled switch</label>
+                    </div>
+
+                    <h3 class="h6 text-secondary mt-4">Range</h3>
+                    <label class="form-label" for="rangeBrightness">Brightness</label>
+                    <input type="range" class="form-range" id="rangeBrightness" value="65">
+
+                    <h3 class="h6 text-secondary mt-4">Floating labels</h3>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com">
+                        <label for="floatingInput1">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect1">
+                            <option selected>Auto</option>
+                            <option>Light</option>
+                            <option>Dark</option>
+                        </select>
+                        <label for="floatingSelect1">Appearance</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Navs & Tabs -->
+        <section id="SectionNavs">
+            <h2 class="section-title">Navs &amp; Tabs</h2>
+
+            <ul class="nav nav-tabs mb-4">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-general" type="button">General</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-display" type="button">Display</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-storage" type="button">Storage</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-disabled" type="button" disabled>Disabled</button></li>
+            </ul>
+            <div class="tab-content mb-4">
+                <div class="tab-pane fade show active" id="tab-general">
+                    <div class="card"><div class="card-body"><h5 class="card-title">General</h5><p class="text-secondary mb-0">Session and account settings.</p></div></div>
+                </div>
+                <div class="tab-pane fade" id="tab-display">
+                    <div class="card"><div class="card-body"><h5 class="card-title">Display</h5><p class="text-secondary mb-0">Resolution, scaling and night light.</p></div></div>
+                </div>
+                <div class="tab-pane fade" id="tab-storage">
+                    <div class="card"><div class="card-body"><h5 class="card-title">Storage</h5><p class="text-secondary mb-0">Disks, partitions and cleanup.</p></div></div>
+                </div>
+                <div class="tab-pane fade" id="tab-disabled">
+                    <div class="card"><div class="card-body"><h5 class="card-title">Hidden</h5><p class="text-secondary mb-0">You should not see this.</p></div></div>
+                </div>
+            </div>
+
+            <h3 class="h6 text-secondary">Pills &amp; underline</h3>
+            <ul class="nav nav-pills mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Inbox</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Drafts</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Archive</a></li>
+            </ul>
+            <ul class="nav nav-underline mb-4">
+                <li class="nav-item"><a class="nav-link active" href="#">Today</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Week</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Month</a></li>
+            </ul>
+
+            <h3 class="h6 text-secondary">Breadcrumbs</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item"><a href="#">Themes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Nord</li>
+                </ol>
+            </nav>
+
+            <h3 class="h6 text-secondary mt-4">Pagination</h3>
+            <nav aria-label="Pagination">
+                <ul class="pagination mb-3">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Compact pagination">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item"><a class="page-link" href="#">‹</a></li>
+                    <li class="page-item"><a class="page-link" href="#">›</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="SectionAlerts">
+            <h2 class="section-title">Alerts</h2>
+            <div class="alert alert-primary" role="alert">
+                <h4 class="alert-heading">Deployment finished</h4>
+                All four nodes are running the new build.
+            </div>
+            <div class="alert alert-success d-flex justify-content-between align-items-center" role="alert">
+                <span>Backup completed successfully.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                Certificate expires in 12 days.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger d-flex justify-content-between align-items-center" role="alert">
+                <span>Could not reach the server.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
+                <span>Syncing library in the background.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="SectionBadges">
+            <h2 class="section-title">Badges</h2>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                <span class="badge bg-primary">primary</span>
+                <span class="badge bg-secondary">secondary</span>
+                <span class="badge bg-success">online</span>
+                <span class="badge bg-danger">failed</span>
+                <span class="badge bg-warning">warn</span>
+                <span class="badge bg-info">info</span>
+                <span class="badge bg-light">light</span>
+                <span class="badge bg-dark">dark</span>
+                <span class="badge rounded-pill bg-primary">pill</span>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <span class="badge bg-danger position-relative">
+                    mail
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-2">12+</span>
+                </span>
+                <button class="btn btn-primary">notifications <span class="badge bg-light">3</span></button>
+            </div>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="SectionProgress">
+            <h2 class="section-title">Progress &amp; Spinners</h2>
+            <h3 class="h6 text-secondary">Basic &amp; contextual</h3>
+            <div class="progress mb-2"><div class="progress-bar" style="width: 25%"></div></div>
+            <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 45%"></div></div>
+            <div class="progress mb-2"><div class="progress-bar bg-warning" style="width: 68%"></div></div>
+            <div class="progress mb-4"><div class="progress-bar bg-danger" style="width: 90%"></div></div>
+
+            <h3 class="h6 text-secondary">Striped &amp; animated</h3>
+            <div class="progress mb-2"><div class="progress-bar progress-bar-striped" style="width: 35%"></div></div>
+            <div class="progress mb-4"><div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div></div>
+
+            <h3 class="h6 text-secondary">Stacked</h3>
+            <div class="progress mb-4" style="height: 0.625rem;">
+                <div class="progress-bar bg-primary" style="width: 35%"></div>
+                <div class="progress-bar bg-success" style="width: 25%"></div>
+                <div class="progress-bar bg-warning" style="width: 15%"></div>
+                <div class="progress-bar bg-danger" style="width: 10%"></div>
+            </div>
+
+            <h3 class="h6 text-secondary">Spinners</h3>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading…</span></div>
+                <div class="spinner-border text-secondary" role="status"></div>
+                <div class="spinner-border text-success" role="status"></div>
+                <div class="spinner-grow text-primary" role="status"></div>
+                <div class="spinner-grow text-danger" role="status"></div>
+                <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+            </div>
+        </section>
+
+        <!-- 10. List groups -->
+        <section id="SectionListgroups">
+            <h2 class="section-title">List Groups</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Default &amp; active</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item active" aria-current="true">Overview</li>
+                        <li class="list-group-item">Instances</li>
+                        <li class="list-group-item">Storage</li>
+                        <li class="list-group-item disabled">Archived</li>
+                    </ul>
+
+                    <h3 class="h6 text-secondary">Linked &amp; actions</h3>
+                    <div class="list-group mb-4">
+                        <a href="#" class="list-group-item list-group-item-action active">metrics</a>
+                        <a href="#" class="list-group-item list-group-item-action">logs</a>
+                        <a href="#" class="list-group-item list-group-item-action">alerts</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Flush</h3>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Flush item</li>
+                        <li class="list-group-item">Flush item</li>
+                    </ul>
+
+                    <h3 class="h6 text-secondary">Inset</h3>
+                    <ul class="list-group list-group-inset mb-2">
+                        <li class="list-group-item">eu-west-1</li>
+                        <li class="list-group-item">us-east-1</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="SectionCards">
+            <h2 class="section-title">Cards</h2>
+            <div class="row g-3 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Basic</h5>
+                            <p class="card-text text-secondary">Flat surface, hairline border.</p>
+                            <button class="btn btn-primary btn-sm">Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-bg-primary border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary</h5>
+                            <p class="card-text">Contextual card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-bg-success border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">Success</h5>
+                            <p class="card-text">Contextual card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--nd-accent)">Bordered</h5>
+                            <p class="card-text text-secondary mb-0">Accent border variant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Header, body &amp; footer</h5>
+                            <p class="card-text text-secondary">Cards compose with the surface hierarchy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-secondary small">updated 2 minutes ago</span>
+                                <button class="btn btn-primary btn-sm">save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Image cap</h5>
+                            <p class="card-text text-secondary">Keep imagery inside the border radius.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-secondary small">wallpaper.tiff</span>
+                                <button class="btn btn-outline-primary btn-sm">open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Card with list group</div>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item">Metrics</div>
+                    <div class="list-group-item active">Logs</div>
+                    <div class="list-group-item">Alerts</div>
+                </div>
+                <div class="card-footer text-secondary">config synced.</div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="SectionAccordions">
+            <h2 class="section-title">Accordions</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Default</h3>
+                    <div class="accordion" id="accordionDefault">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc1" aria-expanded="true" aria-controls="acc1">What is Nord?</button>
+                            </h2>
+                            <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#accordionDefault">
+                                <div class="accordion-body">An Arctic-based, 16-colour palette designed for focus and low eye strain.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2" aria-expanded="false" aria-controls="acc2">Colour groups</button>
+                            </h2>
+                            <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#accordionDefault">
+                                <div class="accordion-body">Polar Night (backgrounds), Snow Storm (text), Frost (accents) and Aurora (semantic).</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3" aria-expanded="false" aria-controls="acc3">Where else?</button>
+                            </h2>
+                            <div id="acc3" class="accordion-collapse collapse" data-bs-parent="#accordionDefault">
+                                <div class="accordion-body">Editors, terminals, wallpapers, image editors and more — the same palette everywhere.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h6 text-secondary">Flush</h3>
+                    <div class="accordion accordion-flush" id="accordionFlush">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accf1" aria-expanded="false" aria-controls="accf1">displays</button>
+                            </h2>
+                            <div id="accf1" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                                <div class="accordion-body">Flush variant removes the outer border.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accf2" aria-expanded="false" aria-controls="accf2">power</button>
+                            </h2>
+                            <div id="accf2" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                                <div class="accordion-body">Each item keeps the style's surface colours.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="SectionCarousel">
+            <h2 class="section-title">Carousel</h2>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-color: var(--nd-nord10); color: var(--nd-nord6);">
+                        <div class="p-5 text-center">
+                            <h3>Frost</h3>
+                            <p>The signature Nord accent family.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-color: var(--nd-nord2); color: var(--nd-nord4);">
+                        <div class="p-5 text-center">
+                            <h3>Polar Night</h3>
+                            <p>Quiet, layered, low contrast between layers.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-color: var(--nd-nord14); color: var(--nd-nord0);">
+                        <div class="p-5 text-center">
+                            <h3>Aurora</h3>
+                            <p>Semantic colours for state, never for decoration.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 14. Modals -->
+        <section id="SectionModals">
+            <h2 class="section-title">Dialogs</h2>
+            <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDefault">Dialog</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalStatic">Static backdrop</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalSm">Small</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalLg">Large</button>
+            </div>
+
+            <div class="modal fade" id="modalDefault" tabindex="-1" aria-labelledby="modalDefaultLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalDefaultLabel">Change Nord style?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Your editor, terminal and this application will share the same style.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalStatic" tabindex="-1" aria-labelledby="modalStaticLabel" aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalStaticLabel">Static backdrop</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Clicking outside will not dismiss this dialog.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalSm" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Small</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Compact dialog.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalLg" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Large</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Spacious dialog for richer content.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. Offcanvas -->
+        <section id="SectionOffcanvas">
+            <h2 class="section-title">Offcanvas</h2>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasStart">Start</button>
+                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd">End</button>
+                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">Top</button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasStartLabel">Sidebar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="list-group list-group-inset">
+                        <li class="list-group-item active">overview</li>
+                        <li class="list-group-item">instances</li>
+                        <li class="list-group-item">storage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEndLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasEndLabel">Inspector</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">Panel content goes here.</div>
+            </div>
+
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasTopLabel">Toolbar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">A top drawer, handy for filters.</div>
+            </div>
+        </section>
+
+        <!-- 16. Popovers and Tooltips -->
+        <section id="SectionPopovers">
+            <h2 class="section-title">Popovers &amp; Tooltips</h2>
+            <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-title="Cloud sync" data-bs-content="Your library is up to date as of just now.">Popover top</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="popover" data-bs-placement="right"
+                        data-bs-title="Storage" data-bs-content="112 GB of 512 GB used.">Popover right</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="popover" data-bs-placement="bottom"
+                        data-bs-title="Deprecated" data-bs-content="This feature will be removed next release.">Popover bottom</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="popover" data-bs-placement="left"
+                        data-bs-title="Left" data-bs-content="Anchored to the left edge.">Popover left</button>
+            </div>
+            <div class="mt-4 d-flex flex-wrap gap-3">
+                <a href="#" class="text-decoration-underline" data-bs-toggle="tooltip" title="Tooltips use the monospace face.">Hover me</a>
+                <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Ctrl + Alt + T opens a terminal.">Keyboard shortcut</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Placed underneath.">Bottom tooltip</button>
+            </div>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="SectionToasts">
+            <h2 class="section-title">Toasts</h2>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-primary" type="button" id="liveToastBtn">Show live toast</button>
+                <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#toastStaticModal">Static toast in dialog</button>
+            </div>
+
+            <div class="toast-container position-static">
+                <div class="toast show mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <span class="badge bg-primary me-2">now</span>
+                        <strong class="me-auto">config synced</strong>
+                        <small>11 min ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">Nord style applied across your workspace.</div>
+                </div>
+
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">scheduled</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">A reminder was added for tomorrow at 09:00.</div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="toastStaticModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Notifications</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <strong class="me-auto">storage almost full</strong>
+                                    <small>now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">Only 4 GB remaining on the system disk.</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">nord</strong>
+                        <small>now</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body" id="liveToastBody">Style updated.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="SectionPlaceholders">
+            <h2 class="section-title">Placeholders</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <p class="placeholder-glow">
+                        <span class="placeholder col-9"></span>
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                    </p>
+                    <p class="placeholder-wave">
+                        <span class="placeholder col-6"></span>
+                        <span class="placeholder col-8"></span>
+                    </p>
+                    <a href="#" class="btn btn-primary disabled placeholder col-3" aria-disabled="true"></a>
+                    <a href="#" class="btn btn-outline-primary disabled placeholder col-4 ms-2" aria-disabled="true"></a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body d-flex align-items-center">
+                            <span class="placeholder-glow"><span class="placeholder rounded-circle" style="width: 44px; height: 44px;"></span></span>
+                            <div class="ms-3 flex-grow-1">
+                                <span class="placeholder-glow d-block mb-2"><span class="placeholder col-7"></span></span>
+                                <span class="placeholder-glow d-block"><span class="placeholder col-4"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="SectionMisc">
+            <h2 class="section-title">Misc</h2>
+
+            <h3 class="h6 text-secondary">Close buttons</h3>
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white btn-close-invert" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" disabled aria-label="Close"></button>
+            </div>
+
+            <h3 class="h6 text-secondary">Menus</h3>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">New</button>
+                    <ul class="dropdown-menu">
+                        <li><h6 class="dropdown-header">create</h6></li>
+                        <li><a class="dropdown-item" href="#">document</a></li>
+                        <li><a class="dropdown-item" href="#">spreadsheet</a></li>
+                        <li><a class="dropdown-item" href="#">presentation</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">folder</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Options</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">rename</a></li>
+                        <li><a class="dropdown-item" href="#">duplicate</a></li>
+                        <li><a class="dropdown-item" href="#">move to…</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">delete</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropup">
+                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Up</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">upload</a></li>
+                        <li><a class="dropdown-item" href="#">export</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="h6 text-secondary">Usage</h3>
+            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark"&gt;</code> · Light: <code>data-bs-theme="light"</code></p>
+        </section>
+
+    </div>
+
+    <footer class="mt-5 py-4 text-center text-secondary border-top">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Bootlegance — Nord Aurora theme · <a href="https://www.nordtheme.com/" target="_blank" rel="noopener">nordtheme.com</a></p>
+            <p class="mb-0"><a href="../../docs/index.html">Back to catalogue</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const html = document.documentElement;
+        const toggle = document.getElementById('theme-toggle');
+                        const liveToast = document.getElementById('liveToast');
+        const liveToastBody = document.getElementById('liveToastBody');
+
+        //                 
+        function announce(message) {
+            liveToastBody.textContent = message;
+            bootstrap.Toast.getOrCreateInstance(liveToast).show();
+        }
+
+        function applyTheme(mode) {
+            html.setAttribute('data-bs-theme', mode);
+            toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+            const appearanceSwitch = document.getElementById('switchDark');
+            if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
+        }
+
+
+        toggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            announce('Appearance switched to ' + next + ' mode.');
+        });
+
+        document.getElementById('switchDark').addEventListener('change', (e) => {
+            applyTheme(e.target.checked ? 'light' : 'dark');
+        });
+
+
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+        document.getElementById('liveToastBtn').addEventListener('click', () => {
+            announce('Notifications marked as read.');
+        });
+    </script>
+</body>
+</html>

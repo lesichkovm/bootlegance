@@ -1,18 +1,14 @@
 /* ==========================================================================
-   Nord — Bootstrap 5 Theme
+   Nord  — Bootstrap 5 Theme
    Built on the official Nord palette (nordtheme.com), based on Arctic.
    Include AFTER bootstrap.min.css.
 
-   Nord is a 16-colour palette (Polar Night, Snow Storm, Frost, Aurora)
-   designed for long focus sessions. Four "styles" ship as complete themes:
+   One style, two modes:
 
-       <html data-bs-theme="dark"  data-variant="polar">   Polar Night (default)
-       <html data-bs-theme="dark"  data-variant="frost">   raised Polar Night
-       <html data-bs-theme="dark"  data-variant="aurora">  Aurora
-       <html data-bs-theme="light" data-variant="snow">    Snow Storm
+       <html data-bs-theme="dark">    Nord  surfaces
+       <html data-bs-theme="light">   accent re-mixed for a light surface
 
-   Every colour is exposed as a token (--nd-nord0 … --nd-nord15) plus utility
-   classes (.nd-text-nord8, .nd-bg-nord8, .nd-chip-nord8).
+   The other styles are separate themes with identical structure.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -51,7 +47,7 @@
    2. Styles
    -------------------------------------------------------------------------- */
 /* Polar Night — the canonical Nord dark theme */
-[data-variant="polar"] {
+:root {
   --nd-bg: var(--nd-nord0);
   --nd-bg-rgb: var(--nd-nord0-rgb);
   --nd-surface: var(--nd-nord1);
@@ -74,74 +70,8 @@
 }
 
 /* Frost — a lifted Polar Night with brighter frost accents */
-[data-variant="frost"] {
-  --nd-bg: var(--nd-nord1);
-  --nd-bg-rgb: var(--nd-nord1-rgb);
-  --nd-surface: var(--nd-nord2);
-  --nd-surface-rgb: var(--nd-nord2-rgb);
-  --nd-surface-raised: var(--nd-nord3);
-  --nd-border: #55607a;
-  --nd-border-soft: rgba(216, 222, 233, 0.16);
-  --nd-fg: var(--nd-nord4);
-  --nd-fg-strong: var(--nd-nord6);
-  --nd-fg-muted: #a9b4c4;
-  --nd-accent: var(--nd-nord7);
-  --nd-accent-rgb: var(--nd-nord7-rgb);
-  --nd-accent-hover: var(--nd-nord8);
-  --nd-accent-hover-rgb: var(--nd-nord8-rgb);
-  --nd-accent-soft: rgba(143, 188, 187, 0.18);
-  --nd-on-accent: var(--nd-nord0);
-  --nd-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --nd-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --nd-code-bg: #333c4d;
-}
-
 /* Snow Storm — the light Nord theme */
-[data-variant="snow"] {
-  --nd-bg: var(--nd-nord6);
-  --nd-bg-rgb: var(--nd-nord6-rgb);
-  --nd-surface: var(--nd-nord4);
-  --nd-surface-rgb: var(--nd-nord4-rgb);
-  --nd-surface-raised: var(--nd-nord5);
-  --nd-border: #c2cad8;
-  --nd-border-soft: rgba(46, 52, 64, 0.12);
-  --nd-fg: #3b4252;
-  --nd-fg-strong: var(--nd-nord0);
-  --nd-fg-muted: #626c7d;
-  --nd-accent: var(--nd-nord10);
-  --nd-accent-rgb: var(--nd-nord10-rgb);
-  --nd-accent-hover: var(--nd-nord9);
-  --nd-accent-hover-rgb: var(--nd-nord9-rgb);
-  --nd-accent-soft: rgba(94, 129, 172, 0.14);
-  --nd-on-accent: var(--nd-nord6);
-  --nd-shadow: 0 1px 2px rgba(46, 52, 64, 0.1);
-  --nd-shadow-lg: 0 12px 28px rgba(46, 52, 64, 0.16);
-  --nd-code-bg: var(--nd-nord4);
-}
-
 /* Aurora — Nord's alternative colour scheme */
-[data-variant="aurora"] {
-  --nd-bg: var(--nd-aurora0);
-  --nd-bg-rgb: var(--nd-aurora0-rgb);
-  --nd-surface: #46527d;
-  --nd-surface-rgb: 70, 82, 125;
-  --nd-surface-raised: #4f5c88;
-  --nd-border: #5a6893;
-  --nd-border-soft: rgba(236, 239, 244, 0.14);
-  --nd-fg: var(--nd-aurora4);
-  --nd-fg-strong: var(--nd-nord6);
-  --nd-fg-muted: #b6c3da;
-  --nd-accent: var(--nd-nord8);
-  --nd-accent-rgb: var(--nd-nord8-rgb);
-  --nd-accent-hover: var(--nd-nord7);
-  --nd-accent-hover-rgb: var(--nd-nord7-rgb);
-  --nd-accent-soft: rgba(136, 192, 208, 0.18);
-  --nd-on-accent: #2e3440;
-  --nd-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --nd-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
-  --nd-code-bg: #38446b;
-}
-
 /* --------------------------------------------------------------------------
    3. Semantic mapping
    -------------------------------------------------------------------------- */
@@ -268,9 +198,9 @@ pre.nd-code {
 }
 
 pre.nd-code .nd-comment { color: var(--nd-nord3); }
-[data-variant="snow"] pre.nd-code .nd-comment { color: #7b8496; }
-[data-variant="frost"] pre.nd-code .nd-comment { color: #63707f; }
-[data-variant="aurora"] pre.nd-code .nd-comment { color: var(--nd-nord9); }
+[data-bs-theme="light"] pre.nd-code .nd-comment { color: #7b8496; }
+[data-bs-theme="light"] pre.nd-code .nd-comment { color: #63707f; }
+[data-bs-theme="light"] pre.nd-code .nd-comment { color: var(--nd-nord9); }
 pre.nd-code .nd-keyword { color: var(--nd-nord9); }
 pre.nd-code .nd-string { color: var(--nd-nord14); }
 pre.nd-code .nd-number { color: var(--nd-nord15); }
@@ -614,7 +544,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: none;
 }
 
-[data-variant="snow"] .form-check-input { border-color: #b6bfcd; }
+[data-bs-theme="light"] .form-check-input { border-color: #b6bfcd; }
 
 .form-check-input:checked {
   background-color: var(--nd-accent);
@@ -639,7 +569,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: inset 0 0 0 1px var(--nd-border);
 }
 
-[data-variant="snow"] .form-switch .form-check-input { background-color: #b6bfcd; }
+[data-bs-theme="light"] .form-switch .form-check-input { background-color: #b6bfcd; }
 
 .form-switch .form-check-input:checked {
   background-color: var(--nd-accent);
@@ -661,8 +591,8 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
 .form-range::-webkit-slider-runnable-track { background-color: var(--nd-nord2); }
 .form-range::-moz-range-track { background-color: var(--nd-nord2); }
 
-[data-variant="snow"] .form-range::-webkit-slider-runnable-track { background-color: #d5dbe5; }
-[data-variant="snow"] .form-range::-moz-range-track { background-color: #d5dbe5; }
+[data-bs-theme="light"] .form-range::-webkit-slider-runnable-track { background-color: #d5dbe5; }
+[data-bs-theme="light"] .form-range::-moz-range-track { background-color: #d5dbe5; }
 
 .form-text,
 .invalid-feedback,
@@ -818,7 +748,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   font-size: 0.8125rem;
 }
 
-[data-variant="snow"] .breadcrumb { --bs-breadcrumb-divider-color: #b6bfcd; }
+[data-bs-theme="light"] .breadcrumb { --bs-breadcrumb-divider-color: #b6bfcd; }
 
 .breadcrumb-item a { color: var(--nd-accent); }
 
@@ -953,8 +883,8 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: none;
 }
 
-[data-variant="snow"] .progress { --bs-progress-bg: #d5dbe5; }
-[data-variant="aurora"] .progress { --bs-progress-bg: #5b6795; }
+[data-bs-theme="light"] .progress { --bs-progress-bg: #d5dbe5; }
+[data-bs-theme="light"] .progress { --bs-progress-bg: #5b6795; }
 
 .progress-bar {
   background-color: var(--nd-accent);

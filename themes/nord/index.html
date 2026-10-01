@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" data-variant="polar">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -117,26 +117,7 @@
         <!-- Styles -->
         <section id="SectionPalette">
             <h2 class="section-title">Styles</h2>
-            <p class="hero-sub">Nord ships four official styles. Polar Night and Frost are dark, Snow Storm is light, Aurora uses Nord's alternative scheme.</p>
-            <div class="style-pick mb-3" id="style-picker">
-                <button type="button" class="style-btn style-btn" data-variant="polar">
-                    <span class="style-preview"><span style="background:#2e3440"></span><span style="background:#3b4252"></span><span style="background:#88c0d0"></span></span>
-                    <strong>Polar Night</strong><code>data-variant="polar"</code>
-                </button>
-                <button type="button" class="style-btn style-btn" data-variant="frost">
-                    <span class="style-preview"><span style="background:#3b4252"></span><span style="background:#434c5e"></span><span style="background:#8fbcbb"></span></span>
-                    <strong>Frost</strong><code>data-variant="frost"</code>
-                </button>
-                <button type="button" class="style-btn style-btn" data-variant="snow">
-                    <span class="style-preview"><span style="background:#eceff4"></span><span style="background:#d8dee9"></span><span style="background:#5e81ac"></span></span>
-                    <strong>Snow Storm</strong><code>data-variant="snow"</code>
-                </button>
-                <button type="button" class="style-btn style-btn" data-variant="aurora">
-                    <span class="style-preview"><span style="background:#3f4c75"></span><span style="background:#4f5d95"></span><span style="background:#88c0d0"></span></span>
-                    <strong>Aurora</strong><code>data-variant="aurora"</code>
-                </button>
-            </div>
-            <p class="mb-4">Active: <strong id="active-style">Polar Night</strong> · <code id="active-style-code">data-variant="polar"</code></p>
+            
 
             <h3 class="h6 mb-2">Polar Night <span class="text-secondary">— backgrounds</span></h3>
             <div class="nd-swatches mb-4">
@@ -376,17 +357,14 @@
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>
-                        <th scope="col">Style</th>
+                        <th scope="col">Mode</th>
                         <th scope="col">Background</th>
                         <th scope="col">Accent</th>
-                        <th scope="col">Mode</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Polar Night</td><td>#2e3440</td><td>#88c0d0</td><td>dark</td></tr>
-                    <tr><td>Frost</td><td>#3b4252</td><td>#8fbcbb</td><td>dark</td></tr>
-                    <tr><td>Snow Storm</td><td>#eceff4</td><td>#5e81ac</td><td>light</td></tr>
-                    <tr><td>Aurora</td><td>#3f4c75</td><td>#88c0d0</td><td>dark</td></tr>
+                    <tr><td>Nord dark</td><td>#2e3440</td><td>#88c0d0</td></tr>
+                    <tr><td>Nord light</td><td>#eceff4</td><td>#88c0d0</td></tr>
                 </tbody>
             </table>
         </section>
@@ -410,12 +388,10 @@
                         <input type="text" class="form-control" id="disabledField" value="Read only" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="selectField">Style</label>
+                        <label class="form-label" for="selectField">Appearance</label>
                         <select class="form-select" id="selectField">
-                            <option selected>Polar Night</option>
-                            <option>Frost</option>
-                            <option>Snow Storm</option>
-                            <option>Aurora</option>
+                            <option selected>Dark</option>
+                            <option>Light</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -1141,8 +1117,7 @@
             </div>
 
             <h3 class="h6 text-secondary">Usage</h3>
-            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark" data-variant="polar"&gt;</code> ·
-                Light: <code>data-variant="snow"</code></p>
+            <p class="text-secondary mb-0">Dark: <code>&lt;html data-bs-theme="dark"&gt;</code> · Light: <code>data-bs-theme="light"</code></p>
         </section>
 
     </div>
@@ -1159,15 +1134,10 @@
     <script>
         const html = document.documentElement;
         const toggle = document.getElementById('theme-toggle');
-        const styleLabel = document.getElementById('active-style');
-        const styleCode = document.getElementById('active-style-code');
-        const liveToast = document.getElementById('liveToast');
+                        const liveToast = document.getElementById('liveToast');
         const liveToastBody = document.getElementById('liveToastBody');
 
-        // Snow Storm is the light style; the rest are dark.
-        const styleMode = { polar: 'dark', frost: 'dark', aurora: 'dark', snow: 'light' };
-        const styleNames = { polar: 'Polar Night', frost: 'Frost', aurora: 'Aurora', snow: 'Snow Storm' };
-
+        //                 
         function announce(message) {
             liveToastBody.textContent = message;
             bootstrap.Toast.getOrCreateInstance(liveToast).show();
@@ -1180,18 +1150,6 @@
             if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
         }
 
-        function applyStyle(name, notify) {
-            html.setAttribute('data-variant', name);
-            applyTheme(styleMode[name]);
-            styleLabel.textContent = styleNames[name];
-            styleCode.textContent = 'data-variant="' + name + '"';
-            document.querySelectorAll('.style-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.variant === name);
-            });
-            if (notify) announce('Switched to ' + styleNames[name] + '.');
-        }
-
-        applyStyle('polar', false);
 
         toggle.addEventListener('click', () => {
             const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
@@ -1203,10 +1161,6 @@
             applyTheme(e.target.checked ? 'light' : 'dark');
         });
 
-        document.getElementById('style-picker').addEventListener('click', (e) => {
-            const btn = e.target.closest('.style-btn');
-            if (btn) applyStyle(btn.dataset.variant, true);
-        });
 
         document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));

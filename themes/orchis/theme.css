@@ -1,17 +1,12 @@
 /* ==========================================================================
    Orchis — Bootstrap 5 Theme
-   Inspired by the Orchis GTK theme (Material Design × macOS).
    Include AFTER bootstrap.min.css.
 
-   Orchis modes are opt-in attributes on <html> (or any ancestor):
+   One accent, two modes. This is the Orchis theme with the blue accent;
+   the other accents are separate themes with identical structure.
 
-       data-bs-theme="light|dark"   Light / dark palette
-       data-variant="…"             10 accent presets (see section 2)
-       data-panels="float|flat"     Floating panel look (default: flat)
-       data-density="regular|compact"
-
-   The result is a rounded, airy, softly elevated interface that feels at
-   home in both GTK3/GTK4 and libadwaita applications.
+       <html data-bs-theme="dark">    blue accent, dark surfaces
+       <html data-bs-theme="light">   blue accent, light surfaces
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -113,146 +108,56 @@
 /* --------------------------------------------------------------------------
    2. Accent presets
    -------------------------------------------------------------------------- */
-[data-variant="blue"] {
+:root {
   --orchis-accent: #2a7fd4; --orchis-accent-rgb: 42, 127, 212;
   --orchis-accent-hover: #1c66b0; --orchis-accent-hover-rgb: 28, 102, 176;
   --orchis-accent-soft: rgba(42, 127, 212, 0.14); --orchis-accent-tint: #e2eefb;
   --orchis-on-accent: #ffffff;
 }
 
-[data-variant="green"] {
-  --orchis-accent: #3a944a; --orchis-accent-rgb: 58, 148, 74;
-  --orchis-accent-hover: #2c7a39; --orchis-accent-hover-rgb: 44, 122, 57;
-  --orchis-accent-soft: rgba(58, 148, 74, 0.16); --orchis-accent-tint: #e4f3e7;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="purple"] {
-  --orchis-accent: #7764d8; --orchis-accent-rgb: 119, 100, 216;
-  --orchis-accent-hover: #5f4dc0; --orchis-accent-hover-rgb: 95, 77, 192;
-  --orchis-accent-soft: rgba(119, 100, 216, 0.16); --orchis-accent-tint: #ece9fb;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="sage"] {
-  --orchis-accent: #4f9d8a; --orchis-accent-rgb: 79, 157, 138;
-  --orchis-accent-hover: #3d8071; --orchis-accent-hover-rgb: 61, 128, 113;
-  --orchis-accent-soft: rgba(79, 157, 138, 0.18); --orchis-accent-tint: #e0f0ec;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="slate"] {
-  --orchis-accent: #5b6b7c; --orchis-accent-rgb: 91, 107, 124;
-  --orchis-accent-hover: #475666; --orchis-accent-hover-rgb: 71, 86, 102;
-  --orchis-accent-soft: rgba(91, 107, 124, 0.18); --orchis-accent-tint: #e8ebef;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="orange"] {
-  --orchis-accent: #ed5b00; --orchis-accent-rgb: 237, 91, 0;
-  --orchis-accent-hover: #c94900; --orchis-accent-hover-rgb: 201, 73, 0;
-  --orchis-accent-soft: rgba(237, 91, 0, 0.16); --orchis-accent-tint: #fdeade;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="pink"] {
-  --orchis-accent: #d5618c; --orchis-accent-rgb: 213, 97, 140;
-  --orchis-accent-hover: #b44870; --orchis-accent-hover-rgb: 180, 72, 112;
-  --orchis-accent-soft: rgba(213, 97, 140, 0.16); --orchis-accent-tint: #fbe7ef;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="red"] {
-  --orchis-accent: #e01b24; --orchis-accent-rgb: 224, 27, 36;
-  --orchis-accent-hover: #b9141c; --orchis-accent-hover-rgb: 185, 20, 28;
-  --orchis-accent-soft: rgba(224, 27, 36, 0.14); --orchis-accent-tint: #fce5e6;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="yellow"] {
-  --orchis-accent: #e9a00e; --orchis-accent-rgb: 233, 160, 14;
-  --orchis-accent-hover: #c68606; --orchis-accent-hover-rgb: 198, 134, 6;
-  --orchis-accent-soft: rgba(233, 160, 14, 0.2); --orchis-accent-tint: #fdf1da;
-  --orchis-on-accent: #ffffff;
-}
 
-[data-variant="cyan"] {
-  --orchis-accent: #0084a8; --orchis-accent-rgb: 0, 132, 168;
-  --orchis-accent-hover: #006b89; --orchis-accent-hover-rgb: 0, 107, 137;
-  --orchis-accent-soft: rgba(0, 132, 168, 0.16); --orchis-accent-tint: #e0f1f6;
-  --orchis-on-accent: #ffffff;
-}
+
+
+
+
+
+
+
+
+
 
 /* Dark mode: brighter, pastel-leaning accents */
-[data-bs-theme="dark"][data-variant="blue"] {
+[data-bs-theme="dark"] {
   --orchis-accent: #7bb8f0; --orchis-accent-rgb: 123, 184, 240;
   --orchis-accent-hover: #a5d0f7; --orchis-accent-hover-rgb: 165, 208, 247;
   --orchis-accent-soft: rgba(123, 184, 240, 0.2); --orchis-accent-tint: #1d2c3d;
   --orchis-on-accent: #10161f;
 }
 
-[data-bs-theme="dark"][data-variant="green"] {
-  --orchis-accent: #7fd18f; --orchis-accent-rgb: 127, 209, 143;
-  --orchis-accent-hover: #a2e0ae; --orchis-accent-hover-rgb: 162, 224, 174;
-  --orchis-accent-soft: rgba(127, 209, 143, 0.2); --orchis-accent-tint: #1b2c22;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="purple"] {
-  --orchis-accent: #ab9bf0; --orchis-accent-rgb: 171, 155, 240;
-  --orchis-accent-hover: #c3b6f6; --orchis-accent-hover-rgb: 195, 182, 246;
-  --orchis-accent-soft: rgba(171, 155, 240, 0.2); --orchis-accent-tint: #262340;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="sage"] {
-  --orchis-accent: #7ec9b6; --orchis-accent-rgb: 126, 201, 182;
-  --orchis-accent-hover: #9fdccc; --orchis-accent-hover-rgb: 159, 220, 204;
-  --orchis-accent-soft: rgba(126, 201, 182, 0.2); --orchis-accent-tint: #1b2f2b;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="slate"] {
-  --orchis-accent: #a4b3c7; --orchis-accent-rgb: 164, 179, 199;
-  --orchis-accent-hover: #bcc8d8; --orchis-accent-hover-rgb: 188, 200, 216;
-  --orchis-accent-soft: rgba(164, 179, 199, 0.2); --orchis-accent-tint: #232830;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="orange"] {
-  --orchis-accent: #ffa869; --orchis-accent-rgb: 255, 168, 105;
-  --orchis-accent-hover: #ffbf90; --orchis-accent-hover-rgb: 255, 191, 144;
-  --orchis-accent-soft: rgba(255, 168, 105, 0.2); --orchis-accent-tint: #33231a;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="pink"] {
-  --orchis-accent: #f194b8; --orchis-accent-rgb: 241, 148, 184;
-  --orchis-accent-hover: #f6b3cd; --orchis-accent-hover-rgb: 246, 179, 205;
-  --orchis-accent-soft: rgba(241, 148, 184, 0.2); --orchis-accent-tint: #33202a;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="red"] {
-  --orchis-accent: #f5848c; --orchis-accent-rgb: 245, 132, 140;
-  --orchis-accent-hover: #f8a3a9; --orchis-accent-hover-rgb: 248, 163, 169;
-  --orchis-accent-soft: rgba(245, 132, 140, 0.2); --orchis-accent-tint: #332022;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="yellow"] {
-  --orchis-accent: #f5c451; --orchis-accent-rgb: 245, 196, 81;
-  --orchis-accent-hover: #f9d67c; --orchis-accent-hover-rgb: 249, 214, 124;
-  --orchis-accent-soft: rgba(245, 196, 81, 0.2); --orchis-accent-tint: #322a19;
-  --orchis-on-accent: #10161f;
-}
 
-[data-bs-theme="dark"][data-variant="cyan"] {
-  --orchis-accent: #62d0ec; --orchis-accent-rgb: 98, 208, 236;
-  --orchis-accent-hover: #8adcf1; --orchis-accent-hover-rgb: 138, 220, 241;
-  --orchis-accent-soft: rgba(98, 208, 236, 0.2); --orchis-accent-tint: #172c33;
-  --orchis-on-accent: #10161f;
-}
+
+
+
+
+
+
+
+
+
 
 /* --------------------------------------------------------------------------
    3. Bootstrap variable overrides

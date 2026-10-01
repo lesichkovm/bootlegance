@@ -1,15 +1,12 @@
 /* ==========================================================================
    Vimix — Bootstrap 5 Theme
-   Inspired by the Vimix GNOME/GTK theme by justonceplaying (macOS-inspired).
    Include AFTER bootstrap.min.css.
 
-   Colour variants are selected with a `data-variant` attribute on any
-   ancestor (normally <html>) and combine with Bootstrap's light/dark mode:
+   One accent, two modes. This is the Vimix theme with the blue accent;
+   the other accents are separate themes with identical structure.
 
-       <html data-bs-theme="light" data-variant="green">
-       <html data-bs-theme="dark"  data-variant="orange">
-
-   Variants: blue (default), dark, green, orange, pink, purple, red, teal, yellow.
+       <html data-bs-theme="dark">    blue accent, dark surfaces
+       <html data-bs-theme="light">   blue accent, light surfaces
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -81,123 +78,51 @@
 /* --------------------------------------------------------------------------
    2. Colour variants
    -------------------------------------------------------------------------- */
-[data-variant="blue"] {
+:root {
   --vix-accent: #007aff; --vix-accent-rgb: 0, 122, 255;
   --vix-accent-hi: #0062cc; --vix-accent-hi-rgb: 0, 98, 204;
   --vix-accent-soft: rgba(0, 122, 255, 0.14);
   --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
 }
 
-[data-variant="dark"] {
-  --vix-accent: #4b4b52; --vix-accent-rgb: 75, 75, 82;
-  --vix-accent-hi: #3a3a40; --vix-accent-hi-rgb: 58, 58, 64;
-  --vix-accent-soft: rgba(75, 75, 82, 0.16);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="green"] {
-  --vix-accent: #28c840; --vix-accent-rgb: 40, 200, 64;
-  --vix-accent-hi: #1e9e32; --vix-accent-hi-rgb: 30, 158, 50;
-  --vix-accent-soft: rgba(40, 200, 64, 0.16);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="orange"] {
-  --vix-accent: #ff9500; --vix-accent-rgb: 255, 149, 0;
-  --vix-accent-hi: #d97d00; --vix-accent-hi-rgb: 217, 125, 0;
-  --vix-accent-soft: rgba(255, 149, 0, 0.18);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="pink"] {
-  --vix-accent: #ff375f; --vix-accent-rgb: 255, 55, 95;
-  --vix-accent-hi: #d81e44; --vix-accent-hi-rgb: 216, 30, 68;
-  --vix-accent-soft: rgba(255, 55, 95, 0.16);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="purple"] {
-  --vix-accent: #af52de; --vix-accent-rgb: 175, 82, 222;
-  --vix-accent-hi: #8f3cba; --vix-accent-hi-rgb: 143, 60, 186;
-  --vix-accent-soft: rgba(175, 82, 222, 0.16);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="red"] {
-  --vix-accent: #ff3b30; --vix-accent-rgb: 255, 59, 48;
-  --vix-accent-hi: #d92c22; --vix-accent-hi-rgb: 217, 44, 34;
-  --vix-accent-soft: rgba(255, 59, 48, 0.16);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="teal"] {
-  --vix-accent: #00b3c7; --vix-accent-rgb: 0, 179, 199;
-  --vix-accent-hi: #0091a2; --vix-accent-hi-rgb: 0, 145, 162;
-  --vix-accent-soft: rgba(0, 179, 199, 0.18);
-  --vix-on-accent: #ffffff; --vix-on-accent-rgb: 255, 255, 255;
-}
 
-[data-variant="yellow"] {
-  --vix-accent: #ffcc00; --vix-accent-rgb: 255, 204, 0;
-  --vix-accent-hi: #e0a800; --vix-accent-hi-rgb: 224, 168, 0;
-  --vix-accent-soft: rgba(255, 204, 0, 0.24);
-  --vix-on-accent: #1d1d1f; --vix-on-accent-rgb: 29, 29, 31;
-}
+
+
+
+
+
+
+
+
 
 /* Dark mode tints every variant brighter for contrast on dark surfaces */
-[data-bs-theme="dark"][data-variant="blue"] {
+[data-bs-theme="dark"] {
   --vix-accent: #0a84ff; --vix-accent-rgb: 10, 132, 255;
   --vix-accent-hi: #409cff; --vix-accent-hi-rgb: 64, 156, 255;
   --vix-accent-soft: rgba(10, 132, 255, 0.24);
 }
 
-[data-bs-theme="dark"][data-variant="dark"] {
-  --vix-accent: #7a7a84; --vix-accent-rgb: 122, 122, 132;
-  --vix-accent-hi: #96969f; --vix-accent-hi-rgb: 150, 150, 159;
-  --vix-accent-soft: rgba(122, 122, 132, 0.24);
-}
 
-[data-bs-theme="dark"][data-variant="green"] {
-  --vix-accent: #32d74b; --vix-accent-rgb: 50, 215, 75;
-  --vix-accent-hi: #40e866; --vix-accent-hi-rgb: 64, 232, 102;
-  --vix-accent-soft: rgba(50, 215, 75, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="orange"] {
-  --vix-accent: #ff9f0a; --vix-accent-rgb: 255, 159, 10;
-  --vix-accent-hi: #ffb340; --vix-accent-hi-rgb: 255, 179, 64;
-  --vix-accent-soft: rgba(255, 159, 10, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="pink"] {
-  --vix-accent: #ff6482; --vix-accent-rgb: 255, 100, 130;
-  --vix-accent-hi: #ff85a0; --vix-accent-hi-rgb: 255, 133, 160;
-  --vix-accent-soft: rgba(255, 100, 130, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="purple"] {
-  --vix-accent: #da8fff; --vix-accent-rgb: 218, 143, 255;
-  --vix-accent-hi: #e6b0ff; --vix-accent-hi-rgb: 230, 176, 255;
-  --vix-accent-soft: rgba(218, 143, 255, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="red"] {
-  --vix-accent: #ff453a; --vix-accent-rgb: 255, 69, 58;
-  --vix-accent-hi: #ff6a61; --vix-accent-hi-rgb: 255, 106, 97;
-  --vix-accent-soft: rgba(255, 69, 58, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="teal"] {
-  --vix-accent: #40c8e0; --vix-accent-rgb: 64, 200, 224;
-  --vix-accent-hi: #64d9ec; --vix-accent-hi-rgb: 100, 217, 236;
-  --vix-accent-soft: rgba(64, 200, 224, 0.22);
-}
 
-[data-bs-theme="dark"][data-variant="yellow"] {
-  --vix-accent: #ffd60a; --vix-accent-rgb: 255, 214, 10;
-  --vix-accent-hi: #ffe14d; --vix-accent-hi-rgb: 255, 225, 77;
-  --vix-accent-soft: rgba(255, 214, 10, 0.22);
-}
+
+
+
+
+
+
+
+
 
 /* --------------------------------------------------------------------------
    3. Bootstrap variable overrides
