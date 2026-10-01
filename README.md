@@ -65,6 +65,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Adwaita** | Neutral GNOME/libadwaita foundation, adaptive | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/adwaita/index.html) | Enterprise/desktop apps, accessibility-first, Linux |
 | **Orchis** | Material Design × macOS, floating panels, 10 presets | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/orchis/index.html) | Designer-grade desktop apps, branded products, Linux |
 | **Catppuccin** | Official Catppuccin palette, 4 flavours | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/catppuccin/index.html) | Developer tools, terminals, editors, cozy apps |
+| **Nord** | Arctic-based, 4 official styles | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/nord/index.html) | Professional tools, dashboards, long-session work |
 | **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |
