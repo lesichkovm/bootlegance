@@ -29,6 +29,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Vimix     | `vimix`      | Available |
 | Adwaita   | `adwaita`    | Available |
 | Orchis    | `orchis`      | Available |
+| Catppuccin | `catppuccin` | Available |
 | Midnight   | `midnight`   | Planned |
 | Sunrise    | `sunrise`    | Planned |
 | Ocean      | `ocean`      | Planned |
