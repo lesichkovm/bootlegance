@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Midnight Bootstrap 5 Theme
+   Dark, sophisticated, and professional theme for corporate apps, SaaS, and modern tech.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Midnight Theme Palette Tokens */
+  --mn-bg-light: #f8fafc;
+  --mn-surface-light: #ffffff;
+  --mn-surface-subtle-light: #f1f5f9;
+  --mn-border-light: #e2e8f0;
+  --mn-border-subtle-light: #cbd5e1;
+  --mn-text-light: #0f172a;
+  --mn-text-muted-light: #475569;
+
+  --mn-bg-dark: #0b0f19;
+  --mn-surface-dark: #111827;
+  --mn-surface-subtle-dark: #1f2937;
+  --mn-border-dark: #1f2937;
+  --mn-border-subtle-dark: #374151;
+  --mn-text-dark: #f9fafb;
+  --mn-text-muted-dark: #9ca3af;
+
+  /* Accent Colors */
+  --mn-blue-primary: #2563eb;
+  --mn-blue-primary-hover: #1d4ed8;
+  --mn-blue-dark: #3b82f6;
+  --mn-blue-dark-hover: #60a5fa;
+
+  --mn-slate-secondary: #475569;
+  --mn-slate-secondary-hover: #334155;
+  --mn-slate-dark-secondary: #64748b;
+
+  --mn-emerald-success: #10b981;
+  --mn-amber-warning: #f59e0b;
+  --mn-rose-danger: #ef4444;
+  --mn-cyan-info: #06b6d4;
+
+  /* Bootstrap Color Palette Overrides - Light Mode Default */
+  --bs-primary: var(--mn-blue-primary);
+  --bs-primary-rgb: 37, 99, 235;
+  --bs-secondary: var(--mn-slate-secondary);
+  --bs-secondary-rgb: 71, 85, 105;
+  --bs-success: var(--mn-emerald-success);
+  --bs-success-rgb: 16, 185, 129;
+  --bs-info: var(--mn-cyan-info);
+  --bs-info-rgb: 6, 182, 212;
+  --bs-warning: var(--mn-amber-warning);
+  --bs-warning-rgb: 245, 158, 11;
+  --bs-danger: var(--mn-rose-danger);
+  --bs-danger-rgb: 239, 68, 68;
+  --bs-light: var(--mn-surface-subtle-light);
+  --bs-light-rgb: 241, 245, 249;
+  --bs-dark: var(--mn-text-light);
+  --bs-dark-rgb: 15, 23, 42;
+
+  /* Body & Surface */
+  --bs-body-bg: var(--mn-bg-light);
+  --bs-body-color: var(--mn-text-light);
+  --bs-secondary-color: var(--mn-text-muted-light);
+  --bs-tertiary-bg: var(--mn-surface-light);
+  --bs-border-color: var(--mn-border-light);
+
+  /* Typography */
+  --bs-font-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 0.95rem;
+  --bs-body-line-height: 1.6;
+
+  /* Globals */
+  --bs-border-radius: 6px;
+  --bs-border-radius-sm: 4px;
+  --bs-border-radius-lg: 8px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 3px;
+  --bs-focus-ring-color: rgba(var(--bs-primary-rgb), 0.35);
+
+  /* Navbar */
+  --bs-navbar-bg: var(--mn-surface-light);
+}
+
+/* --------------------------------------------------------------------------
+   Native Dark Mode Support
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bs-primary: var(--mn-blue-dark);
+  --bs-primary-rgb: 59, 130, 246;
+  --bs-secondary: var(--mn-slate-dark-secondary);
+  --bs-secondary-rgb: 100, 116, 139;
+
+  --bs-body-bg: var(--mn-bg-dark);
+  --bs-body-color: var(--mn-text-dark);
+  --bs-secondary-color: var(--mn-text-muted-dark);
+  --bs-tertiary-bg: var(--mn-surface-dark);
+  --bs-border-color: var(--bs-secondary-bg);
+
+  --bs-light: var(--mn-surface-subtle-dark);
+  --bs-light-rgb: 31, 41, 55;
+  --bs-dark: var(--mn-bg-dark);
+  --bs-dark-rgb: 11, 15, 25;
+
+  --bs-navbar-bg: var(--mn-surface-dark);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--bs-body-color);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--bs-primary);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: var(--bs-border-radius);
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--mn-blue-primary-hover);
+  --bs-btn-hover-border-color: var(--mn-blue-primary-hover);
+  --bs-btn-active-bg: var(--mn-blue-primary-hover);
+  --bs-btn-active-border-color: var(--mn-blue-primary-hover);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-hover-bg: var(--mn-blue-dark-hover);
+  --bs-btn-hover-border-color: var(--mn-blue-dark-hover);
+  --bs-btn-active-bg: var(--mn-blue-dark-hover);
+  --bs-btn-active-border-color: var(--mn-blue-dark-hover);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: var(--mn-slate-secondary-hover);
+  --bs-btn-hover-border-color: var(--mn-slate-secondary-hover);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bs-navbar-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--bs-body-color);
+}
+
+.navbar .nav-link {
+  color: var(--bs-secondary-color);
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--bs-body-color);
+}
+
+.navbar .nav-link.active {
+  color: var(--bs-primary) !important;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--bs-border-radius-lg);
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] .card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  background-color: rgba(var(--bs-primary-rgb), 0.03);
+  border-bottom: 1px solid var(--bs-border-color);
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .card-header {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --------------------------------------------------------------------------
+   6. Forms
+   -------------------------------------------------------------------------- */
+.form-control, .form-select {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+}
+
+.form-check-input {
+  border-color: var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+  border-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Progress Bars & Spinners
+   -------------------------------------------------------------------------- */
+.progress {
+  height: 8px;
+  background-color: var(--bs-light);
+  border-radius: var(--bs-border-radius-sm);
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(var(--bs-primary-rgb), 0.02);
+  --bs-table-hover-bg: rgba(var(--bs-primary-rgb), 0.05);
+  --bs-table-border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--bs-border-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--bs-secondary-color);
+}
+
+/* --------------------------------------------------------------------------
+   9. Badges
+   -------------------------------------------------------------------------- */
+.badge {
+  border-radius: var(--bs-border-radius-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   10. Alerts
+   -------------------------------------------------------------------------- */
+.alert {
+  border: 1px solid var(--bs-border-color);
+  border-left: 4px solid var(--bs-primary);
+  border-radius: var(--bs-border-radius);
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+}
+
+.alert-primary { border-left-color: var(--bs-primary); }
+.alert-secondary { border-left-color: var(--bs-secondary); }
+.alert-success { border-left-color: var(--bs-success); }
+.alert-danger { border-left-color: var(--bs-danger); }
+.alert-warning { border-left-color: var(--bs-warning); }
+.alert-info { border-left-color: var(--bs-info); }
+
+/* --------------------------------------------------------------------------
+   11. Other Components
+   -------------------------------------------------------------------------- */
+.list-group-item {
+  background-color: var(--bs-tertiary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.list-group-item.active {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--bs-primary);
+}
+
+.pagination {
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+  --bs-pagination-border-color: var(--bs-border-color);
+  --bs-pagination-bg: var(--bs-tertiary-bg);
+}
+
+.page-link {
+  color: var(--bs-primary);
+}
+
+.accordion-item {
+  background-color: var(--bs-tertiary-bg);
+  border-color: var(--bs-border-color);
+}
+
+.accordion-button {
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(var(--bs-primary-rgb), 0.08);
+  color: var(--bs-primary);
+}
+
+.accordion-button:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+}
+
+.toast {
+  background-color: var(--bs-tertiary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.toast-header {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  border-bottom-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.modal-content {
+  background-color: var(--bs-tertiary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.modal-header, .modal-footer {
+  border-color: var(--bs-border-color);
+}
+
+.offcanvas {
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid var(--bs-border-color);
+}
