@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Terminal / CRT Bootstrap 5 Theme
+   Green phosphor / amber CRT retro terminal aesthetic.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Terminal Light Tokens (Amber Retro Paper Terminal) */
+  --term-amber: #c26100;
+  --term-amber-dark: #3d2b00;
+  --term-paper: #fcf8ed;
+  --term-card-light: #f3eacb;
+  --term-border-light: #3d2b00;
+
+  /* Bootstrap Primary Overrides (Light Mode) */
+  --bs-primary: var(--term-amber);
+  --bs-primary-rgb: 194, 97, 0;
+  --bs-secondary: #6e5428;
+  --bs-secondary-rgb: 110, 84, 40;
+  --bs-success: #2d7a22;
+  --bs-success-rgb: 45, 122, 34;
+  --bs-info: #007799;
+  --bs-info-rgb: 0, 119, 153;
+  --bs-warning: #b38600;
+  --bs-warning-rgb: 179, 134, 0;
+  --bs-danger: #b81d1d;
+  --bs-danger-rgb: 184, 29, 29;
+  --bs-light: #f3eacb;
+  --bs-light-rgb: 243, 234, 203;
+  --bs-dark: #3d2b00;
+  --bs-dark-rgb: 61, 43, 0;
+
+  /* Body & Surface */
+  --bs-body-bg: var(--term-paper);
+  --bs-body-color: var(--term-amber-dark);
+  --bs-tertiary-bg: var(--term-card-light);
+  --bs-border-color: var(--term-border-light);
+
+  /* Typography */
+  --bs-font-sans-serif: 'JetBrains Mono', 'Courier New', Courier, monospace;
+  --bs-body-font-size: 0.95rem;
+  --bs-body-line-height: 1.5;
+
+  /* Components Globals */
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-color: var(--term-amber);
+
+  /* Navbar */
+  --bs-navbar-bg: #f3eacb;
+}
+
+[data-bs-theme="dark"] {
+  --term-green: #00ff66;
+  --term-green-dark: #0c100d;
+
+  --bs-primary: var(--term-green);
+  --bs-primary-rgb: 0, 255, 102;
+  --bs-secondary: #00cc52;
+  --bs-secondary-rgb: 0, 204, 82;
+  --bs-success: #00ff66;
+  --bs-success-rgb: 0, 255, 102;
+  --bs-info: #00e5ff;
+  --bs-info-rgb: 0, 229, 255;
+  --bs-warning: #ffea00;
+  --bs-warning-rgb: 255, 234, 0;
+  --bs-danger: #ff3355;
+  --bs-danger-rgb: 255, 51, 85;
+
+  --bs-body-bg: #0c100d;
+  --bs-body-color: #00ff66;
+  --bs-tertiary-bg: #121a14;
+  --bs-border-color: #00ff66;
+
+  --bs-light: #121a14;
+  --bs-dark: #0c100d;
+
+  --bs-navbar-bg: #080c09;
+  --bs-focus-ring-color: var(--term-green);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+* {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.6);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: underline;
+}
+
+a:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-body-bg) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Retro Sharp Component Styling
+   -------------------------------------------------------------------------- */
+.btn, .card, .alert, .modal-content, .offcanvas, .toast, .form-control, .form-select, .list-group-item {
+  border-radius: 0 !important;
+  border: 1px solid var(--bs-border-color);
+}
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  color: #0c100d;
+  background-color: var(--term-green);
+  border-color: var(--term-green);
+  box-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--bs-border-color);
+  background-color: var(--bs-navbar-bg) !important;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--bs-border-color);
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] .card-header {
+  background-color: rgba(0, 255, 102, 0.1);
+}
+
+.form-control, .form-select {
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 2px var(--bs-focus-ring-color);
+}

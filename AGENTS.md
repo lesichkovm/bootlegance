@@ -18,64 +18,71 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 
 | Theme                 | Slug                  | Status    |
 |-----------------------|-----------------------|-----------|
-| Adwaita               | `adwaita`               | Available |
-| Ant Design            | `ant-design`            | Available |
-| Ayu                   | `ayu`                   | Available |
-| Brutalski             | `brutalski`             | Available |
-| Carbon                | `carbon`                | Available |
-| Catppuccin            | `catppuccin`            | Available |
-| Catppuccin Frappé     | `catppuccin-frappe`     | Available |
-| Catppuccin Macchiato  | `catppuccin-macchiato`  | Available |
-| Civic                 | `civic`                 | Available |
-| Dracula               | `dracula`               | Available |
-| Dracula Soft          | `dracula-soft`          | Available |
-| Everforest            | `everforest`            | Available |
-| Fluent                | `fluent`                | Available |
-| Forest                | `forest`                | Available |
-| GitHub Primer         | `github-primer`         | Available |
-| Gruvbox               | `gruvbox`               | Available |
-| Kanagawa              | `kanagawa`              | Available |
-| KDE Breeze            | `kde-breeze`            | Available |
-| Classic Mac OS        | `mac-classic`           | Available |
-| Material Design 3     | `material-3`            | Available |
-| Midnight              | `midnight`              | Available |
-| Night Owl             | `night-owl`             | Available |
-| Nord                  | `nord`                  | Available |
-| Nord Aurora           | `nord-aurora`           | Available |
-| Nord Frost            | `nord-frost`            | Available |
-| Ocean                 | `ocean`                 | Available |
-| One Dark              | `one-dark`              | Available |
-| Orchis                | `orchis`                | Available |
-| Orchis Cyan           | `orchis-cyan`           | Available |
-| Orchis Green          | `orchis-green`          | Available |
-| Orchis Orange         | `orchis-orange`         | Available |
-| Orchis Pink           | `orchis-pink`           | Available |
-| Orchis Purple         | `orchis-purple`         | Available |
-| Orchis Red            | `orchis-red`            | Available |
-| Orchis Sage           | `orchis-sage`           | Available |
-| Orchis Slate          | `orchis-slate`          | Available |
-| Orchis Yellow         | `orchis-yellow`         | Available |
-| Pantheon              | `pantheon`              | Available |
-| Rosé Pine             | `rose-pine`             | Available |
-| Seneca                | `seneca`                | Available |
-| Slate                 | `slate`                 | Available |
-| Solarized             | `solarized`             | Available |
-| Sunrise               | `sunrise`               | Available |
-| Tokyo Night           | `tokyo-night`           | Available |
-| Vanguard              | `vanguard`              | Available |
-| Vimix                 | `vimix`                 | Available |
-| Vimix Dark            | `vimix-dark`            | Available |
-| Vimix Green           | `vimix-green`           | Available |
-| Vimix Orange          | `vimix-orange`          | Available |
-| Vimix Pink            | `vimix-pink`            | Available |
-| Vimix Purple          | `vimix-purple`          | Available |
-| Vimix Red             | `vimix-red`             | Available |
-| Vimix Teal            | `vimix-teal`            | Available |
-| Vimix Yellow          | `vimix-yellow`          | Available |
-| Whitehall             | `whitehall`             | Available |
-| WhiteSur              | `whitesur`              | Available |
-| Windows 98            | `win98`                 | Available |
-| Yaru                  | `yaru`                  | Available |
+| Adwaita               | `adwaita`             | Available |
+| Ant Design            | `ant-design`          | Available |
+| Ayu                   | `ayu`                 | Available |
+| Brutalski             | `brutalski`           | Available |
+| Carbon                | `carbon`              | Available |
+| Catppuccin            | `catppuccin`          | Available |
+| Catppuccin Frappé     | `catppuccin-frappe`   | Available |
+| Catppuccin Macchiato  | `catppuccin-macchiato` | Available |
+| Civic                 | `civic`               | Available |
+| Classic Mac OS        | `mac-classic`         | Available |
+| Cyberpunk / Synthwave '84 | `cyberpunk`           | Available |
+| Dracula               | `dracula`             | Available |
+| Dracula Soft          | `dracula-soft`        | Available |
+| Editorial / Paper     | `editorial`           | Available |
+| Everforest            | `everforest`          | Available |
+| Fluent                | `fluent`              | Available |
+| Forest                | `forest`              | Available |
+| GitHub Primer         | `github-primer`       | Available |
+| Glassmorphism         | `glassmorphism`       | Available |
+| Gruvbox               | `gruvbox`             | Available |
+| Kanagawa              | `kanagawa`            | Available |
+| KDE Breeze            | `kde-breeze`          | Available |
+| Material Design 3     | `material-3`          | Available |
+| Midnight              | `midnight`            | Available |
+| Neo-brutalism (soft)  | `neo-brutalism`       | Available |
+| Night Owl             | `night-owl`           | Available |
+| Nord                  | `nord`                | Available |
+| Nord Aurora           | `nord-aurora`         | Available |
+| Nord Frost            | `nord-frost`          | Available |
+| Ocean                 | `ocean`               | Available |
+| One Dark              | `one-dark`            | Available |
+| Orchis                | `orchis`              | Available |
+| Orchis Cyan           | `orchis-cyan`         | Available |
+| Orchis Green          | `orchis-green`        | Available |
+| Orchis Orange         | `orchis-orange`       | Available |
+| Orchis Pink           | `orchis-pink`         | Available |
+| Orchis Purple         | `orchis-purple`       | Available |
+| Orchis Red            | `orchis-red`          | Available |
+| Orchis Sage           | `orchis-sage`         | Available |
+| Orchis Slate          | `orchis-slate`        | Available |
+| Orchis Yellow         | `orchis-yellow`       | Available |
+| Pantheon              | `pantheon`            | Available |
+| Rosé Pine             | `rose-pine`           | Available |
+| Seneca                | `seneca`              | Available |
+| Sepia / Reading mode  | `sepia`               | Available |
+| Slate                 | `slate`               | Available |
+| Solarized             | `solarized`           | Available |
+| Sunrise               | `sunrise`             | Available |
+| Swiss / International Style | `swiss`               | Available |
+| Terminal / CRT        | `terminal`            | Available |
+| Tokyo Night           | `tokyo-night`         | Available |
+| Vanguard              | `vanguard`            | Available |
+| Vimix                 | `vimix`               | Available |
+| Vimix Dark            | `vimix-dark`          | Available |
+| Vimix Green           | `vimix-green`         | Available |
+| Vimix Orange          | `vimix-orange`        | Available |
+| Vimix Pink            | `vimix-pink`          | Available |
+| Vimix Purple          | `vimix-purple`        | Available |
+| Vimix Red             | `vimix-red`           | Available |
+| Vimix Teal            | `vimix-teal`          | Available |
+| Vimix Yellow          | `vimix-yellow`        | Available |
+| Whitehall             | `whitehall`           | Available |
+| WhiteSur              | `whitesur`            | Available |
+| Windows 98            | `win98`               | Available |
+| Yaru                  | `yaru`                | Available |
 
 
 ---

@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Neo-brutalism (soft) Bootstrap 5 Theme
+   Thick borders and offset shadows in bright colors, soft rounded corners.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Neo-brutalism Tokens */
+  --neo-border-width: 2px;
+  --neo-shadow: 3px 3px 0px #0f172a;
+
+  --neo-purple: #7c3aed;
+  --neo-purple-hover: #6d28d9;
+  --neo-pink: #f43f5e;
+  --neo-yellow: #f59e0b;
+  --neo-green: #10b981;
+  --neo-blue: #0284c7;
+
+  /* Bootstrap Primary Overrides (Light Mode) */
+  --bs-primary: var(--neo-purple);
+  --bs-primary-rgb: 124, 58, 237;
+  --bs-secondary: var(--neo-pink);
+  --bs-secondary-rgb: 244, 63, 94;
+  --bs-success: var(--neo-green);
+  --bs-success-rgb: 16, 185, 129;
+  --bs-info: var(--neo-blue);
+  --bs-info-rgb: 2, 132, 199;
+  --bs-warning: var(--neo-yellow);
+  --bs-warning-rgb: 245, 158, 11;
+  --bs-danger: #e11d48;
+  --bs-danger-rgb: 225, 29, 72;
+  --bs-light: #f1f5f9;
+  --bs-light-rgb: 241, 245, 249;
+  --bs-dark: #0f172a;
+  --bs-dark-rgb: 15, 23, 42;
+
+  /* Body & Surface */
+  --bs-body-bg: #fffdfa;
+  --bs-body-color: #0f172a;
+  --bs-tertiary-bg: #ffffff;
+  --bs-border-color: #0f172a;
+
+  /* Typography */
+  --bs-font-sans-serif: 'Plus Jakarta Sans', sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.5;
+
+  /* Components Globals */
+  --bs-border-radius: 8px;
+  --bs-border-radius-sm: 6px;
+  --bs-border-radius-lg: 12px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 3px;
+  --bs-focus-ring-color: #0f172a;
+
+  /* Navbar */
+  --bs-navbar-bg: #f5f3ff;
+}
+
+[data-bs-theme="dark"] {
+  --neo-shadow: 3px 3px 0px #f8fafc;
+
+  --bs-primary: #a78bfa;
+  --bs-primary-rgb: 167, 139, 250;
+  --bs-secondary: #fb7185;
+  --bs-secondary-rgb: 251, 113, 133;
+
+  --bs-body-bg: #0f172a;
+  --bs-body-color: #f8fafc;
+  --bs-tertiary-bg: #1e293b;
+  --bs-border-color: #f8fafc;
+
+  --bs-light: #1e293b;
+  --bs-dark: #0f172a;
+
+  --bs-navbar-bg: #1e1b4b;
+  --bs-focus-ring-color: #f8fafc;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 800;
+  color: var(--bs-body-color);
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--bs-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons & Component Styling
+   -------------------------------------------------------------------------- */
+.btn, .card, .alert, .modal-content, .offcanvas, .toast, .form-control, .form-select {
+  border: var(--neo-border-width) solid var(--bs-border-color) !important;
+  box-shadow: var(--neo-shadow);
+  border-radius: var(--bs-border-radius);
+}
+
+.btn {
+  font-weight: 700;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--bs-border-color);
+}
+
+.btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--bs-border-color);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-bg: var(--neo-purple-hover);
+  --bs-btn-hover-border-color: var(--bs-border-color);
+}
+
+.card-header {
+  border-bottom: var(--neo-border-width) solid var(--bs-border-color);
+  font-weight: 700;
+  background-color: rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.navbar {
+  border-bottom: var(--neo-border-width) solid var(--bs-border-color);
+  background-color: var(--bs-navbar-bg) !important;
+  box-shadow: 0 3px 0px var(--bs-border-color);
+}
+
+.badge {
+  border: 1px solid var(--bs-border-color);
+  font-weight: 700;
+}
