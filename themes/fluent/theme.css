@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Fluent (Windows 11) — Bootstrap 5 Theme
+   Inspired by Microsoft's Fluent Design System & Windows 11 aesthetics.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* Fluent Color Tokens - Light Mode */
+  --fl-accent: #005fb8;
+  --fl-accent-rgb: 0, 95, 184;
+  --fl-accent-hover: #0052a3;
+  --fl-accent-soft: rgba(0, 95, 184, 0.08);
+  --fl-on-accent: #ffffff;
+
+  --fl-bg: #f3f3f3;
+  --fl-surface: #ffffff;
+  --fl-surface-secondary: #f9f9f9;
+  --fl-surface-sunken: #f0f0f0;
+  --fl-border: rgba(0, 0, 0, 0.08);
+  --fl-border-strong: rgba(0, 0, 0, 0.16);
+
+  --fl-foreground: #1a1a1a;
+  --fl-foreground-muted: #606060;
+
+  --fl-radius-xs: 4px;
+  --fl-radius-sm: 6px;
+  --fl-radius-md: 8px;
+  --fl-radius-lg: 12px;
+  --fl-radius-pill: 50rem;
+
+  --fl-shadow-flyout: 0 8px 16px rgba(0, 0, 0, 0.14);
+  --fl-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+  /* Bootstrap Core Overrides */
+  --bs-primary: var(--fl-accent);
+  --bs-primary-rgb: var(--fl-accent-rgb);
+  --bs-secondary: #606060;
+  --bs-secondary-rgb: 96, 96, 96;
+  --bs-success: #107c41;
+  --bs-success-rgb: 16, 124, 65;
+  --bs-info: #0078d4;
+  --bs-info-rgb: 0, 120, 212;
+  --bs-warning: #797775;
+  --bs-warning-rgb: 121, 119, 117;
+  --bs-danger: #c42b1c;
+  --bs-danger-rgb: 196, 43, 28;
+  --bs-light: #f9f9f9;
+  --bs-light-rgb: 249, 249, 249;
+  --bs-dark: #1a1a1a;
+  --bs-dark-rgb: 26, 26, 26;
+
+  --bs-body-bg: var(--fl-bg);
+  --bs-body-color: var(--fl-foreground);
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: var(--fl-foreground-muted);
+  --bs-tertiary-color: var(--fl-foreground-muted);
+  --bs-secondary-bg: var(--fl-surface-secondary);
+  --bs-tertiary-bg: var(--fl-surface);
+  --bs-border-color: var(--fl-border);
+  --bs-border-color-translucent: var(--fl-border);
+
+  --bs-font-sans-serif: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --bs-font-monospace: "Cascadia Code", "Consolas", monospace;
+
+  --bs-border-radius: var(--fl-radius-md);
+  --bs-border-radius-sm: var(--fl-radius-xs);
+  --bs-border-radius-lg: var(--fl-radius-lg);
+  --bs-border-radius-xl: 16px;
+  --bs-border-radius-pill: var(--fl-radius-pill);
+
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: var(--fl-accent);
+}
+
+[data-bs-theme="dark"] {
+  --fl-accent: #60cdff;
+  --fl-accent-rgb: 96, 205, 255;
+  --fl-accent-hover: #4cc2ff;
+  --fl-accent-soft: rgba(96, 205, 255, 0.12);
+  --fl-on-accent: #000000;
+
+  --fl-bg: #202020;
+  --fl-surface: #2c2c2c;
+  --fl-surface-secondary: #323232;
+  --fl-surface-sunken: #1a1a1a;
+  --fl-border: rgba(255, 255, 255, 0.08);
+  --fl-border-strong: rgba(255, 255, 255, 0.18);
+
+  --fl-foreground: #ffffff;
+  --fl-foreground-muted: #adadad;
+
+  --fl-shadow-flyout: 0 8px 16px rgba(0, 0, 0, 0.45);
+  --fl-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  --bs-primary: var(--fl-accent);
+  --bs-primary-rgb: var(--fl-accent-rgb);
+  --bs-secondary: #adadad;
+  --bs-secondary-rgb: 173, 173, 173;
+  --bs-success: #6ccb5f;
+  --bs-success-rgb: 108, 203, 95;
+  --bs-info: #60cdff;
+  --bs-info-rgb: 96, 205, 255;
+  --bs-warning: #fce100;
+  --bs-warning-rgb: 252, 225, 0;
+  --bs-danger: #ff99a4;
+  --bs-danger-rgb: 255, 153, 164;
+  --bs-light: #323232;
+  --bs-light-rgb: 50, 50, 50;
+  --bs-dark: #ffffff;
+  --bs-dark-rgb: 255, 255, 255;
+
+  --bs-body-bg: var(--fl-bg);
+  --bs-body-color: var(--fl-foreground);
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: var(--fl-foreground-muted);
+  --bs-tertiary-color: var(--fl-foreground-muted);
+  --bs-secondary-bg: var(--fl-surface-secondary);
+  --bs-tertiary-bg: var(--fl-surface);
+  --bs-border-color: var(--fl-border);
+  --bs-border-color-translucent: var(--fl-border);
+}
+
+/* Base Elements */
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--fl-bg);
+  color: var(--fl-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Windows 11 Acrylic / Mica background subtle card style */
+.card {
+  background-color: var(--fl-surface);
+  border: 1px solid var(--fl-border);
+  border-radius: var(--fl-radius-md);
+  box-shadow: var(--fl-shadow-card);
+}
+
+.card-header, .card-footer {
+  background-color: transparent;
+  border-color: var(--fl-border);
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--fl-radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.375rem 1rem;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid var(--fl-border);
+}
+
+.btn-primary {
+  background-color: var(--fl-accent);
+  border-color: var(--fl-accent);
+  color: var(--fl-on-accent);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: var(--fl-accent-hover);
+  border-color: var(--fl-accent-hover);
+  color: var(--fl-on-accent);
+}
+
+.btn-secondary {
+  background-color: var(--fl-surface-secondary);
+  border-color: var(--fl-border);
+  color: var(--fl-foreground);
+}
+
+.btn-secondary:hover {
+  background-color: var(--fl-surface-sunken);
+  color: var(--fl-foreground);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--fl-accent);
+  outline-offset: 1px;
+}
+
+/* Forms */
+.form-control, .form-select {
+  background-color: var(--fl-surface);
+  border: 1px solid var(--fl-border-strong);
+  border-radius: var(--fl-radius-sm);
+  color: var(--fl-foreground);
+  font-size: 0.875rem;
+  border-bottom-width: 2px;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--fl-surface);
+  border-color: var(--fl-accent);
+  border-bottom-color: var(--fl-accent);
+  box-shadow: none;
+  outline: none;
+}
+
+.form-check-input {
+  border-radius: 3px;
+  border: 1px solid var(--fl-border-strong);
+}
+
+.form-check-input:checked {
+  background-color: var(--fl-accent);
+  border-color: var(--fl-accent);
+}
+
+/* Navbars & Dropdowns */
+.navbar {
+  background-color: var(--fl-surface) !important;
+  border-bottom: 1px solid var(--fl-border);
+}
+
+.dropdown-menu {
+  background-color: var(--fl-surface);
+  border: 1px solid var(--fl-border);
+  border-radius: var(--fl-radius-md);
+  box-shadow: var(--fl-shadow-flyout);
+  padding: 0.375rem;
+}
+
+.dropdown-item {
+  border-radius: var(--fl-radius-xs);
+  color: var(--fl-foreground);
+  padding: 0.375rem 0.75rem;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: var(--fl-accent-soft);
+  color: var(--fl-foreground);
+}
+
+/* Modals & Flyouts */
+.modal-content {
+  background-color: var(--fl-surface);
+  border: 1px solid var(--fl-border);
+  border-radius: var(--fl-radius-lg);
+  box-shadow: var(--fl-shadow-flyout);
+}
+
+.modal-header, .modal-footer {
+  border-color: var(--fl-border);
+}
+
+/* Navs, Pills, Tabs */
+.nav-pills .nav-link {
+  border-radius: var(--fl-radius-sm);
+  color: var(--fl-foreground);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--fl-accent);
+  color: var(--fl-on-accent);
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 3px solid var(--fl-accent);
+  color: var(--fl-accent);
+  background-color: transparent;
+}
+
+/* Alerts & Badges */
+.alert {
+  border-radius: var(--fl-radius-md);
+  border: 1px solid var(--fl-border);
+}
+
+.badge {
+  border-radius: var(--fl-radius-xs);
+  font-weight: 600;
+}

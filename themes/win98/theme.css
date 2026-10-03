@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Windows 98 — Bootstrap 5 Theme
+   Inspired by classic Windows 95/98 desktop UI with 3D bevels & Tahoma font.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* Windows 98 Classic Palette */
+  --w98-bg: #008080; /* Classic Teal Desktop */
+  --w98-surface: #c0c0c0; /* Windows Grey */
+  --w98-surface-dark: #808080;
+  --w98-surface-light: #ffffff;
+
+  --w98-primary: #000080; /* Navy Titlebar */
+  --w98-primary-rgb: 0, 0, 128;
+  --w98-on-primary: #ffffff;
+
+  --w98-foreground: #000000;
+  --w98-foreground-muted: #808080;
+
+  /* Bootstrap Core Overrides */
+  --bs-primary: var(--w98-primary);
+  --bs-primary-rgb: var(--w98-primary-rgb);
+  --bs-secondary: #808080;
+  --bs-secondary-rgb: 128, 128, 128;
+  --bs-success: #008000;
+  --bs-success-rgb: 0, 128, 0;
+  --bs-info: #008080;
+  --bs-info-rgb: 0, 128, 128;
+  --bs-warning: #808000;
+  --bs-warning-rgb: 128, 128, 0;
+  --bs-danger: #800000;
+  --bs-danger-rgb: 128, 0, 0;
+  --bs-light: #c0c0c0;
+  --bs-light-rgb: 192, 192, 192;
+  --bs-dark: #000000;
+  --bs-dark-rgb: 0, 0, 0;
+
+  --bs-body-bg: var(--w98-surface);
+  --bs-body-color: var(--w98-foreground);
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: var(--w98-foreground-muted);
+  --bs-tertiary-color: var(--w98-foreground-muted);
+  --bs-secondary-bg: var(--w98-surface);
+  --bs-tertiary-bg: #ffffff;
+  --bs-border-color: var(--w98-surface-dark);
+
+  --bs-font-sans-serif: "Tahoma", "MS Sans Serif", "Segoe UI", sans-serif;
+  --bs-font-monospace: "Courier New", monospace;
+
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+  --bs-border-radius-xl: 0px;
+  --bs-border-radius-pill: 0px;
+
+  --bs-focus-ring-width: 1px;
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: #000000;
+}
+
+[data-bs-theme="dark"] {
+  --w98-bg: #101010;
+  --w98-surface: #262626;
+  --w98-surface-dark: #141414;
+  --w98-surface-light: #404040;
+
+  --w98-primary: #1084d0;
+  --w98-primary-rgb: 16, 132, 208;
+  --w98-on-primary: #ffffff;
+
+  --w98-foreground: #ffffff;
+  --w98-foreground-muted: #a0a0a0;
+
+  --bs-primary: var(--w98-primary);
+  --bs-primary-rgb: var(--w98-primary-rgb);
+  --bs-secondary: #a0a0a0;
+  --bs-secondary-rgb: 160, 160, 160;
+  --bs-success: #20c020;
+  --bs-success-rgb: 32, 192, 32;
+  --bs-info: #1084d0;
+  --bs-info-rgb: 16, 132, 208;
+  --bs-warning: #f0c000;
+  --bs-warning-rgb: 240, 192, 0;
+  --bs-danger: #e03030;
+  --bs-danger-rgb: 224, 48, 48;
+  --bs-light: #262626;
+  --bs-light-rgb: 38, 38, 38;
+  --bs-dark: #ffffff;
+  --bs-dark-rgb: 255, 255, 255;
+
+  --bs-body-bg: var(--w98-surface);
+  --bs-body-color: var(--w98-foreground);
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: var(--w98-foreground-muted);
+  --bs-tertiary-color: var(--w98-foreground-muted);
+  --bs-secondary-bg: var(--w98-surface);
+  --bs-tertiary-bg: #1a1a1a;
+  --bs-border-color: var(--w98-surface-light);
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--w98-surface);
+  color: var(--w98-foreground);
+  font-size: 12px;
+}
+
+/* Win98 Bevel Boxes */
+.card, .modal-content, .dropdown-menu {
+  background-color: var(--w98-surface);
+  border-top: 2px solid var(--w98-surface-light) !important;
+  border-left: 2px solid var(--w98-surface-light) !important;
+  border-right: 2px solid var(--w98-surface-dark) !important;
+  border-bottom: 2px solid var(--w98-surface-dark) !important;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 0 !important;
+  background-color: var(--w98-surface);
+  color: var(--w98-foreground);
+  font-weight: bold;
+  font-size: 11px;
+  padding: 3px 12px;
+  border-top: 2px solid var(--w98-surface-light) !important;
+  border-left: 2px solid var(--w98-surface-light) !important;
+  border-right: 2px solid var(--w98-surface-dark) !important;
+  border-bottom: 2px solid var(--w98-surface-dark) !important;
+}
+
+.btn-primary {
+  background-color: var(--w98-primary);
+  color: var(--w98-on-primary);
+  border-color: var(--w98-primary) !important;
+}
+
+.btn:active {
+  border-top: 2px solid var(--w98-surface-dark) !important;
+  border-left: 2px solid var(--w98-surface-dark) !important;
+  border-right: 2px solid var(--w98-surface-light) !important;
+  border-bottom: 2px solid var(--w98-surface-light) !important;
+}
+
+.form-control, .form-select {
+  border-radius: 0 !important;
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 2px solid var(--w98-surface-dark) !important;
+  border-left: 2px solid var(--w98-surface-dark) !important;
+  border-right: 2px solid var(--w98-surface-light) !important;
+  border-bottom: 2px solid var(--w98-surface-light) !important;
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+.navbar {
+  background-color: var(--w98-surface) !important;
+  border-bottom: 2px solid var(--w98-surface-dark);
+}
+
+.card-header {
+  background-color: var(--w98-primary);
+  color: var(--w98-on-primary);
+  font-weight: bold;
+  padding: 3px 6px;
+}

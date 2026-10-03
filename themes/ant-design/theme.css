@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Ant Design — Bootstrap 5 Theme
+   Inspired by Alibaba's Ant Design enterprise design language.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* Ant Design Light Palette */
+  --ant-primary: #1677ff;
+  --ant-primary-rgb: 22, 119, 255;
+  --ant-primary-hover: #4096ff;
+  --ant-on-primary: #ffffff;
+
+  --ant-bg: #f5f5f5;
+  --ant-surface: #ffffff;
+  --ant-surface-alt: #fafafa;
+  --ant-border: #d9d9d9;
+  --ant-border-subtle: #f0f0f0;
+
+  --ant-foreground: rgba(0, 0, 0, 0.88);
+  --ant-foreground-muted: rgba(0, 0, 0, 0.45);
+
+  --ant-radius: 6px;
+  --ant-radius-sm: 4px;
+
+  /* Bootstrap Core Overrides */
+  --bs-primary: var(--ant-primary);
+  --bs-primary-rgb: var(--ant-primary-rgb);
+  --bs-secondary: rgba(0, 0, 0, 0.45);
+  --bs-secondary-rgb: 0, 0, 0;
+  --bs-success: #52c41a;
+  --bs-success-rgb: 82, 196, 26;
+  --bs-info: #1677ff;
+  --bs-info-rgb: 22, 119, 255;
+  --bs-warning: #faad14;
+  --bs-warning-rgb: 250, 173, 20;
+  --bs-danger: #ff4d4f;
+  --bs-danger-rgb: 255, 77, 79;
+  --bs-light: var(--ant-surface-alt);
+  --bs-light-rgb: 250, 250, 250;
+  --bs-dark: #000000;
+  --bs-dark-rgb: 0, 0, 0;
+
+  --bs-body-bg: var(--ant-bg);
+  --bs-body-color: var(--ant-foreground);
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: var(--ant-foreground-muted);
+  --bs-tertiary-color: var(--ant-foreground-muted);
+  --bs-secondary-bg: var(--ant-surface-alt);
+  --bs-tertiary-bg: var(--ant-surface);
+  --bs-border-color: var(--ant-border);
+
+  --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --bs-font-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --bs-border-radius: var(--ant-radius);
+  --bs-border-radius-sm: var(--ant-radius-sm);
+
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-opacity: 0.2;
+  --bs-focus-ring-color: var(--ant-primary);
+}
+
+[data-bs-theme="dark"] {
+  --ant-primary: #1668dc;
+  --ant-primary-rgb: 22, 104, 220;
+  --ant-primary-hover: #3c89e8;
+  --ant-on-primary: #ffffff;
+
+  --ant-bg: #000000;
+  --ant-surface: #141414;
+  --ant-surface-alt: #1f1f1f;
+  --ant-border: #424242;
+  --ant-border-subtle: #303030;
+
+  --ant-foreground: rgba(255, 255, 255, 0.85);
+  --ant-foreground-muted: rgba(255, 255, 255, 0.45);
+
+  --bs-primary: var(--ant-primary);
+  --bs-primary-rgb: var(--ant-primary-rgb);
+  --bs-secondary: rgba(255, 255, 255, 0.45);
+  --bs-secondary-rgb: 255, 255, 255;
+  --bs-success: #49aa19;
+  --bs-success-rgb: 73, 170, 25;
+  --bs-info: #1668dc;
+  --bs-info-rgb: 22, 104, 220;
+  --bs-warning: #d89614;
+  --bs-warning-rgb: 216, 150, 20;
+  --bs-danger: #dc4446;
+  --bs-danger-rgb: 220, 68, 70;
+  --bs-light: var(--ant-surface-alt);
+  --bs-light-rgb: 31, 31, 31;
+  --bs-dark: #ffffff;
+  --bs-dark-rgb: 255, 255, 255;
+
+  --bs-body-bg: var(--ant-bg);
+  --bs-body-color: var(--ant-foreground);
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: var(--ant-foreground-muted);
+  --bs-tertiary-color: var(--ant-foreground-muted);
+  --bs-secondary-bg: var(--ant-surface-alt);
+  --bs-tertiary-bg: var(--ant-surface);
+  --bs-border-color: var(--ant-border);
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--ant-bg);
+  color: var(--ant-foreground);
+}
+
+.card {
+  background-color: var(--ant-surface);
+  border: 1px solid var(--ant-border-subtle);
+  border-radius: var(--ant-radius);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.btn {
+  border-radius: var(--ant-radius);
+  font-weight: 400;
+  padding: 0.3125rem 0.9375rem;
+  border: 1px solid var(--ant-border);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.btn-primary {
+  background-color: var(--ant-primary);
+  border-color: var(--ant-primary);
+  color: var(--ant-on-primary);
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--ant-primary-hover);
+  border-color: var(--ant-primary-hover);
+}
+
+.form-control, .form-select {
+  background-color: var(--ant-surface);
+  border: 1px solid var(--ant-border);
+  border-radius: var(--ant-radius);
+  color: var(--ant-foreground);
+  padding: 0.3125rem 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--ant-primary);
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+}
+
+.navbar {
+  background-color: var(--ant-surface) !important;
+  border-bottom: 1px solid var(--ant-border-subtle);
+}
+
+.dropdown-menu {
+  background-color: var(--ant-surface);
+  border: 1px solid var(--ant-border-subtle);
+  border-radius: var(--ant-radius);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08);
+}
+
+.modal-content {
+  background-color: var(--ant-surface);
+  border: 1px solid var(--ant-border-subtle);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08);
+}

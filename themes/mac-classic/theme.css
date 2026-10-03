@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Classic Mac OS — Bootstrap 5 Theme
+   Inspired by System 7 / Mac OS 8 Platinum interface aesthetic.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* Classic Mac Platinum Palette */
+  --mac-bg: #dddddd;
+  --mac-surface: #eeeeee;
+  --mac-surface-dark: #888888;
+  --mac-surface-light: #ffffff;
+
+  --mac-primary: #000066; /* Classic Mac Deep Blue */
+  --mac-primary-rgb: 0, 0, 102;
+  --mac-on-primary: #ffffff;
+
+  --mac-foreground: #000000;
+  --mac-foreground-muted: #666666;
+
+  /* Bootstrap Core Overrides */
+  --bs-primary: var(--mac-primary);
+  --bs-primary-rgb: var(--mac-primary-rgb);
+  --bs-secondary: #666666;
+  --bs-secondary-rgb: 102, 102, 102;
+  --bs-success: #006600;
+  --bs-success-rgb: 0, 102, 0;
+  --bs-info: #006699;
+  --bs-info-rgb: 0, 102, 153;
+  --bs-warning: #996600;
+  --bs-warning-rgb: 153, 102, 0;
+  --bs-danger: #990000;
+  --bs-danger-rgb: 153, 0, 0;
+  --bs-light: #eeeeee;
+  --bs-light-rgb: 238, 238, 238;
+  --bs-dark: #000000;
+  --bs-dark-rgb: 0, 0, 0;
+
+  --bs-body-bg: var(--mac-surface);
+  --bs-body-color: var(--mac-foreground);
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: var(--mac-foreground-muted);
+  --bs-tertiary-color: var(--mac-foreground-muted);
+  --bs-secondary-bg: var(--mac-surface);
+  --bs-tertiary-bg: #ffffff;
+  --bs-border-color: #000000;
+
+  --bs-font-sans-serif: "Geneva", "Chicago", "Charcoal", "Helvetica Neue", sans-serif;
+  --bs-font-monospace: "Monaco", "Courier", monospace;
+
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: #000000;
+}
+
+[data-bs-theme="dark"] {
+  --mac-bg: #1c1c1c;
+  --mac-surface: #2a2a2a;
+  --mac-surface-dark: #121212;
+  --mac-surface-light: #444444;
+
+  --mac-primary: #3388ff;
+  --mac-primary-rgb: 51, 136, 255;
+  --mac-on-primary: #ffffff;
+
+  --mac-foreground: #ffffff;
+  --mac-foreground-muted: #aaaaaa;
+
+  --bs-primary: var(--mac-primary);
+  --bs-primary-rgb: var(--mac-primary-rgb);
+  --bs-secondary: #aaaaaa;
+  --bs-secondary-rgb: 170, 170, 170;
+  --bs-success: #33cc33;
+  --bs-success-rgb: 51, 204, 51;
+  --bs-info: #3388ff;
+  --bs-info-rgb: 51, 136, 255;
+  --bs-warning: #ffcc00;
+  --bs-warning-rgb: 255, 204, 0;
+  --bs-danger: #ff4444;
+  --bs-danger-rgb: 255, 68, 68;
+  --bs-light: #2a2a2a;
+  --bs-light-rgb: 42, 42, 42;
+  --bs-dark: #ffffff;
+  --bs-dark-rgb: 255, 255, 255;
+
+  --bs-body-bg: var(--mac-surface);
+  --bs-body-color: var(--mac-foreground);
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: var(--mac-foreground-muted);
+  --bs-tertiary-color: var(--mac-foreground-muted);
+  --bs-secondary-bg: var(--mac-surface);
+  --bs-tertiary-bg: #181818;
+  --bs-border-color: #ffffff;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--mac-surface);
+  color: var(--mac-foreground);
+  font-size: 12px;
+}
+
+/* Classic Mac Window & Double Border Elements */
+.card, .modal-content, .dropdown-menu {
+  background-color: var(--mac-surface);
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .modal-content,
+[data-bs-theme="dark"] .dropdown-menu {
+  border: 2px solid #ffffff !important;
+  box-shadow: 2px 2px 0px #ffffff;
+}
+
+.btn {
+  border-radius: 0 !important;
+  background-color: var(--mac-surface);
+  color: var(--mac-foreground);
+  font-weight: bold;
+  font-size: 11px;
+  padding: 3px 12px;
+  border: 2px solid #000000 !important;
+  box-shadow: 1px 1px 0px #000000;
+}
+
+[data-bs-theme="dark"] .btn {
+  border-color: #ffffff !important;
+  box-shadow: 1px 1px 0px #ffffff;
+}
+
+.btn-primary {
+  background-color: var(--mac-primary);
+  color: var(--mac-on-primary);
+}
+
+.form-control, .form-select {
+  border-radius: 0 !important;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000 !important;
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #ffffff !important;
+}
+
+.navbar {
+  background-color: var(--mac-surface) !important;
+  border-bottom: 2px solid #000000;
+}
+
+[data-bs-theme="dark"] .navbar {
+  border-bottom-color: #ffffff;
+}
+
+.card-header {
+  background-color: var(--mac-surface-dark);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-bottom: 2px solid #000000;
+}

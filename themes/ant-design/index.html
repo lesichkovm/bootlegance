@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootlegance — Ant Design</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        body { padding-top: 4.5rem; }
+        .section-title { margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--ant-border-subtle); font-weight: 600; }
+        .hero { padding: 3rem 0; text-align: center; background-color: var(--ant-surface-alt); border-bottom: 1px solid var(--ant-border-subtle); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="#">Ant Design</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#SectionOverview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Components</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#SectionTypography">Typography</a></li>
+                            <li><a class="dropdown-item" href="#SectionTables">Tables</a></li>
+                            <li><a class="dropdown-item" href="#SectionCards">Cards</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-secondary btn-sm" id="theme-toggle">Toggle Dark/Light</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="SectionOverview">
+        <div class="container">
+            <h1 class="display-5 fw-semibold">Ant Design</h1>
+            <p class="lead text-secondary">An enterprise-grade UI theme for Bootstrap 5 inspired by Alibaba's Ant Design system and primary blue #1677ff palette.</p>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+
+        <!-- 2. Buttons -->
+        <section id="SectionButtons">
+            <h2 class="section-title">2. Buttons</h2>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button type="button" class="btn btn-primary">Primary Button</button>
+                <button type="button" class="btn btn-secondary">Default Button</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary">Segment A</button>
+                <button type="button" class="btn btn-secondary">Segment B</button>
+                <button type="button" class="btn btn-secondary">Segment C</button>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="SectionTypography">
+            <h2 class="section-title">3. Typography</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>h1. Enterprise Heading</h1>
+                    <h2>h2. Section Title</h2>
+                    <h3>h3. Subtitle</h3>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Clean enterprise font family and text hierarchy.</p>
+                    <p>Standard paragraph text with <mark>highlight</mark> and <code>monospace code</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="SectionTables">
+            <h2 class="section-title">4. Tables</h2>
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Component</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Data Table</td>
+                        <td><span class="badge bg-success">Success</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Form Control</td>
+                        <td><span class="badge bg-primary">Processing</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="SectionForms">
+            <h2 class="section-title">5. Forms</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="inpAnt">Username</label>
+                    <input type="text" class="form-control" id="inpAnt" value="admin">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check form-switch mt-4">
+                        <input class="form-check-input" type="checkbox" role="switch" id="swAnt" checked>
+                        <label class="form-check-label" for="swAnt">Notifications</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Navs & Tabs -->
+        <section id="SectionNavs">
+            <h2 class="section-title">6. Navs &amp; Tabs</h2>
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Card Tab 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Card Tab 2</a></li>
+            </ul>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="SectionAlerts">
+            <h2 class="section-title">7. Alerts</h2>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                Ant Design information alert box.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="SectionBadges">
+            <h2 class="section-title">8. Badges</h2>
+            <span class="badge bg-primary">Primary Tag</span>
+            <span class="badge bg-success">Success Tag</span>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="SectionProgress">
+            <h2 class="section-title">9. Progress &amp; Spinners</h2>
+            <div class="progress mb-3" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 60%;"></div>
+            </div>
+            <div class="spinner-border text-primary" role="status"></div>
+        </section>
+
+        <!-- 10. List groups -->
+        <section id="SectionListgroups">
+            <h2 class="section-title">10. List Groups</h2>
+            <ul class="list-group">
+                <li class="list-group-item active">Enterprise Task 1</li>
+                <li class="list-group-item">Enterprise Task 2</li>
+            </ul>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="SectionCards">
+            <h2 class="section-title">11. Cards</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ant Design Card Container</h5>
+                    <p class="card-text">Precise 6px border radius with subtle border line.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="SectionAccordions">
+            <h2 class="section-title">12. Accordions</h2>
+            <div class="accordion" id="accAnt">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#colAnt">
+                            Ant Panel Option
+                        </button>
+                    </h2>
+                    <div id="colAnt" class="accordion-collapse collapse show" data-bs-parent="#accAnt">
+                        <div class="accordion-body">Ant Design style panel content.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="SectionCarousel">
+            <h2 class="section-title">13. Carousel</h2>
+            <div class="p-4 bg-body-tertiary rounded text-center">
+                <h4>Ant Design System</h4>
+            </div>
+        </section>
+
+        <!-- 14. Modals -->
+        <section id="SectionModals">
+            <h2 class="section-title">14. Modals</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#antModal">
+                Open Ant Modal
+            </button>
+            <div class="modal fade" id="antModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ant Modal Title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">Ant Design modal body message.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. Offcanvas -->
+        <section id="SectionOffcanvas">
+            <h2 class="section-title">15. Offcanvas</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offAnt">
+                Open Drawer
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offAnt">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Ant Drawer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. Popovers and Tooltips -->
+        <section id="SectionPopovers">
+            <h2 class="section-title">16. Popovers &amp; Tooltips</h2>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="popover" title="Ant Popover" data-bs-content="Content">Popover</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="Ant Tooltip">Tooltip</button>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="SectionToasts">
+            <h2 class="section-title">17. Toasts</h2>
+            <div class="toast show" role="alert">
+                <div class="toast-header">
+                    <strong class="me-auto">Ant Message</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">Ant Design feedback notification.</div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="SectionPlaceholders">
+            <h2 class="section-title">18. Placeholders</h2>
+            <p class="placeholder-glow"><span class="placeholder col-6"></span></p>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="SectionMisc">
+            <h2 class="section-title">19. Misc</h2>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

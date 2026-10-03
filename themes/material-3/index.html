@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootlegance — Material Design 3</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        body { padding-top: 4.5rem; }
+        .section-title { margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--m3-outline-variant); font-weight: 600; }
+        .hero { padding: 3rem 0; text-align: center; background-color: var(--m3-surface-container); border-bottom: 1px solid var(--m3-outline-variant); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="#">Material Design 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#SectionOverview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Components</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#SectionTypography">Typography</a></li>
+                            <li><a class="dropdown-item" href="#SectionTables">Tables</a></li>
+                            <li><a class="dropdown-item" href="#SectionCards">Cards</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-secondary btn-sm" id="theme-toggle">Toggle Dark/Light</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="SectionOverview">
+        <div class="container">
+            <h1 class="display-5 fw-semibold">Material Design 3</h1>
+            <p class="lead text-secondary">Google Material You aesthetics for Bootstrap 5 — pill buttons, tonal surfaces, rounded containers, and modern color roles.</p>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+
+        <!-- 2. Buttons -->
+        <section id="SectionButtons">
+            <h2 class="section-title">2. Buttons</h2>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button type="button" class="btn btn-primary">Filled Primary</button>
+                <button type="button" class="btn btn-secondary">Tonal Secondary</button>
+                <button type="button" class="btn btn-outline-primary">Outlined</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Text Link</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary">Segment 1</button>
+                <button type="button" class="btn btn-secondary">Segment 2</button>
+                <button type="button" class="btn btn-secondary">Segment 3</button>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="SectionTypography">
+            <h2 class="section-title">3. Typography</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Display Large</h1>
+                    <h2>Headline Medium</h2>
+                    <h3>Title Large</h3>
+                    <h4>Body Large</h4>
+                    <h5>Label Medium</h5>
+                    <h6>Caption Small</h6>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Roboto & Google Sans inspired typography hierarchy.</p>
+                    <p>Standard body text with <mark>highlighted</mark> and <strong>bold emphasis</strong>.</p>
+                    <blockquote class="blockquote">
+                        <p>Expressive colors, accessible design, and fluid motion.</p>
+                        <footer class="blockquote-footer">Material Design 3 Guidelines</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="SectionTables">
+            <h2 class="section-title">4. Tables</h2>
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Material You</td>
+                        <td><span class="badge bg-primary">Primary</span></td>
+                        <td>Design System</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Dynamic Color</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Theming</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="SectionForms">
+            <h2 class="section-title">5. Forms</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="input1">Outlined Input</label>
+                    <input type="email" class="form-control" id="input1" placeholder="user@domain.com">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="select1">Select Dropdown</label>
+                    <select class="form-select" id="select1">
+                        <option selected>Choose option...</option>
+                        <option value="1">Option 1</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" type="checkbox" role="switch" id="m3switch" checked>
+                        <label class="form-check-label" for="m3switch">M3 Expressive Switch</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m3check" checked>
+                        <label class="form-check-label" for="m3check">M3 Checkbox</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="customRange" class="form-label">Slider</label>
+                    <input type="range" class="form-range" id="customRange">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Navs & Tabs -->
+        <section id="SectionNavs">
+            <h2 class="section-title">6. Navs &amp; Tabs</h2>
+            <ul class="nav nav-pills mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Pill Active</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pill Two</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pill Three</a></li>
+            </ul>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Material 3</li>
+                </ol>
+            </nav>
+            <nav aria-label="Pagination">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="SectionAlerts">
+            <h2 class="section-title">7. Alerts</h2>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                Material 3 primary container alert message.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="SectionBadges">
+            <h2 class="section-title">8. Badges</h2>
+            <span class="badge bg-primary">Primary</span>
+            <span class="badge bg-secondary">Secondary</span>
+            <span class="badge bg-success">Success</span>
+            <span class="badge bg-danger">Danger</span>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="SectionProgress">
+            <h2 class="section-title">9. Progress &amp; Spinners</h2>
+            <div class="progress mb-3" style="height: 8px;">
+                <div class="progress-bar" role="progressbar" style="width: 70%;"></div>
+            </div>
+            <div class="spinner-border text-primary" role="status"></div>
+        </section>
+
+        <!-- 10. List groups -->
+        <section id="SectionListgroups">
+            <h2 class="section-title">10. List Groups</h2>
+            <ul class="list-group">
+                <li class="list-group-item active">Active List Item</li>
+                <li class="list-group-item">Standard List Item</li>
+            </ul>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="SectionCards">
+            <h2 class="section-title">11. Cards</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">M3 Surface Card</h5>
+                    <p class="card-text">Material Design 3 elevated container with generous border radius.</p>
+                    <button class="btn btn-primary">Action</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="SectionAccordions">
+            <h2 class="section-title">12. Accordions</h2>
+            <div class="accordion" id="accM3">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseM3">
+                            Material Accordion Panel
+                        </button>
+                    </h2>
+                    <div id="collapseM3" class="accordion-collapse collapse show" data-bs-parent="#accM3">
+                        <div class="accordion-body">Fluid panels with rounded container shapes.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="SectionCarousel">
+            <h2 class="section-title">13. Carousel</h2>
+            <div id="carouselM3" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner p-4 bg-body-tertiary rounded-4 text-center">
+                    <div class="carousel-item active">
+                        <h4>Material You</h4>
+                        <p>Tonal Color Palette</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. Modals -->
+        <section id="SectionModals">
+            <h2 class="section-title">14. Modals</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m3Modal">
+                Open M3 Dialog
+            </button>
+            <div class="modal fade" id="m3Modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">M3 Container Dialog</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">Material 3 highly elevated rounded dialog box.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dismiss</button>
+                            <button type="button" class="btn btn-primary">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. Offcanvas -->
+        <section id="SectionOffcanvas">
+            <h2 class="section-title">15. Offcanvas</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offM3">
+                Open Navigation Drawer
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offM3">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Navigation Drawer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">Drawer items...</div>
+            </div>
+        </section>
+
+        <!-- 16. Popovers and Tooltips -->
+        <section id="SectionPopovers">
+            <h2 class="section-title">16. Popovers &amp; Tooltips</h2>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="popover" title="M3 Popover" data-bs-content="Content">Popover</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="M3 Tooltip">Tooltip</button>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="SectionToasts">
+            <h2 class="section-title">17. Toasts</h2>
+            <div class="toast show" role="alert">
+                <div class="toast-header">
+                    <strong class="me-auto">Snackbar / Toast</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">Material 3 notification message.</div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="SectionPlaceholders">
+            <h2 class="section-title">18. Placeholders</h2>
+            <p class="placeholder-glow">
+                <span class="placeholder col-6"></span>
+            </p>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="SectionMisc">
+            <h2 class="section-title">19. Misc</h2>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
