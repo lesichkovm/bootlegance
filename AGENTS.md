@@ -19,6 +19,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Theme                 | Slug                  | Status    |
 |-----------------------|-----------------------|-----------|
 | Adwaita               | `adwaita`               | Available |
+| Ant Design            | `ant-design`            | Available |
 | Ayu                   | `ayu`                   | Available |
 | Brutalski             | `brutalski`             | Available |
 | Carbon                | `carbon`                | Available |
@@ -29,10 +30,14 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Dracula               | `dracula`               | Available |
 | Dracula Soft          | `dracula-soft`          | Available |
 | Everforest            | `everforest`            | Available |
+| Fluent                | `fluent`                | Available |
 | Forest                | `forest`                | Available |
 | GitHub Primer         | `github-primer`         | Available |
 | Gruvbox               | `gruvbox`               | Available |
 | Kanagawa              | `kanagawa`              | Available |
+| KDE Breeze            | `kde-breeze`            | Available |
+| Classic Mac OS        | `mac-classic`           | Available |
+| Material Design 3     | `material-3`            | Available |
 | Midnight              | `midnight`              | Available |
 | Night Owl             | `night-owl`             | Available |
 | Nord                  | `nord`                  | Available |
@@ -50,6 +55,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Orchis Sage           | `orchis-sage`           | Available |
 | Orchis Slate          | `orchis-slate`          | Available |
 | Orchis Yellow         | `orchis-yellow`         | Available |
+| Pantheon              | `pantheon`              | Available |
 | Rosé Pine             | `rose-pine`             | Available |
 | Seneca                | `seneca`                | Available |
 | Slate                 | `slate`                 | Available |
@@ -68,6 +74,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Vimix Yellow          | `vimix-yellow`          | Available |
 | Whitehall             | `whitehall`             | Available |
 | WhiteSur              | `whitesur`              | Available |
+| Windows 98            | `win98`                 | Available |
 | Yaru                  | `yaru`                  | Available |
 
 

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootlegance — Windows 98</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        body { padding-top: 4.5rem; }
+        .section-title { margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--w98-surface-dark); font-weight: bold; }
+        .hero { padding: 3rem 0; text-align: center; background-color: var(--w98-surface); border-bottom: 2px solid var(--w98-surface-dark); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Windows 98</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#SectionOverview">Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionButtons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#SectionForms">Forms</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#SectionTypography">Typography</a></li>
+                            <li><a class="dropdown-item" href="#SectionTables">Tables</a></li>
+                            <li><a class="dropdown-item" href="#SectionCards">Cards</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-secondary btn-sm" id="theme-toggle">Toggle Dark/Light Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="SectionOverview">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Windows 98</h1>
+            <p class="lead">Nostalgic retro desktop theme for Bootstrap 5 featuring Tahoma typography, 3D bevels, classic grey surfaces, and navy titlebars.</p>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+
+        <!-- 2. Buttons -->
+        <section id="SectionButtons">
+            <h2 class="section-title">2. Buttons</h2>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button type="button" class="btn btn-primary">Primary (OK)</button>
+                <button type="button" class="btn btn-secondary">Secondary (Cancel)</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary">File</button>
+                <button type="button" class="btn btn-secondary">Edit</button>
+                <button type="button" class="btn btn-secondary">View</button>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="SectionTypography">
+            <h2 class="section-title">3. Typography</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Heading 1 (Tahoma)</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Retro 90s OS typography hierarchy.</p>
+                    <p>Standard text with <mark>highlight</mark> and <code>C:\WINDOWS\SYSTEM32</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="SectionTables">
+            <h2 class="section-title">4. Tables</h2>
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMMAND.COM</td>
+                        <td>MS-DOS Application</td>
+                        <td>93 KB</td>
+                    </tr>
+                    <tr>
+                        <td>AUTOEXEC.BAT</td>
+                        <td>MS-DOS Batch File</td>
+                        <td>1 KB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="SectionForms">
+            <h2 class="section-title">5. Forms</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="inpW98">Computer Name</label>
+                    <input type="text" class="form-control" id="inpW98" value="DESKTOP-WIN98">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check mt-4">
+                        <input class="form-check-input" type="checkbox" id="chkW98" checked>
+                        <label class="form-check-label" for="chkW98">Enable Active Desktop</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Navs & Tabs -->
+        <section id="SectionNavs">
+            <h2 class="section-title">6. Navs &amp; Tabs</h2>
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item"><a class="nav-link active" href="#">General</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Device Manager</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Hardware Profiles</a></li>
+            </ul>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="SectionAlerts">
+            <h2 class="section-title">7. Alerts</h2>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                A fatal exception 0E has occurred at 0028:C0011E36.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="SectionBadges">
+            <h2 class="section-title">8. Badges</h2>
+            <span class="badge bg-primary">Win98 SE</span>
+            <span class="badge bg-success">DirectX 6.1</span>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="SectionProgress">
+            <h2 class="section-title">9. Progress &amp; Spinners</h2>
+            <div class="progress mb-3" style="height: 16px;">
+                <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+            </div>
+            <div class="spinner-border text-primary" role="status"></div>
+        </section>
+
+        <!-- 10. List groups -->
+        <section id="SectionListgroups">
+            <h2 class="section-title">10. List Groups</h2>
+            <ul class="list-group">
+                <li class="list-group-item active">C:\ My Computer</li>
+                <li class="list-group-item">A:\ 3½ Floppy</li>
+            </ul>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="SectionCards">
+            <h2 class="section-title">11. Cards</h2>
+            <div class="card">
+                <div class="card-header">System Properties</div>
+                <div class="card-body">
+                    <h5 class="card-title">Microsoft Windows 98</h5>
+                    <p class="card-text">Second Edition. Computer: Genuine Intel Pentium II Processor, 64MB RAM.</p>
+                    <button class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="SectionAccordions">
+            <h2 class="section-title">12. Accordions</h2>
+            <div class="accordion" id="accW98">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#colW98">
+                            Control Panel
+                        </button>
+                    </h2>
+                    <div id="colW98" class="accordion-collapse collapse show" data-bs-parent="#accW98">
+                        <div class="accordion-body">System settings and driver options.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="SectionCarousel">
+            <h2 class="section-title">13. Carousel</h2>
+            <div class="p-4 bg-body-tertiary rounded text-center">
+                <h4>Windows 98 Desktop</h4>
+            </div>
+        </section>
+
+        <!-- 14. Modals -->
+        <section id="SectionModals">
+            <h2 class="section-title">14. Modals</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#w98Modal">
+                Open Dialog Window
+            </button>
+            <div class="modal fade" id="w98Modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="card-header">System Warning</div>
+                        <div class="modal-body">Are you sure you want to shut down the computer?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. Offcanvas -->
+        <section id="SectionOffcanvas">
+            <h2 class="section-title">15. Offcanvas</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offW98">
+                Start Menu Panel
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offW98">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Windows 98 Start</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. Popovers and Tooltips -->
+        <section id="SectionPopovers">
+            <h2 class="section-title">16. Popovers &amp; Tooltips</h2>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="popover" title="Help" data-bs-content="Windows Help file">Popover</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="Tooltip">Tooltip</button>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="SectionToasts">
+            <h2 class="section-title">17. Toasts</h2>
+            <div class="toast show" role="alert">
+                <div class="toast-header">
+                    <strong class="me-auto">New Hardware Found</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">Windows has detected new PCI Communications Device.</div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="SectionPlaceholders">
+            <h2 class="section-title">18. Placeholders</h2>
+            <p class="placeholder-glow"><span class="placeholder col-6"></span></p>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="SectionMisc">
+            <h2 class="section-title">19. Misc</h2>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

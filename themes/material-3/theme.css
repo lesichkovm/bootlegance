@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Material Design 3 — Bootstrap 5 Theme
+   Inspired by Google's Material You / Material Design 3 guidelines.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root {
+  /* M3 Light Tonal Palette */
+  --m3-primary: #6750a4;
+  --m3-primary-rgb: 103, 80, 164;
+  --m3-on-primary: #ffffff;
+  --m3-primary-container: #eaddff;
+  --m3-on-primary-container: #21005d;
+
+  --m3-secondary: #625b71;
+  --m3-secondary-rgb: 98, 91, 113;
+  --m3-secondary-container: #e8def8;
+  --m3-on-secondary-container: #1d192b;
+
+  --m3-surface: #fef7ff;
+  --m3-surface-container: #f3edf7;
+  --m3-surface-container-high: #ece6f0;
+  --m3-on-surface: #1d1b20;
+  --m3-on-surface-variant: #49454f;
+  --m3-outline: #79747e;
+  --m3-outline-variant: #caccd6;
+
+  --m3-radius-xs: 8px;
+  --m3-radius-sm: 12px;
+  --m3-radius-md: 16px;
+  --m3-radius-lg: 24px;
+  --m3-radius-xl: 28px;
+  --m3-radius-pill: 50rem;
+
+  /* Bootstrap Core Overrides */
+  --bs-primary: var(--m3-primary);
+  --bs-primary-rgb: var(--m3-primary-rgb);
+  --bs-secondary: var(--m3-secondary);
+  --bs-secondary-rgb: var(--m3-secondary-rgb);
+  --bs-success: #2e6c40;
+  --bs-success-rgb: 46, 108, 64;
+  --bs-info: #00639b;
+  --bs-info-rgb: 0, 99, 155;
+  --bs-warning: #7d5700;
+  --bs-warning-rgb: 125, 87, 0;
+  --bs-danger: #b3261e;
+  --bs-danger-rgb: 179, 38, 30;
+  --bs-light: var(--m3-surface-container);
+  --bs-light-rgb: 243, 237, 247;
+  --bs-dark: var(--m3-on-surface);
+  --bs-dark-rgb: 29, 27, 32;
+
+  --bs-body-bg: var(--m3-surface);
+  --bs-body-color: var(--m3-on-surface);
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: var(--m3-on-surface-variant);
+  --bs-tertiary-color: var(--m3-on-surface-variant);
+  --bs-secondary-bg: var(--m3-surface-container);
+  --bs-tertiary-bg: var(--m3-surface-container-high);
+  --bs-border-color: var(--m3-outline-variant);
+
+  --bs-font-sans-serif: "Roboto", "Google Sans", system-ui, -apple-system, sans-serif;
+  --bs-font-monospace: "Roboto Mono", monospace;
+
+  --bs-border-radius: var(--m3-radius-md);
+  --bs-border-radius-sm: var(--m3-radius-xs);
+  --bs-border-radius-lg: var(--m3-radius-lg);
+  --bs-border-radius-xl: var(--m3-radius-xl);
+  --bs-border-radius-pill: var(--m3-radius-pill);
+
+  --bs-focus-ring-width: 3px;
+  --bs-focus-ring-opacity: 0.4;
+  --bs-focus-ring-color: var(--m3-primary);
+}
+
+[data-bs-theme="dark"] {
+  --m3-primary: #d0bcff;
+  --m3-primary-rgb: 208, 188, 255;
+  --m3-on-primary: #381e72;
+  --m3-primary-container: #4f378b;
+  --m3-on-primary-container: #eaddff;
+
+  --m3-secondary: #ccc2dc;
+  --m3-secondary-rgb: 204, 194, 220;
+  --m3-secondary-container: #4a4458;
+  --m3-on-secondary-container: #e8def8;
+
+  --m3-surface: #141218;
+  --m3-surface-container: #211f26;
+  --m3-surface-container-high: #2b2930;
+  --m3-on-surface: #e6e0e9;
+  --m3-on-surface-variant: #cad4e0;
+  --m3-outline: #938f99;
+  --m3-outline-variant: #49454f;
+
+  --bs-primary: var(--m3-primary);
+  --bs-primary-rgb: var(--m3-primary-rgb);
+  --bs-secondary: var(--m3-secondary);
+  --bs-secondary-rgb: var(--m3-secondary-rgb);
+  --bs-success: #a6d3a0;
+  --bs-success-rgb: 166, 211, 160;
+  --bs-info: #9ecaff;
+  --bs-info-rgb: 158, 202, 255;
+  --bs-warning: #f1c100;
+  --bs-warning-rgb: 241, 193, 0;
+  --bs-danger: #f2b8b5;
+  --bs-danger-rgb: 242, 184, 181;
+  --bs-light: var(--m3-surface-container);
+  --bs-light-rgb: 33, 31, 38;
+  --bs-dark: var(--m3-on-surface);
+  --bs-dark-rgb: 230, 224, 233;
+
+  --bs-body-bg: var(--m3-surface);
+  --bs-body-color: var(--m3-on-surface);
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: var(--m3-on-surface-variant);
+  --bs-tertiary-color: var(--m3-on-surface-variant);
+  --bs-secondary-bg: var(--m3-surface-container);
+  --bs-tertiary-bg: var(--m3-surface-container-high);
+  --bs-border-color: var(--m3-outline-variant);
+}
+
+/* Base Body */
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--m3-surface);
+  color: var(--m3-on-surface);
+}
+
+/* M3 Fully Pill-shaped Buttons */
+.btn {
+  border-radius: var(--m3-radius-pill);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--m3-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+}
+
+.btn-outline-primary {
+  border: 1px solid var(--m3-outline);
+  color: var(--m3-primary);
+  background-color: transparent;
+}
+
+/* Cards - M3 Container Elevation */
+.card {
+  background-color: var(--m3-surface-container);
+  border: none;
+  border-radius: var(--m3-radius-lg);
+  box-shadow: none;
+  padding: 0.5rem;
+}
+
+.card-header, .card-footer {
+  border-color: var(--m3-outline-variant);
+  background-color: transparent;
+}
+
+/* Forms */
+.form-control, .form-select {
+  background-color: var(--m3-surface-container-high);
+  border: 1px solid var(--m3-outline);
+  border-radius: var(--m3-radius-xs);
+  color: var(--m3-on-surface);
+  padding: 0.625rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--m3-surface-container-high);
+  border-color: var(--m3-primary);
+  box-shadow: 0 0 0 2px var(--m3-primary);
+}
+
+.form-check-input {
+  border-radius: var(--m3-radius-xs);
+  border: 2px solid var(--m3-outline);
+}
+
+.form-check-input:checked {
+  background-color: var(--m3-primary);
+  border-color: var(--m3-primary);
+}
+
+.form-switch .form-check-input {
+  width: 3.25rem;
+  height: 2rem;
+  border-radius: var(--m3-radius-pill);
+}
+
+/* Navigation & Modals */
+.navbar {
+  background-color: var(--m3-surface-container) !important;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.modal-content {
+  background-color: var(--m3-surface-container-high);
+  border-radius: var(--m3-radius-xl);
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu {
+  background-color: var(--m3-surface-container-high);
+  border-radius: var(--m3-radius-md);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-pills .nav-link {
+  border-radius: var(--m3-radius-pill);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
+  font-weight: 600;
+}
