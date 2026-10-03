@@ -56,7 +56,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Orchis Yellow         | `orchis-yellow`       | Available |
 | Orchis Cyan           | `orchis-cyan`         | Available |
 | Midnight              | `midnight`            | Available |
-| Sunrise               | `sunrise`             | Planned   |
+| Sunrise               | `sunrise`             | Available |
 | Ocean                 | `ocean`               | Planned   |
 | Forest                | `forest`              | Planned   |
 | Slate                 | `slate`               | Planned   |
