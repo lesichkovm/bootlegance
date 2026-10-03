@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Cyberpunk / Synthwave '84 Bootstrap 5 Theme
+   Neon aesthetic for gaming and entertainment.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cyberpunk Palette Tokens */
+  --cp-neon-pink: #d9006c;
+  --cp-neon-pink-hover: #b30059;
+  --cp-neon-cyan: #009bb3;
+  --cp-neon-cyan-hover: #007d91;
+  --cp-neon-yellow: #d9a000;
+  --cp-neon-green: #00a862;
+  --cp-neon-red: #e60000;
+  --cp-bg-light: #f4f0ff;
+  --cp-card-light: #ffffff;
+  --cp-text-light: #230f38;
+  --cp-border-light: #cbb8f0;
+
+  /* Bootstrap Primary Overrides (Light Mode) */
+  --bs-primary: var(--cp-neon-pink);
+  --bs-primary-rgb: 217, 0, 108;
+  --bs-secondary: var(--cp-neon-cyan);
+  --bs-secondary-rgb: 0, 155, 179;
+  --bs-success: var(--cp-neon-green);
+  --bs-success-rgb: 0, 168, 98;
+  --bs-info: var(--cp-neon-cyan);
+  --bs-info-rgb: 0, 155, 179;
+  --bs-warning: var(--cp-neon-yellow);
+  --bs-warning-rgb: 217, 160, 0;
+  --bs-danger: var(--cp-neon-red);
+  --bs-danger-rgb: 230, 0, 0;
+  --bs-light: #eae0ff;
+  --bs-light-rgb: 234, 224, 255;
+  --bs-dark: #230f38;
+  --bs-dark-rgb: 35, 15, 56;
+
+  /* Body & Surface */
+  --bs-body-bg: var(--cp-bg-light);
+  --bs-body-color: var(--cp-text-light);
+  --bs-tertiary-bg: var(--cp-card-light);
+  --bs-border-color: var(--cp-border-light);
+
+  /* Typography */
+  --bs-font-sans-serif: 'Rajdhani', 'Chakra Petch', sans-serif;
+  --bs-body-font-size: 1.05rem;
+  --bs-body-line-height: 1.5;
+
+  /* Components Globals */
+  --bs-border-radius: 4px;
+  --bs-border-radius-sm: 2px;
+  --bs-border-radius-lg: 6px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 3px;
+  --bs-focus-ring-color: rgba(217, 0, 108, 0.4);
+
+  /* Navbar */
+  --bs-navbar-bg: #e6dcff;
+}
+
+[data-bs-theme="dark"] {
+  --cp-dark-pink: #ff007f;
+  --cp-dark-cyan: #00f0ff;
+  --cp-dark-yellow: #ffe600;
+  --cp-dark-green: #00ff66;
+  --cp-dark-red: #ff0055;
+
+  --bs-primary: var(--cp-dark-pink);
+  --bs-primary-rgb: 255, 0, 127;
+  --bs-secondary: var(--cp-dark-cyan);
+  --bs-secondary-rgb: 0, 240, 255;
+  --bs-success: var(--cp-dark-green);
+  --bs-success-rgb: 0, 255, 102;
+  --bs-info: var(--cp-dark-cyan);
+  --bs-info-rgb: 0, 240, 255;
+  --bs-warning: var(--cp-dark-yellow);
+  --bs-warning-rgb: 255, 230, 0;
+  --bs-danger: var(--cp-dark-red);
+  --bs-danger-rgb: 255, 0, 85;
+
+  --bs-body-bg: #0d0221;
+  --bs-body-color: #00f0ff;
+  --bs-tertiary-bg: #190a38;
+  --bs-border-color: #ff007f;
+
+  --bs-light: #190a38;
+  --bs-dark: #0d0221;
+
+  --bs-navbar-bg: #13042e;
+  --bs-focus-ring-color: rgba(0, 240, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--bs-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--bs-border-radius);
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--cp-neon-pink-hover);
+  --bs-btn-hover-border-color: var(--cp-neon-pink-hover);
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 0 18px rgba(255, 0, 127, 0.8);
+}
+
+[data-bs-theme="dark"] .btn-secondary {
+  color: #0d0221;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bs-navbar-bg) !important;
+  border-bottom: 2px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .navbar {
+  box-shadow: 0 2px 15px rgba(255, 0, 127, 0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Cards
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--bs-border-radius-lg);
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+}
+
+[data-bs-theme="dark"] .card {
+  box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+}
+
+.card-header {
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  border-bottom: 1px solid var(--bs-border-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   6. Forms
+   -------------------------------------------------------------------------- */
+.form-control, .form-select {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  font-weight: 600;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px var(--bs-focus-ring-color);
+}
+
+/* --------------------------------------------------------------------------
+   7. Alerts & Badges
+   -------------------------------------------------------------------------- */
+.alert {
+  border: 1px solid var(--bs-border-color);
+  border-left: 5px solid var(--bs-primary);
+  border-radius: var(--bs-border-radius);
+  font-weight: 600;
+}
+
+.badge {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

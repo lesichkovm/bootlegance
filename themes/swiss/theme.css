@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Swiss / International Style Bootstrap 5 Theme
+   Strict grid, neutral palette and Helvetica-like typography.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Swiss Palette Tokens */
+  --swiss-red: #d90429;
+  --swiss-red-hover: #b80322;
+  --swiss-black: #000000;
+  --swiss-white: #ffffff;
+  --swiss-gray-light: #f2f2f2;
+  --swiss-gray-mid: #666666;
+
+  /* Bootstrap Primary Overrides (Light Mode) */
+  --bs-primary: var(--swiss-red);
+  --bs-primary-rgb: 217, 4, 41;
+  --bs-secondary: #2b2b2b;
+  --bs-secondary-rgb: 43, 43, 43;
+  --bs-success: #008000;
+  --bs-success-rgb: 0, 128, 0;
+  --bs-info: #0055ff;
+  --bs-info-rgb: 0, 85, 255;
+  --bs-warning: #e6a100;
+  --bs-warning-rgb: 230, 161, 0;
+  --bs-danger: #d90429;
+  --bs-danger-rgb: 217, 4, 41;
+  --bs-light: #f2f2f2;
+  --bs-light-rgb: 242, 242, 242;
+  --bs-dark: #000000;
+  --bs-dark-rgb: 0, 0, 0;
+
+  /* Body & Surface */
+  --bs-body-bg: var(--swiss-white);
+  --bs-body-color: var(--swiss-black);
+  --bs-tertiary-bg: var(--swiss-gray-light);
+  --bs-border-color: var(--swiss-black);
+
+  /* Typography */
+  --bs-font-sans-serif: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.45;
+
+  /* Components Globals */
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+
+  /* Focus Ring */
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-color: var(--swiss-red);
+
+  /* Navbar */
+  --bs-navbar-bg: #f8f8f8;
+}
+
+[data-bs-theme="dark"] {
+  --swiss-dark-red: #ff2a3b;
+
+  --bs-primary: var(--swiss-dark-red);
+  --bs-primary-rgb: 255, 42, 59;
+  --bs-secondary: #d1d1d1;
+  --bs-secondary-rgb: 209, 209, 209;
+
+  --bs-body-bg: #0a0a0a;
+  --bs-body-color: #ffffff;
+  --bs-tertiary-bg: #1a1a1a;
+  --bs-border-color: #ffffff;
+
+  --bs-light: #1a1a1a;
+  --bs-dark: #0a0a0a;
+
+  --bs-navbar-bg: #141414;
+  --bs-focus-ring-color: var(--swiss-dark-red);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--bs-body-color);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--bs-primary);
+}
+
+a:hover {
+  background-color: var(--bs-primary);
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Swiss Grid & Sharp Component Styling
+   -------------------------------------------------------------------------- */
+.btn, .card, .alert, .modal-content, .offcanvas, .toast, .form-control, .form-select, .list-group-item {
+  border-radius: 0 !important;
+  border: 2px solid var(--bs-border-color);
+}
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-bg: var(--swiss-red-hover);
+  --bs-btn-hover-border-color: var(--bs-border-color);
+}
+
+.navbar {
+  border-bottom: 2px solid var(--bs-border-color);
+  background-color: var(--bs-navbar-bg) !important;
+}
+
+.navbar-brand {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.card-header {
+  border-bottom: 2px solid var(--bs-border-color);
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  border-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
