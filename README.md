@@ -94,7 +94,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Orchis Yellow** | The yellow Orchis accent with highlighter energy. | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/orchis-yellow/index.html) | Sibling of **Orchis** |
 | **Orchis Cyan** | The cyan Orchis accent — clean and contemporary. | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/orchis-cyan/index.html) | Sibling of **Orchis** |
 | **Dracula Soft** | The same eleven Dracula colours with the neon pulled back — muted surfaces and softer accents. | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/dracula-soft/index.html) | Sibling of **Dracula** |
-| **Midnight** | Dark, sophisticated, professional | | Corporate apps, SaaS, modern tech |
+| **Midnight** | Dark, sophisticated, professional | [Preview](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/themes/midnight/index.html) | Corporate apps, SaaS, modern tech |
 | **Sunrise** | Warm, energetic, light | | Creative portfolios, startups, inviting projects |
 | **Ocean** | Cool, calm, trustworthy | | Finance, corporate, professional services |
 | **Forest** | Natural, earthy, organic | | Eco-conscious brands, wellness, sustainability |
