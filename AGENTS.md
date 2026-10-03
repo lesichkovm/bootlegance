@@ -37,6 +37,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Forest                | `forest`              | Available |
 | GitHub Primer         | `github-primer`       | Available |
 | Glassmorphism         | `glassmorphism`       | Available |
+| High Contrast         | `high-contrast`       | Available |
 | Gruvbox               | `gruvbox`             | Available |
 | Kanagawa              | `kanagawa`            | Available |
 | KDE Breeze            | `kde-breeze`          | Available |
@@ -60,6 +61,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Orchis Slate          | `orchis-slate`        | Available |
 | Orchis Yellow         | `orchis-yellow`       | Available |
 | Pantheon              | `pantheon`            | Available |
+| Print-Optimized       | `print-optimized`     | Available |
 | Rosé Pine             | `rose-pine`           | Available |
 | Seneca                | `seneca`              | Available |
 | Sepia / Reading mode  | `sepia`               | Available |
