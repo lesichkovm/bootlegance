@@ -28,7 +28,7 @@ Bootlegance is a collection of carefully crafted Bootstrap 5 themes designed to 
 <link href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/themes/{theme-name}/theme.css" rel="stylesheet">
 
 <!-- Load specific version of theme CSS from CDN -->
-<link href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@v2.9.0/themes/{theme-name}/theme.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@{release-tag}/themes/{theme-name}/theme.css" rel="stylesheet">
 ```
 
 3. That's it! Your Bootstrap components now have the Bootlegance theme applied.
