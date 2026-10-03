@@ -1,0 +1,96 @@
+/* ==========================================================================
+   One Dark — Bootstrap 5 Theme
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: #282c34;
+  --bs-body-color: #abb2bf;
+  --bs-emphasis-color: #e6e6e6;
+  --bs-secondary-color: #5c6370;
+  --bs-tertiary-color: #5c6370;
+  --bs-secondary-bg: #21252b;
+  --bs-tertiary-bg: #353b45;
+  --bs-border-color: #181a1f;
+
+  --bs-primary: #61afef;
+  --bs-secondary: #c678dd;
+  --bs-success: #98c379;
+  --bs-info: #56b6c2;
+  --bs-warning: #e5c07b;
+  --bs-danger: #e06c75;
+  --bs-light: #21252b;
+  --bs-dark: #e6e6e6;
+
+  --bs-link-color: #61afef;
+  --bs-link-hover-color: #c678dd;
+}
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #fafafa;
+  --bs-body-color: #383a42;
+  --bs-emphasis-color: #202227;
+  --bs-secondary-color: #a0a1a7;
+  --bs-tertiary-color: #a0a1a7;
+  --bs-secondary-bg: #f0f0f0;
+  --bs-tertiary-bg: #e5e5e6;
+  --bs-border-color: #d0d0d0;
+
+  --bs-primary: #4078f2;
+  --bs-secondary: #a626a4;
+  --bs-success: #50a14f;
+  --bs-info: #0184bc;
+  --bs-warning: #c18401;
+  --bs-danger: #e45649;
+  --bs-light: #f0f0f0;
+  --bs-dark: #202227;
+
+  --bs-link-color: #4078f2;
+  --bs-link-hover-color: #a626a4;
+}
+
+.navbar {
+  background-color: var(--bs-secondary-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.card {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+.table {
+  --bs-table-bg: var(--bs-secondary-bg);
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-border-color: var(--bs-border-color);
+}
+
+.modal-content {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--bs-secondary-bg);
+  --bs-dropdown-border-color: var(--bs-border-color);
+  --bs-dropdown-link-color: var(--bs-body-color);
+}
+
+.list-group-item {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.form-control, .form-select {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border-color: var(--bs-primary);
+}

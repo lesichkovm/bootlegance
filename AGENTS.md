@@ -18,48 +18,58 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 
 | Theme                 | Slug                  | Status    |
 |-----------------------|-----------------------|-----------|
-| Brutalski             | `brutalski`           | Available |
-| Carbon                | `carbon`              | Available |
-| Civic                 | `civic`               | Available |
-| Seneca                | `seneca`              | Available |
-| Vanguard              | `vanguard`            | Available |
-| Whitehall             | `whitehall`           | Available |
-| Yaru                  | `yaru`                | Available |
-| WhiteSur              | `whitesur`            | Available |
-| Vimix                 | `vimix`               | Available |
-| Adwaita               | `adwaita`             | Available |
-| Orchis                | `orchis`              | Available |
-| Catppuccin            | `catppuccin`          | Available |
-| Nord                  | `nord`                | Available |
-| Gruvbox               | `gruvbox`             | Available |
-| Dracula               | `dracula`             | Available |
-| Dracula Soft          | `dracula-soft`        | Available |
-| Catppuccin Macchiato  | `catppuccin-macchiato` | Available |
-| Catppuccin Frappé     | `catppuccin-frappe`   | Available |
-| Nord Frost            | `nord-frost`          | Available |
-| Nord Aurora           | `nord-aurora`         | Available |
-| Vimix Dark            | `vimix-dark`          | Available |
-| Vimix Green           | `vimix-green`         | Available |
-| Vimix Orange          | `vimix-orange`        | Available |
-| Vimix Pink            | `vimix-pink`          | Available |
-| Vimix Purple          | `vimix-purple`        | Available |
-| Vimix Red             | `vimix-red`           | Available |
-| Vimix Teal            | `vimix-teal`          | Available |
-| Vimix Yellow          | `vimix-yellow`        | Available |
-| Orchis Green          | `orchis-green`        | Available |
-| Orchis Purple         | `orchis-purple`       | Available |
-| Orchis Sage           | `orchis-sage`         | Available |
-| Orchis Slate          | `orchis-slate`        | Available |
-| Orchis Orange         | `orchis-orange`       | Available |
-| Orchis Pink           | `orchis-pink`         | Available |
-| Orchis Red            | `orchis-red`          | Available |
-| Orchis Yellow         | `orchis-yellow`       | Available |
-| Orchis Cyan           | `orchis-cyan`         | Available |
-| Midnight              | `midnight`            | Available |
-| Sunrise               | `sunrise`             | Available |
-| Ocean                 | `ocean`               | Available |
-| Forest                | `forest`              | Available |
-| Slate                 | `slate`               | Available |
+| Adwaita               | `adwaita`               | Available |
+| Ayu                   | `ayu`                   | Available |
+| Brutalski             | `brutalski`             | Available |
+| Carbon                | `carbon`                | Available |
+| Catppuccin            | `catppuccin`            | Available |
+| Catppuccin Frappé     | `catppuccin-frappe`     | Available |
+| Catppuccin Macchiato  | `catppuccin-macchiato`  | Available |
+| Civic                 | `civic`                 | Available |
+| Dracula               | `dracula`               | Available |
+| Dracula Soft          | `dracula-soft`          | Available |
+| Everforest            | `everforest`            | Available |
+| Forest                | `forest`                | Available |
+| GitHub Primer         | `github-primer`         | Available |
+| Gruvbox               | `gruvbox`               | Available |
+| Kanagawa              | `kanagawa`              | Available |
+| Midnight              | `midnight`              | Available |
+| Night Owl             | `night-owl`             | Available |
+| Nord                  | `nord`                  | Available |
+| Nord Aurora           | `nord-aurora`           | Available |
+| Nord Frost            | `nord-frost`            | Available |
+| Ocean                 | `ocean`                 | Available |
+| One Dark              | `one-dark`              | Available |
+| Orchis                | `orchis`                | Available |
+| Orchis Cyan           | `orchis-cyan`           | Available |
+| Orchis Green          | `orchis-green`          | Available |
+| Orchis Orange         | `orchis-orange`         | Available |
+| Orchis Pink           | `orchis-pink`           | Available |
+| Orchis Purple         | `orchis-purple`         | Available |
+| Orchis Red            | `orchis-red`            | Available |
+| Orchis Sage           | `orchis-sage`           | Available |
+| Orchis Slate          | `orchis-slate`          | Available |
+| Orchis Yellow         | `orchis-yellow`         | Available |
+| Rosé Pine             | `rose-pine`             | Available |
+| Seneca                | `seneca`                | Available |
+| Slate                 | `slate`                 | Available |
+| Solarized             | `solarized`             | Available |
+| Sunrise               | `sunrise`               | Available |
+| Tokyo Night           | `tokyo-night`           | Available |
+| Vanguard              | `vanguard`              | Available |
+| Vimix                 | `vimix`                 | Available |
+| Vimix Dark            | `vimix-dark`            | Available |
+| Vimix Green           | `vimix-green`           | Available |
+| Vimix Orange          | `vimix-orange`          | Available |
+| Vimix Pink            | `vimix-pink`            | Available |
+| Vimix Purple          | `vimix-purple`          | Available |
+| Vimix Red             | `vimix-red`             | Available |
+| Vimix Teal            | `vimix-teal`            | Available |
+| Vimix Yellow          | `vimix-yellow`          | Available |
+| Whitehall             | `whitehall`             | Available |
+| WhiteSur              | `whitesur`              | Available |
+| Yaru                  | `yaru`                  | Available |
+
 
 ---
 
