@@ -4,6 +4,8 @@ Elegant Bootstrap themes that redefine your project's aesthetic.
 
 Bootlegance is a collection of carefully crafted Bootstrap 5 themes designed to elevate the look and feel of your projects. From bold brutalist designs to refined minimalism, each theme is built to make your applications stand out.
 
+## Preview / Demo
+
 [**View Theme Gallery**](https://html-preview.github.io/?url=https://github.com/lesichkovm/bootlegance/blob/main/docs/index.html)
 
 ## Features
