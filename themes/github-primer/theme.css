@@ -1,0 +1,96 @@
+/* ==========================================================================
+   GitHub Primer — Bootstrap 5 Theme
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0d1117;
+  --bs-body-color: #e6edf3;
+  --bs-emphasis-color: #f0f6fc;
+  --bs-secondary-color: #8d96a0;
+  --bs-tertiary-color: #8d96a0;
+  --bs-secondary-bg: #161b22;
+  --bs-tertiary-bg: #21262d;
+  --bs-border-color: #30363d;
+
+  --bs-primary: #2f81f7;
+  --bs-secondary: #a371f7;
+  --bs-success: #3fb950;
+  --bs-info: #58a6ff;
+  --bs-warning: #d29922;
+  --bs-danger: #f85149;
+  --bs-light: #161b22;
+  --bs-dark: #f0f6fc;
+
+  --bs-link-color: #2f81f7;
+  --bs-link-hover-color: #a371f7;
+}
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #1f2328;
+  --bs-emphasis-color: #000000;
+  --bs-secondary-color: #656d76;
+  --bs-tertiary-color: #656d76;
+  --bs-secondary-bg: #f6f8fa;
+  --bs-tertiary-bg: #eaeeed;
+  --bs-border-color: #d0d7de;
+
+  --bs-primary: #0969da;
+  --bs-secondary: #8250df;
+  --bs-success: #1a7f37;
+  --bs-info: #0576b8;
+  --bs-warning: #9a6700;
+  --bs-danger: #cf222e;
+  --bs-light: #f6f8fa;
+  --bs-dark: #000000;
+
+  --bs-link-color: #0969da;
+  --bs-link-hover-color: #8250df;
+}
+
+.navbar {
+  background-color: var(--bs-secondary-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.card {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+.table {
+  --bs-table-bg: var(--bs-secondary-bg);
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-border-color: var(--bs-border-color);
+}
+
+.modal-content {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--bs-secondary-bg);
+  --bs-dropdown-border-color: var(--bs-border-color);
+  --bs-dropdown-link-color: var(--bs-body-color);
+}
+
+.list-group-item {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.form-control, .form-select {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border-color: var(--bs-primary);
+}
