@@ -1118,71 +1118,74 @@
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('theme-toggle');
-        const panelsToggle = document.getElementById('panels-toggle');
-        const densityToggle = document.getElementById('density-toggle');
-                        const liveToast = document.getElementById('liveToast');
-        const liveToastBody = document.getElementById('liveToastBody');
+    document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const panelsToggle = document.getElementById('panels-toggle');
+            const densityToggle = document.getElementById('density-toggle');
+                            const liveToast = document.getElementById('liveToast');
+            const liveToastBody = document.getElementById('liveToastBody');
 
-        function announce(message) {
-            liveToastBody.textContent = message;
-            bootstrap.Toast.getOrCreateInstance(liveToast).show();
-        }
+            function announce(message) {
+                liveToastBody.textContent = message;
+                bootstrap.Toast.getOrCreateInstance(liveToast).show();
+            }
 
-        function applyTheme(mode) {
-            html.setAttribute('data-bs-theme', mode);
-            themeToggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
-            const appearanceSwitch = document.getElementById('switchDark');
-            if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
-        }
+            function applyTheme(mode) {
+                html.setAttribute('data-bs-theme', mode);
+                themeToggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                const appearanceSwitch = document.getElementById('switchDark');
+                if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
+            }
 
-        function applyPanels(mode, notify) {
-            const isFloat = mode === 'float';
-            html.setAttribute('data-panels', isFloat ? 'float' : 'flat');
-            panelsToggle.textContent = isFloat ? 'Flat panels' : 'Floating panels';
-            panelsToggle.classList.toggle('btn-primary', isFloat);
-            panelsToggle.classList.toggle('btn-light', !isFloat);
-            panelsToggle.setAttribute('aria-pressed', String(isFloat));
-            if (notify) announce(isFloat ? 'Floating panels enabled.' : 'Flat panels enabled.');
-        }
+            function applyPanels(mode, notify) {
+                const isFloat = mode === 'float';
+                html.setAttribute('data-panels', isFloat ? 'float' : 'flat');
+                panelsToggle.textContent = isFloat ? 'Flat panels' : 'Floating panels';
+                panelsToggle.classList.toggle('btn-primary', isFloat);
+                panelsToggle.classList.toggle('btn-light', !isFloat);
+                panelsToggle.setAttribute('aria-pressed', String(isFloat));
+                if (notify) announce(isFloat ? 'Floating panels enabled.' : 'Flat panels enabled.');
+            }
 
-        function applyDensity(mode, notify) {
-            const isCompact = mode === 'compact';
-            html.setAttribute('data-density', isCompact ? 'compact' : 'regular');
-            densityToggle.textContent = isCompact ? 'Regular Density' : 'Compact Density';
-            densityToggle.setAttribute('aria-pressed', String(isCompact));
-            if (notify) announce(isCompact ? 'Compact density enabled.' : 'Regular density restored.');
-        }
+            function applyDensity(mode, notify) {
+                const isCompact = mode === 'compact';
+                html.setAttribute('data-density', isCompact ? 'compact' : 'regular');
+                densityToggle.textContent = isCompact ? 'Regular Density' : 'Compact Density';
+                densityToggle.setAttribute('aria-pressed', String(isCompact));
+                if (notify) announce(isCompact ? 'Compact density enabled.' : 'Regular density restored.');
+            }
 
-                applyPanels('float', false);
-        applyDensity('regular', false);
+                    applyPanels('float', false);
+            applyDensity('regular', false);
 
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            announce('Appearance switched to ' + next + ' mode.');
-        });
+            themeToggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                announce('Appearance switched to ' + next + ' mode.');
+            });
 
-        panelsToggle.addEventListener('click', () => {
-            applyPanels(html.getAttribute('data-panels') === 'float' ? 'flat' : 'float', true);
-        });
+            panelsToggle.addEventListener('click', () => {
+                applyPanels(html.getAttribute('data-panels') === 'float' ? 'flat' : 'float', true);
+            });
 
-        densityToggle.addEventListener('click', () => {
-            applyDensity(html.getAttribute('data-density') === 'compact' ? 'regular' : 'compact', true);
-        });
+            densityToggle.addEventListener('click', () => {
+                applyDensity(html.getAttribute('data-density') === 'compact' ? 'regular' : 'compact', true);
+            });
 
-        document.getElementById('switchDark').addEventListener('change', (e) => {
-            applyTheme(e.target.checked ? 'dark' : 'light');
-        });
+            document.getElementById('switchDark').addEventListener('change', (e) => {
+                applyTheme(e.target.checked ? 'dark' : 'light');
+            });
 
 
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
-        document.getElementById('liveToastBtn').addEventListener('click', () => {
-            announce('Notifications marked as read.');
-        });
-    </script>
+            document.getElementById('liveToastBtn').addEventListener('click', () => {
+                announce('Notifications marked as read.');
+            });
+
+    });
+</script>
 </body>
 </html>

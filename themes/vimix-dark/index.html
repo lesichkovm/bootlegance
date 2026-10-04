@@ -1078,36 +1078,39 @@
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const toggle = document.getElementById('theme-toggle');
+    document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
                 
-        function applyTheme(mode) {
-            html.setAttribute('data-bs-theme', mode);
-            toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
-            const appearanceSwitch = document.getElementById('switchDark');
-            if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
-        }
+            function applyTheme(mode) {
+                html.setAttribute('data-bs-theme', mode);
+                toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                const appearanceSwitch = document.getElementById('switchDark');
+                if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
+            }
 
         
-        toggle.addEventListener('click', () => {
-            applyTheme(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
-        });
+            toggle.addEventListener('click', () => {
+                applyTheme(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
+            });
 
-        document.getElementById('switchDark').addEventListener('change', (e) => {
-            applyTheme(e.target.checked ? 'dark' : 'light');
-        });
+            document.getElementById('switchDark').addEventListener('change', (e) => {
+                applyTheme(e.target.checked ? 'dark' : 'light');
+            });
 
 
-        // Popovers & tooltips
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+            // Popovers & tooltips
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
-        // Live toast trigger
-        document.getElementById('liveToastBtn').addEventListener('click', () => {
-            document.getElementById('liveToastBody').textContent =
-                'Notifications marked as read.';
-            bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
-        });
-    </script>
+            // Live toast trigger
+            document.getElementById('liveToastBtn').addEventListener('click', () => {
+                document.getElementById('liveToastBody').textContent =
+                    'Notifications marked as read.';
+                bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
+            });
+
+    });
+</script>
 </body>
 </html>

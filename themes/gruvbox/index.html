@@ -1148,60 +1148,63 @@
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const toggle = document.getElementById('theme-toggle');
-        const boldToggle = document.getElementById('bold-toggle');
-                        const boldCode = document.getElementById('active-bold-code');
-        const liveToast = document.getElementById('liveToast');
-        const liveToastBody = document.getElementById('liveToastBody');
+    document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const boldToggle = document.getElementById('bold-toggle');
+                            const boldCode = document.getElementById('active-bold-code');
+            const liveToast = document.getElementById('liveToast');
+            const liveToastBody = document.getElementById('liveToastBody');
 
-        //                 
-        function announce(message) {
-            liveToastBody.textContent = message;
-            bootstrap.Toast.getOrCreateInstance(liveToast).show();
-        }
+            //
+            function announce(message) {
+                liveToastBody.textContent = message;
+                bootstrap.Toast.getOrCreateInstance(liveToast).show();
+            }
 
-        function applyTheme(mode) {
-            html.setAttribute('data-bs-theme', mode);
-            toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
-            const appearanceSwitch = document.getElementById('switchDark');
-            if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
-        }
+            function applyTheme(mode) {
+                html.setAttribute('data-bs-theme', mode);
+                toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                const appearanceSwitch = document.getElementById('switchDark');
+                if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
+            }
 
-        function applyBold(isBold, notify) {
-            if (isBold) html.setAttribute('data-bold', '');
-            else html.removeAttribute('data-bold');
-            boldToggle.textContent = isBold ? 'Regular' : 'Bold';
-            boldToggle.classList.toggle('btn-primary', isBold);
-            boldToggle.classList.toggle('btn-light', !isBold);
-            boldToggle.setAttribute('aria-pressed', String(isBold));
-            boldCode.textContent = isBold ? 'on' : 'off';
-            if (notify) announce(isBold ? 'Bold background enabled.' : 'Regular background restored.');
-        }
+            function applyBold(isBold, notify) {
+                if (isBold) html.setAttribute('data-bold', '');
+                else html.removeAttribute('data-bold');
+                boldToggle.textContent = isBold ? 'Regular' : 'Bold';
+                boldToggle.classList.toggle('btn-primary', isBold);
+                boldToggle.classList.toggle('btn-light', !isBold);
+                boldToggle.setAttribute('aria-pressed', String(isBold));
+                boldCode.textContent = isBold ? 'on' : 'off';
+                if (notify) announce(isBold ? 'Bold background enabled.' : 'Regular background restored.');
+            }
 
-        applyBold(false, false);
+            applyBold(false, false);
 
-        toggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            announce('Appearance switched to ' + next + ' mode.');
-        });
+            toggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                announce('Appearance switched to ' + next + ' mode.');
+            });
 
-        boldToggle.addEventListener('click', () => {
-            applyBold(!html.hasAttribute('data-bold'), true);
-        });
+            boldToggle.addEventListener('click', () => {
+                applyBold(!html.hasAttribute('data-bold'), true);
+            });
 
-        document.getElementById('switchDark').addEventListener('change', (e) => {
-            applyTheme(e.target.checked ? 'light' : 'dark');
-        });
+            document.getElementById('switchDark').addEventListener('change', (e) => {
+                applyTheme(e.target.checked ? 'light' : 'dark');
+            });
 
 
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
-        document.getElementById('liveToastBtn').addEventListener('click', () => {
-            announce('Notifications marked as read.');
-        });
-    </script>
+            document.getElementById('liveToastBtn').addEventListener('click', () => {
+                announce('Notifications marked as read.');
+            });
+
+    });
+</script>
 </body>
 </html>
