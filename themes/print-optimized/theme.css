@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Print-Optimized Bootstrap 5 Theme
+   Tuned for printed pages, PDFs, and document-style readability.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+:root,
+[data-bs-theme="light"] {
+  /* Paper-inspired palette (Light Mode) */
+  --bs-body-bg: #fcfbf9;
+  --bs-body-color: #1a1a1a;
+  --bs-body-bg-rgb: 252, 251, 249;
+  --bs-body-color-rgb: 26, 26, 26;
+
+  --bs-secondary-bg: #f2f0ec;
+  --bs-secondary-bg-rgb: 242, 240, 236;
+  --bs-tertiary-bg: #e8e5df;
+  --bs-tertiary-bg-rgb: 232, 229, 223;
+
+  --bs-secondary-color: #4a4a4a;
+  --bs-secondary-color-rgb: 74, 74, 74;
+  --bs-tertiary-color: #666666;
+  --bs-tertiary-color-rgb: 102, 102, 102;
+
+  --bs-border-color: #d8d5ce;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.12);
+
+  /* Primary Accent: Deep Ink Blue */
+  --bs-primary: #1a365d;
+  --bs-primary-rgb: 26, 54, 93;
+  --bs-secondary: #4a5568;
+  --bs-secondary-rgb: 74, 85, 104;
+  --bs-success: #22543d;
+  --bs-success-rgb: 34, 84, 61;
+  --bs-info: #2b6cb0;
+  --bs-info-rgb: 43, 108, 176;
+  --bs-warning: #744210;
+  --bs-warning-rgb: 116, 66, 16;
+  --bs-danger: #742a2a;
+  --bs-danger-rgb: 116, 42, 42;
+
+  --bs-light: #f7f6f3;
+  --bs-light-rgb: 247, 246, 243;
+  --bs-dark: #1a1a1a;
+  --bs-dark-rgb: 26, 26, 26;
+
+  /* Typography: Document Font Stack */
+  --bs-font-sans-serif: "Georgia", "Cambria", "Times New Roman", Times, serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.6;
+
+  --bs-link-color: #1a365d;
+  --bs-link-hover-color: #0f2340;
+  --bs-link-decoration: underline;
+
+  --bs-border-radius: 2px;
+  --bs-border-radius-sm: 1px;
+  --bs-border-radius-lg: 3px;
+
+  --bs-navbar-bg: #1a365d;
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #e2e8f0;
+
+  --bs-focus-ring-width: 2px;
+  --bs-focus-ring-color: #1a365d;
+}
+
+/* --------------------------------------------------------------------------
+   1. Base & Global Styles
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--bs-font-sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  color: var(--bs-body-color);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--bs-link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}
+
+/* --------------------------------------------------------------------------
+   2. Components & Document Formatting
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bs-navbar-bg) !important;
+  border-bottom: 2px solid var(--bs-primary);
+}
+
+.btn {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  border-radius: var(--bs-border-radius);
+}
+
+.card {
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-body-bg);
+  box-shadow: none;
+}
+
+.table {
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-bg: var(--bs-body-bg);
+  --bs-table-border-color: var(--bs-border-color);
+  border-top: 2px solid var(--bs-body-color);
+  border-bottom: 2px solid var(--bs-body-color);
+}
+
+.table th {
+  border-bottom: 2px solid var(--bs-body-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.alert {
+  border: 1px solid var(--bs-border-color);
+  border-left: 4px solid var(--bs-primary);
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-body-color);
+}
+
+.badge {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  border: 1px solid var(--bs-border-color);
+}
+
+.blockquote {
+  border-left: 3px solid var(--bs-primary);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   3. Dark Mode (Dark Paper Surface)
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1c1d21;
+  --bs-body-color: #e4e4e7;
+  --bs-body-bg-rgb: 28, 29, 33;
+  --bs-body-color-rgb: 228, 228, 231;
+
+  --bs-secondary-bg: #27282f;
+  --bs-secondary-bg-rgb: 39, 40, 47;
+  --bs-tertiary-bg: #32343d;
+  --bs-tertiary-bg-rgb: 50, 52, 61;
+
+  --bs-secondary-color: #a1a1aa;
+  --bs-secondary-color-rgb: 161, 161, 170;
+  --bs-tertiary-color: #71717a;
+  --bs-tertiary-color-rgb: 113, 113, 122;
+
+  --bs-border-color: #3f3f46;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+
+  --bs-primary: #93c5fd;
+  --bs-primary-rgb: 147, 197, 253;
+  --bs-secondary: #cbd5e1;
+  --bs-secondary-rgb: 203, 213, 225;
+  --bs-success: #86efac;
+  --bs-success-rgb: 134, 239, 172;
+  --bs-info: #7dd3fc;
+  --bs-info-rgb: 125, 211, 252;
+  --bs-warning: #fde047;
+  --bs-warning-rgb: 253, 224, 71;
+  --bs-danger: #fca5a5;
+  --bs-danger-rgb: 252, 165, 165;
+
+  --bs-light: #27282f;
+  --bs-light-rgb: 39, 40, 47;
+  --bs-dark: #e4e4e7;
+  --bs-dark-rgb: 228, 228, 231;
+
+  --bs-link-color: #93c5fd;
+  --bs-link-hover-color: #bfdbfe;
+
+  --bs-navbar-bg: #111215;
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #93c5fd;
+}
+
+/* --------------------------------------------------------------------------
+   4. Print Media Rules (@media print)
+   -------------------------------------------------------------------------- */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  a, a:visited {
+    text-decoration: underline !important;
+    color: #000000 !important;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 85%;
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .navbar,
+  #theme-toggle,
+  .btn,
+  .pagination,
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+
+  .table td,
+  .table th {
+    background-color: #ffffff !important;
+  }
+
+  .card,
+  .alert,
+  .list-group-item {
+    border: 1pt solid #000000 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
