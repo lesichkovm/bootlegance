@@ -526,20 +526,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        themeToggle.addEventListener('click', () => {
-            const current = html.getAttribute('data-bs-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-bs-theme', next);
-            themeToggle.innerText = next === 'dark' ? 'Switch to Light' : 'Switch to Dark';
-            themeToggle.className = next === 'dark' ? 'btn btn-outline-light btn-sm' : 'btn btn-outline-dark btn-sm';
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            themeToggle.addEventListener('click', () => {
+                const current = html.getAttribute('data-bs-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-bs-theme', next);
+                themeToggle.innerText = next === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+                themeToggle.className = next === 'dark' ? 'btn btn-outline-light btn-sm' : 'btn btn-outline-dark btn-sm';
+            });
 
-        // Initialize components
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-    </script>
+            // Initialize components
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+    });
+</script>
 
     <footer class="mt-5 py-4 border-top">
         <div class="container text-center">

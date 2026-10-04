@@ -1130,73 +1130,76 @@
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const toggle = document.getElementById('theme-toggle');
-        const contrastToggle = document.getElementById('contrast-toggle');
-        const densityToggle = document.getElementById('density-toggle');
-        const liveToast = document.getElementById('liveToast');
-        const liveToastBody = document.getElementById('liveToastBody');
+    document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const contrastToggle = document.getElementById('contrast-toggle');
+            const densityToggle = document.getElementById('density-toggle');
+            const liveToast = document.getElementById('liveToast');
+            const liveToastBody = document.getElementById('liveToastBody');
 
-        function announce(message) {
-            liveToastBody.textContent = message;
-            bootstrap.Toast.getOrCreateInstance(liveToast).show();
-        }
+            function announce(message) {
+                liveToastBody.textContent = message;
+                bootstrap.Toast.getOrCreateInstance(liveToast).show();
+            }
 
-        function applyTheme(mode) {
-            html.setAttribute('data-bs-theme', mode);
-            toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
-            const appearanceSwitch = document.getElementById('switchDark');
-            if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
-        }
+            function applyTheme(mode) {
+                html.setAttribute('data-bs-theme', mode);
+                toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                const appearanceSwitch = document.getElementById('switchDark');
+                if (appearanceSwitch) appearanceSwitch.checked = mode === 'dark';
+            }
 
-        function applyContrast(mode) {
-            const isHigh = mode === 'high';
-            html.setAttribute('data-contrast', isHigh ? 'high' : 'normal');
-            contrastToggle.textContent = isHigh ? 'Standard Contrast' : 'High Contrast';
-            contrastToggle.classList.toggle('btn-primary', isHigh);
-            contrastToggle.classList.toggle('btn-light', !isHigh);
-            contrastToggle.setAttribute('aria-pressed', String(isHigh));
-        }
+            function applyContrast(mode) {
+                const isHigh = mode === 'high';
+                html.setAttribute('data-contrast', isHigh ? 'high' : 'normal');
+                contrastToggle.textContent = isHigh ? 'Standard Contrast' : 'High Contrast';
+                contrastToggle.classList.toggle('btn-primary', isHigh);
+                contrastToggle.classList.toggle('btn-light', !isHigh);
+                contrastToggle.setAttribute('aria-pressed', String(isHigh));
+            }
 
-        function applyDensity(mode) {
-            const isCompact = mode === 'compact';
-            html.setAttribute('data-density', isCompact ? 'compact' : 'regular');
-            densityToggle.textContent = isCompact ? 'Regular Density' : 'Compact Density';
-            densityToggle.setAttribute('aria-pressed', String(isCompact));
-        }
+            function applyDensity(mode) {
+                const isCompact = mode === 'compact';
+                html.setAttribute('data-density', isCompact ? 'compact' : 'regular');
+                densityToggle.textContent = isCompact ? 'Regular Density' : 'Compact Density';
+                densityToggle.setAttribute('aria-pressed', String(isCompact));
+            }
 
-        applyTheme('light');
-        applyContrast('normal');
-        applyDensity('regular');
+            applyTheme('light');
+            applyContrast('normal');
+            applyDensity('regular');
 
-        toggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            announce('Appearance switched to ' + next + ' mode.');
-        });
+            toggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                announce('Appearance switched to ' + next + ' mode.');
+            });
 
-        contrastToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-contrast') === 'high' ? 'normal' : 'high';
-            applyContrast(next);
-            announce(next === 'high' ? 'High contrast enabled.' : 'Standard contrast restored.');
-        });
+            contrastToggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-contrast') === 'high' ? 'normal' : 'high';
+                applyContrast(next);
+                announce(next === 'high' ? 'High contrast enabled.' : 'Standard contrast restored.');
+            });
 
-        densityToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-density') === 'compact' ? 'regular' : 'compact';
-            applyDensity(next);
-            announce(next === 'compact' ? 'Compact density enabled.' : 'Regular density restored.');
-        });
+            densityToggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-density') === 'compact' ? 'regular' : 'compact';
+                applyDensity(next);
+                announce(next === 'compact' ? 'Compact density enabled.' : 'Regular density restored.');
+            });
 
-        document.getElementById('switchDark').addEventListener('change', (e) => {
-            applyTheme(e.target.checked ? 'dark' : 'light');
-        });
+            document.getElementById('switchDark').addEventListener('change', (e) => {
+                applyTheme(e.target.checked ? 'dark' : 'light');
+            });
 
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
-        document.getElementById('liveToastBtn').addEventListener('click', () => {
-            announce('Notifications marked as read.');
-        });
-    </script>
+            document.getElementById('liveToastBtn').addEventListener('click', () => {
+                announce('Notifications marked as read.');
+            });
+
+    });
+</script>
 </body>
 </html>

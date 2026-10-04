@@ -1098,43 +1098,46 @@
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const toggle = document.getElementById('theme-toggle');
-                        const liveToast = document.getElementById('liveToast');
-        const liveToastBody = document.getElementById('liveToastBody');
+    document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+                            const liveToast = document.getElementById('liveToast');
+            const liveToastBody = document.getElementById('liveToastBody');
 
-        // Latte is the light flavour; the rest are dark.
+            // Latte is the light flavour; the rest are dark.
                 
-        function announce(message) {
-            liveToastBody.textContent = message;
-            bootstrap.Toast.getOrCreateInstance(liveToast).show();
-        }
+            function announce(message) {
+                liveToastBody.textContent = message;
+                bootstrap.Toast.getOrCreateInstance(liveToast).show();
+            }
 
-        function applyTheme(mode) {
-            html.setAttribute('data-bs-theme', mode);
-            toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
-            const appearanceSwitch = document.getElementById('switchDark');
-            if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
-        }
-
-
-        toggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            announce('Appearance switched to ' + next + ' mode.');
-        });
-
-        document.getElementById('switchDark').addEventListener('change', (e) => {
-            applyTheme(e.target.checked ? 'light' : 'dark');
-        });
+            function applyTheme(mode) {
+                html.setAttribute('data-bs-theme', mode);
+                toggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                const appearanceSwitch = document.getElementById('switchDark');
+                if (appearanceSwitch) appearanceSwitch.checked = mode === 'light';
+            }
 
 
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+            toggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                announce('Appearance switched to ' + next + ' mode.');
+            });
 
-        document.getElementById('liveToastBtn').addEventListener('click', () => {
-            announce('Notifications marked as read.');
-        });
-    </script>
+            document.getElementById('switchDark').addEventListener('change', (e) => {
+                applyTheme(e.target.checked ? 'light' : 'dark');
+            });
+
+
+            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+            document.getElementById('liveToastBtn').addEventListener('click', () => {
+                announce('Notifications marked as read.');
+            });
+
+    });
+</script>
 </body>
 </html>
