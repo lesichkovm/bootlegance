@@ -178,7 +178,7 @@ The workflow automatically builds the site artifact (`_site/`) by assembling `do
 
 ### Enabling GitHub Pages in Repository Settings
 1. Go to repository **Settings** -> **Pages**.
-2. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
+2. Under **Build and deployment** -> **Source**, select **GitHub Actions** (Required: selecting branch deployment will cause GitHub Pages to process root `README.md` via Jekyll instead of serving `docs/index.html` as the root gallery page).
 
 ### Custom Domain Setup (Optional)
 To use a custom domain in the future:
