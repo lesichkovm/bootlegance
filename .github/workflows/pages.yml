@@ -34,11 +34,13 @@ jobs:
           touch _site/.nojekyll
           if [ -f docs/CNAME ]; then
             cp docs/CNAME _site/CNAME
+          elif [ -f CNAME ]; then
+            cp CNAME _site/CNAME
           fi
 
       - name: Generate sitemap and robots.txt
         run: |
-          SITE_URL="https://lesichkovm.github.io/bootlegance"
+          SITE_URL="https://bootlegance.lesichkov.co.uk"
 
           # robots.txt
           cat <<EOF > _site/robots.txt
