@@ -1,0 +1,90 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'themes/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -R docs/. _site/
+          cp -R themes _site/themes
+          touch _site/.nojekyll
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME _site/CNAME
+          fi
+
+      - name: Generate sitemap and robots.txt
+        run: |
+          SITE_URL="https://lesichkovm.github.io/bootlegance"
+
+          # robots.txt
+          cat <<EOF > _site/robots.txt
+          User-agent: *
+          Allow: /
+          Sitemap: ${SITE_URL}/sitemap.xml
+          EOF
+
+          # sitemap.xml
+          cat <<EOF > _site/sitemap.xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>${SITE_URL}/</loc>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          EOF
+
+          for theme in $(ls -1 _site/themes); do
+            if [ -f "_site/themes/${theme}/index.html" ]; then
+              cat <<EOF >> _site/sitemap.xml
+            <url>
+              <loc>${SITE_URL}/themes/${theme}/</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.8</priority>
+            </url>
+          EOF
+            fi
+          done
+
+          echo "</urlset>" >> _site/sitemap.xml
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
