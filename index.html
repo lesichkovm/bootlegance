@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootlegance — Bootstrap 5 Theme Gallery</title>
+    <meta name="description" content="Bootlegance is a collection of elegant drop-in Bootstrap 5 themes with native light and dark modes. Free and open source.">
+    <link rel="canonical" href="https://bootlegance.lesichkov.co.uk/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bootlegance.lesichkov.co.uk/">
+    <meta property="og:title" content="Bootlegance — Bootstrap 5 Theme Gallery">
+    <meta property="og:description" content="Bootlegance is a collection of elegant drop-in Bootstrap 5 themes with native light and dark modes. Free and open source.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://bootlegance.lesichkov.co.uk/">
+    <meta property="twitter:title" content="Bootlegance — Bootstrap 5 Theme Gallery">
+    <meta property="twitter:description" content="Bootlegance is a collection of elegant drop-in Bootstrap 5 themes with native light and dark modes. Free and open source.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bs-primary: #4f46e5;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            padding-top: 3rem;
+        }
+        .theme-card {
+            border: 2px solid #0f172a;
+            box-shadow: 4px 4px 0px 0px #0f172a;
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+        .theme-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px 0px #0f172a;
+        }
+        .theme-screenshot {
+            border-bottom: 2px solid #0f172a;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+        }
+        .btn-preview {
+            background-color: #4f46e5;
+            color: white;
+            border: 2px solid #0f172a;
+            box-shadow: 2px 2px 0px 0px #0f172a;
+            font-weight: bold;
+            border-radius: 0;
+        }
+        .btn-preview:hover {
+            background-color: #4338ca;
+            color: white;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px 0px #0f172a;
+        }
+        header {
+            margin-bottom: 4rem;
+        }
+        .shot-toggle { display: flex; gap: .25rem; justify-content: center; margin-top: 1rem; }
+        .shot-toggle button {
+            background: #fff; border: 2px solid #0f172a; color: #0f172a;
+            padding: .25rem .75rem; font-weight: bold; cursor: pointer; font-size: .8rem;
+        }
+        .shot-toggle button.active { background: #4f46e5; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center">
+            <h1 class="display-4 fw-bold">BOOTLEGANCE</h1>
+            <p class="lead">Elegant Bootstrap themes that redefine your project's aesthetic.</p>
+            <hr class="my-4 mx-auto" style="width: 100px; border-top: 3px solid #0f172a; opacity: 1;">
+            <div class="shot-toggle" id="shot-toggle">
+                <button type="button" class="active" data-mode="dark">Dark mode</button>
+                <button type="button" data-mode="light">Light mode</button>
+            </div>
+        </header>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/adwaita/screenshot.png" class="card-img-top theme-screenshot" alt="Adwaita theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ADWAITA</h5>
+                        <p class="card-text flex-grow-1">The neutral visual foundation of GNOME, rebuilt for Bootstrap 5. A subtle gray and blue palette, a 6px spacing rhythm, header bars, boxed lists and adaptive container-query layouts in the spirit of libadwaita — plus high-contrast and compact-density modes.</p>
+                        <a href="themes/adwaita/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/ant-design/screenshot.png" class="card-img-top theme-screenshot" alt="Ant Design Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">ANT DESIGN</h5>
+                        <p class="card-text flex-grow-1">Enterprise-grade UI theme inspired by Alibaba's Ant Design system and primary blue #1677ff palette.</p>
+                        <a href="themes/ant-design/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/ayu/screenshot.png" class="card-img-top theme-screenshot" alt="Ayu Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">AYU</h5>
+                        <p class="card-text flex-grow-1">A simple, bright, and elegant theme designed for all day coding comfort.</p>
+                        <a href="themes/ayu/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/brutalski/screenshot.png" class="card-img-top theme-screenshot" alt="Brutalski Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">BRUTALSKI</h5>
+                        <p class="card-text flex-grow-1">Bold, raw, geometric brutalism. Now with an expanded "Kitchen Sink" preview showcasing the full range of Bootstrap 5.3 components.</p>
+                        <a href="themes/brutalski/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/carbon/screenshot.png" class="card-img-top theme-screenshot" alt="Carbon Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">CARBON</h5>
+                        <p class="card-text flex-grow-1">IBM Carbon inspired theme. Clinical, flat, and focused on high-density information display. Perfect for enterprise tools.</p>
+                        <a href="themes/carbon/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/catppuccin/screenshot.png" class="card-img-top theme-screenshot" alt="Catppuccin theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">CATPPUCCIN</h5>
+                        <p class="card-text flex-grow-1">The official Catppuccin palette, faithfully ported. Latte, Frappé, Macchiato and Mocha drive every surface and accent, with utility classes for all 14 colours and terminal-styled code blocks — so your app, editor and terminal finally match.</p>
+                        <a href="themes/catppuccin/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/catppuccin-frappe/screenshot.png" class="card-img-top theme-screenshot" alt="Catppuccin Frappé theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">CATPPUCCIN FRAPPÉ</h5>
+                        <p class="card-text flex-grow-1">The softer mid-dark Catppuccin flavour, with light accents re-mixed for a bright surface.</p>
+                        <a href="themes/catppuccin-frappe/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/catppuccin-macchiato/screenshot.png" class="card-img-top theme-screenshot" alt="Catppuccin Macchiato theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">CATPPUCCIN MACCHIATO</h5>
+                        <p class="card-text flex-grow-1">The mid-dark Catppuccin flavour, with light accents re-mixed for a bright surface.</p>
+                        <a href="themes/catppuccin-macchiato/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/civic/screenshot.png" class="card-img-top theme-screenshot" alt="Civic Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">CIVIC</h5>
+                        <p class="card-text flex-grow-1">Inspired by the U.S. Web Design System (USWDS). Accessible, trustworthy, and authoritative digital service aesthetic.</p>
+                        <a href="themes/civic/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CYBERPUNK / SYNTHWAVE '84 Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/cyberpunk/screenshot.png" class="card-img-top theme-screenshot" alt="CYBERPUNK / SYNTHWAVE '84 Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">CYBERPUNK / SYNTHWAVE '84</h5>
+                        <p class="card-text flex-grow-1">Retro-futuristic neon theme for gaming and entertainment. Glowing cyan/magenta accents and synthwave dark mode grid aesthetics.</p>
+                        <a href="themes/cyberpunk/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/dracula/screenshot.png" class="card-img-top theme-screenshot" alt="Dracula theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">DRACULA</h5>
+                        <p class="card-text flex-grow-1">A high-contrast, vibrant palette of purples, pinks and greens, with an optional neon glow layer for focus rings, buttons and cards.</p>
+                        <a href="themes/dracula/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/dracula-soft/screenshot.png" class="card-img-top theme-screenshot" alt="Dracula Soft theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">DRACULA SOFT</h5>
+                        <p class="card-text flex-grow-1">The same eleven Dracula colours with the neon pulled back — muted surfaces, softer accents and a subtle glow layer. Long sessions and shared screens, without losing the palette.</p>
+                        <a href="themes/dracula-soft/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDITORIAL / PAPER Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/editorial/screenshot.png" class="card-img-top theme-screenshot" alt="EDITORIAL / PAPER Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">EDITORIAL / PAPER</h5>
+                        <p class="card-text flex-grow-1">Elegant serif typography, warm off-white parchment paper surfaces, and refined rule lines designed for blogs, publishing, and documentation.</p>
+                        <a href="themes/editorial/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/everforest/screenshot.png" class="card-img-top theme-screenshot" alt="Everforest Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">EVERFOREST</h5>
+                        <p class="card-text flex-grow-1">A green, comfortable, low-contrast palette designed to be easy on the eyes.</p>
+                        <a href="themes/everforest/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/fluent/screenshot.png" class="card-img-top theme-screenshot" alt="Fluent Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">FLUENT</h5>
+                        <p class="card-text flex-grow-1">A modern Windows 11 Fluent Design theme with subtle acrylic surfaces and Windows accent colors.</p>
+                        <a href="themes/fluent/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/forest/screenshot.png" class="card-img-top theme-screenshot" alt="Forest Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">FOREST</h5>
+                        <p class="card-text flex-grow-1">Natural, earthy, organic theme designed for eco-conscious brands, wellness, and sustainability with native light and dark mode support.</p>
+                        <a href="themes/forest/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/github-primer/screenshot.png" class="card-img-top theme-screenshot" alt="GitHub Primer Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">GITHUB PRIMER</h5>
+                        <p class="card-text flex-grow-1">GitHub's official Primer design system palette for developer tools and apps.</p>
+                        <a href="themes/github-primer/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GLASSMORPHISM Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/glassmorphism/screenshot.png" class="card-img-top theme-screenshot" alt="GLASSMORPHISM Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">GLASSMORPHISM</h5>
+                        <p class="card-text flex-grow-1">Semi-transparent frosted glass panels, backdrop blurs, glowing glass borders, and ambient background gradients.</p>
+                        <a href="themes/glassmorphism/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/gruvbox/screenshot.png" class="card-img-top theme-screenshot" alt="Gruvbox theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">GRUVBOX</h5>
+                        <p class="card-text flex-grow-1">Retro-groove warmth: earthy browns, burnt orange and muted greens with the contrast and readability the palette is famous for. Dark and light styles, an optional bold background, chunky 2px borders and utility classes for every bright and neutral colour.</p>
+                        <a href="themes/gruvbox/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/high-contrast/screenshot.png" class="card-img-top theme-screenshot" alt="High Contrast Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">HIGH CONTRAST</h5>
+                        <p class="card-text flex-grow-1">WCAG AAA contrast compliance with high visibility focus indicators and bold component borders for maximum accessibility.</p>
+                        <a href="themes/high-contrast/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/kanagawa/screenshot.png" class="card-img-top theme-screenshot" alt="Kanagawa Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">KANAGAWA</h5>
+                        <p class="card-text flex-grow-1">An elegant palette inspired by Japanese paintings and dark wood aesthetics.</p>
+                        <a href="themes/kanagawa/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/kde-breeze/screenshot.png" class="card-img-top theme-screenshot" alt="KDE Breeze Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">KDE BREEZE</h5>
+                        <p class="card-text flex-grow-1">A crisp desktop aesthetic inspired by KDE Plasma Breeze with Breeze Blue accents and Noto Sans typography.</p>
+                        <a href="themes/kde-breeze/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/mac-classic/screenshot.png" class="card-img-top theme-screenshot" alt="Classic Mac OS Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">CLASSIC MAC OS</h5>
+                        <p class="card-text flex-grow-1">System 7 / Mac OS 8 Platinum desktop interface aesthetic featuring Geneva typography and double borders.</p>
+                        <a href="themes/mac-classic/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/material-3/screenshot.png" class="card-img-top theme-screenshot" alt="Material Design 3 Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">MATERIAL DESIGN 3</h5>
+                        <p class="card-text flex-grow-1">Google Material You aesthetics — pill buttons, tonal surfaces, rounded containers, and modern color roles.</p>
+                        <a href="themes/material-3/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/midnight/screenshot.png" class="card-img-top theme-screenshot" alt="Midnight Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">MIDNIGHT</h5>
+                        <p class="card-text flex-grow-1">Dark, sophisticated, professional theme designed for corporate apps, SaaS, and modern tech with native light and dark mode support.</p>
+                        <a href="themes/midnight/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEO-BRUTALISM (SOFT) Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/neo-brutalism/screenshot.png" class="card-img-top theme-screenshot" alt="NEO-BRUTALISM (SOFT) Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">NEO-BRUTALISM (SOFT)</h5>
+                        <p class="card-text flex-grow-1">Thick borders and offset shadows in bright colors with soft rounded corners, distinct from raw Brutalski.</p>
+                        <a href="themes/neo-brutalism/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/night-owl/screenshot.png" class="card-img-top theme-screenshot" alt="Night Owl Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">NIGHT OWL</h5>
+                        <p class="card-text flex-grow-1">A theme for nocturnal programmers who like working late into the night.</p>
+                        <a href="themes/night-owl/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/nord/screenshot.png" class="card-img-top theme-screenshot" alt="Nord theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">NORD</h5>
+                        <p class="card-text flex-grow-1">An Arctic-based palette of cool blues and slate grays, designed for focus and reduced eye strain. Four official styles — Polar Night, Frost, Snow Storm and Aurora — with crisp geometry, monospace accents and utility classes for all sixteen colours.</p>
+                        <a href="themes/nord/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/nord-aurora/screenshot.png" class="card-img-top theme-screenshot" alt="Nord Aurora theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">NORD AURORA</h5>
+                        <p class="card-text flex-grow-1">Nord's alternative colour scheme, deep aurora blue with the frost accent family.</p>
+                        <a href="themes/nord-aurora/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/nord-frost/screenshot.png" class="card-img-top theme-screenshot" alt="Nord Frost theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">NORD FROST</h5>
+                        <p class="card-text flex-grow-1">A lifted Polar Night with brighter frost accents — still one accent, two modes.</p>
+                        <a href="themes/nord-frost/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/ocean/screenshot.png" class="card-img-top theme-screenshot" alt="Ocean Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">OCEAN</h5>
+                        <p class="card-text flex-grow-1">Cool, calm, trustworthy ocean aesthetic designed for finance, corporate, and professional services with native light and dark mode support.</p>
+                        <a href="themes/ocean/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/one-dark/screenshot.png" class="card-img-top theme-screenshot" alt="One Dark Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">ONE DARK</h5>
+                        <p class="card-text flex-grow-1">Iconic Atom One Dark theme adapted for modern Bootstrap 5 interfaces.</p>
+                        <a href="themes/one-dark/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS</h5>
+                        <p class="card-text flex-grow-1">Material Design meets macOS. Rounded corners, soft elevation, floating panel layouts and ten accent presets — with Material 3 button roles and a compact density scale for anything from legacy GTK3 apps to libadwaita.</p>
+                        <a href="themes/orchis/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-cyan/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Cyan theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS CYAN</h5>
+                        <p class="card-text flex-grow-1">The cyan Orchis accent — clean and contemporary.</p>
+                        <a href="themes/orchis-cyan/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-green/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Green theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS GREEN</h5>
+                        <p class="card-text flex-grow-1">The green Orchis accent on floating, softly elevated panels.</p>
+                        <a href="themes/orchis-green/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-orange/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Orange theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS ORANGE</h5>
+                        <p class="card-text flex-grow-1">The orange Orchis accent, energetic and Material-forward.</p>
+                        <a href="themes/orchis-orange/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-pink/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Pink theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS PINK</h5>
+                        <p class="card-text flex-grow-1">The pink Orchis accent with a bright designer feel.</p>
+                        <a href="themes/orchis-pink/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-purple/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Purple theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS PURPLE</h5>
+                        <p class="card-text flex-grow-1">The purple Orchis accent on floating, softly elevated panels.</p>
+                        <a href="themes/orchis-purple/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-red/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Red theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS RED</h5>
+                        <p class="card-text flex-grow-1">The red Orchis accent, bold and high contrast.</p>
+                        <a href="themes/orchis-red/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-sage/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Sage theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS SAGE</h5>
+                        <p class="card-text flex-grow-1">The sage Orchis accent — muted, editorial and calm.</p>
+                        <a href="themes/orchis-sage/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-slate/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Slate theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS SLATE</h5>
+                        <p class="card-text flex-grow-1">The slate Orchis accent for understated professional interfaces.</p>
+                        <a href="themes/orchis-slate/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/orchis-yellow/screenshot.png" class="card-img-top theme-screenshot" alt="Orchis Yellow theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">ORCHIS YELLOW</h5>
+                        <p class="card-text flex-grow-1">The yellow Orchis accent with highlighter energy.</p>
+                        <a href="themes/orchis-yellow/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/pantheon/screenshot.png" class="card-img-top theme-screenshot" alt="Pantheon Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">PANTHEON</h5>
+                        <p class="card-text flex-grow-1">A clean, thoughtful desktop theme inspired by elementary OS Pantheon UI guidelines and Inter typeface.</p>
+                        <a href="themes/pantheon/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/print-optimized/screenshot.png" class="card-img-top theme-screenshot" alt="Print-Optimized Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">PRINT-OPTIMIZED</h5>
+                        <p class="card-text flex-grow-1">Tuned for printed pages, PDFs, and document presentation with paper typography and page-break rules.</p>
+                        <a href="themes/print-optimized/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/rose-pine/screenshot.png" class="card-img-top theme-screenshot" alt="Rosé Pine Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">ROSÉ PINE</h5>
+                        <p class="card-text flex-grow-1">All natural pine, faux fur and a bit of soho vibes for the classy aesthetic.</p>
+                        <a href="themes/rose-pine/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/seneca/screenshot.png" class="card-img-top theme-screenshot" alt="Seneca Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SENECA</h5>
+                        <p class="card-text flex-grow-1">Enterprise UI aesthetic inspired by Sencha's ExtJS Classic and Neptune themes. Professional, compact, and feature-rich.</p>
+                        <a href="themes/seneca/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPIA / READING MODE Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/sepia/screenshot.png" class="card-img-top theme-screenshot" alt="SEPIA / READING MODE Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SEPIA / READING MODE</h5>
+                        <p class="card-text flex-grow-1">Kindle-style warm paper palette and serif typography optimized for long-form content reading comfort.</p>
+                        <a href="themes/sepia/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/slate/screenshot.png" class="card-img-top theme-screenshot" alt="Slate Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SLATE</h5>
+                        <p class="card-text flex-grow-1">Minimal, neutral, clean theme designed for content-heavy sites, reading, and simplicity with native light and dark mode support.</p>
+                        <a href="themes/slate/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/solarized/screenshot.png" class="card-img-top theme-screenshot" alt="Solarized Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SOLARIZED</h5>
+                        <p class="card-text flex-grow-1">Precision color palette designed for maximum readability and visual comfort.</p>
+                        <a href="themes/solarized/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/sunrise/screenshot.png" class="card-img-top theme-screenshot" alt="Sunrise Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SUNRISE</h5>
+                        <p class="card-text flex-grow-1">Warm, energetic, light theme designed for creative portfolios, startups, and inviting projects with native light and dark mode support.</p>
+                        <a href="themes/sunrise/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SWISS / INTERNATIONAL STYLE Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/swiss/screenshot.png" class="card-img-top theme-screenshot" alt="SWISS / INTERNATIONAL STYLE Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">SWISS / INTERNATIONAL STYLE</h5>
+                        <p class="card-text flex-grow-1">Strict grid system, crisp Helvetica-like typography, bold monochrome palette, and a iconic signal red accent.</p>
+                        <a href="themes/swiss/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TERMINAL / CRT Theme -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/terminal/screenshot.png" class="card-img-top theme-screenshot" alt="TERMINAL / CRT Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">TERMINAL / CRT</h5>
+                        <p class="card-text flex-grow-1">Green phosphor CRT dark mode and amber phosphor vintage paper light mode with monospaced typography and sharp boxy components.</p>
+                        <a href="themes/terminal/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/tokyo-night/screenshot.png" class="card-img-top theme-screenshot" alt="Tokyo Night Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">TOKYO NIGHT</h5>
+                        <p class="card-text flex-grow-1">A clean, dark/light theme inspired by the Tokyo Night editor theme with vibrant blues and purples.</p>
+                        <a href="themes/tokyo-night/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vanguard/screenshot.png" class="card-img-top theme-screenshot" alt="Vanguard Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">VANGUARD</h5>
+                        <p class="card-text flex-grow-1">A faithfully recreated Bootstrap 3 aesthetic. Now with an expanded "Kitchen Sink" preview showcasing the full range of Bootstrap 5.3 components.</p>
+                        <a href="themes/vanguard/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX</h5>
+                        <p class="card-text flex-grow-1">A modern, macOS-inspired Bootstrap 5 theme for Ubuntu. Soft rounded controls, vibrancy chrome and nine colour variants (blue, dark, green, orange, pink, purple, red, teal, yellow) selectable with a single <code>data-variant</code> attribute.</p>
+                        <a href="themes/vimix/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-dark/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Dark theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX DARK</h5>
+                        <p class="card-text flex-grow-1">The graphite Vimix accent — restrained, neutral and work-focused.</p>
+                        <a href="themes/vimix-dark/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-green/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Green theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX GREEN</h5>
+                        <p class="card-text flex-grow-1">The green Vimix accent for a fresh, energetic interface.</p>
+                        <a href="themes/vimix-green/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-orange/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Orange theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX ORANGE</h5>
+                        <p class="card-text flex-grow-1">The orange Vimix accent, closest to Ubuntu warmth.</p>
+                        <a href="themes/vimix-orange/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-pink/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Pink theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX PINK</h5>
+                        <p class="card-text flex-grow-1">The pink Vimix accent with a friendly, modern feel.</p>
+                        <a href="themes/vimix-pink/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-purple/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Purple theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX PURPLE</h5>
+                        <p class="card-text flex-grow-1">The purple Vimix accent for richer, more creative products.</p>
+                        <a href="themes/vimix-purple/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-red/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Red theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX RED</h5>
+                        <p class="card-text flex-grow-1">The red Vimix accent with high visual urgency.</p>
+                        <a href="themes/vimix-red/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-teal/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Teal theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX TEAL</h5>
+                        <p class="card-text flex-grow-1">The teal Vimix accent — calm and technical.</p>
+                        <a href="themes/vimix-teal/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/vimix-yellow/screenshot.png" class="card-img-top theme-screenshot" alt="Vimix Yellow theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">VIMIX YELLOW</h5>
+                        <p class="card-text flex-grow-1">The yellow Vimix accent, bright and high-visibility.</p>
+                        <a href="themes/vimix-yellow/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/whitehall/screenshot.png" class="card-img-top theme-screenshot" alt="Whitehall Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">WHITEHALL</h5>
+                        <p class="card-text flex-grow-1">High accessibility, square corners, and the iconic yellow focus ring. A clinical and trustworthy aesthetic for complex data-driven applications.</p>
+                        <a href="themes/whitehall/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/whitesur/screenshot.png" class="card-img-top theme-screenshot" alt="WhiteSur theme screenshot" loading="lazy" decoding="async">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title fw-bold">WHITESUR</h5>
+                        <p class="card-text flex-grow-1">A macOS-inspired Bootstrap 5 theme with a complete set of matching elements: frosted glass surfaces, vibrancy toolbars, pill-shaped controls, and full light/dark parity.</p>
+                        <a href="themes/whitesur/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/win98/screenshot.png" class="card-img-top theme-screenshot" alt="Windows 98 Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">WINDOWS 98</h5>
+                        <p class="card-text flex-grow-1">Nostalgic retro desktop theme featuring Tahoma typography, 3D bevels, classic grey surfaces, and navy titlebars.</p>
+                        <a href="themes/win98/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card theme-card">
+                    <img src="themes/yaru/screenshot.png" class="card-img-top theme-screenshot" alt="Yaru Theme Screenshot">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">YARU</h5>
+                        <p class="card-text flex-grow-1">Ubuntu Yaru inspired theme. Warm, approachable, and human-centric Bootstrap 5 theme with the iconic orange and aubergine accents.</p>
+                        <a href="themes/yaru/index.html" class="btn btn-preview mt-3">Live Preview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 py-4 text-center text-muted">
+            <p>&copy; 2026 Bootlegance. All themes are MIT licensed.</p>
+            <p><a href="https://github.com/lesichkovm/bootlegance" class="text-decoration-none">Back to GitHub</a></p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Swap every card screenshot between the dark and light mode captures
+        document.getElementById('shot-toggle').addEventListener('click', function (e) {
+            const btn = e.target.closest('button[data-mode]');
+            if (!btn) return;
+            const mode = btn.dataset.mode;
+            this.querySelectorAll('button').forEach(function (b) { b.classList.toggle('active', b === btn); });
+            document.querySelectorAll('.theme-screenshot').forEach(function (img) {
+                const slug = img.getAttribute('src').split('/')[1];
+                img.setAttribute('src', 'themes/' + slug + '/screenshot' + (mode === 'light' ? '-light' : '') + '.png');
+            });
+        });
+    </script>
+</body>
+</html>
