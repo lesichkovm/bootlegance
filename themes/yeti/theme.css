@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ermine Bootstrap 5 Theme
+   Yeti Bootstrap 5 Theme
    Port of Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation.
    Include AFTER bootstrap.min.css.
    ========================================================================== */
@@ -12,52 +12,52 @@
 :root,
 [data-bs-theme="light"] {
   /* Yeti Color Tokens */
-  --ermine-blue: #008cba;
-  --ermine-blue-hover: #007095;
-  --ermine-blue-active: #00698c;
-  --ermine-blue-shade: #007ea7;
-  --ermine-blue-darken: #00769c;
-  --ermine-gray-100: #f8f9fa;
-  --ermine-gray-200: #eee;
-  --ermine-gray-300: #dee2e6;
-  --ermine-gray-400: #ccc;
-  --ermine-gray-500: #adb5bd;
-  --ermine-gray-600: #888;
-  --ermine-gray-700: #495057;
-  --ermine-gray-800: #333;
-  --ermine-gray-900: #222;
-  --ermine-white: #fff;
-  --ermine-black: #000;
+  --yeti-blue: #008cba;
+  --yeti-blue-hover: #007095;
+  --yeti-blue-active: #00698c;
+  --yeti-blue-shade: #007ea7;
+  --yeti-blue-darken: #00769c;
+  --yeti-gray-100: #f8f9fa;
+  --yeti-gray-200: #eee;
+  --yeti-gray-300: #dee2e6;
+  --yeti-gray-400: #ccc;
+  --yeti-gray-500: #adb5bd;
+  --yeti-gray-600: #888;
+  --yeti-gray-700: #495057;
+  --yeti-gray-800: #333;
+  --yeti-gray-900: #222;
+  --yeti-white: #fff;
+  --yeti-black: #000;
 
-  --ermine-green: #43ac6a;
-  --ermine-green-hover: #368a55;
-  --ermine-green-shade: #3c9b5f;
-  --ermine-cyan: #5bc0de;
-  --ermine-cyan-hover: #499ab2;
-  --ermine-cyan-shade: #52adc8;
-  --ermine-yellow: #e99002;
-  --ermine-yellow-hover: #ba7302;
-  --ermine-yellow-shade: #d28202;
-  --ermine-red: #f04124;
-  --ermine-red-hover: #c0341d;
-  --ermine-red-shade: #d83b20;
+  --yeti-green: #43ac6a;
+  --yeti-green-hover: #368a55;
+  --yeti-green-shade: #3c9b5f;
+  --yeti-cyan: #5bc0de;
+  --yeti-cyan-hover: #499ab2;
+  --yeti-cyan-shade: #52adc8;
+  --yeti-yellow: #e99002;
+  --yeti-yellow-hover: #ba7302;
+  --yeti-yellow-shade: #d28202;
+  --yeti-red: #f04124;
+  --yeti-red-hover: #c0341d;
+  --yeti-red-shade: #d83b20;
 
   /* Bootstrap Color Palette Overrides */
-  --bs-primary: var(--ermine-blue);
+  --bs-primary: var(--yeti-blue);
   --bs-primary-rgb: 0, 140, 186;
-  --bs-secondary: var(--ermine-gray-200);
+  --bs-secondary: var(--yeti-gray-200);
   --bs-secondary-rgb: 238, 238, 238;
-  --bs-success: var(--ermine-green);
+  --bs-success: var(--yeti-green);
   --bs-success-rgb: 67, 172, 106;
-  --bs-info: var(--ermine-cyan);
+  --bs-info: var(--yeti-cyan);
   --bs-info-rgb: 91, 192, 222;
-  --bs-warning: var(--ermine-yellow);
+  --bs-warning: var(--yeti-yellow);
   --bs-warning-rgb: 233, 144, 2;
-  --bs-danger: var(--ermine-red);
+  --bs-danger: var(--yeti-red);
   --bs-danger-rgb: 240, 65, 36;
-  --bs-light: var(--ermine-gray-200);
+  --bs-light: var(--yeti-gray-200);
   --bs-light-rgb: 238, 238, 238;
-  --bs-dark: var(--ermine-gray-800);
+  --bs-dark: var(--yeti-gray-800);
   --bs-dark-rgb: 51, 51, 51;
 
   /* Subtle background and borders */
@@ -68,7 +68,7 @@
   --bs-warning-bg-subtle: #fbe9cc;
   --bs-danger-bg-subtle: #fcd9d3;
   --bs-light-bg-subtle: #fcfcfd;
-  --bs-dark-bg-subtle: var(--ermine-gray-400);
+  --bs-dark-bg-subtle: var(--yeti-gray-400);
 
   --bs-primary-border-subtle: #99d1e3;
   --bs-secondary-border-subtle: #f8f8f8;
@@ -76,8 +76,8 @@
   --bs-info-border-subtle: #bde6f2;
   --bs-warning-border-subtle: #f6d39a;
   --bs-danger-border-subtle: #f9b3a7;
-  --bs-light-border-subtle: var(--ermine-gray-200);
-  --bs-dark-border-subtle: var(--ermine-gray-500);
+  --bs-light-border-subtle: var(--yeti-gray-200);
+  --bs-dark-border-subtle: var(--yeti-gray-500);
 
   --bs-primary-text-emphasis: #00384a;
   --bs-secondary-text-emphasis: #5f5f5f;
@@ -85,8 +85,8 @@
   --bs-info-text-emphasis: #244d59;
   --bs-warning-text-emphasis: #5d3a01;
   --bs-danger-text-emphasis: #601a0e;
-  --bs-light-text-emphasis: var(--ermine-gray-700);
-  --bs-dark-text-emphasis: var(--ermine-gray-700);
+  --bs-light-text-emphasis: var(--yeti-gray-700);
+  --bs-dark-text-emphasis: var(--yeti-gray-700);
 
   /* Body & Surface */
   --bs-body-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -94,29 +94,29 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: var(--ermine-gray-900);
+  --bs-body-color: var(--yeti-gray-900);
   --bs-body-color-rgb: 34, 34, 34;
-  --bs-body-bg: var(--ermine-white);
+  --bs-body-bg: var(--yeti-white);
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-emphasis-color: var(--ermine-black);
+  --bs-emphasis-color: var(--yeti-black);
   --bs-emphasis-color-rgb: 0, 0, 0;
 
   --bs-secondary-color: rgba(34, 34, 34, 0.75);
   --bs-secondary-color-rgb: 34, 34, 34;
-  --bs-secondary-bg: var(--ermine-gray-200);
+  --bs-secondary-bg: var(--yeti-gray-200);
   --bs-secondary-bg-rgb: 238, 238, 238;
   --bs-tertiary-color: rgba(34, 34, 34, 0.5);
   --bs-tertiary-color-rgb: 34, 34, 34;
-  --bs-tertiary-bg: var(--ermine-gray-100);
+  --bs-tertiary-bg: var(--yeti-gray-100);
   --bs-tertiary-bg-rgb: 248, 249, 250;
 
-  --bs-link-color: var(--ermine-blue);
+  --bs-link-color: var(--yeti-blue);
   --bs-link-color-rgb: 0, 140, 186;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: var(--ermine-blue-hover);
+  --bs-link-hover-color: var(--yeti-blue-hover);
   --bs-link-hover-color-rgb: 0, 112, 149;
 
-  --bs-border-color: var(--ermine-gray-300);
+  --bs-border-color: var(--yeti-gray-300);
   --bs-border-radius: 0;
   --bs-border-radius-sm: 0;
   --bs-border-radius-lg: 0;
@@ -125,12 +125,12 @@
   --bs-focus-ring-opacity: 0.25;
   --bs-focus-ring-color: rgba(0, 140, 186, 0.25);
 
-  --bs-form-valid-color: var(--ermine-green);
-  --bs-form-valid-border-color: var(--ermine-green);
-  --bs-form-invalid-color: var(--ermine-red);
-  --bs-form-invalid-border-color: var(--ermine-red);
+  --bs-form-valid-color: var(--yeti-green);
+  --bs-form-valid-border-color: var(--yeti-green);
+  --bs-form-invalid-color: var(--yeti-red);
+  --bs-form-invalid-border-color: var(--yeti-red);
 
-  --bs-navbar-bg: var(--ermine-gray-200);
+  --bs-navbar-bg: var(--yeti-gray-200);
   --bs-navbar-color: rgba(0, 0, 0, 0.65);
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.8);
   --bs-navbar-active-color: rgba(0, 0, 0, 1);
@@ -139,25 +139,25 @@
 }
 
 [data-bs-theme="dark"] {
-  --ermine-dark-bg: #222;
-  --ermine-dark-surface: #2b2b2b;
-  --ermine-dark-surface-subtle: #333;
-  --ermine-dark-border: #495057;
+  --yeti-dark-bg: #222;
+  --yeti-dark-surface: #2b2b2b;
+  --yeti-dark-surface-subtle: #333;
+  --yeti-dark-border: #495057;
 
-  --bs-body-color: var(--ermine-gray-300);
+  --bs-body-color: var(--yeti-gray-300);
   --bs-body-color-rgb: 222, 226, 230;
-  --bs-body-bg: var(--ermine-dark-bg);
+  --bs-body-bg: var(--yeti-dark-bg);
   --bs-body-bg-rgb: 34, 34, 34;
-  --bs-emphasis-color: var(--ermine-white);
+  --bs-emphasis-color: var(--yeti-white);
   --bs-emphasis-color-rgb: 255, 255, 255;
 
   --bs-secondary-color: rgba(222, 226, 230, 0.75);
   --bs-secondary-color-rgb: 222, 226, 230;
-  --bs-secondary-bg: var(--ermine-dark-surface-subtle);
+  --bs-secondary-bg: var(--yeti-dark-surface-subtle);
   --bs-secondary-bg-rgb: 51, 51, 51;
   --bs-tertiary-color: rgba(222, 226, 230, 0.5);
   --bs-tertiary-color-rgb: 222, 226, 230;
-  --bs-tertiary-bg: var(--ermine-dark-surface);
+  --bs-tertiary-bg: var(--yeti-dark-surface);
   --bs-tertiary-bg-rgb: 43, 43, 43;
 
   --bs-primary-text-emphasis: #66bad6;
@@ -166,8 +166,8 @@
   --bs-info-text-emphasis: #9dd9eb;
   --bs-warning-text-emphasis: #f2bc67;
   --bs-danger-text-emphasis: #f68d7c;
-  --bs-light-text-emphasis: var(--ermine-gray-100);
-  --bs-dark-text-emphasis: var(--ermine-gray-300);
+  --bs-light-text-emphasis: var(--yeti-gray-100);
+  --bs-dark-text-emphasis: var(--yeti-gray-300);
 
   --bs-primary-bg-subtle: #001c25;
   --bs-secondary-bg-subtle: #303030;
@@ -175,7 +175,7 @@
   --bs-info-bg-subtle: #12262c;
   --bs-warning-bg-subtle: #2f1d00;
   --bs-danger-bg-subtle: #300d07;
-  --bs-light-bg-subtle: var(--ermine-dark-surface-subtle);
+  --bs-light-bg-subtle: var(--yeti-dark-surface-subtle);
   --bs-dark-bg-subtle: #1a1a1a;
 
   --bs-primary-border-subtle: #005470;
@@ -184,24 +184,24 @@
   --bs-info-border-subtle: #377385;
   --bs-warning-border-subtle: #8c5601;
   --bs-danger-border-subtle: #902716;
-  --bs-light-border-subtle: var(--ermine-gray-700);
-  --bs-dark-border-subtle: var(--ermine-gray-800);
+  --bs-light-border-subtle: var(--yeti-gray-700);
+  --bs-dark-border-subtle: var(--yeti-gray-800);
 
   --bs-link-color: #66bad6;
   --bs-link-hover-color: #85c8de;
   --bs-link-color-rgb: 102, 186, 214;
   --bs-link-hover-color-rgb: 133, 200, 222;
 
-  --bs-border-color: var(--ermine-dark-border);
+  --bs-border-color: var(--yeti-dark-border);
 
-  --bs-navbar-bg: var(--ermine-dark-surface-subtle);
+  --bs-navbar-bg: var(--yeti-dark-surface-subtle);
   --bs-navbar-color: rgba(255, 255, 255, 0.7);
   --bs-navbar-hover-color: rgba(255, 255, 255, 1);
   --bs-navbar-active-color: rgba(255, 255, 255, 1);
   --bs-navbar-brand-color: rgba(255, 255, 255, 1);
   --bs-navbar-brand-hover-color: rgba(255, 255, 255, 1);
 
-  --bs-pagination-disabled-color: var(--ermine-gray-700);
+  --bs-pagination-disabled-color: var(--yeti-gray-700);
 }
 
 /* --------------------------------------------------------------------------
@@ -226,15 +226,15 @@ a {
 }
 
 .text-secondary {
-  color: var(--ermine-gray-700) !important;
+  color: var(--yeti-gray-700) !important;
 }
 
 [data-bs-theme="dark"] .text-secondary {
-  color: var(--ermine-gray-500) !important;
+  color: var(--yeti-gray-500) !important;
 }
 
 .blockquote-footer {
-  color: var(--ermine-gray-600);
+  color: var(--yeti-gray-600);
 }
 
 /* --------------------------------------------------------------------------
@@ -261,8 +261,8 @@ a {
 .bg-primary .dropdown-menu .dropdown-item.active,
 .bg-primary .dropdown-menu .dropdown-item:hover,
 .bg-primary .dropdown-menu .dropdown-item:focus {
-  color: var(--ermine-white);
-  background-color: var(--ermine-blue-shade);
+  color: var(--yeti-white);
+  background-color: var(--yeti-blue-shade);
 }
 
 .bg-dark {
@@ -281,7 +281,7 @@ a {
 .bg-dark .dropdown-menu .dropdown-item.active,
 .bg-dark .dropdown-menu .dropdown-item:hover,
 .bg-dark .dropdown-menu .dropdown-item:focus {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
   background-color: #2e2e2e;
 }
 
@@ -314,59 +314,59 @@ a {
 
 .btn-primary {
   --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: var(--ermine-blue-shade);
-  --bs-btn-hover-bg: var(--ermine-blue-hover);
-  --bs-btn-hover-border-color: var(--ermine-blue-active);
-  --bs-btn-active-bg: var(--ermine-blue-hover);
-  --bs-btn-active-border-color: var(--ermine-blue-active);
+  --bs-btn-border-color: var(--yeti-blue-shade);
+  --bs-btn-hover-bg: var(--yeti-blue-hover);
+  --bs-btn-hover-border-color: var(--yeti-blue-active);
+  --bs-btn-active-bg: var(--yeti-blue-hover);
+  --bs-btn-active-border-color: var(--yeti-blue-active);
 }
 
 .btn-secondary {
   --bs-btn-bg: var(--bs-secondary);
   --bs-btn-border-color: #d6d6d6;
-  --bs-btn-color: var(--ermine-black);
+  --bs-btn-color: var(--yeti-black);
 }
 
 .btn-success {
   --bs-btn-bg: var(--bs-success);
-  --bs-btn-border-color: var(--ermine-green-shade);
+  --bs-btn-border-color: var(--yeti-green-shade);
   --bs-btn-hover-bg: #39925a;
-  --bs-btn-hover-border-color: var(--ermine-green-hover);
-  --bs-btn-active-bg: var(--ermine-green-hover);
+  --bs-btn-hover-border-color: var(--yeti-green-hover);
+  --bs-btn-active-bg: var(--yeti-green-hover);
 }
 
 .btn-info {
-  color: var(--ermine-white);
-  --bs-btn-color: var(--ermine-white);
+  color: var(--yeti-white);
+  --bs-btn-color: var(--yeti-white);
   --bs-btn-bg: var(--bs-info);
-  --bs-btn-border-color: var(--ermine-cyan-shade);
+  --bs-btn-border-color: var(--yeti-cyan-shade);
   --bs-btn-hover-bg: #4da3bd;
-  --bs-btn-hover-border-color: var(--ermine-cyan-hover);
-  --bs-btn-active-bg: var(--ermine-cyan-hover);
+  --bs-btn-hover-border-color: var(--yeti-cyan-hover);
+  --bs-btn-active-bg: var(--yeti-cyan-hover);
 }
 
 .btn-warning {
-  color: var(--ermine-white);
-  --bs-btn-color: var(--ermine-white);
+  color: var(--yeti-white);
+  --bs-btn-color: var(--yeti-white);
   --bs-btn-bg: var(--bs-warning);
-  --bs-btn-border-color: var(--ermine-yellow-shade);
+  --bs-btn-border-color: var(--yeti-yellow-shade);
   --bs-btn-hover-bg: #c67a02;
-  --bs-btn-hover-border-color: var(--ermine-yellow-hover);
-  --bs-btn-active-bg: var(--ermine-yellow-hover);
+  --bs-btn-hover-border-color: var(--yeti-yellow-hover);
+  --bs-btn-active-bg: var(--yeti-yellow-hover);
 }
 
 .btn-danger {
   --bs-btn-bg: var(--bs-danger);
-  --bs-btn-border-color: var(--ermine-red-shade);
+  --bs-btn-border-color: var(--yeti-red-shade);
   --bs-btn-hover-bg: #cc371f;
-  --bs-btn-hover-border-color: var(--ermine-red-hover);
-  --bs-btn-active-bg: var(--ermine-red-hover);
+  --bs-btn-hover-border-color: var(--yeti-red-hover);
+  --bs-btn-active-bg: var(--yeti-red-hover);
 }
 
 .btn-light {
   --bs-btn-bg: var(--bs-light);
   --bs-btn-border-color: #d6d6d6;
-  --bs-btn-color: var(--ermine-black);
+  --bs-btn-color: var(--yeti-black);
 }
 
 .btn-dark {
@@ -385,16 +385,16 @@ a {
 
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu {
   background-color: var(--bs-primary);
-  border-color: var(--ermine-blue-shade);
+  border-color: var(--yeti-blue-shade);
 }
 
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu .dropdown-item {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu .dropdown-item:focus {
-  background-color: var(--ermine-blue-darken);
+  background-color: var(--yeti-blue-darken);
 }
 
 .btn-group .dropdown-toggle.btn-secondary ~ .dropdown-menu {
@@ -413,11 +413,11 @@ a {
 
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu {
   background-color: var(--bs-success);
-  border-color: var(--ermine-green-shade);
+  border-color: var(--yeti-green-shade);
 }
 
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu .dropdown-item {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu .dropdown-item:hover,
@@ -427,11 +427,11 @@ a {
 
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu {
   background-color: var(--bs-info);
-  border-color: var(--ermine-cyan-shade);
+  border-color: var(--yeti-cyan-shade);
 }
 
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu .dropdown-item {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu .dropdown-item:hover,
@@ -441,11 +441,11 @@ a {
 
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu {
   background-color: var(--bs-warning);
-  border-color: var(--ermine-yellow-shade);
+  border-color: var(--yeti-yellow-shade);
 }
 
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu .dropdown-item {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu .dropdown-item:hover,
@@ -455,11 +455,11 @@ a {
 
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu {
   background-color: var(--bs-danger);
-  border-color: var(--ermine-red-shade);
+  border-color: var(--yeti-red-shade);
 }
 
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu .dropdown-item {
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu .dropdown-item:hover,
@@ -514,9 +514,9 @@ label,
 
 .nav-pills .active,
 .nav-pills .nav-link.active {
-  border: 1px solid var(--ermine-blue-shade);
+  border: 1px solid var(--yeti-blue-shade);
   background-color: var(--bs-primary);
-  color: var(--ermine-white);
+  color: var(--yeti-white);
 }
 
 .breadcrumb {
@@ -530,10 +530,10 @@ label,
 
 .pagination {
   font-weight: 300;
-  --bs-pagination-color: var(--ermine-gray-600);
+  --bs-pagination-color: var(--yeti-gray-600);
   --bs-pagination-active-bg: var(--bs-primary);
   --bs-pagination-active-border-color: #0079a1;
-  --bs-pagination-disabled-color: var(--ermine-gray-400);
+  --bs-pagination-disabled-color: var(--yeti-gray-400);
 }
 
 .pagination .page-link {
@@ -584,7 +584,7 @@ label,
 
 .badge.bg-secondary,
 .badge.bg-light {
-  color: var(--ermine-gray-800);
+  color: var(--yeti-gray-800);
 }
 
 .progress {
