@@ -1,146 +1,188 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootlegance — Theme Switcher Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="bootlegance.js" data-default-theme="vanguard"></script>
+    <script src="bootlegance.js" data-default-theme="orchis-sage"></script>
     <style>
         body {
             min-height: 100vh;
         }
-        .demo-card {
-            margin-bottom: 1.5rem;
+        /* Custom dropdown styling matching user reference design */
+        .theme-settings-menu {
+            width: 320px;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
-        .demo-bar {
-            background-color: var(--bs-tertiary-bg);
-            border-bottom: 1px solid var(--bs-border-color);
+        .theme-settings-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.85rem;
+        }
+        .theme-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.65;
+            margin-bottom: 0.5rem;
+        }
+        .mode-toggle-group {
+            display: flex;
+            width: 100%;
+            border-radius: 9999px;
+            padding: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 1.25rem;
+        }
+        .mode-toggle-group .btn {
+            flex: 1;
+            border-radius: 9999px;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .mode-toggle-group .btn.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        .theme-toggle-btn {
+            width: 48px;
+            height: 38px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 0 8px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: inherit;
+        }
+        .theme-toggle-btn:hover, .theme-toggle-btn:focus {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <!-- Top Demo Control Bar -->
-    <header class="demo-bar py-3">
-        <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
-            <div class="d-flex align-items-center gap-2">
-                <a href="index.html" class="fw-bold text-decoration-none text-reset fs-4">Bootlegance</a>
-                <span class="badge bg-primary">Switcher Demo</span>
-            </div>
+    <!-- Top Navbar with compact theme switcher -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom px-3 py-2">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                Bootlegance
+            </a>
 
-            <div class="d-flex align-items-center gap-3">
-                <div class="d-flex align-items-center gap-2">
-                    <label class="form-label mb-0 fw-semibold">Theme:</label>
-                    <div data-bootlegance-picker style="min-width: 200px;"></div>
-                </div>
+            <div class="d-flex align-items-center ms-auto gap-2">
+                <input class="form-control form-control-sm d-none d-sm-inline-block" type="search" placeholder="Search..." style="width: 180px;">
+                <button class="btn btn-outline-info btn-sm rounded-pill px-3 me-2" type="button">Search</button>
 
-                <div class="btn-group" role="group" aria-label="Mode toggle">
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bootlegance-mode="light">☀️ Light</button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bootlegance-mode="dark">🌙 Dark</button>
+                <!-- Compact Theme Switcher Dropdown (Matching Reference Design) -->
+                <div class="dropdown">
+                    <button class="theme-toggle-btn dropdown-toggle" type="button" id="themeDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" title="Theme Settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.99 0 2.823-.97 2.823-1.882 0-.543-.156-.99-.42-1.412-.282-.452-.403-.66-.403-1.045 0-.845.582-1.237 1.08-1.468l.953-.123zM8 1a7 7 0 0 1 4.95 11.95c-.385-.356-.992-.51-1.545-.586-.714-.098-1.405-.443-1.405-1.494 0-.374.144-.72.364-1.087.27-.45.436-.924.436-1.533 0-1.516-1.077-2.25-2.03-2.25C6.702 6 5.8 7.02 5.8 8.4c0 .385.08.704.164.952.12.35.15.548.15.648 0 .825-.515 1.5-1.314 1.5-.4 0-.75-.15-.99-.45A6.974 6.974 0 0 1 1 8a7 7 0 0 1 7-7z"/>
+                            <circle cx="4" cy="5.5" r="1.5"/>
+                            <circle cx="7" cy="3.5" r="1.5"/>
+                            <circle cx="10" cy="5.5" r="1.5"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-end theme-settings-menu" aria-labelledby="themeDropdownBtn">
+                        <div class="theme-settings-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.99 0 2.823-.97 2.823-1.882 0-.543-.156-.99-.42-1.412-.282-.452-.403-.66-.403-1.045 0-.845.582-1.237 1.08-1.468l.953-.123zM8 1a7 7 0 0 1 4.95 11.95c-.385-.356-.992-.51-1.545-.586-.714-.098-1.405-.443-1.405-1.494 0-.374.144-.72.364-1.087.27-.45.436-.924.436-1.533 0-1.516-1.077-2.25-2.03-2.25C6.702 6 5.8 7.02 5.8 8.4c0 .385.08.704.164.952.12.35.15.548.15.648 0 .825-.515 1.5-1.314 1.5-.4 0-.75-.15-.99-.45A6.974 6.974 0 0 1 1 8a7 7 0 0 1 7-7z"/>
+                                <circle cx="4" cy="5.5" r="1.5"/>
+                                <circle cx="7" cy="3.5" r="1.5"/>
+                                <circle cx="10" cy="5.5" r="1.5"/>
+                            </svg>
+                            Theme Settings
+                        </div>
+                        <hr class="dropdown-divider mb-3">
+
+                        <div class="theme-section-label">MODE</div>
+                        <div class="mode-toggle-group">
+                            <button type="button" class="btn btn-outline-secondary" data-bootlegance-mode="light">
+                                ☀️ Light
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" data-bootlegance-mode="dark">
+                                🌙 Dark
+                            </button>
+                        </div>
+
+                        <div class="theme-section-label">BOOTLEGANCE THEME</div>
+                        <div data-bootlegance-picker></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <main class="container my-5">
-        <div class="p-5 mb-4 bg-body-tertiary rounded-3 border">
+        <div class="p-5 mb-4 bg-body-tertiary rounded-4 border shadow-sm">
             <div class="container-fluid py-2">
-                <h1 class="display-5 fw-bold">Live Theme Switcher</h1>
-                <p class="col-md-8 fs-5">
-                    Select any theme from the dropdown above to watch Bootstrap components dynamically re-theme in real time without refreshing the page.
+                <h1 class="display-5 fw-bold">Theme Switcher Demo</h1>
+                <p class="col-md-9 fs-5 text-body-secondary">
+                    Click the palette icon in the top right navbar to toggle modes and switch themes on the fly.
                 </p>
                 <div class="d-flex gap-2">
-                    <button class="btn btn-primary btn-lg" type="button">Primary Action</button>
-                    <button class="btn btn-outline-secondary btn-lg" type="button">Secondary Action</button>
+                    <button class="btn btn-primary btn-lg px-4" type="button">Primary Button</button>
+                    <button class="btn btn-outline-secondary btn-lg px-4" type="button">Secondary</button>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4">
             <div class="col-md-6">
-                <div class="card demo-card shadow-sm">
-                    <div class="card-header fw-bold">Buttons & Badges</div>
+                <div class="card shadow-sm h-100">
+                    <div class="card-header fw-bold">Interactive Components</div>
                     <div class="card-body">
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <button type="button" class="btn btn-primary">Primary</button>
-                            <button type="button" class="btn btn-secondary">Secondary</button>
-                            <button type="button" class="btn btn-success">Success</button>
-                            <button type="button" class="btn btn-danger">Danger</button>
-                            <button type="button" class="btn btn-warning">Warning</button>
-                            <button type="button" class="btn btn-info">Info</button>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <button class="btn btn-primary">Primary</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                            <button class="btn btn-success">Success</button>
+                            <button class="btn btn-danger">Danger</button>
+                            <button class="btn btn-warning">Warning</button>
+                            <button class="btn btn-info">Info</button>
                         </div>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-primary">Primary</span>
-                            <span class="badge bg-secondary">Secondary</span>
-                            <span class="badge bg-success">Success</span>
-                            <span class="badge bg-danger">Danger</span>
-                            <span class="badge bg-warning text-dark">Warning</span>
-                            <span class="badge bg-info text-dark">Info</span>
+                        <div class="alert alert-info d-flex align-items-center mb-3" role="alert">
+                            <div>Live CSS theme swapping with instant visual update!</div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="card demo-card shadow-sm">
-                    <div class="card-header fw-bold">Alerts</div>
-                    <div class="card-body">
-                        <div class="alert alert-primary mb-2" role="alert">
-                            A simple primary alert check it out!
-                        </div>
-                        <div class="alert alert-success mb-0" role="alert">
-                            Theme switched successfully!
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 70%"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="card demo-card shadow-sm">
-                    <div class="card-header fw-bold">Form Controls</div>
+                <div class="card shadow-sm h-100">
+                    <div class="card-header fw-bold">Form Elements</div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="exampleInput" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInput" placeholder="name@example.com" value="user@example.com">
+                            <label class="form-label">Email address</label>
+                            <input type="email" class="form-control" value="hello@bootlegance.dev">
                         </div>
-                        <div class="mb-3 form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
-                            <label class="form-check-label" for="switchCheck">Enable notifications</label>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Enable notifications</label>
                         </div>
-                        <div class="progress mb-2" style="height: 12px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card demo-card shadow-sm">
-                    <div class="card-header fw-bold">Table</div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Vanguard</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Dracula</td>
-                                        <td><span class="badge bg-info text-dark">Available</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Brutalski</td>
-                                        <td><span class="badge bg-secondary">Available</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-primary">vanguard</span>
+                            <span class="badge bg-success">active</span>
+                            <span class="badge bg-dark">dark mode</span>
                         </div>
                     </div>
                 </div>
@@ -149,5 +191,19 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Ensure dropdown stays open when interacting with inputs
+        document.addEventListener('DOMContentLoaded', () => {
+            const menu = document.querySelector('.theme-settings-menu');
+            if (menu) {
+                menu.addEventListener('click', (e) => {
+                    // Prevent closing unless clicking a close button
+                    if (!e.target.closest('[data-bs-dismiss="dropdown"]')) {
+                        e.stopPropagation();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
