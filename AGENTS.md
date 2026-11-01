@@ -33,7 +33,6 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Dracula               | `dracula`             | Available |
 | Dracula Soft          | `dracula-soft`        | Available |
 | Editorial / Paper     | `editorial`           | Available |
-| Ermine                | `ermine`              | Available |
 | Everforest            | `everforest`          | Available |
 | Flatly                | `flatly`              | Available |
 | Fluent                | `fluent`              | Available |
@@ -91,6 +90,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | WhiteSur              | `whitesur`            | Available |
 | Windows 98            | `win98`               | Available |
 | Yaru                  | `yaru`                | Available |
+| Yeti                  | `yeti`                | Available |
 
 
 ---

@@ -73,7 +73,6 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Dracula** | Vibrant neon palette with an optional glow layer | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula/) | Editor-adjacent apps, terminals, striking dashboards |
 | **Dracula Soft** | The same eleven colours, softened | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula-soft/) | Long sessions, calmer workspaces, shared screens |
 | **Editorial / Paper** | Serif typography and warm off-white parchment paper for blogs and docs. | [Preview](https://bootlegance.lesichkov.co.uk/themes/editorial/) | Blogs, documentation, publishing |
-| **Ermine** | Port of Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation | [Preview](https://bootlegance.lesichkov.co.uk/themes/ermine/) | Clean web applications, friendly portals, dashboards |
 | **Everforest** | A green, comfortable, low-contrast palette designed to be easy on the eyes. | [Preview](https://bootlegance.lesichkov.co.uk/themes/everforest/) | Developers, code-heavy UIs, editors |
 | **Flatly** | Port of Bootswatch Flatly — Flat and modern design with clean emerald accents. | [Preview](https://bootlegance.lesichkov.co.uk/themes/flatly/) | Modern web applications, flat UI, dashboards |
 | **Fluent** | Windows 11 Fluent Design theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/fluent/) | Modern desktop apps, Windows-centric UIs, web applications |
@@ -131,6 +130,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **WhiteSur** | macOS-inspired, frosted glass and vibrancy | [Preview](https://bootlegance.lesichkov.co.uk/themes/whitesur/) | Consumer apps, dashboards, polished product UIs |
 | **Windows 98** | Classic Windows 98 3D bevel desktop theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/win98/) | Retro apps, nostalgia, 90s web style |
 | **Yaru** | Ubuntu Yaru inspired theme. Warm, approachable, and human-centric. | [Preview](https://bootlegance.lesichkov.co.uk/themes/yaru/) | Open-source projects, personal blogs, friendly interfaces |
+| **Yeti** | Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation | [Preview](https://bootlegance.lesichkov.co.uk/themes/yeti/) | Clean web applications, friendly portals, dashboards |
 
 *More themes coming soon.*
 
