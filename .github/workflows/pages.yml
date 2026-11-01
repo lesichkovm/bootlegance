@@ -31,6 +31,8 @@ jobs:
           mkdir -p _site
           cp -R docs/. _site/
           cp -R themes _site/themes
+          cp bootlegance.js _site/bootlegance.js
+          cp themes.json _site/themes.json
           touch _site/.nojekyll
           if [ -f docs/CNAME ]; then
             cp docs/CNAME _site/CNAME
