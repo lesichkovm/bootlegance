@@ -33,6 +33,8 @@ jobs:
           cp -R themes _site/themes
           cp bootlegance.js _site/bootlegance.js
           cp themes.json _site/themes.json
+          if [ -f demo.html ]; then cp demo.html _site/demo.html; fi
+          if [ -f screenshot-demo.png ]; then cp screenshot-demo.png _site/screenshot-demo.png; fi
           touch _site/.nojekyll
           if [ -f docs/CNAME ]; then
             cp docs/CNAME _site/CNAME

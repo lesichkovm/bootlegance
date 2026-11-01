@@ -55,6 +55,10 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 
 Bootlegance includes a dependency-free vanilla JavaScript script (`bootlegance.js`) that manages theme loading, cookie persistence, query parameter overrides, light/dark mode toggling, and optional automatic UI wiring.
 
+![Bootlegance Theme Switcher Demo](screenshot-demo.png)
+
+Try out the [**Live Theme Switcher Demo**](https://bootlegance.lesichkov.co.uk/demo.html).
+
 ### Quick Start (Client-Side Switching)
 
 Include the script in your page. It automatically resolves the theme, injects `<link id="bootlegance-theme" rel="stylesheet">`, and loads the theme stylesheet:
