@@ -68,12 +68,14 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **Catppuccin Macchiato** | The mid-dark Catppuccin flavour, with light accents re-mixed for a bright surface. | [Preview](https://bootlegance.lesichkov.co.uk/themes/catppuccin-macchiato/) | Sibling of **Catppuccin** |
 | **Civic** | Inspired by the U.S. Web Design System (USWDS) | [Preview](https://bootlegance.lesichkov.co.uk/themes/civic/) | Government, digital services, accessibility-first |
 | **Classic Mac OS** | System 7 / Mac OS 8 Platinum desktop interface | [Preview](https://bootlegance.lesichkov.co.uk/themes/mac-classic/) | Retro projects, nostalgic UIs |
+| **Cosmo** | Port of Bootswatch Cosmo — An ode to Metro. Clean, flat, and modern. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cosmo/) | Modern web applications, dashboards, Metro-inspired UIs |
 | **Cyberpunk / Synthwave '84** | Neon option for gaming and entertainment with glowing cyan/magenta accents. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cyberpunk/) | Gaming, entertainment, synthwave UIs |
 | **Dracula** | Vibrant neon palette with an optional glow layer | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula/) | Editor-adjacent apps, terminals, striking dashboards |
 | **Dracula Soft** | The same eleven colours, softened | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula-soft/) | Long sessions, calmer workspaces, shared screens |
 | **Editorial / Paper** | Serif typography and warm off-white parchment paper for blogs and docs. | [Preview](https://bootlegance.lesichkov.co.uk/themes/editorial/) | Blogs, documentation, publishing |
 | **Ermine** | Port of Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation | [Preview](https://bootlegance.lesichkov.co.uk/themes/ermine/) | Clean web applications, friendly portals, dashboards |
 | **Everforest** | A green, comfortable, low-contrast palette designed to be easy on the eyes. | [Preview](https://bootlegance.lesichkov.co.uk/themes/everforest/) | Developers, code-heavy UIs, editors |
+| **Flatly** | Port of Bootswatch Flatly — Flat and modern design with clean emerald accents. | [Preview](https://bootlegance.lesichkov.co.uk/themes/flatly/) | Modern web applications, flat UI, dashboards |
 | **Fluent** | Windows 11 Fluent Design theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/fluent/) | Modern desktop apps, Windows-centric UIs, web applications |
 | **Forest** | Natural, earthy, organic | [Preview](https://bootlegance.lesichkov.co.uk/themes/forest/) | Eco-conscious brands, wellness, sustainability |
 | **GitHub Primer** | GitHub's official Primer design system palette for developer tools and apps. | [Preview](https://bootlegance.lesichkov.co.uk/themes/github-primer/) | Developers, code-heavy UIs, editors |
@@ -82,8 +84,11 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 | **High Contrast** | WCAG AAA contrast compliance with high visibility focus indicators and bold component borders | [Preview](https://bootlegance.lesichkov.co.uk/themes/high-contrast/) | Accessibility-first UIs, public sector, low vision |
 | **Kanagawa** | An elegant palette inspired by Japanese paintings and dark wood aesthetics. | [Preview](https://bootlegance.lesichkov.co.uk/themes/kanagawa/) | Developers, code-heavy UIs, editors |
 | **KDE Breeze** | KDE Plasma desktop inspired theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/kde-breeze/) | Linux desktop apps, open source projects |
+| **Lumen** | Port of Bootswatch Lumen — Light and shadow with crisp beveled bottom borders. | [Preview](https://bootlegance.lesichkov.co.uk/themes/lumen/) | Web apps, friendly portals, clean UI |
+| **Lux** | Port of Bootswatch Lux — A touch of elegance with tracked uppercase typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/lux/) | Luxury brands, portfolios, fashion, minimal designs |
 | **Material Design 3** | Material You design system | [Preview](https://bootlegance.lesichkov.co.uk/themes/material-3/) | Mobile-first web apps, modern Google-style UIs |
 | **Midnight** | Dark, sophisticated, professional | [Preview](https://bootlegance.lesichkov.co.uk/themes/midnight/) | Corporate apps, SaaS, modern tech |
+| **Morph** | Port of Bootswatch Morph — Neumorphic soft shadows and pill controls. | [Preview](https://bootlegance.lesichkov.co.uk/themes/morph/) | Neumorphic designs, soft modern apps, creative portals |
 | **Neo-brutalism (soft)** | Thick borders and offset shadows in bright colors with soft rounded corners. | [Preview](https://bootlegance.lesichkov.co.uk/themes/neo-brutalism/) | Portfolios, modern products, marketing |
 | **Night Owl** | A theme for nocturnal programmers who like working late into the night. | [Preview](https://bootlegance.lesichkov.co.uk/themes/night-owl/) | Developers, code-heavy UIs, editors |
 | **Nord** | Arctic-based, 4 official styles | [Preview](https://bootlegance.lesichkov.co.uk/themes/nord/) | Professional tools, dashboards, long-session work |
