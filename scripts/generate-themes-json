@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""
+Scans the themes/ directory and writes themes.json at the repository root.
+Only directories containing theme.css and matching ^[a-z0-9-]+$ are included.
+"""
+
+import json
+import os
+import re
+import sys
+
+# Standard slug pattern allowing lowercase letters, numbers, and hyphens (matches win98, material-3, etc.)
+SLUG_PATTERN = re.compile(r'^[a-z0-9-]+$')
+
+def main():
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    themes_dir = os.path.join(repo_root, "themes")
+
+    if not os.path.isdir(themes_dir):
+        print(f"Error: themes directory not found at {themes_dir}", file=sys.stderr)
+        sys.exit(1)
+
+    themes = []
+    for entry in sorted(os.listdir(themes_dir)):
+        entry_path = os.path.join(themes_dir, entry)
+        if os.path.isdir(entry_path):
+            if not SLUG_PATTERN.match(entry):
+                print(f"Warning: skipping '{entry}' (does not match slug pattern ^[a-z0-9-]+$)", file=sys.stderr)
+                continue
+            theme_css = os.path.join(entry_path, "theme.css")
+            if os.path.isfile(theme_css):
+                themes.append(entry)
+
+    themes.sort()
+
+    output_path = os.path.join(repo_root, "themes.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(themes, f, indent=2)
+        f.write("\n")
+
+    print(f"Successfully generated {output_path} with {len(themes)} themes.")
+
+if __name__ == "__main__":
+    main()

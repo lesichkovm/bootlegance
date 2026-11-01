@@ -51,6 +51,160 @@ Or dynamically switch with JavaScript:
 document.documentElement.setAttribute('data-bs-theme', 'dark');
 ```
 
+## Reusable Theme Switcher (`bootlegance.js`)
+
+Bootlegance includes a dependency-free vanilla JavaScript script (`bootlegance.js`) that manages theme loading, cookie persistence, query parameter overrides, light/dark mode toggling, and optional automatic UI wiring.
+
+![Bootlegance Theme Switcher Demo](screenshot-demo.png)
+
+Try out the [**Live Theme Switcher Demo**](https://bootlegance.lesichkov.co.uk/demo.html).
+
+### Quick Start (Client-Side Switching)
+
+Include the script in your page. It automatically resolves the theme, injects `<link id="bootlegance-theme" rel="stylesheet">`, and loads the theme stylesheet:
+
+```html
+<!-- Load Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Load Bootlegance theme switcher -->
+<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.js"></script>
+```
+
+### Auto-UI Controls
+
+You can automatically render a theme picker `<select>` dropdown and wire light/dark mode toggle buttons using `data-*` attributes:
+
+```html
+<!-- Theme picker dropdown container -->
+<div data-bootlegance-picker></div>
+
+<!-- Mode toggles -->
+<button data-bootlegance-mode="light" class="btn btn-outline-secondary">Light</button>
+<button data-bootlegance-mode="dark" class="btn btn-outline-secondary">Dark</button>
+
+<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.js"
+        data-default-theme="vanguard"></script>
+```
+
+### Configuration Attributes
+
+The script tag accepts optional attributes:
+
+| Attribute | Description | Default |
+|---|---|---|
+| `data-default-theme` | Fallback theme if no cookie or query param is found | `vanguard` |
+| `data-endpoint` | Server endpoint URL (e.g. `/theme`) for server-side redirection mode | `null` (client-side swap) |
+| `data-base-url` | Override base CDN or asset URL for themes and `themes.json` | Auto-detected from script `src` |
+| `data-themes` | Comma-separated list of fallback theme slugs | (Fetched from `themes.json`) |
+| `data-mode-storage-key` | `localStorage` key for light/dark mode persistence | `cf-theme` |
+| `data-mode-attribute` | Attribute on `<html>` for light/dark mode | `data-bs-theme` |
+
+### Theme Resolution Priority
+
+1. `?theme=` URL query parameter (e.g. `https://example.com/?theme=dracula`)
+2. `theme` cookie
+3. `data-default-theme` attribute on the script tag
+4. Built-in default theme (`vanguard`)
+
+Theme names are validated against `^[a-z0-9-]+$`.
+
+### JavaScript API
+
+The script exposes a global `window.Bootlegance` object:
+
+```javascript
+// Get list of registered themes
+console.log(Bootlegance.themes);
+
+// Get current theme slug
+console.log(Bootlegance.current());
+
+// Switch to a new theme
+Bootlegance.set('dracula');
+
+// Get stylesheet URL for a theme
+console.log(Bootlegance.url('dracula'));
+
+// Set mode ('light', 'dark', or 'auto')
+Bootlegance.setMode('dark');
+
+// Get current mode ('light' or 'dark')
+console.log(Bootlegance.getMode());
+
+// Listen for theme changes
+window.addEventListener('bootlegance:change', (e) => {
+  console.log('Active theme changed to:', e.detail.theme);
+});
+```
+
+### Server-Side Contract (FOUC Prevention & Optional Endpoint)
+
+To avoid Flash of Unstyled Content (FOUC) on server-rendered websites, backends can integrate with Bootlegance's cookie contract:
+
+1. **Server-rendered stylesheet**: Read the `theme` cookie on each incoming request and emit the `<link>` directly in the HTML `<head>`:
+   ```html
+   <link id="bootlegance-theme" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/themes/{{ theme }}/theme.css">
+   ```
+2. **Server-endpoint mode**: Set `data-endpoint="/theme"` on the `<script>` tag. When `Bootlegance.set('theme-name')` is called (or a user selects a theme from the auto-UI picker), it redirects to `{endpoint}?theme={name}&redirect={currentPath+Query}`.
+
+#### Reference Implementation (Go HTTP Handler)
+
+Here is a minimal reference Go handler implementing the server contract:
+
+```go
+package main
+
+import (
+	"net/http"
+	"net/url"
+	"regexp"
+	"strings"
+	"time"
+)
+
+var validThemeSlug = regexp.MustCompile(`^[a-z0-9-]+$`)
+
+func themeHandler(w http.ResponseWriter, r *http.Request) {
+	theme := r.URL.Query().Get("theme")
+	redirect := r.URL.Query().Get("redirect")
+
+	// Validate theme name
+	if !validThemeSlug.MatchString(theme) {
+		theme = "vanguard"
+	}
+
+	// Set cookie: Path=/, 1 year expiration, Lax SameSite
+	http.SetCookie(w, &http.Cookie{
+		Name:     "theme",
+		Value:    theme,
+		Path:     "/",
+		Expires:  time.Now().Add(365 * 24 * time.Hour),
+		MaxAge:   365 * 24 * 60 * 60,
+		SameSite: http.SameSiteLaxMode,
+		Secure:   r.TLS != nil || r.Header.Get("X-Forwarded-Proto") == "https",
+		HttpOnly: false, // Accessible to Bootlegance JS
+	})
+
+	// Prevent open redirects: allow only local paths starting with '/' and not '//'
+	if redirect == "" || !strings.HasPrefix(redirect, "/") || strings.HasPrefix(redirect, "//") {
+		redirect = "/"
+	}
+
+	http.Redirect(w, r, redirect, http.StatusFound)
+}
+```
+
+### Generating `themes.json`
+
+Before publishing or releasing a new version, run the manifest generator to update `themes.json`:
+
+```bash
+./scripts/generate-themes-json
+```
+
+This updates `themes.json` at the repo root with all available theme directories containing a `theme.css`.
+
 ## Available Themes
 
 > Every theme ships exactly **two modes** — light and dark. A different palette is a
