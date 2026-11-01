@@ -28,12 +28,14 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Catppuccin Macchiato  | `catppuccin-macchiato` | Available |
 | Civic                 | `civic`               | Available |
 | Classic Mac OS        | `mac-classic`         | Available |
+| Cosmo                 | `cosmo`               | Available |
 | Cyberpunk / Synthwave '84 | `cyberpunk`           | Available |
 | Dracula               | `dracula`             | Available |
 | Dracula Soft          | `dracula-soft`        | Available |
 | Editorial / Paper     | `editorial`           | Available |
 | Ermine                | `ermine`              | Available |
 | Everforest            | `everforest`          | Available |
+| Flatly                | `flatly`              | Available |
 | Fluent                | `fluent`              | Available |
 | Forest                | `forest`              | Available |
 | GitHub Primer         | `github-primer`       | Available |
@@ -42,8 +44,11 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Gruvbox               | `gruvbox`             | Available |
 | Kanagawa              | `kanagawa`            | Available |
 | KDE Breeze            | `kde-breeze`          | Available |
+| Lumen                 | `lumen`               | Available |
+| Lux                   | `lux`                 | Available |
 | Material Design 3     | `material-3`          | Available |
 | Midnight              | `midnight`            | Available |
+| Morph                 | `morph`               | Available |
 | Neo-brutalism (soft)  | `neo-brutalism`       | Available |
 | Night Owl             | `night-owl`           | Available |
 | Nord                  | `nord`                | Available |

@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Lux Bootstrap 5 Theme
+   Port of Bootswatch Lux — A touch of elegance. Uppercase, tracked, monochrome.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Lux Color Tokens */
+  --lux-gray-100: #f8f9fa;
+  --lux-gray-200: #f0f1f2;
+  --lux-gray-300: #e0e1e2;
+  --lux-gray-400: #cdcecf;
+  --lux-gray-500: #adb5bd;
+  --lux-gray-600: #919aa1;
+  --lux-gray-700: #55595c;
+  --lux-gray-800: #343a40;
+  --lux-gray-900: #1a1a1a;
+  --lux-white: #fff;
+  --lux-black: #000;
+
+  --lux-green: #4bbf73;
+  --lux-cyan: #1f9bcf;
+  --lux-yellow: #f0ad4e;
+  --lux-red: #d9534f;
+  --lux-blue: #007bff;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--lux-gray-900);
+  --bs-primary-rgb: 26, 26, 26;
+  --bs-secondary: var(--lux-white);
+  --bs-secondary-rgb: 255, 255, 255;
+  --bs-success: var(--lux-green);
+  --bs-success-rgb: 75, 191, 115;
+  --bs-info: var(--lux-cyan);
+  --bs-info-rgb: 31, 155, 207;
+  --bs-warning: var(--lux-yellow);
+  --bs-warning-rgb: 240, 173, 78;
+  --bs-danger: var(--lux-red);
+  --bs-danger-rgb: 217, 83, 79;
+  --bs-light: var(--lux-gray-200);
+  --bs-light-rgb: 240, 241, 242;
+  --bs-dark: var(--lux-gray-800);
+  --bs-dark-rgb: 52, 58, 64;
+
+  /* Subtle background and borders */
+  --bs-primary-bg-subtle: #d1d1d1;
+  --bs-secondary-bg-subtle: #f8f9fa;
+  --bs-success-bg-subtle: #dbf2e3;
+  --bs-info-bg-subtle: #d2ebf5;
+  --bs-warning-bg-subtle: #fcefdb;
+  --bs-danger-bg-subtle: #f7dddc;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #d6d8d9;
+
+  --bs-primary-border-subtle: #a3a3a3;
+  --bs-secondary-border-subtle: #e9ecef;
+  --bs-success-border-subtle: #b7e5c7;
+  --bs-info-border-subtle: #a5d7ec;
+  --bs-warning-border-subtle: #f9deb8;
+  --bs-danger-border-subtle: #f0bab8;
+  --bs-light-border-subtle: #f0f1f2;
+  --bs-dark-border-subtle: #aeb0b3;
+
+  --bs-primary-text-emphasis: #0a0a0a;
+  --bs-secondary-text-emphasis: #666666;
+  --bs-success-text-emphasis: #1e4c2e;
+  --bs-info-text-emphasis: #0c3e53;
+  --bs-warning-text-emphasis: #60451f;
+  --bs-danger-text-emphasis: #572120;
+  --bs-light-text-emphasis: #55595c;
+  --bs-dark-text-emphasis: #151719;
+
+  /* Body & Surface */
+  --bs-body-font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-sans-serif: var(--bs-body-font-family);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 300;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--lux-gray-700);
+  --bs-body-color-rgb: 85, 89, 92;
+  --bs-body-bg: var(--lux-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: var(--lux-gray-900);
+  --bs-emphasis-color-rgb: 26, 26, 26;
+
+  --bs-secondary-color: rgba(85, 89, 92, 0.75);
+  --bs-secondary-color-rgb: 85, 89, 92;
+  --bs-secondary-bg: var(--lux-gray-200);
+  --bs-secondary-bg-rgb: 240, 241, 242;
+  --bs-tertiary-color: rgba(85, 89, 92, 0.5);
+  --bs-tertiary-color-rgb: 85, 89, 92;
+  --bs-tertiary-bg: var(--lux-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-link-color: var(--lux-gray-900);
+  --bs-link-color-rgb: 26, 26, 26;
+  --bs-link-decoration: none;
+  --bs-link-hover-color: #000;
+  --bs-link-hover-color-rgb: 0, 0, 0;
+
+  --bs-border-color: rgba(0, 0, 0, 0.08);
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-xxl: 0;
+  --bs-border-radius-pill: 0;
+
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(26, 26, 26, 0.25);
+
+  --bs-form-valid-color: var(--lux-green);
+  --bs-form-valid-border-color: var(--lux-green);
+  --bs-form-invalid-color: var(--lux-red);
+  --bs-form-invalid-border-color: var(--lux-red);
+}
+
+[data-bs-theme="dark"] {
+  --lux-dark-bg: #121212;
+  --lux-dark-surface: #1e1e1e;
+  --lux-dark-surface-subtle: #292929;
+  --lux-dark-border: #383838;
+
+  --bs-body-color: #e0e1e2;
+  --bs-body-color-rgb: 224, 225, 226;
+  --bs-body-bg: var(--lux-dark-bg);
+  --bs-body-bg-rgb: 18, 18, 18;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(224, 225, 226, 0.75);
+  --bs-secondary-color-rgb: 224, 225, 226;
+  --bs-secondary-bg: var(--lux-dark-surface-subtle);
+  --bs-secondary-bg-rgb: 41, 41, 41;
+  --bs-tertiary-color: rgba(224, 225, 226, 0.5);
+  --bs-tertiary-color-rgb: 224, 225, 226;
+  --bs-tertiary-bg: var(--lux-dark-surface);
+  --bs-tertiary-bg-rgb: 30, 30, 30;
+
+  --bs-primary: #080808;
+  --bs-primary-rgb: 8, 8, 8;
+  --bs-primary-text-emphasis: #e0e1e2;
+  --bs-secondary-text-emphasis: #ffffff;
+  --bs-success-text-emphasis: #93d9a5;
+  --bs-info-text-emphasis: #79c3e2;
+  --bs-warning-text-emphasis: #f6ce95;
+  --bs-danger-text-emphasis: #e89895;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #e0e1e2;
+
+  --bs-primary-bg-subtle: #040404;
+  --bs-secondary-bg-subtle: #292929;
+  --bs-success-bg-subtle: #0f2617;
+  --bs-info-bg-subtle: #061f2a;
+  --bs-warning-bg-subtle: #302310;
+  --bs-danger-bg-subtle: #2b1110;
+  --bs-light-bg-subtle: var(--lux-dark-surface-subtle);
+  --bs-dark-bg-subtle: #0a0a0a;
+
+  --bs-primary-border-subtle: #292929;
+  --bs-secondary-border-subtle: #444;
+  --bs-success-border-subtle: #2e7345;
+  --bs-info-border-subtle: #135d7c;
+  --bs-warning-border-subtle: #90682f;
+  --bs-danger-border-subtle: #82322f;
+  --bs-light-border-subtle: #444;
+  --bs-dark-border-subtle: #222;
+
+  --bs-link-color: #fff;
+  --bs-link-hover-color: #ccc;
+  --bs-link-color-rgb: 255, 255, 255;
+  --bs-link-hover-color-rgb: 204, 204, 204;
+
+  --bs-border-color: var(--lux-dark-border);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography & Letter Spacing
+   -------------------------------------------------------------------------- */
+body {
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.75rem; }
+
+/* --------------------------------------------------------------------------
+   3. Navbar & Navs
+   -------------------------------------------------------------------------- */
+.navbar {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar .nav-item {
+  margin-right: 1.5rem;
+}
+
+.navbar .nav-link {
+  padding-top: 0.715rem;
+  padding-bottom: 0.715rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-sm {
+  font-size: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-lg {
+  padding: 1.25rem 2rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #000;
+  --bs-btn-hover-border-color: #000;
+  --bs-btn-active-bg: #000;
+  --bs-btn-active-border-color: #000;
+}
+
+.btn-secondary {
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #ced4da;
+  --bs-btn-color: var(--lux-gray-900);
+  --bs-btn-hover-bg: #f0f1f2;
+  --bs-btn-hover-border-color: #ced4da;
+  --bs-btn-active-bg: #e0e1e2;
+  --bs-btn-active-border-color: #ced4da;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: #3ca360;
+  --bs-btn-hover-border-color: #3ca360;
+  --bs-btn-active-bg: #3ca360;
+  --bs-btn-active-border-color: #3ca360;
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #1a82ad;
+  --bs-btn-hover-border-color: #1a82ad;
+  --bs-btn-active-bg: #1a82ad;
+  --bs-btn-active-border-color: #1a82ad;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d4953c;
+  --bs-btn-hover-border-color: #d4953c;
+  --bs-btn-active-bg: #d4953c;
+  --bs-btn-active-border-color: #d4953c;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-hover-bg: #b83e3a;
+  --bs-btn-hover-border-color: #b83e3a;
+  --bs-btn-active-bg: #b83e3a;
+  --bs-btn-active-border-color: #b83e3a;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: #e0e1e2;
+  --bs-btn-color: var(--lux-gray-900);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+}
+
+[class*="btn-outline-"] {
+  border-width: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables & Forms
+   -------------------------------------------------------------------------- */
+th {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table th,
+.table td {
+  padding: 1.25rem;
+}
+
+.input-group-text,
+.form-control,
+.form-select {
+  border-radius: 0;
+}
+
+.badge {
+  padding-top: 0.35rem;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.badge-pill {
+  border-radius: 10rem;
+}
+
+.card,
+.modal-content,
+.list-group-item,
+.popover,
+.toast,
+.dropdown-menu {
+  border-radius: 0;
+}

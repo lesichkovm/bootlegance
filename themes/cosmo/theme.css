@@ -1,0 +1,329 @@
+/* ==========================================================================
+   Cosmo Bootstrap 5 Theme
+   Port of Bootswatch Cosmo — An ode to Metro. Clean, flat, and modern.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Cosmo Color Tokens */
+  --cosmo-blue: #2780e3;
+  --cosmo-blue-hover: #1f6ec6;
+  --cosmo-gray-100: #f8f9fa;
+  --cosmo-gray-200: #e9ecef;
+  --cosmo-gray-300: #dee2e6;
+  --cosmo-gray-400: #ced4da;
+  --cosmo-gray-500: #adb5bd;
+  --cosmo-gray-600: #868e96;
+  --cosmo-gray-700: #495057;
+  --cosmo-gray-800: #373a3c;
+  --cosmo-gray-900: #212529;
+  --cosmo-white: #fff;
+  --cosmo-black: #000;
+
+  --cosmo-green: #3fb618;
+  --cosmo-green-hover: #359814;
+  --cosmo-cyan: #9954bb;
+  --cosmo-cyan-hover: #82479e;
+  --cosmo-yellow: #ff7518;
+  --cosmo-yellow-hover: #d96314;
+  --cosmo-red: #ff0039;
+  --cosmo-red-hover: #d90030;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--cosmo-blue);
+  --bs-primary-rgb: 39, 128, 227;
+  --bs-secondary: var(--cosmo-gray-800);
+  --bs-secondary-rgb: 55, 58, 60;
+  --bs-success: var(--cosmo-green);
+  --bs-success-rgb: 63, 182, 24;
+  --bs-info: var(--cosmo-cyan);
+  --bs-info-rgb: 153, 84, 187;
+  --bs-warning: var(--cosmo-yellow);
+  --bs-warning-rgb: 255, 117, 24;
+  --bs-danger: var(--cosmo-red);
+  --bs-danger-rgb: 255, 0, 57;
+  --bs-light: var(--cosmo-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--cosmo-gray-800);
+  --bs-dark-rgb: 55, 58, 60;
+
+  /* Subtle colors */
+  --bs-primary-bg-subtle: #d4e6fa;
+  --bs-secondary-bg-subtle: #dadcde;
+  --bs-success-bg-subtle: #d9f0d1;
+  --bs-info-bg-subtle: #ebdcf1;
+  --bs-warning-bg-subtle: #ffe3d1;
+  --bs-danger-bg-subtle: #ffd6df;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #b6b9bb;
+
+  --bs-primary-border-subtle: #a9cdfa;
+  --bs-secondary-border-subtle: #afb2b4;
+  --bs-success-border-subtle: #b2e2a3;
+  --bs-info-border-subtle: #d7bae4;
+  --bs-warning-border-subtle: #ffc8a3;
+  --bs-danger-border-subtle: #ff9cb0;
+  --bs-light-border-subtle: #dee2e6;
+  --bs-dark-border-subtle: #8a8d8f;
+
+  --bs-primary-text-emphasis: #10335c;
+  --bs-secondary-text-emphasis: #161718;
+  --bs-success-text-emphasis: #19490a;
+  --bs-info-text-emphasis: #3d224b;
+  --bs-warning-text-emphasis: #662f0a;
+  --bs-danger-text-emphasis: #660017;
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+
+  /* Body & Surface */
+  --bs-body-font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-sans-serif: var(--bs-body-font-family);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--cosmo-gray-800);
+  --bs-body-color-rgb: 55, 58, 60;
+  --bs-body-bg: var(--cosmo-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: var(--cosmo-black);
+  --bs-emphasis-color-rgb: 0, 0, 0;
+
+  --bs-secondary-color: rgba(55, 58, 60, 0.75);
+  --bs-secondary-color-rgb: 55, 58, 60;
+  --bs-secondary-bg: var(--cosmo-gray-200);
+  --bs-secondary-bg-rgb: 233, 236, 239;
+  --bs-tertiary-color: rgba(55, 58, 60, 0.5);
+  --bs-tertiary-color-rgb: 55, 58, 60;
+  --bs-tertiary-bg: var(--cosmo-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-link-color: var(--cosmo-blue);
+  --bs-link-color-rgb: 39, 128, 227;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: var(--cosmo-blue-hover);
+  --bs-link-hover-color-rgb: 31, 110, 198;
+
+  --bs-border-color: var(--cosmo-gray-300);
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-xxl: 0;
+  --bs-border-radius-pill: 0;
+
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(39, 128, 227, 0.25);
+
+  --bs-form-valid-color: var(--cosmo-green);
+  --bs-form-valid-border-color: var(--cosmo-green);
+  --bs-form-invalid-color: var(--cosmo-red);
+  --bs-form-invalid-border-color: var(--cosmo-red);
+
+  --bs-navbar-hover-color: rgba(0, 0, 0, 0.9);
+}
+
+[data-bs-theme="dark"] {
+  --cosmo-dark-bg: #212529;
+  --cosmo-dark-surface: #2b3035;
+  --cosmo-dark-surface-subtle: #373a3c;
+  --cosmo-dark-border: #495057;
+
+  --bs-body-color: #dee2e6;
+  --bs-body-color-rgb: 222, 226, 230;
+  --bs-body-bg: var(--cosmo-dark-bg);
+  --bs-body-bg-rgb: 33, 37, 41;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(222, 226, 230, 0.75);
+  --bs-secondary-color-rgb: 222, 226, 230;
+  --bs-secondary-bg: var(--cosmo-dark-surface-subtle);
+  --bs-secondary-bg-rgb: 55, 58, 60;
+  --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+  --bs-tertiary-color-rgb: 222, 226, 230;
+  --bs-tertiary-bg: var(--cosmo-dark-surface);
+  --bs-tertiary-bg-rgb: 43, 48, 53;
+
+  --bs-primary-text-emphasis: #7db6f2;
+  --bs-secondary-text-emphasis: #d1d5db;
+  --bs-success-text-emphasis: #8ce172;
+  --bs-info-text-emphasis: #c99ee1;
+  --bs-warning-text-emphasis: #ffad75;
+  --bs-danger-text-emphasis: #ff7594;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #dee2e6;
+
+  --bs-primary-bg-subtle: #081a2e;
+  --bs-secondary-bg-subtle: #1c1d1e;
+  --bs-success-bg-subtle: #0d2505;
+  --bs-info-bg-subtle: #1f1126;
+  --bs-warning-bg-subtle: #331705;
+  --bs-danger-bg-subtle: #33000b;
+  --bs-light-bg-subtle: var(--cosmo-dark-surface-subtle);
+  --bs-dark-bg-subtle: #141618;
+
+  --bs-primary-border-subtle: #184d88;
+  --bs-secondary-border-subtle: #495057;
+  --bs-success-border-subtle: #266e0f;
+  --bs-info-border-subtle: #5c3270;
+  --bs-warning-border-subtle: #99460e;
+  --bs-danger-border-subtle: #990022;
+  --bs-light-border-subtle: #495057;
+  --bs-dark-border-subtle: #373a3c;
+
+  --bs-link-color: #7db6f2;
+  --bs-link-hover-color: #a4ccf6;
+  --bs-link-color-rgb: 125, 182, 242;
+  --bs-link-hover-color-rgb: 164, 204, 246;
+
+  --bs-border-color: var(--cosmo-dark-border);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography & Metro Aesthetics
+   -------------------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  border-radius: var(--bs-border-radius);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--cosmo-blue-hover);
+  --bs-btn-hover-border-color: var(--cosmo-blue-hover);
+  --bs-btn-active-bg: var(--cosmo-blue-hover);
+  --bs-btn-active-border-color: var(--cosmo-blue-hover);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: #2b2e2f;
+  --bs-btn-hover-border-color: #2b2e2f;
+  --bs-btn-active-bg: #2b2e2f;
+  --bs-btn-active-border-color: #2b2e2f;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: var(--cosmo-green-hover);
+  --bs-btn-hover-border-color: var(--cosmo-green-hover);
+  --bs-btn-active-bg: var(--cosmo-green-hover);
+  --bs-btn-active-border-color: var(--cosmo-green-hover);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cosmo-cyan-hover);
+  --bs-btn-hover-border-color: var(--cosmo-cyan-hover);
+  --bs-btn-active-bg: var(--cosmo-cyan-hover);
+  --bs-btn-active-border-color: var(--cosmo-cyan-hover);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cosmo-yellow-hover);
+  --bs-btn-hover-border-color: var(--cosmo-yellow-hover);
+  --bs-btn-active-bg: var(--cosmo-yellow-hover);
+  --bs-btn-active-border-color: var(--cosmo-yellow-hover);
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-hover-bg: var(--cosmo-red-hover);
+  --bs-btn-hover-border-color: var(--cosmo-red-hover);
+  --bs-btn-active-bg: var(--cosmo-red-hover);
+  --bs-btn-active-border-color: var(--cosmo-red-hover);
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: #dee2e6;
+  --bs-btn-color: var(--cosmo-gray-800);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+}
+
+/* --------------------------------------------------------------------------
+   4. Tables
+   -------------------------------------------------------------------------- */
+.table-primary,
+.table-secondary,
+.table-success,
+.table-warning,
+.table-danger,
+.table-info,
+.table-light {
+  --bs-table-color: var(--bs-body-color);
+}
+
+/* --------------------------------------------------------------------------
+   5. Alerts & Indicators
+   -------------------------------------------------------------------------- */
+.alert {
+  border-width: 0;
+  border-radius: var(--bs-border-radius);
+}
+
+.badge.bg-light {
+  color: var(--bs-dark);
+}
+
+.progress {
+  height: 0.5rem;
+  border-radius: var(--bs-border-radius);
+  box-shadow: none;
+}
+
+.progress .progress-bar {
+  font-size: 8px;
+  line-height: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Containers & Overrides
+   -------------------------------------------------------------------------- */
+.card,
+.card-header,
+.card-footer,
+.list-group-item,
+.modal-content,
+.popover,
+.dropdown-menu,
+.form-control,
+.form-select,
+.page-link,
+.accordion-item,
+.accordion-button {
+  border-radius: 0;
+}
