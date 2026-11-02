@@ -70,7 +70,9 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Orchis Yellow         | `orchis-yellow`       | Available |
 | Pantheon              | `pantheon`            | Available |
 | Print-Optimized       | `print-optimized`     | Available |
+| Quartz                | `quartz`              | Available |
 | Rosé Pine             | `rose-pine`           | Available |
+| Sandstone             | `sandstone`           | Available |
 | Seneca                | `seneca`              | Available |
 | Sepia / Reading mode  | `sepia`               | Available |
 | Slate                 | `slate`               | Available |
