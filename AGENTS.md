@@ -72,7 +72,9 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Sepia / Reading mode  | `sepia`               | Available |
 | Slate                 | `slate`               | Available |
 | Solarized             | `solarized`           | Available |
+| Spacelab              | `spacelab`            | Available |
 | Sunrise               | `sunrise`             | Available |
+| Superhero             | `superhero`           | Available |
 | Swiss / International Style | `swiss`               | Available |
 | Terminal / CRT        | `terminal`            | Available |
 | Tokyo Night           | `tokyo-night`         | Available |
