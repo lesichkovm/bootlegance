@@ -240,8 +240,10 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Journal** | Port of Bootswatch Journal — Crisp like a new sheet of paper with News Cycle bold typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/journal/) | Content sites, editorial publications, news, blogs |
 | **Kanagawa** | An elegant palette inspired by Japanese paintings and dark wood aesthetics. | [Preview](https://bootlegance.lesichkov.co.uk/themes/kanagawa/) | Developers, code-heavy UIs, editors |
 | **KDE Breeze** | KDE Plasma desktop inspired theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/kde-breeze/) | Linux desktop apps, open source projects |
+| **Litera** | Port of Bootswatch Litera — The medium is the message with serif body copy and rounded pill buttons. | [Preview](https://bootlegance.lesichkov.co.uk/themes/litera/) | Content sites, clean web applications, blogs, reading |
 | **Lumen** | Port of Bootswatch Lumen — Light and shadow with crisp beveled bottom borders. | [Preview](https://bootlegance.lesichkov.co.uk/themes/lumen/) | Web apps, friendly portals, clean UI |
 | **Lux** | Port of Bootswatch Lux — A touch of elegance with tracked uppercase typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/lux/) | Luxury brands, portfolios, fashion, minimal designs |
+| **Materia** | Port of Bootswatch Materia — Material is the metaphor with elevation shadows and underline inputs. | [Preview](https://bootlegance.lesichkov.co.uk/themes/materia/) | Material Design interfaces, web apps, dashboards |
 | **Material Design 3** | Material You design system | [Preview](https://bootlegance.lesichkov.co.uk/themes/material-3/) | Mobile-first web apps, modern Google-style UIs |
 | **Midnight** | Dark, sophisticated, professional | [Preview](https://bootlegance.lesichkov.co.uk/themes/midnight/) | Corporate apps, SaaS, modern tech |
 | **Minty** | Port of Bootswatch Minty — A fresh feel with pastel mint and coral tones. | [Preview](https://bootlegance.lesichkov.co.uk/themes/minty/) | Friendly web apps, blogs, creative portals |

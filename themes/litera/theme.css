@@ -1,0 +1,424 @@
+/* ==========================================================================
+   Litera Bootstrap 5 Theme
+   Port of Bootswatch Litera — The medium is the message.
+   Clean, readable typography with serif body copy and rounded pill buttons.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Litera Color Tokens */
+  --litera-blue: #4582ec;
+  --litera-indigo: #6610f2;
+  --litera-purple: #6f42c1;
+  --litera-pink: #e83e8c;
+  --litera-red: #d9534f;
+  --litera-orange: #fd7e14;
+  --litera-yellow: #f0ad4e;
+  --litera-green: #02b875;
+  --litera-teal: #20c997;
+  --litera-cyan: #17a2b8;
+  --litera-white: #fff;
+  --litera-gray-100: #f8f9fa;
+  --litera-gray-200: #e9ecef;
+  --litera-gray-300: #ddd;
+  --litera-gray-400: #ced4da;
+  --litera-gray-500: #adb5bd;
+  --litera-gray-600: #868e96;
+  --litera-gray-700: #495057;
+  --litera-gray-800: #343a40;
+  --litera-gray-900: #212529;
+  --litera-black: #000;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--litera-blue);
+  --bs-primary-rgb: 69, 130, 236;
+  --bs-secondary: var(--litera-gray-500);
+  --bs-secondary-rgb: 173, 181, 189;
+  --bs-success: var(--litera-green);
+  --bs-success-rgb: 2, 184, 117;
+  --bs-info: var(--litera-cyan);
+  --bs-info-rgb: 23, 162, 184;
+  --bs-warning: var(--litera-yellow);
+  --bs-warning-rgb: 240, 173, 78;
+  --bs-danger: var(--litera-red);
+  --bs-danger-rgb: 217, 83, 79;
+  --bs-light: var(--litera-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--litera-gray-800);
+  --bs-dark-rgb: 52, 58, 64;
+
+  /* Subtle background and border colors */
+  --bs-primary-bg-subtle: #dae6fb;
+  --bs-secondary-bg-subtle: #eff0f2;
+  --bs-success-bg-subtle: #ccf1e3;
+  --bs-info-bg-subtle: #d1ecf1;
+  --bs-warning-bg-subtle: #fcefdc;
+  --bs-danger-bg-subtle: #f7dddc;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #b5cdf7;
+  --bs-secondary-border-subtle: #dee1e5;
+  --bs-success-border-subtle: #9ae3c8;
+  --bs-info-border-subtle: #a2dae3;
+  --bs-warning-border-subtle: #f9deb8;
+  --bs-danger-border-subtle: #f0bab9;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+
+  --bs-primary-text-emphasis: #1c345e;
+  --bs-secondary-text-emphasis: #45484c;
+  --bs-success-text-emphasis: #014a2f;
+  --bs-info-text-emphasis: #09414a;
+  --bs-warning-text-emphasis: #60451f;
+  --bs-danger-text-emphasis: #572120;
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+
+  /* Body & Surface */
+  --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1.1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--litera-gray-800);
+  --bs-body-color-rgb: 52, 58, 64;
+  --bs-body-bg: var(--litera-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: var(--litera-black);
+  --bs-emphasis-color-rgb: 0, 0, 0;
+
+  --bs-secondary-color: rgba(52, 58, 64, 0.75);
+  --bs-secondary-color-rgb: 52, 58, 64;
+  --bs-secondary-bg: var(--litera-gray-200);
+  --bs-secondary-bg-rgb: 233, 236, 239;
+  --bs-tertiary-color: rgba(52, 58, 64, 0.5);
+  --bs-tertiary-color-rgb: 52, 58, 64;
+  --bs-tertiary-bg: var(--litera-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-link-color: var(--litera-blue);
+  --bs-link-color-rgb: 69, 130, 236;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #3768bd;
+  --bs-link-hover-color-rgb: 55, 104, 189;
+
+  --bs-border-color: var(--litera-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.1);
+
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(69, 130, 236, 0.25);
+
+  --bs-form-valid-color: var(--litera-green);
+  --bs-form-valid-border-color: var(--litera-green);
+  --bs-form-invalid-color: var(--litera-red);
+  --bs-form-invalid-border-color: var(--litera-red);
+
+  /* Navbar variables */
+  --bs-navbar-brand-font-size: 1.375rem;
+  --bs-navbar-hover-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-bs-theme="dark"] {
+  --litera-dark-bg: #212529;
+  --litera-dark-surface: #2b3035;
+  --litera-dark-surface-subtle: #343a40;
+  --litera-dark-border: #495057;
+
+  --bs-body-color: var(--litera-gray-300);
+  --bs-body-color-rgb: 221, 221, 221;
+  --bs-body-bg: var(--litera-dark-bg);
+  --bs-body-bg-rgb: 33, 37, 41;
+  --bs-emphasis-color: var(--litera-white);
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(221, 221, 221, 0.75);
+  --bs-secondary-color-rgb: 221, 221, 221;
+  --bs-secondary-bg: var(--litera-dark-surface-subtle);
+  --bs-secondary-bg-rgb: 52, 58, 64;
+  --bs-tertiary-color: rgba(221, 221, 221, 0.5);
+  --bs-tertiary-color-rgb: 221, 221, 221;
+  --bs-tertiary-bg: var(--litera-dark-surface);
+  --bs-tertiary-bg-rgb: 43, 48, 53;
+
+  --bs-primary-text-emphasis: #8fb4f4;
+  --bs-secondary-text-emphasis: #ced3d7;
+  --bs-success-text-emphasis: #67d4ac;
+  --bs-info-text-emphasis: #74c7d4;
+  --bs-warning-text-emphasis: #f6ce95;
+  --bs-danger-text-emphasis: #e89895;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #ddd;
+
+  --bs-primary-bg-subtle: #0e1a2f;
+  --bs-secondary-bg-subtle: #232426;
+  --bs-success-bg-subtle: #002517;
+  --bs-info-bg-subtle: #052025;
+  --bs-warning-bg-subtle: #302310;
+  --bs-danger-bg-subtle: #2b1110;
+  --bs-light-bg-subtle: var(--litera-dark-surface-subtle);
+  --bs-dark-bg-subtle: #1a1d20;
+
+  --bs-primary-border-subtle: #294e8e;
+  --bs-secondary-border-subtle: #686d71;
+  --bs-success-border-subtle: #016e46;
+  --bs-info-border-subtle: #0e616e;
+  --bs-warning-border-subtle: #90682f;
+  --bs-danger-border-subtle: #82322f;
+  --bs-light-border-subtle: #495057;
+  --bs-dark-border-subtle: #343a40;
+
+  --bs-link-color: #8fb4f4;
+  --bs-link-hover-color: #a5c3f6;
+  --bs-link-color-rgb: 143, 180, 244;
+  --bs-link-hover-color-rgb: 165, 195, 246;
+
+  --bs-border-color: var(--litera-dark-border);
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+}
+
+p {
+  font-family: var(--bs-font-serif);
+}
+
+blockquote {
+  font-style: italic;
+}
+
+footer {
+  font-size: 0.9625rem;
+}
+
+.lead {
+  font-family: var(--bs-font-sans-serif);
+  color: var(--litera-gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   3. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  font-size: 0.9625rem;
+  background-color: var(--bs-navbar-bg, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: 1.1rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-border-radius: 1.078em;
+  font-family: var(--bs-font-sans-serif);
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  --bs-btn-border-radius: 2.688em;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  --bs-btn-border-radius: 0.844em;
+  --bs-btn-font-size: 0.688rem;
+}
+
+.btn-group {
+  border-radius: 1.078em;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #3b6fc9;
+  --bs-btn-hover-border-color: #3768bd;
+  --bs-btn-active-bg: #3768bd;
+  --bs-btn-active-border-color: #3462b1;
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: #939aa1;
+  --bs-btn-hover-border-color: #8a9197;
+  --bs-btn-active-bg: #8a9197;
+  --bs-btn-active-border-color: #82888e;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: #029c63;
+  --bs-btn-hover-border-color: #02935e;
+  --bs-btn-active-bg: #02935e;
+  --bs-btn-active-border-color: #028a58;
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-hover-bg: #148a9c;
+  --bs-btn-hover-border-color: #128293;
+  --bs-btn-active-bg: #128293;
+  --bs-btn-active-border-color: #117a8a;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-hover-bg: #cc9342;
+  --bs-btn-hover-border-color: #c08a3e;
+  --bs-btn-active-bg: #c08a3e;
+  --bs-btn-active-border-color: #b4823b;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-hover-bg: #b84743;
+  --bs-btn-hover-border-color: #ae423f;
+  --bs-btn-active-bg: #ae423f;
+  --bs-btn-active-border-color: #a33e3b;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--bs-light);
+  --bs-btn-color: var(--bs-dark);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables & Forms
+   -------------------------------------------------------------------------- */
+table,
+.table {
+  font-size: 0.9625rem;
+  --bs-table-border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] table,
+[data-bs-theme="dark"] .table {
+  --bs-table-border-color: var(--bs-border-color);
+}
+
+.form-control,
+.form-select {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  border-color: var(--bs-border-color);
+}
+
+.input-group-text {
+  background-color: var(--litera-gray-200);
+}
+
+[data-bs-theme="dark"] .input-group-text {
+  background-color: var(--bs-secondary-bg);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navs, Breadcrumb, Pagination, Dropdowns, List Groups
+   -------------------------------------------------------------------------- */
+.nav,
+.breadcrumb,
+.pagination,
+.dropdown-menu,
+.list-group {
+  font-size: 0.9625rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Alerts & Badges
+   -------------------------------------------------------------------------- */
+.alert {
+  font-size: 0.9625rem;
+  border-width: 0;
+  color: var(--litera-white);
+}
+
+.alert,
+.alert p {
+  font-family: var(--bs-font-sans-serif);
+}
+
+.alert a,
+.alert .alert-link {
+  font-weight: 400;
+  color: var(--litera-white);
+  text-decoration: underline;
+}
+
+.alert-primary {
+  background-color: var(--bs-primary);
+}
+
+.alert-secondary {
+  background-color: var(--bs-secondary);
+}
+
+.alert-success {
+  background-color: var(--bs-success);
+}
+
+.alert-info {
+  background-color: var(--bs-info);
+}
+
+.alert-warning {
+  background-color: var(--bs-warning);
+}
+
+.alert-danger {
+  background-color: var(--bs-danger);
+}
+
+.alert-light {
+  background-color: var(--bs-light);
+  &,
+  a,
+  .alert-link {
+    color: var(--bs-body-color);
+  }
+}
+
+.alert-dark {
+  background-color: var(--bs-dark);
+}
+
+.badge {
+  font-weight: 400;
+  padding: 0.6em 1.2em;
+}
+
+.badge.bg-light {
+  color: var(--bs-dark);
+}

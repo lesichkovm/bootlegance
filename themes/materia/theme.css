@@ -1,0 +1,544 @@
+/* ==========================================================================
+   Materia Bootstrap 5 Theme
+   Port of Bootswatch Materia — Material is the metaphor.
+   Material Design elevation, uppercase elevated buttons, and underline inputs.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Materia Color Tokens */
+  --materia-blue: #2196f3;
+  --materia-indigo: #6610f2;
+  --materia-purple: #6f42c1;
+  --materia-pink: #e83e8c;
+  --materia-red: #e51c23;
+  --materia-orange: #fd7e14;
+  --materia-yellow: #ff9800;
+  --materia-green: #4caf50;
+  --materia-teal: #20c997;
+  --materia-cyan: #9c27b0;
+  --materia-white: #fff;
+  --materia-black: #000;
+  --materia-gray-100: #f8f9fa;
+  --materia-gray-200: #eee;
+  --materia-gray-300: #dee2e6;
+  --materia-gray-400: #ced4da;
+  --materia-gray-500: #bbb;
+  --materia-gray-600: #666;
+  --materia-gray-700: #444;
+  --materia-gray-800: #222;
+  --materia-gray-900: #212121;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--materia-blue);
+  --bs-primary-rgb: 33, 150, 243;
+  --bs-secondary: var(--materia-white);
+  --bs-secondary-rgb: 255, 255, 255;
+  --bs-success: var(--materia-green);
+  --bs-success-rgb: 76, 175, 80;
+  --bs-info: var(--materia-cyan);
+  --bs-info-rgb: 156, 39, 176;
+  --bs-warning: var(--materia-yellow);
+  --bs-warning-rgb: 255, 152, 0;
+  --bs-danger: var(--materia-red);
+  --bs-danger-rgb: 229, 28, 35;
+  --bs-light: var(--materia-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--materia-gray-800);
+  --bs-dark-rgb: 34, 34, 34;
+
+  /* Subtle background and border colors */
+  --bs-primary-bg-subtle: #d3eafd;
+  --bs-secondary-bg-subtle: #ffffff;
+  --bs-success-bg-subtle: #dbefdc;
+  --bs-info-bg-subtle: #ebd4ef;
+  --bs-warning-bg-subtle: #ffeacc;
+  --bs-danger-bg-subtle: #fad2d3;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #a6d5fa;
+  --bs-secondary-border-subtle: #ffffff;
+  --bs-success-border-subtle: #b7dfb9;
+  --bs-info-border-subtle: #d7a9df;
+  --bs-warning-border-subtle: #ffd699;
+  --bs-danger-border-subtle: #f5a4a7;
+  --bs-light-border-subtle: #eee;
+  --bs-dark-border-subtle: #bbb;
+
+  --bs-primary-text-emphasis: #0d3c61;
+  --bs-secondary-text-emphasis: #666666;
+  --bs-success-text-emphasis: #1e4620;
+  --bs-info-text-emphasis: #3e1046;
+  --bs-warning-text-emphasis: #663d00;
+  --bs-danger-text-emphasis: #5c0b0e;
+  --bs-light-text-emphasis: #444;
+  --bs-dark-text-emphasis: #444;
+
+  /* Body & Surface */
+  --bs-font-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--materia-gray-700);
+  --bs-body-color-rgb: 68, 68, 68;
+  --bs-body-bg: var(--materia-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: var(--materia-black);
+  --bs-emphasis-color-rgb: 0, 0, 0;
+
+  --bs-secondary-color: rgba(68, 68, 68, 0.75);
+  --bs-secondary-color-rgb: 68, 68, 68;
+  --bs-secondary-bg: var(--materia-gray-200);
+  --bs-secondary-bg-rgb: 238, 238, 238;
+  --bs-tertiary-color: rgba(68, 68, 68, 0.5);
+  --bs-tertiary-color-rgb: 68, 68, 68;
+  --bs-tertiary-bg: var(--materia-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-link-color: var(--materia-blue);
+  --bs-link-color-rgb: 33, 150, 243;
+  --bs-link-hover-color: #1a78c2;
+  --bs-link-hover-color-rgb: 26, 120, 194;
+
+  --bs-border-color: var(--materia-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(33, 150, 243, 0.25);
+
+  --bs-form-valid-color: var(--materia-green);
+  --bs-form-valid-border-color: var(--materia-green);
+  --bs-form-invalid-color: var(--materia-red);
+  --bs-form-invalid-border-color: var(--materia-red);
+
+  /* Elevation Shadows */
+  --materia-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --materia-modal-shadow: 0 6px 36px rgba(0, 0, 0, 0.3);
+
+  /* Navbar variables */
+  --bs-navbar-padding-y: 1rem;
+  --bs-navbar-brand-font-size: 24px;
+  --bs-navbar-hover-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-bs-theme="dark"] {
+  --materia-dark-bg: #212121;
+  --materia-dark-surface: #222;
+  --materia-dark-surface-alt: #343434;
+  --materia-dark-border: #444;
+
+  --bs-body-color: #dee2e6;
+  --bs-body-color-rgb: 222, 226, 230;
+  --bs-body-bg: var(--materia-dark-bg);
+  --bs-body-bg-rgb: 33, 33, 33;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(222, 226, 230, 0.75);
+  --bs-secondary-color-rgb: 222, 226, 230;
+  --bs-secondary-bg: var(--materia-dark-surface);
+  --bs-secondary-bg-rgb: 34, 34, 34;
+  --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+  --bs-tertiary-color-rgb: 222, 226, 230;
+  --bs-tertiary-bg: var(--materia-dark-surface);
+  --bs-tertiary-bg-rgb: 34, 34, 34;
+
+  --bs-primary-text-emphasis: #7ac0f8;
+  --bs-secondary-text-emphasis: #fff;
+  --bs-success-text-emphasis: #94cf96;
+  --bs-info-text-emphasis: #c47dd0;
+  --bs-warning-text-emphasis: #ffc166;
+  --bs-danger-text-emphasis: #ef777b;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #dee2e6;
+
+  --bs-primary-bg-subtle: #071e31;
+  --bs-secondary-bg-subtle: #333333;
+  --bs-success-bg-subtle: #0f2310;
+  --bs-info-bg-subtle: #1f0823;
+  --bs-warning-bg-subtle: #331e00;
+  --bs-danger-bg-subtle: #2e0607;
+  --bs-light-bg-subtle: var(--materia-dark-surface);
+  --bs-dark-bg-subtle: #111111;
+
+  --bs-primary-border-subtle: #145a92;
+  --bs-secondary-border-subtle: #999999;
+  --bs-success-border-subtle: #2e6930;
+  --bs-info-border-subtle: #5e176a;
+  --bs-warning-border-subtle: #995b00;
+  --bs-danger-border-subtle: #891115;
+  --bs-light-border-subtle: #444;
+  --bs-dark-border-subtle: #222;
+
+  --bs-link-color: #7ac0f8;
+  --bs-link-hover-color: #95cdf9;
+  --bs-link-color-rgb: 122, 192, 248;
+  --bs-link-hover-color-rgb: 149, 205, 249;
+
+  --bs-border-color: var(--materia-dark-border);
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+
+  --materia-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  --materia-modal-shadow: 0 6px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography & General
+   -------------------------------------------------------------------------- */
+body,
+input,
+button {
+  letter-spacing: 0.1px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: var(--bs-navbar-bg, transparent);
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.navbar.bg-dark input,
+.navbar.bg-primary input {
+  color: var(--materia-white);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.navbar.bg-dark input:focus,
+.navbar.bg-primary input:focus {
+  box-shadow: inset 0 -2px 0 var(--materia-white);
+}
+
+.navbar.bg-dark input::placeholder,
+.navbar.bg-primary input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  text-transform: uppercase;
+  border: none;
+  box-shadow: var(--materia-shadow);
+  transition: color 0.4s, background-color 0.4s, border-color 0.4s, box-shadow 0.4s;
+  --bs-btn-padding-y: 0.8rem;
+  --bs-btn-padding-x: 1rem;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5);
+}
+
+.btn:active {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1d84d6;
+  --bs-btn-hover-border-color: #1d84d6;
+  --bs-btn-active-bg: #1a78c2;
+  --bs-btn-active-border-color: #1a78c2;
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-color: var(--materia-black);
+  --bs-btn-hover-bg: #e0e0e0;
+  --bs-btn-hover-border-color: #e0e0e0;
+  --bs-btn-active-bg: #d5d5d5;
+  --bs-btn-active-border-color: #d5d5d5;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: #439a46;
+  --bs-btn-hover-border-color: #439a46;
+  --bs-btn-active-bg: #3d8c40;
+  --bs-btn-active-border-color: #3d8c40;
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-hover-bg: #89229b;
+  --bs-btn-hover-border-color: #89229b;
+  --bs-btn-active-bg: #7d1f8d;
+  --bs-btn-active-border-color: #7d1f8d;
+  --bs-btn-color: #fff;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-hover-bg: #e08600;
+  --bs-btn-hover-border-color: #e08600;
+  --bs-btn-active-bg: #cc7a00;
+  --bs-btn-active-border-color: #cc7a00;
+  --bs-btn-color: #fff;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-hover-bg: #ca191f;
+  --bs-btn-hover-border-color: #ca191f;
+  --bs-btn-active-bg: #b7161c;
+  --bs-btn-active-border-color: #b7161c;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--bs-light);
+  --bs-btn-hover-bg: #dadbdc;
+  --bs-btn-hover-border-color: #dadbdc;
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+  --bs-btn-hover-bg: #1e1e1e;
+  --bs-btn-hover-border-color: #1e1e1e;
+}
+
+.btn-link {
+  box-shadow: none;
+  text-decoration: underline;
+  text-transform: none;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  box-shadow: none;
+}
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group > .dropdown-toggle {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   5. Forms (Material Underline Style)
+   -------------------------------------------------------------------------- */
+.form-control,
+input.form-control,
+textarea.form-control {
+  border: 0 solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: inset 0 -1px 0 var(--bs-border-color);
+  transition: box-shadow 0.2s;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus {
+  background-color: transparent;
+  box-shadow: inset 0 -2px 0 var(--bs-primary);
+  border-color: transparent;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  border-bottom: 1px dotted var(--bs-border-color);
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.form-select {
+  border: 0 solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: inset 0 -1px 0 var(--bs-border-color);
+  padding-left: 0;
+}
+
+.form-select:focus {
+  box-shadow: inset 0 -2px 0 var(--bs-primary);
+  border-color: transparent;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: 0 solid transparent;
+}
+
+.form-check-input {
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid var(--materia-gray-400);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  height: 0.8em;
+  margin-top: 0.29em;
+  border: none;
+  border-radius: 2em;
+}
+
+/* --------------------------------------------------------------------------
+   6. Navs & Tabs
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-link:focus {
+  color: var(--bs-body-color);
+  background-color: transparent;
+  border: none;
+  box-shadow: inset 0 -1px 0 var(--bs-border-color);
+  transition: color 0.2s, box-shadow 0.2s;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus:hover {
+  color: var(--bs-primary);
+  background-color: transparent;
+  box-shadow: inset 0 -2px 0 var(--bs-primary);
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:focus {
+  color: var(--bs-primary);
+  border: none;
+  box-shadow: inset 0 -2px 0 var(--bs-primary);
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   7. Progress Bars
+   -------------------------------------------------------------------------- */
+.progress,
+.progress-stacked {
+  --bs-progress-height: 0.375rem;
+  --bs-progress-border-radius: 0;
+  border-radius: 0;
+  height: 0.375rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Cards, Modals, Popovers
+   -------------------------------------------------------------------------- */
+.card {
+  box-shadow: var(--materia-shadow);
+  border-width: 0;
+}
+
+.modal-content {
+  border-radius: 0.2rem;
+  box-shadow: var(--materia-modal-shadow);
+  border: none;
+}
+
+.popover {
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   9. Alerts & Badges
+   -------------------------------------------------------------------------- */
+.alert {
+  border: none;
+  color: var(--materia-white);
+}
+
+.alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6,
+.alert .h1, .alert .h2, .alert .h3, .alert .h4, .alert .h5, .alert .h6 {
+  color: var(--materia-white);
+}
+
+.alert a:not(.btn),
+.alert .alert-link {
+  font-weight: 700;
+  color: var(--materia-white);
+}
+
+.alert-primary {
+  background-color: var(--bs-primary);
+}
+
+.alert-secondary {
+  background-color: var(--materia-gray-200);
+  color: var(--bs-body-color);
+}
+.alert-secondary a:not(.btn),
+.alert-secondary .alert-link {
+  color: var(--bs-body-color);
+}
+
+.alert-success {
+  background-color: var(--bs-success);
+}
+
+.alert-info {
+  background-color: var(--bs-info);
+}
+
+.alert-warning {
+  background-color: var(--bs-warning);
+}
+
+.alert-danger {
+  background-color: var(--bs-danger);
+}
+
+.alert-light {
+  background-color: var(--bs-light);
+  color: var(--bs-body-color);
+}
+.alert-light a:not(.btn),
+.alert-light .alert-link {
+  color: var(--bs-body-color);
+}
+
+.alert-dark {
+  background-color: var(--bs-dark);
+}
+
+.badge.bg-secondary,
+.badge.bg-light {
+  color: var(--bs-dark);
+}
