@@ -226,6 +226,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Cosmo** | Port of Bootswatch Cosmo — An ode to Metro. Clean, flat, and modern. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cosmo/) | Modern web applications, dashboards, Metro-inspired UIs |
 | **Cyborg** | Port of Bootswatch Cyborg — Jet black and electric blue dark futuristic aesthetic. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cyborg/) | Dark dashboards, tech applications, futuristic UIs |
 | **Cyberpunk / Synthwave '84** | Neon option for gaming and entertainment with glowing cyan/magenta accents. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cyberpunk/) | Gaming, entertainment, synthwave UIs |
+| **Darkly** |  | [Preview](https://bootlegance.lesichkov.co.uk/themes/darkly/) | Flatly in night mode |
 | **Dracula** | Vibrant neon palette with an optional glow layer | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula/) | Editor-adjacent apps, terminals, striking dashboards |
 | **Dracula Soft** | The same eleven colours, softened | [Preview](https://bootlegance.lesichkov.co.uk/themes/dracula-soft/) | Long sessions, calmer workspaces, shared screens |
 | **Editorial / Paper** | Serif typography and warm off-white parchment paper for blogs and docs. | [Preview](https://bootlegance.lesichkov.co.uk/themes/editorial/) | Blogs, documentation, publishing |
@@ -282,6 +283,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Terminal / CRT** | Green or amber phosphor CRT retro terminal theme with monospaced typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/terminal/) | Dev tools, terminal apps, portfolios |
 | **Tokyo Night** | A clean, dark/light theme inspired by the Tokyo Night editor theme with vibrant blues and purples. | [Preview](https://bootlegance.lesichkov.co.uk/themes/tokyo-night/) | Developers, code-heavy UIs, editors |
 | **Vanguard** | Faithfully recreated Bootstrap 3 aesthetic | [Preview](https://bootlegance.lesichkov.co.uk/themes/vanguard/) | Legacy projects, nostalgia, familiarity |
+| **Vapor** |  | [Preview](https://bootlegance.lesichkov.co.uk/themes/vapor/) | Cyberpunk synthwave with neon glow |
 | **Vimix** | macOS-inspired GNOME theme with 9 colour variants | [Preview](https://bootlegance.lesichkov.co.uk/themes/vimix/) | Ubuntu/ GNOME apps, desktops, multi-brand products |
 | **Vimix Dark** | The graphite Vimix accent — restrained, neutral and work-focused. | [Preview](https://bootlegance.lesichkov.co.uk/themes/vimix-dark/) | Sibling of **Vimix** |
 | **Vimix Green** | The green Vimix accent for a fresh, energetic interface. | [Preview](https://bootlegance.lesichkov.co.uk/themes/vimix-green/) | Sibling of **Vimix** |
