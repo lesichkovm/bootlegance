@@ -266,7 +266,9 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Sepia / Reading mode** | Kindle-style warm paper theme designed for long-form content. | [Preview](https://bootlegance.lesichkov.co.uk/themes/sepia/) | Reading apps, blogs, articles |
 | **Slate** | Minimal, neutral, clean | [Preview](https://bootlegance.lesichkov.co.uk/themes/slate/) | Content-heavy sites, reading, simplicity |
 | **Solarized** | Precision color palette designed for maximum readability and visual comfort. | [Preview](https://bootlegance.lesichkov.co.uk/themes/solarized/) | Developers, code-heavy UIs, editors |
+| **Spacelab** | Port of Bootswatch Spacelab — Silvery and sleek with beveled gradients. | [Preview](https://bootlegance.lesichkov.co.uk/themes/spacelab/) | Clean web applications, enterprise portals, dashboards |
 | **Sunrise** | Warm, energetic, light | [Preview](https://bootlegance.lesichkov.co.uk/themes/sunrise/) | Creative portfolios, startups, inviting projects |
+| **Superhero** | Port of Bootswatch Superhero — The brave and the blue with dark slate surfaces and vibrant accents. | [Preview](https://bootlegance.lesichkov.co.uk/themes/superhero/) | Dark dashboards, gaming sites, tech apps |
 | **Swiss / International Style** | Strict grid, neutral palette, signal red accent and Helvetica-like type. | [Preview](https://bootlegance.lesichkov.co.uk/themes/swiss/) | Design portfolios, typography-focused sites |
 | **Terminal / CRT** | Green or amber phosphor CRT retro terminal theme with monospaced typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/terminal/) | Dev tools, terminal apps, portfolios |
 | **Tokyo Night** | A clean, dark/light theme inspired by the Tokyo Night editor theme with vibrant blues and purples. | [Preview](https://bootlegance.lesichkov.co.uk/themes/tokyo-night/) | Developers, code-heavy UIs, editors |
