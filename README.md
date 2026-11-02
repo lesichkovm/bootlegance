@@ -264,7 +264,9 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Orchis Yellow** | The yellow Orchis accent with highlighter energy. | [Preview](https://bootlegance.lesichkov.co.uk/themes/orchis-yellow/) | Sibling of **Orchis** |
 | **Pantheon** | elementary OS desktop theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/pantheon/) | Clean minimalist products, Linux apps |
 | **Print-Optimized** | Tuned for printed pages, PDFs, and document presentation with paper typography and page-break rules | [Preview](https://bootlegance.lesichkov.co.uk/themes/print-optimized/) | Reports, document publishing, PDF exports, printable UIs |
+| **Quartz** | Port of Bootswatch Quartz — A glassmorphic layer with frosted surfaces and vivid gradients. | [Preview](https://bootlegance.lesichkov.co.uk/themes/quartz/) | Glassmorphic interfaces, modern web apps, creative dashboards |
 | **Rosé Pine** | All natural pine, faux fur and a bit of soho vibes for the classy aesthetic. | [Preview](https://bootlegance.lesichkov.co.uk/themes/rose-pine/) | Developers, code-heavy UIs, editors |
+| **Sandstone** | Port of Bootswatch Sandstone — A touch of warmth with Roboto typography and clean component styling. | [Preview](https://bootlegance.lesichkov.co.uk/themes/sandstone/) | Clean modern web apps, warm portals, content sites |
 | **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://bootlegance.lesichkov.co.uk/themes/seneca/) | Enterprise apps, internal dashboards, complex data UIs |
 | **Sepia / Reading mode** | Kindle-style warm paper theme designed for long-form content. | [Preview](https://bootlegance.lesichkov.co.uk/themes/sepia/) | Reading apps, blogs, articles |
 | **Slate** | Minimal, neutral, clean | [Preview](https://bootlegance.lesichkov.co.uk/themes/slate/) | Content-heavy sites, reading, simplicity |
