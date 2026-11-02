@@ -26,6 +26,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Catppuccin            | `catppuccin`          | Available |
 | Catppuccin Frappé     | `catppuccin-frappe`   | Available |
 | Catppuccin Macchiato  | `catppuccin-macchiato` | Available |
+| Cerulean              | `cerulean`            | Available |
 | Civic                 | `civic`               | Available |
 | Classic Mac OS        | `mac-classic`         | Available |
 | Cosmo                 | `cosmo`               | Available |
@@ -93,6 +94,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Windows 98            | `win98`               | Available |
 | Yaru                  | `yaru`                | Available |
 | Yeti                  | `yeti`                | Available |
+| Zephyr                | `zephyr`              | Available |
 
 
 ---
