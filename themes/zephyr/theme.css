@@ -1,0 +1,490 @@
+/* ==========================================================================
+   Zephyr Bootstrap 5 Theme
+   Port of Bootswatch Zephyr — Breezy and beautiful.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Zephyr Palette Tokens */
+  --zephyr-blue: #3459e6;
+  --zephyr-indigo: #6610f2;
+  --zephyr-purple: #6f42c1;
+  --zephyr-pink: #d63384;
+  --zephyr-red: #da292e;
+  --zephyr-orange: #f8765f;
+  --zephyr-yellow: #f4bd61;
+  --zephyr-green: #2fb380;
+  --zephyr-teal: #20c997;
+  --zephyr-cyan: #287bb5;
+  --zephyr-white: #fff;
+  --zephyr-gray-100: #f8f9fa;
+  --zephyr-gray-200: #e9ecef;
+  --zephyr-gray-300: #dee2e6;
+  --zephyr-gray-400: #ced4da;
+  --zephyr-gray-500: #adb5bd;
+  --zephyr-gray-600: #6c757d;
+  --zephyr-gray-700: #495057;
+  --zephyr-gray-800: #343a40;
+  --zephyr-gray-900: #212529;
+  --zephyr-black: #000;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--zephyr-blue);
+  --bs-primary-rgb: 52, 89, 230;
+  --bs-secondary: var(--zephyr-white);
+  --bs-secondary-rgb: 255, 255, 255;
+  --bs-success: var(--zephyr-green);
+  --bs-success-rgb: 47, 179, 128;
+  --bs-info: var(--zephyr-cyan);
+  --bs-info-rgb: 40, 123, 181;
+  --bs-warning: var(--zephyr-yellow);
+  --bs-warning-rgb: 244, 189, 97;
+  --bs-danger: var(--zephyr-red);
+  --bs-danger-rgb: 218, 41, 46;
+  --bs-light: var(--zephyr-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--zephyr-gray-900);
+  --bs-dark-rgb: 33, 37, 41;
+
+  /* Subtle colors */
+  --bs-primary-bg-subtle: #d6defa;
+  --bs-secondary-bg-subtle: #f8f9fa;
+  --bs-success-bg-subtle: #d5f0e6;
+  --bs-info-bg-subtle: #d4e5f0;
+  --bs-warning-bg-subtle: #fdf2df;
+  --bs-danger-bg-subtle: #f8d4d5;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #aebdf5;
+  --bs-secondary-border-subtle: #e9ecef;
+  --bs-success-border-subtle: #ace1cc;
+  --bs-info-border-subtle: #a9cbe2;
+  --bs-warning-border-subtle: #fae5c0;
+  --bs-danger-border-subtle: #f0aaac;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+
+  /* Body & Typography */
+  --bs-body-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-body-color: var(--zephyr-gray-700);
+  --bs-body-color-rgb: 73, 80, 87;
+  --bs-body-bg: var(--zephyr-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+
+  --bs-emphasis-color: var(--zephyr-gray-900);
+  --bs-emphasis-color-rgb: 33, 37, 41;
+  --bs-secondary-color: var(--zephyr-gray-600);
+  --bs-secondary-bg: var(--zephyr-gray-100);
+  --bs-tertiary-color: var(--zephyr-gray-500);
+  --bs-tertiary-bg: var(--zephyr-gray-200);
+
+  --bs-border-color: var(--zephyr-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.1);
+
+  /* Links */
+  --bs-link-color: var(--zephyr-blue);
+  --bs-link-hover-color: #2645bd;
+
+  /* Component Shadows */
+  --zephyr-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --zephyr-box-shadow-lg: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+  --bs-box-shadow: var(--zephyr-box-shadow);
+  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-box-shadow-lg: var(--zephyr-box-shadow-lg);
+
+  /* Headings */
+  --bs-heading-color: var(--zephyr-gray-900);
+}
+
+/* --------------------------------------------------------------------------
+   2. Dark Mode Overrides
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --zephyr-dark-bg: #111827;
+  --zephyr-dark-surface: #1f2937;
+  --zephyr-dark-surface-alt: #374151;
+
+  --bs-body-bg: var(--zephyr-dark-bg);
+  --bs-body-bg-rgb: 17, 24, 39;
+  --bs-body-color: #d1d5db;
+  --bs-body-color-rgb: 209, 213, 219;
+
+  --bs-secondary-bg: var(--zephyr-dark-surface);
+  --bs-tertiary-bg: var(--zephyr-dark-surface-alt);
+
+  --bs-emphasis-color: #f9fafb;
+  --bs-emphasis-color-rgb: 249, 250, 251;
+  --bs-secondary-color: #9ca3af;
+  --bs-tertiary-color: #6b7280;
+
+  --bs-border-color: #374151;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.12);
+
+  --bs-primary: #4b6ef5;
+  --bs-primary-rgb: 75, 110, 245;
+  --bs-secondary: #374151;
+  --bs-secondary-rgb: 55, 65, 81;
+
+  --bs-primary-bg-subtle: #1e293b;
+  --bs-secondary-bg-subtle: #1e2530;
+  --bs-success-bg-subtle: #064e3b;
+  --bs-info-bg-subtle: #0c4a6e;
+  --bs-warning-bg-subtle: #78350f;
+  --bs-danger-bg-subtle: #7f1d1d;
+
+  --bs-primary-border-subtle: #2563eb;
+  --bs-secondary-border-subtle: #4b5563;
+  --bs-success-border-subtle: #059669;
+  --bs-info-border-subtle: #0284c7;
+  --bs-warning-border-subtle: #d97706;
+  --bs-danger-border-subtle: #dc2626;
+
+  --bs-link-color: #60a5fa;
+  --bs-link-hover-color: #93c5fd;
+
+  --zephyr-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --zephyr-box-shadow-lg: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography & Global Elements
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--bs-body-font-family);
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  background-color: var(--bs-navbar-bg, transparent);
+}
+
+.navbar .nav-item {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.navbar .navbar-nav .nav-link {
+  border-radius: var(--bs-border-radius);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.navbar[data-bs-theme="dark"] .navbar-nav .nav-link:hover,
+.navbar.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar[data-bs-theme="dark"] .navbar-nav .nav-link.active,
+.navbar.navbar-dark .navbar-nav .nav-link.active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar[data-bs-theme="light"] .navbar-nav .nav-link:hover,
+.navbar.navbar-light .navbar-nav .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.navbar[data-bs-theme="light"] .navbar-nav .nav-link.active,
+.navbar.navbar-light .navbar-nav .nav-link.active {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+.btn:focus,
+.btn:active {
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #2747c4;
+  --bs-btn-hover-border-color: #2747c4;
+  --bs-btn-active-bg: #213da8;
+  --bs-btn-active-border-color: #213da8;
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--zephyr-gray-900);
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--zephyr-gray-300);
+  --bs-btn-hover-color: var(--zephyr-gray-900);
+  --bs-btn-hover-bg: var(--zephyr-gray-200);
+  --bs-btn-hover-border-color: var(--zephyr-gray-300);
+  --bs-btn-active-color: var(--zephyr-gray-900);
+  --bs-btn-active-bg: var(--zephyr-gray-300);
+  --bs-btn-active-border-color: var(--zephyr-gray-400);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--zephyr-gray-900);
+  --bs-btn-border-color: var(--zephyr-gray-300);
+  --bs-btn-hover-color: var(--zephyr-gray-900);
+  --bs-btn-hover-bg: var(--zephyr-gray-200);
+  --bs-btn-hover-border-color: var(--zephyr-gray-300);
+}
+
+[data-bs-theme="dark"] .btn-secondary,
+[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #f9fafb;
+  --bs-btn-border-color: #4b5563;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4b5563;
+  --bs-btn-hover-border-color: #4b5563;
+}
+
+.btn-light {
+  --bs-btn-color: var(--zephyr-gray-900);
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--zephyr-gray-300);
+  --bs-btn-hover-color: var(--zephyr-gray-900);
+  --bs-btn-hover-bg: var(--zephyr-gray-200);
+  --bs-btn-hover-border-color: var(--zephyr-gray-300);
+}
+
+.btn-outline-light {
+  color: var(--zephyr-gray-900);
+  border-color: var(--zephyr-gray-300);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:active {
+  background-color: var(--zephyr-gray-200);
+  border-color: var(--zephyr-gray-200);
+  color: var(--zephyr-gray-900);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-color: var(--zephyr-gray-900);
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+}
+
+/* --------------------------------------------------------------------------
+   6. Tables
+   -------------------------------------------------------------------------- */
+.table {
+  font-size: 0.875rem;
+  box-shadow: var(--zephyr-box-shadow-lg);
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+}
+
+.table.table-sm th,
+.table.table-sm td {
+  padding: 0.5rem;
+}
+
+thead th {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-primary,
+.table-secondary,
+.table-success,
+.table-warning,
+.table-danger,
+.table-info,
+.table-light {
+  --bs-table-color: var(--bs-body-color);
+}
+
+/* --------------------------------------------------------------------------
+   7. Forms & Inputs
+   -------------------------------------------------------------------------- */
+.form-label {
+  font-weight: 500;
+}
+
+.form-control,
+.form-select {
+  font-size: 0.875rem;
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+.input-group-text {
+  font-size: 0.875rem;
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   8. Navs & Tabs, Breadcrumbs, Pagination
+   -------------------------------------------------------------------------- */
+.nav-tabs {
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-width: 0 0 1px;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  box-shadow: inset 0 -2px 0 var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.nav-pills {
+  font-weight: 500;
+}
+
+.pagination {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pagination .page-link {
+  padding: 0.5rem 1rem;
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--zephyr-box-shadow);
+}
+
+.breadcrumb-item {
+  padding: 1rem 0.5rem 1rem 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  padding-right: 1rem;
+  content: ">";
+}
+
+/* --------------------------------------------------------------------------
+   9. Dropdowns
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+  font-size: 0.875rem;
+  border-color: var(--bs-border-color);
+  box-shadow: var(--zephyr-box-shadow-lg);
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   10. Badges & Alerts
+   -------------------------------------------------------------------------- */
+.badge.bg-secondary,
+.badge.bg-light {
+  color: var(--zephyr-gray-900);
+}
+
+.alert .btn-close {
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   11. Cards, Lists & Modals
+   -------------------------------------------------------------------------- */
+.card {
+  box-shadow: var(--zephyr-box-shadow-lg);
+}
+
+.card-header,
+.card-footer {
+  padding: 1rem 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card h1, .card .h1,
+.card h2, .card .h2,
+.card h3, .card .h3,
+.card h4, .card .h4,
+.card h5, .card .h5,
+.card h6, .card .h6,
+.list-group-item h1, .list-group-item .h1,
+.list-group-item h2, .list-group-item .h2,
+.list-group-item h3, .list-group-item .h3,
+.list-group-item h4, .list-group-item .h4,
+.list-group-item h5, .list-group-item .h5,
+.list-group-item h6, .list-group-item .h6 {
+  color: inherit;
+}
+
+.list-group {
+  box-shadow: var(--zephyr-box-shadow-lg);
+}
+
+.list-group-item {
+  padding: 1rem 1.5rem;
+}
+
+.modal-content {
+  box-shadow: var(--zephyr-box-shadow-lg);
+}
+
+.modal-header {
+  border-bottom-width: 0;
+}
+
+.modal-footer {
+  background-color: var(--bs-tertiary-bg);
+}

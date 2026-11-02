@@ -220,6 +220,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Catppuccin** | Official Catppuccin palette, 4 flavours | [Preview](https://bootlegance.lesichkov.co.uk/themes/catppuccin/) | Developer tools, terminals, editors, cozy apps |
 | **Catppuccin Frappé** | The softer mid-dark Catppuccin flavour, with light accents re-mixed for a bright surface. | [Preview](https://bootlegance.lesichkov.co.uk/themes/catppuccin-frappe/) | Sibling of **Catppuccin** |
 | **Catppuccin Macchiato** | The mid-dark Catppuccin flavour, with light accents re-mixed for a bright surface. | [Preview](https://bootlegance.lesichkov.co.uk/themes/catppuccin-macchiato/) | Sibling of **Catppuccin** |
+| **Cerulean** | Port of Bootswatch Cerulean — A calm blue sky with subtle text shadows and glossy gradients. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cerulean/) | Web applications, calm modern portals, corporate UIs |
 | **Civic** | Inspired by the U.S. Web Design System (USWDS) | [Preview](https://bootlegance.lesichkov.co.uk/themes/civic/) | Government, digital services, accessibility-first |
 | **Classic Mac OS** | System 7 / Mac OS 8 Platinum desktop interface | [Preview](https://bootlegance.lesichkov.co.uk/themes/mac-classic/) | Retro projects, nostalgic UIs |
 | **Cosmo** | Port of Bootswatch Cosmo — An ode to Metro. Clean, flat, and modern. | [Preview](https://bootlegance.lesichkov.co.uk/themes/cosmo/) | Modern web applications, dashboards, Metro-inspired UIs |
@@ -287,6 +288,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Windows 98** | Classic Windows 98 3D bevel desktop theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/win98/) | Retro apps, nostalgia, 90s web style |
 | **Yaru** | Ubuntu Yaru inspired theme. Warm, approachable, and human-centric. | [Preview](https://bootlegance.lesichkov.co.uk/themes/yaru/) | Open-source projects, personal blogs, friendly interfaces |
 | **Yeti** | Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation | [Preview](https://bootlegance.lesichkov.co.uk/themes/yeti/) | Clean web applications, friendly portals, dashboards |
+| **Zephyr** | Port of Bootswatch Zephyr — Breezy and beautiful with subtle shadows and clean typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/zephyr/) | Modern web applications, clean dashboards, contemporary UIs |
 
 *More themes coming soon.*
 

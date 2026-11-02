@@ -1,0 +1,390 @@
+/* ==========================================================================
+   Cerulean Bootstrap 5 Theme
+   Port of Bootswatch Cerulean — A calm blue sky.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Cerulean Palette Tokens */
+  --cerulean-blue: #033c73;
+  --cerulean-indigo: #6610f2;
+  --cerulean-purple: #6f42c1;
+  --cerulean-pink: #e83e8c;
+  --cerulean-red: #c71c22;
+  --cerulean-orange: #fd7e14;
+  --cerulean-yellow: #dd5600;
+  --cerulean-green: #73a839;
+  --cerulean-teal: #20c997;
+  --cerulean-cyan: #2fa4e7;
+  --cerulean-white: #fff;
+  --cerulean-gray-100: #f8f9fa;
+  --cerulean-gray-200: #e9ecef;
+  --cerulean-gray-300: #dee2e6;
+  --cerulean-gray-400: #ced4da;
+  --cerulean-gray-500: #adb5bd;
+  --cerulean-gray-600: #868e96;
+  --cerulean-gray-700: #495057;
+  --cerulean-gray-800: #343a40;
+  --cerulean-gray-900: #212529;
+  --cerulean-black: #000;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--cerulean-cyan);
+  --bs-primary-rgb: 47, 164, 231;
+  --bs-secondary: var(--cerulean-gray-200);
+  --bs-secondary-rgb: 233, 236, 239;
+  --bs-success: var(--cerulean-green);
+  --bs-success-rgb: 115, 168, 57;
+  --bs-info: var(--cerulean-blue);
+  --bs-info-rgb: 3, 60, 115;
+  --bs-warning: var(--cerulean-yellow);
+  --bs-warning-rgb: 221, 86, 0;
+  --bs-danger: var(--cerulean-red);
+  --bs-danger-rgb: 199, 28, 34;
+  --bs-light: var(--cerulean-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--cerulean-gray-800);
+  --bs-dark-rgb: 52, 58, 64;
+
+  /* Subtle colors */
+  --bs-primary-bg-subtle: #d5edf9;
+  --bs-secondary-bg-subtle: #f8f9fa;
+  --bs-success-bg-subtle: #e3eed7;
+  --bs-info-bg-subtle: #ccd8e3;
+  --bs-warning-bg-subtle: #f8ddcc;
+  --bs-danger-bg-subtle: #f4d2d3;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #abdbf5;
+  --bs-secondary-border-subtle: #e9ecef;
+  --bs-success-border-subtle: #c7ddb0;
+  --bs-info-border-subtle: #9ab1c7;
+  --bs-warning-border-subtle: #f1bb99;
+  --bs-danger-border-subtle: #e9a4a7;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+
+  /* Body & Typography */
+  --bs-body-color: var(--cerulean-gray-700);
+  --bs-body-color-rgb: 73, 80, 87;
+  --bs-body-bg: var(--cerulean-white);
+  --bs-body-bg-rgb: 255, 255, 255;
+
+  --bs-emphasis-color: var(--cerulean-gray-900);
+  --bs-emphasis-color-rgb: 33, 37, 41;
+  --bs-secondary-color: var(--cerulean-gray-600);
+  --bs-secondary-bg: var(--cerulean-gray-100);
+  --bs-tertiary-color: var(--cerulean-gray-500);
+  --bs-tertiary-bg: var(--cerulean-gray-200);
+
+  --bs-border-color: var(--cerulean-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.1);
+
+  /* Links */
+  --bs-link-color: var(--cerulean-cyan);
+  --bs-link-hover-color: #1b7cb5;
+
+  /* Headings */
+  --bs-heading-color: var(--cerulean-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   2. Dark Mode Overrides
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --cerulean-dark-bg: #121e28;
+  --cerulean-dark-surface: #1a2b3c;
+  --cerulean-dark-surface-alt: #253d54;
+
+  --bs-body-bg: var(--cerulean-dark-bg);
+  --bs-body-bg-rgb: 18, 30, 40;
+  --bs-body-color: #d7e2ec;
+  --bs-body-color-rgb: 215, 226, 236;
+
+  --bs-secondary-bg: var(--cerulean-dark-surface);
+  --bs-tertiary-bg: var(--cerulean-dark-surface-alt);
+
+  --bs-emphasis-color: #f0f6fc;
+  --bs-emphasis-color-rgb: 240, 246, 252;
+  --bs-secondary-color: #9cb1c7;
+  --bs-tertiary-color: #6c849e;
+
+  --bs-border-color: #2b425b;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.12);
+
+  --bs-primary: #38b2f8;
+  --bs-primary-rgb: 56, 178, 248;
+  --bs-secondary: #2b425b;
+  --bs-secondary-rgb: 43, 66, 91;
+  --bs-info: #0d6efd;
+  --bs-info-rgb: 13, 110, 253;
+
+  --bs-primary-bg-subtle: #082f49;
+  --bs-secondary-bg-subtle: #1e2d3d;
+  --bs-success-bg-subtle: #14532d;
+  --bs-info-bg-subtle: #1e3a8a;
+  --bs-warning-bg-subtle: #713f12;
+  --bs-danger-bg-subtle: #7f1d1d;
+
+  --bs-primary-border-subtle: #0284c7;
+  --bs-secondary-border-subtle: #385370;
+  --bs-success-border-subtle: #16a34a;
+  --bs-info-border-subtle: #2563eb;
+  --bs-warning-border-subtle: #ca8a04;
+  --bs-danger-border-subtle: #dc2626;
+
+  --bs-link-color: #38b2f8;
+  --bs-link-hover-color: #7dd3fc;
+
+  --bs-heading-color: #38b2f8;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bs-navbar-bg, transparent);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar.bg-primary {
+  background-image: linear-gradient(#50b3eb, #2fa4e7 60%, #2c9ad9);
+}
+
+.navbar.bg-success {
+  background-image: linear-gradient(#89b657, #73a839 60%, #6c9e36);
+}
+
+.navbar.bg-info {
+  background-image: linear-gradient(#055caa, #033c73 60%, #03386c);
+}
+
+.navbar.bg-warning {
+  background-image: linear-gradient(#f16b17, #dd5600 60%, #cf5100);
+}
+
+.navbar.bg-danger {
+  background-image: linear-gradient(#d63c41, #c71c22 60%, #bb1a20);
+}
+
+.navbar.bg-dark {
+  background-image: linear-gradient(#495159, #343a40 60%, #31373c);
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+  color: #495057;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: #2fa4e7;
+  background-image: linear-gradient(#50b3eb, #2fa4e7 60%, #2c9ad9);
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(#2fa4e7, #2d9cdb 60%, #288bc4);
+}
+
+.btn-primary:active,
+.btn-check:checked + .btn-primary {
+  background-image: linear-gradient(#2683b9, #2683b9 60%, #2173a3);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: #dee2e6;
+  background-image: linear-gradient(#eef0f2, #e9ecef 60%, #dbdee1);
+}
+
+.btn-secondary:hover {
+  background-image: linear-gradient(#e9ecef, #dde0e3 60%, #c6c9cb);
+}
+
+.btn-secondary:active,
+.btn-check:checked + .btn-secondary {
+  background-image: linear-gradient(#babdbf, #babdbf 60%, #a3a5a7);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: #73a839;
+  background-image: linear-gradient(#89b657, #73a839 60%, #6c9e36);
+}
+
+.btn-success:hover {
+  background-image: linear-gradient(#73a839, #6da036 60%, #629031);
+}
+
+.btn-success:active,
+.btn-check:checked + .btn-success {
+  background-image: linear-gradient(#5c862e, #5c862e 60%, #517628);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: #033c73;
+  color: #fff;
+  background-image: linear-gradient(#055caa, #033c73 60%, #03386c);
+}
+
+.btn-info:hover {
+  color: #fff;
+  background-image: linear-gradient(#033c73, #03396d 60%, #033362);
+}
+
+.btn-info:active,
+.btn-check:checked + .btn-info {
+  color: #fff;
+  background-image: linear-gradient(#02305c, #02305c 60%, #022a51);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: #dd5600;
+  color: #fff;
+  background-image: linear-gradient(#f16b17, #dd5600 60%, #cf5100);
+}
+
+.btn-warning:hover {
+  color: #fff;
+  background-image: linear-gradient(#dd5600, #d25200 60%, #bc4900);
+}
+
+.btn-warning:active,
+.btn-check:checked + .btn-warning {
+  color: #fff;
+  background-image: linear-gradient(#b14500, #b14500 60%, #9b3c00);
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: #c71c22;
+  background-image: linear-gradient(#d63c41, #c71c22 60%, #bb1a20);
+}
+
+.btn-danger:hover {
+  background-image: linear-gradient(#c71c22, #bd1b20 60%, #a9181d);
+}
+
+.btn-danger:active,
+.btn-check:checked + .btn-danger {
+  background-image: linear-gradient(#9f161b, #9f161b 60%, #8b1418);
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: #dee2e6;
+  background-image: linear-gradient(#f9fafb, #f8f9fa 60%, #e9eaeb);
+}
+
+.btn-light:hover {
+  background-image: linear-gradient(#f8f9fa, #ecedee 60%, #d3d4d5);
+}
+
+.btn-light:active,
+.btn-check:checked + .btn-light {
+  background-image: linear-gradient(#c6c7c8, #c6c7c8 60%, #aeaeaf);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: #343a40;
+  background-image: linear-gradient(#545a5f, #343a40 60%, #31373c);
+}
+
+.btn-dark:hover {
+  background-image: linear-gradient(#343a40, #31373d 60%, #2c3136);
+}
+
+.btn-dark:active,
+.btn-check:checked + .btn-dark {
+  background-image: linear-gradient(#2a2e33, #2a2e33 60%, #24292d);
+}
+
+/* --------------------------------------------------------------------------
+   5. Typography, Headings & Containers
+   -------------------------------------------------------------------------- */
+.text-secondary {
+  color: #868e96 !important;
+}
+
+.bg-primary h1, .bg-primary .h1,
+.bg-primary h2, .bg-primary .h2,
+.bg-primary h3, .bg-primary .h3,
+.bg-primary h4, .bg-primary .h4,
+.bg-primary h5, .bg-primary .h5,
+.bg-primary h6, .bg-primary .h6,
+.bg-success h1, .bg-success .h1,
+.bg-success h2, .bg-success .h2,
+.bg-success h3, .bg-success .h3,
+.bg-success h4, .bg-success .h4,
+.bg-success h5, .bg-success .h5,
+.bg-success h6, .bg-success .h6,
+.bg-info h1, .bg-info .h1,
+.bg-info h2, .bg-info .h2,
+.bg-info h3, .bg-info .h3,
+.bg-info h4, .bg-info .h4,
+.bg-info h5, .bg-info .h5,
+.bg-info h6, .bg-info .h6,
+.bg-warning h1, .bg-warning .h1,
+.bg-warning h2, .bg-warning .h2,
+.bg-warning h3, .bg-warning .h3,
+.bg-warning h4, .bg-warning .h4,
+.bg-warning h5, .bg-warning .h5,
+.bg-warning h6, .bg-warning .h6,
+.bg-danger h1, .bg-danger .h1,
+.bg-danger h2, .bg-danger .h2,
+.bg-danger h3, .bg-danger .h3,
+.bg-danger h4, .bg-danger .h4,
+.bg-danger h5, .bg-danger .h5,
+.bg-danger h6, .bg-danger .h6,
+.bg-dark h1, .bg-dark .h1,
+.bg-dark h2, .bg-dark .h2,
+.bg-dark h3, .bg-dark .h3,
+.bg-dark h4, .bg-dark .h4,
+.bg-dark h5, .bg-dark .h5,
+.bg-dark h6, .bg-dark .h6 {
+  color: #fff;
+}
+
+.dropdown-menu .dropdown-header {
+  color: #868e96;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+.badge.bg-secondary,
+.badge.bg-light {
+  color: #343a40;
+}
+
+.table-primary,
+.table-secondary,
+.table-success,
+.table-warning,
+.table-danger,
+.table-info,
+.table-light {
+  --bs-table-color: var(--bs-body-color);
+}
