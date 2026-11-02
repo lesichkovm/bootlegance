@@ -214,4 +214,5 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 - [ ] Light mode and dark mode (`data-bs-theme="dark"`) both look intentional
 - [ ] Exactly two modes — no palette variants inside the theme
 - [ ] No Bootstrap source files are bundled or committed
-- [ ] Theme slug directory name is lowercase and hyphenated
+- [ ] Theme slug directory name is lowercase and hyphenated| Darkly |  | Available | Flatly in night mode (Bootswatch port) |
+| Vapor |  | Available | Cyberpunk synthwave with neon glow (Bootswatch port) |
