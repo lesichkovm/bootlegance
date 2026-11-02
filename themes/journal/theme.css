@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Journal Bootstrap 5 Theme
+   Port of Bootswatch Journal — Crisp like a new sheet of paper.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Journal Color Tokens */
+  --journal-white: #fff;
+  --journal-gray-100: #f8f9fa;
+  --journal-gray-200: #eee;
+  --journal-gray-300: #dee2e6;
+  --journal-gray-400: #ced4da;
+  --journal-gray-500: #aaa;
+  --journal-gray-600: #777;
+  --journal-gray-700: #495057;
+  --journal-gray-800: #333;
+  --journal-gray-900: #222;
+  --journal-black: #000;
+
+  --journal-blue: #eb6864;
+  --journal-indigo: #6610f2;
+  --journal-purple: #6f42c1;
+  --journal-pink: #e83e8c;
+  --journal-red: #f57a00;
+  --journal-orange: #fd7e14;
+  --journal-yellow: #f5e625;
+  --journal-green: #22b24c;
+  --journal-teal: #20c997;
+  --journal-cyan: #369;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--journal-blue);
+  --bs-primary-rgb: 235, 104, 100;
+  --bs-secondary: var(--journal-gray-500);
+  --bs-secondary-rgb: 170, 170, 170;
+  --bs-success: var(--journal-green);
+  --bs-success-rgb: 34, 178, 76;
+  --bs-info: var(--journal-cyan);
+  --bs-info-rgb: 51, 102, 153;
+  --bs-warning: var(--journal-yellow);
+  --bs-warning-rgb: 245, 230, 37;
+  --bs-danger: var(--journal-red);
+  --bs-danger-rgb: 245, 122, 0;
+  --bs-light: var(--journal-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--journal-gray-900);
+  --bs-dark-rgb: 34, 34, 34;
+
+  /* Subtle colors */
+  --bs-primary-bg-subtle: #fbe1e0;
+  --bs-secondary-bg-subtle: #eeeeee;
+  --bs-success-bg-subtle: #d3f0db;
+  --bs-info-bg-subtle: #d6e0eb;
+  --bs-warning-bg-subtle: #fdfad3;
+  --bs-danger-bg-subtle: #fde4cc;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #f7c3c1;
+  --bs-secondary-border-subtle: #dddddd;
+  --bs-success-border-subtle: #a7e0b7;
+  --bs-info-border-subtle: #adc2d6;
+  --bs-warning-border-subtle: #fbf5a8;
+  --bs-danger-border-subtle: #fbca99;
+  --bs-light-border-subtle: #eee;
+  --bs-dark-border-subtle: #aaa;
+
+  --bs-primary-text-emphasis: #5e2a28;
+  --bs-secondary-text-emphasis: #444444;
+  --bs-success-text-emphasis: #0e471e;
+  --bs-info-text-emphasis: #14293d;
+  --bs-warning-text-emphasis: #625c0f;
+  --bs-danger-text-emphasis: #623100;
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+
+  /* Body & Surface */
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--journal-gray-900);
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: #000;
+  --bs-emphasis-color-rgb: 0, 0, 0;
+
+  --bs-secondary-color: rgba(34, 34, 34, 0.75);
+  --bs-secondary-color-rgb: 34, 34, 34;
+  --bs-secondary-bg: var(--journal-gray-200);
+  --bs-secondary-bg-rgb: 238, 238, 238;
+  --bs-tertiary-color: rgba(34, 34, 34, 0.5);
+  --bs-tertiary-color-rgb: 34, 34, 34;
+  --bs-tertiary-bg: var(--journal-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-link-color: var(--journal-blue);
+  --bs-link-color-rgb: 235, 104, 100;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #bc5350;
+  --bs-link-hover-color-rgb: 188, 83, 80;
+
+  --bs-border-color: var(--journal-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-pill: 50rem;
+
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(235, 104, 100, 0.25);
+
+  --bs-navbar-color: rgba(34, 34, 34, 0.65);
+  --bs-navbar-hover-color: rgba(34, 34, 34, 0.8);
+  --bs-navbar-active-color: rgba(34, 34, 34, 1);
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-color: var(--journal-gray-300);
+  --bs-body-color-rgb: 222, 226, 230;
+  --bs-body-bg: var(--journal-gray-900);
+  --bs-body-bg-rgb: 34, 34, 34;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(222, 226, 230, 0.75);
+  --bs-secondary-color-rgb: 222, 226, 230;
+  --bs-secondary-bg: var(--journal-gray-800);
+  --bs-secondary-bg-rgb: 51, 51, 51;
+  --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+  --bs-tertiary-color-rgb: 222, 226, 230;
+  --bs-tertiary-bg: #2b2b2b;
+  --bs-tertiary-bg-rgb: 43, 43, 43;
+
+  --bs-primary-text-emphasis: #f3a4a2;
+  --bs-secondary-text-emphasis: #cccccc;
+  --bs-success-text-emphasis: #7ad194;
+  --bs-info-text-emphasis: #85a3c2;
+  --bs-warning-text-emphasis: #f9f07c;
+  --bs-danger-text-emphasis: #f9af66;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #dee2e6;
+
+  --bs-primary-bg-subtle: #2f1514;
+  --bs-secondary-bg-subtle: #222222;
+  --bs-success-bg-subtle: #07240f;
+  --bs-info-bg-subtle: #0a141f;
+  --bs-warning-bg-subtle: #312e07;
+  --bs-danger-bg-subtle: #311800;
+  --bs-light-bg-subtle: #333;
+  --bs-dark-bg-subtle: #1a1a1a;
+
+  --bs-primary-border-subtle: #8d3e3c;
+  --bs-secondary-border-subtle: #666666;
+  --bs-success-border-subtle: #146b2e;
+  --bs-info-border-subtle: #1f3d5c;
+  --bs-warning-border-subtle: #938a16;
+  --bs-danger-border-subtle: #934900;
+  --bs-light-border-subtle: #495057;
+  --bs-dark-border-subtle: #333;
+
+  --bs-link-color: #f3a4a2;
+  --bs-link-hover-color: #f5b6b5;
+  --bs-link-color-rgb: 243, 164, 162;
+  --bs-link-hover-color-rgb: 245, 182, 181;
+
+  --bs-border-color: #495057;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+
+  --bs-form-valid-color: #7ad194;
+  --bs-form-valid-border-color: #7ad194;
+  --bs-form-invalid-color: #f9af66;
+  --bs-form-invalid-border-color: #f9af66;
+
+  --bs-navbar-color: rgba(255, 255, 255, 0.55);
+  --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-active-color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography (News Cycle Headings)
+   -------------------------------------------------------------------------- */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navbar Overrides (News Cycle font, 18px, uppercase brand)
+   -------------------------------------------------------------------------- */
+.navbar {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--bs-navbar-bg, var(--bs-body-bg));
+}
+
+.navbar-brand {
+  padding-top: 0.5rem;
+  font-size: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons Overrides (News Cycle bold font, white text on secondary/warning)
+   -------------------------------------------------------------------------- */
+.btn {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+  --bs-btn-padding-x: 1rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-color: #fff;
+  color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  --bs-btn-color: #fff;
+  color: #fff;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-color: #fff;
+  color: #fff;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+  --bs-btn-color: #fff;
+  color: #fff;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--bs-light);
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables Overrides
+   -------------------------------------------------------------------------- */
+.table-primary,
+.table-secondary,
+.table-success,
+.table-warning,
+.table-danger,
+.table-info,
+.table-light {
+  --bs-table-color: var(--bs-body-color);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navs, Pagination, Breadcrumb Overrides
+   -------------------------------------------------------------------------- */
+.pagination a:hover {
+  text-decoration: none;
+}

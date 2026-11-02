@@ -237,6 +237,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Glassmorphism** | Frosted glass panels, backdrop blurs, and ambient background gradients. | [Preview](https://bootlegance.lesichkov.co.uk/themes/glassmorphism/) | Portfolios, dashboards, modern apps |
 | **Gruvbox** | Retro-groove earthy palette, dark & light | [Preview](https://bootlegance.lesichkov.co.uk/themes/gruvbox/) | Developer tools, terminals, code-heavy UIs |
 | **High Contrast** | WCAG AAA contrast compliance with high visibility focus indicators and bold component borders | [Preview](https://bootlegance.lesichkov.co.uk/themes/high-contrast/) | Accessibility-first UIs, public sector, low vision |
+| **Journal** | Port of Bootswatch Journal — Crisp like a new sheet of paper with News Cycle bold typography. | [Preview](https://bootlegance.lesichkov.co.uk/themes/journal/) | Content sites, editorial publications, news, blogs |
 | **Kanagawa** | An elegant palette inspired by Japanese paintings and dark wood aesthetics. | [Preview](https://bootlegance.lesichkov.co.uk/themes/kanagawa/) | Developers, code-heavy UIs, editors |
 | **KDE Breeze** | KDE Plasma desktop inspired theme | [Preview](https://bootlegance.lesichkov.co.uk/themes/kde-breeze/) | Linux desktop apps, open source projects |
 | **Lumen** | Port of Bootswatch Lumen — Light and shadow with crisp beveled bottom borders. | [Preview](https://bootlegance.lesichkov.co.uk/themes/lumen/) | Web apps, friendly portals, clean UI |
@@ -269,6 +270,7 @@ This updates `themes.json` at the repo root with all available theme directories
 | **Sandstone** | Port of Bootswatch Sandstone — A touch of warmth with Roboto typography and clean component styling. | [Preview](https://bootlegance.lesichkov.co.uk/themes/sandstone/) | Clean modern web apps, warm portals, content sites |
 | **Seneca** | Enterprise UI inspired by ExtJS Classic | [Preview](https://bootlegance.lesichkov.co.uk/themes/seneca/) | Enterprise apps, internal dashboards, complex data UIs |
 | **Sepia / Reading mode** | Kindle-style warm paper theme designed for long-form content. | [Preview](https://bootlegance.lesichkov.co.uk/themes/sepia/) | Reading apps, blogs, articles |
+| **Simplex** | Port of Bootswatch Simplex — Mini and minimalist with subtle gradients and clean lines. | [Preview](https://bootlegance.lesichkov.co.uk/themes/simplex/) | Minimalist apps, modern dashboards, clean portals |
 | **Slate** | Minimal, neutral, clean | [Preview](https://bootlegance.lesichkov.co.uk/themes/slate/) | Content-heavy sites, reading, simplicity |
 | **Solarized** | Precision color palette designed for maximum readability and visual comfort. | [Preview](https://bootlegance.lesichkov.co.uk/themes/solarized/) | Developers, code-heavy UIs, editors |
 | **Spacelab** | Port of Bootswatch Spacelab — Silvery and sleek with beveled gradients. | [Preview](https://bootlegance.lesichkov.co.uk/themes/spacelab/) | Clean web applications, enterprise portals, dashboards |

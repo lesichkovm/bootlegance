@@ -43,6 +43,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Glassmorphism         | `glassmorphism`       | Available |
 | High Contrast         | `high-contrast`       | Available |
 | Gruvbox               | `gruvbox`             | Available |
+| Journal               | `journal`             | Available |
 | Kanagawa              | `kanagawa`            | Available |
 | KDE Breeze            | `kde-breeze`          | Available |
 | Lumen                 | `lumen`               | Available |
@@ -75,6 +76,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Sandstone             | `sandstone`           | Available |
 | Seneca                | `seneca`              | Available |
 | Sepia / Reading mode  | `sepia`               | Available |
+| Simplex               | `simplex`             | Available |
 | Slate                 | `slate`               | Available |
 | Solarized             | `solarized`           | Available |
 | Spacelab              | `spacelab`            | Available |
