@@ -30,6 +30,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Civic                 | `civic`               | Available |
 | Classic Mac OS        | `mac-classic`         | Available |
 | Cosmo                 | `cosmo`               | Available |
+| Cyborg                | `cyborg`              | Available |
 | Cyberpunk / Synthwave '84 | `cyberpunk`           | Available |
 | Dracula               | `dracula`             | Available |
 | Dracula Soft          | `dracula-soft`        | Available |
@@ -48,6 +49,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Lux                   | `lux`                 | Available |
 | Material Design 3     | `material-3`          | Available |
 | Midnight              | `midnight`            | Available |
+| Minty                 | `minty`               | Available |
 | Morph                 | `morph`               | Available |
 | Neo-brutalism (soft)  | `neo-brutalism`       | Available |
 | Night Owl             | `night-owl`           | Available |

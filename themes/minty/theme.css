@@ -1,0 +1,409 @@
+/* ==========================================================================
+   Minty Bootstrap 5 Theme
+   Port of Bootswatch Minty — A fresh feel.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Bootstrap variable overrides)
+   -------------------------------------------------------------------------- */
+:root,
+[data-bs-theme="light"] {
+  /* Minty Color Tokens */
+  --minty-blue: #007bff;
+  --minty-indigo: #6610f2;
+  --minty-purple: #6f42c1;
+  --minty-pink: #e83e8c;
+  --minty-red: #ff7851;
+  --minty-orange: #fd7e14;
+  --minty-yellow: #ffce67;
+  --minty-green: #56cc9d;
+  --minty-teal: #20c997;
+  --minty-cyan: #6cc3d5;
+  --minty-primary: #78c2ad;
+  --minty-secondary: #f3969a;
+  --minty-white: #fff;
+  --minty-gray-100: #f8f9fa;
+  --minty-gray-200: #f7f7f9;
+  --minty-gray-300: #eceeef;
+  --minty-gray-400: #ced4da;
+  --minty-gray-500: #aaa;
+  --minty-gray-600: #888;
+  --minty-gray-700: #5a5a5a;
+  --minty-gray-800: #343a40;
+  --minty-gray-900: #212529;
+  --minty-black: #000;
+
+  /* Bootstrap Color Palette Overrides */
+  --bs-primary: var(--minty-primary);
+  --bs-primary-rgb: 120, 194, 173;
+  --bs-secondary: var(--minty-secondary);
+  --bs-secondary-rgb: 243, 150, 154;
+  --bs-success: var(--minty-green);
+  --bs-success-rgb: 86, 204, 157;
+  --bs-info: var(--minty-cyan);
+  --bs-info-rgb: 108, 195, 213;
+  --bs-warning: var(--minty-yellow);
+  --bs-warning-rgb: 255, 206, 103;
+  --bs-danger: var(--minty-red);
+  --bs-danger-rgb: 255, 120, 81;
+  --bs-light: var(--minty-gray-100);
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark: var(--minty-gray-800);
+  --bs-dark-rgb: 52, 58, 64;
+
+  /* Subtle background and borders */
+  --bs-primary-bg-subtle: #e4f3ef;
+  --bs-secondary-bg-subtle: #fdeaeb;
+  --bs-success-bg-subtle: #ddf5eb;
+  --bs-info-bg-subtle: #e2f3f7;
+  --bs-warning-bg-subtle: #fff5e1;
+  --bs-danger-bg-subtle: #ffe4dc;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+
+  --bs-primary-border-subtle: #c9e7de;
+  --bs-secondary-border-subtle: #fad5d7;
+  --bs-success-border-subtle: #bbebd8;
+  --bs-info-border-subtle: #c4e7ee;
+  --bs-warning-border-subtle: #ffebc2;
+  --bs-danger-border-subtle: #ffc9b9;
+  --bs-light-border-subtle: #f7f7f9;
+  --bs-dark-border-subtle: #aaa;
+
+  --bs-primary-text-emphasis: #304e45;
+  --bs-secondary-text-emphasis: #613c3e;
+  --bs-success-text-emphasis: #22523f;
+  --bs-info-text-emphasis: #2b4e55;
+  --bs-warning-text-emphasis: #665229;
+  --bs-danger-text-emphasis: #663020;
+  --bs-light-text-emphasis: #5a5a5a;
+  --bs-dark-text-emphasis: #5a5a5a;
+
+  /* Body & Surface */
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  --bs-font-sans-serif: var(--bs-body-font-family);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: var(--minty-gray-600);
+  --bs-body-color-rgb: 136, 136, 136;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: #000;
+  --bs-emphasis-color-rgb: 0, 0, 0;
+
+  --bs-secondary-color: rgba(136, 136, 136, 0.75);
+  --bs-secondary-color-rgb: 136, 136, 136;
+  --bs-secondary-bg: var(--minty-gray-200);
+  --bs-secondary-bg-rgb: 247, 247, 249;
+  --bs-tertiary-color: rgba(136, 136, 136, 0.5);
+  --bs-tertiary-color-rgb: 136, 136, 136;
+  --bs-tertiary-bg: var(--minty-gray-100);
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+
+  --bs-heading-color: var(--minty-gray-700);
+
+  --bs-link-color: var(--minty-primary);
+  --bs-link-color-rgb: 120, 194, 173;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #609b8a;
+  --bs-link-hover-color-rgb: 96, 155, 138;
+
+  --bs-border-color: var(--minty-gray-300);
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.4rem;
+  --bs-border-radius-sm: 0.3rem;
+  --bs-border-radius-lg: 0.6rem;
+
+  --bs-pagination-color: #fff;
+  --bs-pagination-bg: var(--minty-primary);
+  --bs-pagination-border-color: var(--minty-primary);
+  --bs-pagination-hover-color: #fff;
+  --bs-pagination-hover-bg: var(--minty-secondary);
+  --bs-pagination-hover-border-color: var(--minty-secondary);
+  --bs-pagination-active-bg: var(--minty-secondary);
+  --bs-pagination-active-border-color: var(--minty-secondary);
+  --bs-pagination-disabled-color: #fff;
+  --bs-pagination-disabled-bg: #cce8e0;
+  --bs-pagination-disabled-border-color: #cce8e0;
+
+  --bs-breadcrumb-bg: var(--minty-primary);
+  --bs-breadcrumb-divider-color: #fff;
+  --bs-breadcrumb-item-active-color: #fff;
+  --bs-breadcrumb-border-radius: 0.25rem;
+
+  --bs-dropdown-link-hover-bg: var(--minty-secondary);
+  --bs-dropdown-link-hover-color: #fff;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-color: #eceeef;
+  --bs-body-color-rgb: 236, 238, 239;
+  --bs-body-bg: #212529;
+  --bs-body-bg-rgb: 33, 37, 41;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+
+  --bs-secondary-color: rgba(236, 238, 239, 0.75);
+  --bs-secondary-color-rgb: 236, 238, 239;
+  --bs-secondary-bg: #343a40;
+  --bs-secondary-bg-rgb: 52, 58, 64;
+  --bs-tertiary-color: rgba(236, 238, 239, 0.5);
+  --bs-tertiary-color-rgb: 236, 238, 239;
+  --bs-tertiary-bg: #2b3035;
+  --bs-tertiary-bg-rgb: 43, 48, 53;
+
+  --bs-heading-color: inherit;
+
+  --bs-link-color: #aedace;
+  --bs-link-hover-color: #bee1d8;
+  --bs-link-color-rgb: 174, 218, 206;
+  --bs-link-hover-color-rgb: 190, 225, 216;
+
+  --bs-primary-text-emphasis: #aedace;
+  --bs-secondary-text-emphasis: #f8c0c2;
+  --bs-success-text-emphasis: #9ae0c4;
+  --bs-info-text-emphasis: #a7dbe6;
+  --bs-warning-text-emphasis: #ffe2a4;
+  --bs-danger-text-emphasis: #ffae97;
+  --bs-light-text-emphasis: #f8f9fa;
+  --bs-dark-text-emphasis: #eceeef;
+
+  --bs-primary-bg-subtle: #182723;
+  --bs-secondary-bg-subtle: #311e1f;
+  --bs-success-bg-subtle: #11291f;
+  --bs-info-bg-subtle: #16272b;
+  --bs-warning-bg-subtle: #332915;
+  --bs-danger-bg-subtle: #331810;
+  --bs-light-bg-subtle: #343a40;
+  --bs-dark-bg-subtle: #1a1d20;
+
+  --bs-primary-border-subtle: #487468;
+  --bs-secondary-border-subtle: #925a5c;
+  --bs-success-border-subtle: #347a5e;
+  --bs-info-border-subtle: #417580;
+  --bs-warning-border-subtle: #997c3e;
+  --bs-danger-border-subtle: #994831;
+  --bs-light-border-subtle: #5a5a5a;
+  --bs-dark-border-subtle: #343a40;
+
+  --bs-border-color: #5a5a5a;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+
+  --bs-pagination-bg: var(--minty-primary);
+  --bs-pagination-border-color: var(--minty-primary);
+  --bs-pagination-hover-bg: var(--minty-secondary);
+  --bs-pagination-hover-border-color: var(--minty-secondary);
+  --bs-pagination-active-bg: var(--minty-secondary);
+  --bs-pagination-active-border-color: var(--minty-secondary);
+  --bs-pagination-disabled-color: rgba(255, 255, 255, 0.5);
+  --bs-pagination-disabled-bg: #324e47;
+  --bs-pagination-disabled-border-color: #324e47;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography & Font Stacks
+   -------------------------------------------------------------------------- */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  color: var(--bs-heading-color);
+}
+
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
+
+legend {
+  font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--bs-heading-color);
+}
+
+/* --------------------------------------------------------------------------
+   3. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bs-navbar-bg, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #66a593;
+  --bs-btn-hover-border-color: #609b8a;
+  --bs-btn-active-bg: #609b8a;
+  --bs-btn-active-border-color: #5a9282;
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #cf8083;
+  --bs-btn-hover-border-color: #c2787b;
+  --bs-btn-active-bg: #c2787b;
+  --bs-btn-active-border-color: #b67174;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #49ad85;
+  --bs-btn-hover-border-color: #45a37e;
+  --bs-btn-active-bg: #45a37e;
+  --bs-btn-active-border-color: #419976;
+}
+
+.btn-info {
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #5ca6b5;
+  --bs-btn-hover-border-color: #569caa;
+  --bs-btn-active-bg: #569caa;
+  --bs-btn-active-border-color: #5192a0;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #d9af58;
+  --bs-btn-hover-border-color: #cca552;
+  --bs-btn-active-bg: #cca552;
+  --bs-btn-active-border-color: #bf9b4d;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #d96645;
+  --bs-btn-hover-border-color: #cc6041;
+  --bs-btn-active-bg: #cc6041;
+  --bs-btn-active-border-color: #bf5a3d;
+}
+
+.btn-light {
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--bs-light);
+  --bs-btn-color: var(--minty-gray-700);
+}
+
+.btn-light:hover {
+  color: var(--minty-gray-700);
+  background-color: #d3d4d5;
+  border-color: #c6c7c8;
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #52585d;
+  --bs-btn-hover-border-color: #484e53;
+  --bs-btn-active-bg: #5d6166;
+  --bs-btn-active-border-color: #484e53;
+}
+
+.btn-link {
+  color: var(--bs-primary);
+}
+
+.btn-link:hover {
+  color: var(--bs-primary);
+}
+
+.btn-link.disabled:hover {
+  color: var(--bs-secondary-color);
+}
+
+.btn-outline-primary { color: var(--bs-primary); }
+.btn-outline-secondary { color: var(--bs-secondary); }
+.btn-outline-success { color: var(--bs-success); }
+.btn-outline-info { color: var(--bs-info); }
+.btn-outline-warning { color: var(--bs-warning); }
+.btn-outline-danger { color: var(--bs-danger); }
+.btn-outline-dark { color: var(--bs-dark); }
+.btn-outline-light { color: var(--minty-gray-600); }
+
+/* --------------------------------------------------------------------------
+   5. Tables & Navs
+   -------------------------------------------------------------------------- */
+.table-light {
+  --bs-table-color: var(--bs-body-color);
+}
+
+.dropdown-menu {
+  font-family: var(--bs-body-font-family);
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Alerts & Badges
+   -------------------------------------------------------------------------- */
+.alert a,
+.alert .alert-link {
+  color: #fff;
+}
+
+.alert-light,
+.alert-light a:not(.btn),
+.alert-light .alert-link {
+  color: var(--bs-body-color);
+}
+
+.badge {
+  color: #fff;
+}
+
+.badge.bg-light {
+  color: var(--minty-gray-700);
+}
+
+/* --------------------------------------------------------------------------
+   7. Containers
+   -------------------------------------------------------------------------- */
+.card h1, .card .h1,
+.card h2, .card .h2,
+.card h3, .card .h3,
+.card h4, .card .h4,
+.card h5, .card .h5,
+.card h6, .card .h6,
+.list-group-item h1, .list-group-item .h1,
+.list-group-item h2, .list-group-item .h2,
+.list-group-item h3, .list-group-item .h3,
+.list-group-item h4, .list-group-item .h4,
+.list-group-item h5, .list-group-item .h5,
+.list-group-item h6, .list-group-item .h6 {
+  color: inherit;
+}
