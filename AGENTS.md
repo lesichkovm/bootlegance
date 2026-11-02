@@ -46,8 +46,10 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Journal               | `journal`             | Available |
 | Kanagawa              | `kanagawa`            | Available |
 | KDE Breeze            | `kde-breeze`          | Available |
+| Litera                | `litera`              | Available |
 | Lumen                 | `lumen`               | Available |
 | Lux                   | `lux`                 | Available |
+| Materia               | `materia`             | Available |
 | Material Design 3     | `material-3`          | Available |
 | Midnight              | `midnight`            | Available |
 | Minty                 | `minty`               | Available |
