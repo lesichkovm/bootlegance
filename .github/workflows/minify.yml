@@ -1,0 +1,44 @@
+name: Minify CDN Script
+
+on:
+  push:
+    paths:
+      - 'bootlegance.js'
+      - 'scripts/minify.js'
+      - '.github/workflows/minify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Terser
+        run: npm install -g terser
+
+      - name: Run minification script
+        run: node scripts/minify.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain bootlegance.min.js docs/bootlegance.min.js docs/bootlegance.js)" ]; then
+            git add bootlegance.min.js docs/bootlegance.min.js docs/bootlegance.js
+            git commit -m "Minify CDN script to bootlegance.min.js [skip ci]"
+            git push
+          else
+            echo "No changes in minified script files."
+          fi

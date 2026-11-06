@@ -67,8 +67,8 @@ Include the script in your page. It automatically resolves the theme, injects `<
 <!-- Load Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Load Bootlegance theme switcher -->
-<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.js"></script>
+<!-- Load Bootlegance theme switcher (or bootlegance.min.js) -->
+<script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.min.js"></script>
 ```
 
 ### Auto-UI Controls
@@ -213,6 +213,18 @@ func themeHandler(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, redirect, http.StatusFound)
 }
 ```
+
+### Minifying CDN Script
+
+To minimize `bootlegance.js` to `bootlegance.min.js`:
+
+```bash
+./scripts/minify-script
+# or
+node scripts/minify.js
+```
+
+A GitHub Action (`.github/workflows/minify.yml`) also automatically minifies and updates `bootlegance.min.js` on push when `bootlegance.js` is modified.
 
 ### Generating `themes.json`
 
