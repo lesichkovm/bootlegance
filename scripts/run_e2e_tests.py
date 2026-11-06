@@ -141,6 +141,18 @@ def run_tests(port):
         assert link_href.startswith("https://cdn.example.com/themes/gruvbox/theme.css"), f"Unexpected custom base href: {link_href}"
         print("  Passed!")
 
+        print("Test 10: Minified script bootlegance.min.js functionality")
+        context.clear_cookies()
+        page.goto(f"http://localhost:{port}/tests/test_minified_page.html")
+        current = page.evaluate("Bootlegance.current()")
+        assert current == "vanguard", f"Expected default vanguard in minified script, got {current}"
+        page.evaluate("Bootlegance.set('ayu')")
+        current = page.evaluate("Bootlegance.current()")
+        assert current == "ayu", f"Expected current to be ayu after set, got {current}"
+        link_href = page.locator("#bootlegance-theme").get_attribute("href")
+        assert "themes/ayu/theme.css" in link_href, f"Unexpected minified link href: {link_href}"
+        print("  Passed!")
+
         browser.close()
 
 def main():
@@ -187,6 +199,19 @@ def main():
 </body>
 </html>""")
 
+    with open("tests/test_minified_page.html", "w") as f:
+        f.write("""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Minified Test Page</title>
+    <script src="/bootlegance.min.js"></script>
+</head>
+<body>
+    <div data-bootlegance-picker></div>
+</body>
+</html>""")
+
     server = ReusableTCPServer(("", 0), Handler)
     port = server.server_address[1]
     t = threading.Thread(target=server.serve_forever)
@@ -200,7 +225,7 @@ def main():
     finally:
         server.shutdown()
         # Clean up test html files
-        for test_file in ["tests/test_page.html", "tests/test_endpoint_page.html", "tests/test_custom_config.html"]:
+        for test_file in ["tests/test_page.html", "tests/test_endpoint_page.html", "tests/test_custom_config.html", "tests/test_minified_page.html"]:
             if os.path.exists(test_file):
                 os.remove(test_file)
         if os.path.exists("tests") and not os.listdir("tests"):
