@@ -20,6 +20,11 @@
   var DEFAULT_MODE_KEY = 'cf-theme';
   var DEFAULT_MODE_ATTR = 'data-bs-theme';
   var LINK_ELEMENT_ID = 'bootlegance-theme';
+  var DEFAULT_FONT_SIZE_KEY = 'cf-font-size';
+  var FONT_SIZE_STEP = 10;
+  var MIN_FONT_SIZE = 70;
+  var MAX_FONT_SIZE = 200;
+  var DEFAULT_FONT_SIZE = 100;
 
   function isValidThemeName(name) {
     return typeof name === 'string' && THEME_NAME_REGEX.test(name);
@@ -104,9 +109,11 @@
   var defaultThemeAttr = scriptEl ? scriptEl.getAttribute('data-default-theme') : null;
   var modeStorageKey = (scriptEl && scriptEl.getAttribute('data-mode-storage-key')) || DEFAULT_MODE_KEY;
   var modeAttribute = (scriptEl && scriptEl.getAttribute('data-mode-attribute')) || DEFAULT_MODE_ATTR;
+  var fontSizeStorageKey = (scriptEl && scriptEl.getAttribute('data-font-size-storage-key')) || DEFAULT_FONT_SIZE_KEY;
   var initialThemesAttr = scriptEl ? scriptEl.getAttribute('data-themes') : null;
 
   var currentTheme = DEFAULT_THEME;
+  var currentFontSize = DEFAULT_FONT_SIZE;
   var themeList = [];
 
   if (initialThemesAttr) {
@@ -251,6 +258,96 @@
     }
   }
 
+  function applyFontSize(scale) {
+    if (typeof document === 'undefined') return;
+    var rootEl = document.documentElement;
+    if (scale && scale !== DEFAULT_FONT_SIZE) {
+      rootEl.style.fontSize = scale + '%';
+      rootEl.style.setProperty('--bootlegance-font-scale', scale + '%');
+    } else {
+      rootEl.style.fontSize = '';
+      rootEl.style.removeProperty('--bootlegance-font-scale');
+    }
+  }
+
+  function getStoredFontSize() {
+    if (typeof window === 'undefined' || !window.localStorage) return null;
+    try {
+      var val = window.localStorage.getItem(fontSizeStorageKey);
+      if (val !== null) {
+        var parsed = parseInt(val, 10);
+        if (!isNaN(parsed) && parsed >= MIN_FONT_SIZE && parsed <= MAX_FONT_SIZE) {
+          return parsed;
+        }
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setFontSize(scale) {
+    var parsed = parseInt(scale, 10);
+    if (isNaN(parsed)) {
+      console.warn('[Bootlegance] Invalid font size: ' + scale);
+      return;
+    }
+    // Clamp between MIN_FONT_SIZE and MAX_FONT_SIZE
+    if (parsed < MIN_FONT_SIZE) parsed = MIN_FONT_SIZE;
+    if (parsed > MAX_FONT_SIZE) parsed = MAX_FONT_SIZE;
+
+    currentFontSize = parsed;
+
+    if (typeof window !== 'undefined' && window.localStorage) {
+      try {
+        if (currentFontSize === DEFAULT_FONT_SIZE) {
+          window.localStorage.removeItem(fontSizeStorageKey);
+        } else {
+          window.localStorage.setItem(fontSizeStorageKey, currentFontSize.toString());
+        }
+      } catch (e) {
+        // Storage unavailable
+      }
+    }
+
+    applyFontSize(currentFontSize);
+    updateAutoUI();
+
+    if (typeof window !== 'undefined' && typeof CustomEvent === 'function') {
+      window.dispatchEvent(new CustomEvent('bootlegance:fontsize', {
+        detail: { fontSize: currentFontSize }
+      }));
+    }
+  }
+
+  function getFontSize() {
+    return currentFontSize;
+  }
+
+  function increaseFontSize(step) {
+    var s = (typeof step === 'number' && !isNaN(step)) ? step : FONT_SIZE_STEP;
+    setFontSize(currentFontSize + s);
+  }
+
+  function decreaseFontSize(step) {
+    var s = (typeof step === 'number' && !isNaN(step)) ? step : FONT_SIZE_STEP;
+    setFontSize(currentFontSize - s);
+  }
+
+  function resetFontSize() {
+    setFontSize(DEFAULT_FONT_SIZE);
+  }
+
+  function initFontSize() {
+    var stored = getStoredFontSize();
+    if (stored !== null) {
+      currentFontSize = stored;
+      applyFontSize(currentFontSize);
+    } else {
+      currentFontSize = DEFAULT_FONT_SIZE;
+    }
+  }
+
   function updateAutoUI() {
     if (typeof document === 'undefined') return;
 
@@ -310,6 +407,41 @@
         btn.classList.remove('active');
         btn.setAttribute('aria-pressed', 'false');
       }
+    }
+
+    // 3. Font size buttons: [data-bootlegance-font-size]
+    var fontBtns = document.querySelectorAll('[data-bootlegance-font-size]');
+    for (var f = 0; f < fontBtns.length; f++) {
+      var fBtn = fontBtns[f];
+      var action = fBtn.getAttribute('data-bootlegance-font-size');
+      if (fBtn.getAttribute('data-bootlegance-wired') !== 'true') {
+        fBtn.setAttribute('data-bootlegance-wired', 'true');
+        fBtn.addEventListener('click', (function (act) {
+          return function () {
+            if (act === 'up' || act === 'increase') {
+              increaseFontSize();
+            } else if (act === 'down' || act === 'decrease') {
+              decreaseFontSize();
+            } else if (act === 'reset') {
+              resetFontSize();
+            }
+          };
+        })(action));
+      }
+
+      if (action === 'up' || action === 'increase') {
+        fBtn.disabled = (currentFontSize >= MAX_FONT_SIZE);
+      } else if (action === 'down' || action === 'decrease') {
+        fBtn.disabled = (currentFontSize <= MIN_FONT_SIZE);
+      } else if (action === 'reset') {
+        fBtn.disabled = (currentFontSize === DEFAULT_FONT_SIZE);
+      }
+    }
+
+    // 4. Font size display value: [data-bootlegance-font-size-value]
+    var fontValues = document.querySelectorAll('[data-bootlegance-font-size-value]');
+    for (var v = 0; v < fontValues.length; v++) {
+      fontValues[v].textContent = currentFontSize + '%';
     }
   }
 
@@ -384,12 +516,18 @@
     url: themeUrl,
     setMode: setMode,
     getMode: getMode,
+    getFontSize: getFontSize,
+    setFontSize: setFontSize,
+    increaseFontSize: increaseFontSize,
+    decreaseFontSize: decreaseFontSize,
+    resetFontSize: resetFontSize,
     init: function (opts) {
       opts = opts || {};
       if (opts.endpoint !== undefined) endpoint = opts.endpoint;
       if (opts.baseUrl !== undefined) configuredBaseUrl = opts.baseUrl.replace(/\/+$/, '');
       if (opts.modeStorageKey !== undefined) modeStorageKey = opts.modeStorageKey;
       if (opts.modeAttribute !== undefined) modeAttribute = opts.modeAttribute;
+      if (opts.fontSizeStorageKey !== undefined) fontSizeStorageKey = opts.fontSizeStorageKey;
       if (Array.isArray(opts.themes)) {
         themeList = opts.themes.filter(isValidThemeName);
         Bootlegance.themes = themeList;
@@ -400,6 +538,7 @@
       var resolved = resolveTheme();
       setTheme(resolved);
       initMode();
+      initFontSize();
       updateAutoUI();
     }
   };
@@ -408,6 +547,7 @@
   currentTheme = resolveTheme();
   applyCss(currentTheme);
   initMode();
+  initFontSize();
 
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') {

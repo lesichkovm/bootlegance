@@ -53,7 +53,7 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 
 ## Reusable Theme Switcher (`bootlegance.js`)
 
-Bootlegance includes a dependency-free vanilla JavaScript script (`bootlegance.js`) that manages theme loading, cookie persistence, query parameter overrides, light/dark mode toggling, and optional automatic UI wiring.
+Bootlegance includes a dependency-free vanilla JavaScript script (`bootlegance.js`) that manages theme loading, cookie persistence, query parameter overrides, light/dark mode toggling, accessible font size scaling (increase / decrease / reset), and optional automatic UI wiring.
 
 ![Bootlegance Theme Switcher Demo](screenshot-demo.png)
 
@@ -83,6 +83,12 @@ You can automatically render a theme picker `<select>` dropdown and wire light/d
 <button data-bootlegance-mode="light" class="btn btn-outline-secondary">Light</button>
 <button data-bootlegance-mode="dark" class="btn btn-outline-secondary">Dark</button>
 
+<!-- Font size controls (Accessibility) -->
+<button data-bootlegance-font-size="down" class="btn btn-outline-secondary">A−</button>
+<span data-bootlegance-font-size-value>100%</span>
+<button data-bootlegance-font-size="up" class="btn btn-outline-secondary">A+</button>
+<button data-bootlegance-font-size="reset" class="btn btn-outline-secondary">Reset</button>
+
 <script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.js"
         data-default-theme="vanguard"></script>
 ```
@@ -99,6 +105,7 @@ The script tag accepts optional attributes:
 | `data-themes` | Comma-separated list of fallback theme slugs | (Fetched from `themes.json`) |
 | `data-mode-storage-key` | `localStorage` key for light/dark mode persistence | `cf-theme` |
 | `data-mode-attribute` | Attribute on `<html>` for light/dark mode | `data-bs-theme` |
+| `data-font-size-storage-key` | `localStorage` key for font size persistence | `cf-font-size` |
 
 ### Theme Resolution Priority
 
@@ -135,6 +142,18 @@ console.log(Bootlegance.getMode());
 // Listen for theme changes
 window.addEventListener('bootlegance:change', (e) => {
   console.log('Active theme changed to:', e.detail.theme);
+});
+
+// Font size accessibility controls
+console.log(Bootlegance.getFontSize()); // e.g. 100 (%)
+Bootlegance.increaseFontSize();        // Increases scale by 10% (clamped at 200%)
+Bootlegance.decreaseFontSize();        // Decreases scale by 10% (clamped at 70%)
+Bootlegance.setFontSize(125);          // Explicitly set scale (70% - 200%)
+Bootlegance.resetFontSize();           // Resets scale to 100%
+
+// Listen for font size changes
+window.addEventListener('bootlegance:fontsize', (e) => {
+  console.log('Font size scale changed to:', e.detail.fontSize);
 });
 ```
 

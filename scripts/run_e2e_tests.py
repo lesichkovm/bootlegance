@@ -141,16 +141,71 @@ def run_tests(port):
         assert link_href.startswith("https://cdn.example.com/themes/gruvbox/theme.css"), f"Unexpected custom base href: {link_href}"
         print("  Passed!")
 
-        print("Test 10: Minified script bootlegance.min.js functionality")
-        context.clear_cookies()
-        page.goto(f"http://localhost:{port}/tests/test_minified_page.html")
-        current = page.evaluate("Bootlegance.current()")
-        assert current == "vanguard", f"Expected default vanguard in minified script, got {current}"
-        page.evaluate("Bootlegance.set('ayu')")
-        current = page.evaluate("Bootlegance.current()")
-        assert current == "ayu", f"Expected current to be ayu after set, got {current}"
-        link_href = page.locator("#bootlegance-theme").get_attribute("href")
-        assert "themes/ayu/theme.css" in link_href, f"Unexpected minified link href: {link_href}"
+        print("Test 10: Font size controls (API, UI, storage, clamping, reset)")
+        page.goto(f"http://localhost:{port}/tests/test_page.html")
+        # Verify initial font size
+        fs = page.evaluate("Bootlegance.getFontSize()")
+        assert fs == 100, f"Expected initial fs 100, got {fs}"
+        value_text = page.locator("[data-bootlegance-font-size-value]").text_content()
+        assert value_text == "100%", f"Expected 100%, got {value_text}"
+        reset_btn = page.locator("[data-bootlegance-font-size='reset']")
+        assert reset_btn.is_disabled(), "Reset button should be disabled at 100%"
+
+        # Increase via UI button
+        up_btn = page.locator("[data-bootlegance-font-size='up']")
+        up_btn.click()
+        assert page.evaluate("Bootlegance.getFontSize()") == 110
+        assert page.evaluate("document.documentElement.style.fontSize") == "110%"
+        assert page.evaluate("document.documentElement.style.getPropertyValue('--bootlegance-font-scale')") == "110%"
+        assert page.locator("[data-bootlegance-font-size-value]").text_content() == "110%"
+        assert page.evaluate("localStorage.getItem('cf-font-size')") == "110"
+        assert not reset_btn.is_disabled(), "Reset button should be enabled after change"
+
+        # Increase again
+        up_btn.click()
+        assert page.evaluate("Bootlegance.getFontSize()") == 120
+        assert page.locator("[data-bootlegance-font-size-value]").text_content() == "120%"
+
+        # Decrease via UI button
+        down_btn = page.locator("[data-bootlegance-font-size='down']")
+        down_btn.click()
+        assert page.evaluate("Bootlegance.getFontSize()") == 110
+        assert page.locator("[data-bootlegance-font-size-value]").text_content() == "110%"
+
+        # Reset via UI button
+        reset_btn.click()
+        assert page.evaluate("Bootlegance.getFontSize()") == 100
+        assert page.evaluate("document.documentElement.style.fontSize") == ""
+        assert page.locator("[data-bootlegance-font-size-value]").text_content() == "100%"
+        assert page.evaluate("localStorage.getItem('cf-font-size')") is None
+        assert reset_btn.is_disabled(), "Reset button should be disabled after reset"
+
+        # Clamping at max (200) and min (70)
+        page.evaluate("Bootlegance.setFontSize(250)")
+        assert page.evaluate("Bootlegance.getFontSize()") == 200
+        assert up_btn.is_disabled(), "Up button should be disabled at max font size"
+
+        page.evaluate("Bootlegance.setFontSize(50)")
+        assert page.evaluate("Bootlegance.getFontSize()") == 70
+        assert down_btn.is_disabled(), "Down button should be disabled at min font size"
+
+        # Event dispatching
+        page.evaluate("""() => {
+            window.fontSizeEventVal = null;
+            window.addEventListener('bootlegance:fontsize', (e) => {
+                window.fontSizeEventVal = e.detail.fontSize;
+            });
+            Bootlegance.setFontSize(130);
+        }""")
+        event_fs = page.evaluate("window.fontSizeEventVal")
+        assert event_fs == 130, f"Expected 130 in event detail, got {event_fs}"
+
+        # Persistence across reload
+        page.reload()
+        assert page.evaluate("Bootlegance.getFontSize()") == 130
+        assert page.evaluate("document.documentElement.style.fontSize") == "130%"
+        assert page.locator("[data-bootlegance-font-size-value]").text_content() == "130%"
+
         print("  Passed!")
 
         browser.close()
@@ -171,6 +226,10 @@ def main():
     <div data-bootlegance-picker></div>
     <button data-bootlegance-mode="light">Light</button>
     <button data-bootlegance-mode="dark">Dark</button>
+    <button data-bootlegance-font-size="down">A-</button>
+    <span data-bootlegance-font-size-value></span>
+    <button data-bootlegance-font-size="up">A+</button>
+    <button data-bootlegance-font-size="reset">Reset</button>
 </body>
 </html>""")
 

@@ -58,6 +58,36 @@
             background-color: rgba(255, 255, 255, 0.2);
             color: #fff;
         }
+        .font-size-control-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 9999px;
+            padding: 4px;
+        }
+        .font-size-btn-group {
+            display: inline-flex;
+            gap: 3px;
+        }
+        .font-size-btn {
+            border-radius: 9999px !important;
+            padding: 0.25rem 0.65rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        .font-size-badge {
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            padding: 0.2rem 0.5rem;
+            min-width: 52px;
+            text-align: center;
+        }
         .theme-toggle-btn {
             width: 48px;
             height: 38px;
@@ -119,6 +149,22 @@
                             </button>
                             <button type="button" class="btn btn-outline-secondary" data-bootlegance-mode="dark">
                                 🌙 Dark
+                            </button>
+                        </div>
+
+                        <div class="theme-section-label">FONT SIZE</div>
+                        <div class="font-size-control-group">
+                            <div class="font-size-btn-group">
+                                <button type="button" class="btn btn-outline-secondary btn-sm font-size-btn" data-bootlegance-font-size="down" title="Decrease Font Size" aria-label="Decrease Font Size">
+                                    A−
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm font-size-btn" data-bootlegance-font-size="up" title="Increase Font Size" aria-label="Increase Font Size">
+                                    A+
+                                </button>
+                            </div>
+                            <span class="font-size-badge" data-bootlegance-font-size-value>100%</span>
+                            <button type="button" class="btn btn-outline-secondary btn-sm font-size-btn" data-bootlegance-font-size="reset" title="Reset Font Size" aria-label="Reset Font Size">
+                                Reset
                             </button>
                         </div>
 
