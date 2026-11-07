@@ -195,8 +195,6 @@ pre.nd-code {
 }
 
 pre.nd-code .nd-comment { color: var(--nd-nord3); }
-[data-bs-theme="light"] pre.nd-code .nd-comment { color: #7b8496; }
-[data-bs-theme="light"] pre.nd-code .nd-comment { color: #63707f; }
 [data-bs-theme="light"] pre.nd-code .nd-comment { color: var(--nd-nord9); }
 pre.nd-code .nd-keyword { color: var(--nd-nord9); }
 pre.nd-code .nd-string { color: var(--nd-nord14); }
@@ -541,7 +539,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: none;
 }
 
-[data-bs-theme="light"] .form-check-input { border-color: #b6bfcd; }
+[data-bs-theme="light"] .form-check-input { border-color: var(--nd-light-input-border); }
 
 .form-check-input:checked {
   background-color: var(--nd-accent);
@@ -566,7 +564,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: inset 0 0 0 1px var(--nd-border);
 }
 
-[data-bs-theme="light"] .form-switch .form-check-input { background-color: #b6bfcd; }
+[data-bs-theme="light"] .form-switch .form-check-input { background-color: var(--nd-light-input-border); }
 
 .form-switch .form-check-input:checked {
   background-color: var(--nd-accent);
@@ -588,8 +586,8 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
 .form-range::-webkit-slider-runnable-track { background-color: var(--nd-nord2); }
 .form-range::-moz-range-track { background-color: var(--nd-nord2); }
 
-[data-bs-theme="light"] .form-range::-webkit-slider-runnable-track { background-color: #d5dbe5; }
-[data-bs-theme="light"] .form-range::-moz-range-track { background-color: #d5dbe5; }
+[data-bs-theme="light"] .form-range::-webkit-slider-runnable-track { background-color: var(--nd-light-progress); }
+[data-bs-theme="light"] .form-range::-moz-range-track { background-color: var(--nd-light-progress); }
 
 .form-text,
 .invalid-feedback,
@@ -745,7 +743,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   font-size: 0.8125rem;
 }
 
-[data-bs-theme="light"] .breadcrumb { --bs-breadcrumb-divider-color: #b6bfcd; }
+[data-bs-theme="light"] .breadcrumb { --bs-breadcrumb-divider-color: var(--nd-light-input-border); }
 
 .breadcrumb-item a { color: var(--nd-accent); }
 
@@ -880,8 +878,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   box-shadow: none;
 }
 
-[data-bs-theme="light"] .progress { --bs-progress-bg: #d5dbe5; }
-[data-bs-theme="light"] .progress { --bs-progress-bg: #5b6795; }
+[data-bs-theme="light"] .progress { --bs-progress-bg: var(--nd-progress-fill); }
 
 .progress-bar {
   background-color: var(--nd-accent);
@@ -1166,6 +1163,7 @@ pre.nd-code .nd-const { color: var(--nd-nord7); }
   --nd-code-bg: var(--nd-nord4);
   /* light-mode input and track overrides */
   --nd-light-input-border: #b6bfcd;
+  --nd-progress-fill: #5b6795;
   --nd-light-progress: #d5dbe5;
 }
 Frost

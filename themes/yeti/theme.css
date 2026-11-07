@@ -143,6 +143,15 @@
   --yeti-dark-surface: #2b2b2b;
   --yeti-dark-surface-subtle: #333;
   --yeti-dark-border: #495057;
+  --yeti-dropdown-dark-hover: #2e2e2e;
+  --yeti-dropdown-light-hover: #f0f0f0;
+  --yeti-dropdown-border: #d6d6d6;
+  --yeti-dropdown-secondary-hover: #c8c8c8;
+  --yeti-dropdown-success-hover: #389059;
+  --yeti-dropdown-info-hover: #4ca1ba;
+  --yeti-dropdown-warning-hover: #c47902;
+  --yeti-dropdown-danger-hover: #ca371e;
+  --yeti-focus-border: #80c6dd;
 
   --bs-body-color: var(--yeti-gray-300);
   --bs-body-color-rgb: 222, 226, 230;
@@ -282,7 +291,7 @@ a {
 .bg-dark .dropdown-menu .dropdown-item:hover,
 .bg-dark .dropdown-menu .dropdown-item:focus {
   color: var(--yeti-white);
-  background-color: #2e2e2e;
+  background-color: var(--yeti-dropdown-dark-hover);
 }
 
 .bg-light .dropdown-menu {
@@ -298,7 +307,7 @@ a {
 .bg-light .dropdown-menu .dropdown-item:hover,
 .bg-light .dropdown-menu .dropdown-item:focus {
   color: var(--bs-emphasis-color);
-  background-color: #f0f0f0;
+  background-color: var(--yeti-dropdown-light-hover);
 }
 
 /* --------------------------------------------------------------------------
@@ -323,7 +332,7 @@ a {
 
 .btn-secondary {
   --bs-btn-bg: var(--bs-secondary);
-  --bs-btn-border-color: #d6d6d6;
+  --bs-btn-border-color: var(--yeti-dropdown-border);
   --bs-btn-color: var(--yeti-black);
 }
 
@@ -365,7 +374,7 @@ a {
 
 .btn-light {
   --bs-btn-bg: var(--bs-light);
-  --bs-btn-border-color: #d6d6d6;
+  --bs-btn-border-color: var(--yeti-dropdown-border);
   --bs-btn-color: var(--yeti-black);
 }
 
@@ -399,7 +408,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-secondary ~ .dropdown-menu {
   background-color: var(--bs-secondary);
-  border-color: #d6d6d6;
+  border-color: var(--yeti-dropdown-border);
 }
 
 .btn-group .dropdown-toggle.btn-secondary ~ .dropdown-menu .dropdown-item {
@@ -408,7 +417,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-secondary ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-secondary ~ .dropdown-menu .dropdown-item:focus {
-  background-color: #c8c8c8;
+  background-color: var(--yeti-dropdown-secondary-hover);
 }
 
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu {
@@ -422,7 +431,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu .dropdown-item:focus {
-  background-color: #389059;
+  background-color: var(--yeti-dropdown-success-hover);
 }
 
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu {
@@ -436,7 +445,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu .dropdown-item:focus {
-  background-color: #4ca1ba;
+  background-color: var(--yeti-dropdown-info-hover);
 }
 
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu {
@@ -450,7 +459,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu .dropdown-item:focus {
-  background-color: #c47902;
+  background-color: var(--yeti-dropdown-warning-hover);
 }
 
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu {
@@ -464,7 +473,7 @@ a {
 
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu .dropdown-item:hover,
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu .dropdown-item:focus {
-  background-color: #ca371e;
+  background-color: var(--yeti-dropdown-danger-hover);
 }
 
 /* --------------------------------------------------------------------------
@@ -498,7 +507,7 @@ label,
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: #80c6dd;
+  border-color: var(--yeti-focus-border);
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
 
