@@ -227,3 +227,40 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 - [ ] Preview renders with default presentation (no `data-panels`/`data-density`/`data-contrast` attributes on `<html>`)
 - [ ] No Bootstrap source files are bundled or committed
 - [ ] Theme slug directory name is lowercase and hyphenated
+
+---
+
+## Bootstrap 6 Track (alpha)
+
+Bootstrap 6 is in alpha. The v5 collection under `themes/{slug}/` remains the
+stable default; v6 ports live alongside it without touching v5 files:
+
+```
+/themes/v6/{theme-slug}/
+    theme.css       - v6 theme stylesheet (Bootstrap 6 token model)
+    index.html      - v6 preview page (Bootstrap 6 markup)
+/v6/index.html      - v6 gallery (deployed to /v6/)
+```
+
+Key v6 differences to respect when porting (see
+`.agents/skills/bootstrap-v5-v6-migration/SKILL.md` for the full checklist):
+
+- Color variants are `.theme-*` token compositions, not per-color classes:
+  `btn-solid theme-primary`, `alert theme-success`, `badge theme-danger`.
+  Theme keys: `primary`, `secondary`, `accent`, `success`, `danger`,
+  `warning`, `info`, `inverse` (no `light`/`dark` keys).
+- `--bs-*-rgb` vars are gone — use `color-mix()` instead of `rgba(var(--bs-*-rgb))`.
+- Components renamed: modal → `dialog` (native `<dialog>`), offcanvas →
+  `drawer` (native `<dialog>`), dropdown → `menu` (flattened markup).
+- Accordion uses native `<details>/<summary>`; carousel is scroll-snap based
+  (`data-bs-autoplay`, composed `btn-icon` + `carousel-icon-*` controls).
+- Responsive/state classes are prefixed: `md:col-6`, `lg:navbar-expand`,
+  `print:d-none`. Spacer scale renumbered (v5 `mb-3` ~ v6 `mb-5`).
+- `text-*` color utilities → `fg-*`; `text-muted` → `fg-secondary`;
+  `display-*`/`.lead` removed (compose `fs-*` + `fw-*`).
+- Mode-aware tokens use `light-dark()`; `data-bs-theme` toggling still works.
+- JS is ESM-only — load the bundle with `<script type="module">` and import
+  named exports (`Popover`, `Tooltip`); there is no `window.bootstrap`.
+
+v6 previews pin the alpha CDN (`bootstrap@6.0.0-alpha.1`). Bump together
+across all v6 files when upstream releases a new alpha/beta.

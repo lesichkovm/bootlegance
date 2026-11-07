@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Flatly Bootstrap 6 Theme (alpha)
+   Port of Bootswatch Flatly — Flat and modern.
+   Include AFTER bootstrap.min.css.
+   Bootstrap 6 notes:
+   - No --bs-*-rgb vars; per-color *-rgb tokens are gone.
+   - Color variants are driven by --bs-{key}-* token sets
+     (base, fg, fg-emphasis, bg, bg-subtle, bg-muted, border, focus-ring,
+     contrast) consumed via .theme-{key} classes.
+   - Mode-aware values use light-dark() instead of a [data-bs-theme="dark"]
+     block where possible.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. Palette tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Flatly Color Tokens */
+  --flatly-blue: #2c3e50;
+  --flatly-blue-hover: #1e2b37;
+  --flatly-gray-100: #f8f9fa;
+  --flatly-gray-200: #ecf0f1;
+  --flatly-gray-300: #dee2e6;
+  --flatly-gray-400: #ced4da;
+  --flatly-gray-500: #b4bcc2;
+  --flatly-gray-600: #95a5a6;
+  --flatly-gray-700: #7b8a8b;
+  --flatly-gray-800: #343a40;
+  --flatly-gray-900: #212529;
+  --flatly-white: #fff;
+  --flatly-black: #000;
+
+  --flatly-green: #18bc9c;
+  --flatly-green-hover: #128f76;
+  --flatly-cyan: #3498db;
+  --flatly-cyan-hover: #217dbb;
+  --flatly-yellow: #f39c12;
+  --flatly-yellow-hover: #c87f0a;
+  --flatly-red: #e74c3c;
+  --flatly-red-hover: #d62c1a;
+
+  --flatly-dark-bg: #1a252f;
+  --flatly-dark-surface: #22313f;
+  --flatly-dark-surface-subtle: #2c3e50;
+  --flatly-dark-border: #3e5367;
+
+  /* Bootstrap 6 theme-key token sets */
+  --bs-primary-base: var(--flatly-blue);
+  --bs-primary-fg: var(--flatly-blue);
+  --bs-primary-fg-emphasis: light-dark(#121920, #859db5);
+  --bs-primary-bg: var(--flatly-blue);
+  --bs-primary-bg-subtle: light-dark(#d5d8dc, #090d10);
+  --bs-primary-bg-muted: light-dark(#eaedee, #1e2b38);
+  --bs-primary-border: light-dark(#abb2b9, #1e2b38);
+  --bs-primary-focus-ring: color-mix(in oklab, var(--flatly-blue), transparent 75%);
+  --bs-primary-contrast: var(--flatly-white);
+
+  --bs-secondary-base: var(--flatly-gray-600);
+  --bs-secondary-fg: var(--flatly-gray-600);
+  --bs-secondary-fg-emphasis: light-dark(#3c4242, #cbd3d4);
+  --bs-secondary-bg: var(--flatly-gray-600);
+  --bs-secondary-bg-subtle: light-dark(#eaedee, #1e2121);
+  --bs-secondary-bg-muted: light-dark(#f4f6f6, #252a2a);
+  --bs-secondary-border: light-dark(#d5dbdb, #4c5454);
+  --bs-secondary-focus-ring: color-mix(in oklab, var(--flatly-gray-600), transparent 75%);
+  --bs-secondary-contrast: var(--flatly-white);
+
+  --bs-accent-base: var(--flatly-green);
+  --bs-accent-fg: var(--flatly-green);
+  --bs-accent-fg-emphasis: light-dark(#0a4b3e, #5ae1c7);
+  --bs-accent-bg: var(--flatly-green);
+  --bs-accent-bg-subtle: light-dark(#d1f2eb, #05261f);
+  --bs-accent-bg-muted: light-dark(#e8f8f5, #0a3a30);
+  --bs-accent-border: light-dark(#a3e4d7, #0f7662);
+  --bs-accent-focus-ring: color-mix(in oklab, var(--flatly-green), transparent 75%);
+  --bs-accent-contrast: var(--flatly-white);
+
+  --bs-success-base: var(--flatly-green);
+  --bs-success-fg: var(--flatly-green);
+  --bs-success-fg-emphasis: light-dark(#0a4b3e, #5ae1c7);
+  --bs-success-bg: var(--flatly-green);
+  --bs-success-bg-subtle: light-dark(#d1f2eb, #05261f);
+  --bs-success-bg-muted: light-dark(#e8f8f5, #0a3a30);
+  --bs-success-border: light-dark(#a3e4d7, #0f7662);
+  --bs-success-focus-ring: color-mix(in oklab, var(--flatly-green), transparent 75%);
+  --bs-success-contrast: var(--flatly-white);
+
+  --bs-info-base: var(--flatly-cyan);
+  --bs-info-fg: var(--flatly-cyan);
+  --bs-info-fg-emphasis: light-dark(#153d58, #7ec1ee);
+  --bs-info-bg: var(--flatly-cyan);
+  --bs-info-bg-subtle: light-dark(#d6eaf8, #0a1f2c);
+  --bs-info-bg-muted: light-dark(#eaf4fb, #11334a);
+  --bs-info-border: light-dark(#aed6f1, #1a608b);
+  --bs-info-focus-ring: color-mix(in oklab, var(--flatly-cyan), transparent 75%);
+  --bs-info-contrast: var(--flatly-white);
+
+  --bs-warning-base: var(--flatly-yellow);
+  --bs-warning-fg: var(--flatly-yellow);
+  --bs-warning-fg-emphasis: light-dark(#613e07, #f7bd62);
+  --bs-warning-bg: var(--flatly-yellow);
+  --bs-warning-bg-subtle: light-dark(#fdebd0, #311f04);
+  --bs-warning-bg-muted: light-dark(#fef5e7, #4a2f07);
+  --bs-warning-border: light-dark(#f9d5a5, #925e0b);
+  --bs-warning-focus-ring: color-mix(in oklab, var(--flatly-yellow), transparent 75%);
+  --bs-warning-contrast: var(--flatly-white);
+
+  --bs-danger-base: var(--flatly-red);
+  --bs-danger-fg: var(--flatly-red);
+  --bs-danger-fg-emphasis: light-dark(#5c1e18, #f0897e);
+  --bs-danger-bg: var(--flatly-red);
+  --bs-danger-bg-subtle: light-dark(#fadbd8, #2e0f0c);
+  --bs-danger-bg-muted: light-dark(#fbeae8, #461713);
+  --bs-danger-border: light-dark(#f5b7b1, #8b2e24);
+  --bs-danger-focus-ring: color-mix(in oklab, var(--flatly-red), transparent 75%);
+  --bs-danger-contrast: var(--flatly-white);
+
+  --bs-inverse-base: var(--flatly-gray-900);
+  --bs-inverse-fg: var(--flatly-gray-800);
+  --bs-inverse-fg-emphasis: light-dark(#313738, #ecf0f1);
+  --bs-inverse-bg: var(--flatly-gray-700);
+  --bs-inverse-bg-subtle: light-dark(#e5e7e8, #111414);
+  --bs-inverse-bg-muted: light-dark(#f2f3f4, #1c1f1f);
+  --bs-inverse-border: light-dark(#cacfd2, #2b3030);
+  --bs-inverse-focus-ring: color-mix(in oklab, var(--flatly-gray-700), transparent 75%);
+  --bs-inverse-contrast: var(--flatly-white);
+
+  /* Body & surfaces */
+  --bs-body-font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-fg-body: light-dark(var(--flatly-gray-800), var(--flatly-gray-200));
+  --bs-bg-body: light-dark(var(--flatly-white), var(--flatly-dark-bg));
+  --bs-bg-1: light-dark(var(--flatly-white), var(--flatly-dark-surface));
+  --bs-bg-2: light-dark(var(--flatly-gray-100), var(--flatly-dark-surface-subtle));
+  --bs-border-color: light-dark(var(--flatly-gray-300), var(--flatly-dark-border));
+
+  /* Links */
+  --bs-link-color: light-dark(var(--flatly-green), #5ae1c7);
+  --bs-link-decoration: none;
+  --bs-link-hover-color: light-dark(var(--flatly-green-hover), #83e9d6);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   -------------------------------------------------------------------------- */
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   Solid variants are driven by .theme-*; flatly hovers come from Bootstrap's
+   own hover mixing on the theme tokens.
+   -------------------------------------------------------------------------- */
+.btn-solid.theme-secondary,
+.btn-outline.theme-secondary {
+  --bs-btn-color: var(--flatly-white);
+  --bs-btn-hover-color: var(--flatly-white);
+  --bs-btn-active-color: var(--flatly-white);
+}
+
+/* --------------------------------------------------------------------------
+   4. Alerts & Indicators
+   Flatly alerts are solid fills rather than subtle backgrounds.
+   -------------------------------------------------------------------------- */
+/* v6's default close icon is a filled squircle; flatly uses a plain × */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.alert {
+  --bs-theme-bg-subtle: var(--bs-theme-bg, var(--bs-bg-2));
+  --bs-theme-fg: var(--bs-theme-contrast, var(--bs-fg-body));
+  --bs-theme-border: transparent;
+}
+.alert a,
+.alert .alert-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   5. Navs & Pagination
+   -------------------------------------------------------------------------- */
+.pagination {
+  --bs-pagination-color: var(--flatly-white);
+  --bs-pagination-bg: var(--flatly-green);
+  --bs-pagination-border-width: 0;
+  --bs-pagination-border-color: transparent;
+  --bs-pagination-hover-color: var(--flatly-white);
+  --bs-pagination-hover-bg: var(--flatly-green-hover);
+  --bs-pagination-hover-border-color: transparent;
+  --bs-pagination-active-bg: var(--flatly-green-hover);
+  --bs-pagination-active-border-color: transparent;
+  --bs-pagination-disabled-color: var(--flatly-gray-200);
+  --bs-pagination-disabled-bg: #32dcb9;
+  --bs-pagination-disabled-border-color: transparent;
+}
+
+.pagination .page-link:hover {
+  text-decoration: none;
+}
+
+.breadcrumb {
+  --bs-breadcrumb-padding-x: 0.75rem;
+  --bs-breadcrumb-padding-y: 0.375rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Cards
+   Keep a colored header band on solid bg-* cards (v5/Bootswatch look);
+   v6's default card header ignores the card's background utility.
+   -------------------------------------------------------------------------- */
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}

@@ -31,6 +31,7 @@ jobs:
           mkdir -p _site
           cp -R docs/. _site/
           cp -R themes _site/themes
+          if [ -d v6 ]; then cp -R v6 _site/v6; fi
           cp index.html _site/index.html
           cp 404.html _site/404.html
           cp bootlegance.js _site/bootlegance.js
@@ -78,6 +79,28 @@ jobs:
           EOF
             fi
           done
+
+          for theme in $(ls -1 _site/themes/v6 2>/dev/null); do
+            if [ -f "_site/themes/v6/${theme}/index.html" ]; then
+              cat <<EOF >> _site/sitemap.xml
+            <url>
+              <loc>${SITE_URL}/themes/v6/${theme}/</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.5</priority>
+            </url>
+          EOF
+            fi
+          done
+
+          if [ -f _site/v6/index.html ]; then
+            cat <<EOF >> _site/sitemap.xml
+            <url>
+              <loc>${SITE_URL}/v6/</loc>
+              <changefreq>weekly</changefreq>
+              <priority>0.6</priority>
+            </url>
+          EOF
+          fi
 
           echo "</urlset>" >> _site/sitemap.xml
 
