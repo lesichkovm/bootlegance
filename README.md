@@ -71,13 +71,108 @@ Include the script in your page. It automatically resolves the theme, injects `<
 <script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.min.js"></script>
 ```
 
-### Auto-UI Controls
+### How the Theme Switcher Works
 
-You can automatically render a theme picker `<select>` dropdown and wire light/dark mode toggle buttons using `data-*` attributes:
+`bootlegance.js` is a lightweight, dependency-free vanilla JavaScript library designed to manage theme loading, switching, and UI controls dynamically. Here is a breakdown of how it works under the hood:
+
+#### 1. Theme Resolution Priority
+When the page loads, `bootlegance.js` runs immediately and determines which theme should be active according to the following resolution hierarchy:
+1. **`?theme=` URL Query Parameter**: Overrides everything (e.g. `?theme=dracula` or `?theme=bootstrap`).
+2. **`theme` Cookie**: Persists across page visits and reloads (`Path=/; Max-Age=31536000; SameSite=Lax`).
+3. **`data-default-theme` Script Attribute**: Fallback defined on the `<script>` tag (e.g. `<script src="bootlegance.js" data-default-theme="orchis-sage">`).
+4. **Built-in Default Theme**: Defaults to `vanguard` if no preference or attribute is found.
+
+Theme names are validated against `^[a-z0-9-]+$`.
+
+#### 2. Stylesheet Injection & Removal (`<link id="bootlegance-theme">`)
+Once the active theme is determined:
+- **Custom Theme Selected**: `applyCss(themeName)` checks if `<link id="bootlegance-theme">` exists in `<head>`. If not, it creates and injects it; if it already exists, it updates its `href` to `themes/{theme-name}/theme.css`.
+- **Standard Bootstrap Selected** (`"bootstrap"`, `"none"`, or `""`): Any existing `#bootlegance-theme` `<link>` element is removed from the DOM. Without the theme override stylesheet, only the site's default Bootstrap stylesheet is applied.
+
+#### 3. Automatic UI Binding (`[data-bootlegance-picker]`)
+If your markup contains an element with the `data-bootlegance-picker` attribute (such as `<div data-bootlegance-picker></div>`):
+- **Creates `<select>`**: It automatically creates a Bootstrap `<select class="form-select">` inside the container if one doesn't exist.
+- **Standard Bootstrap Option**: Prepends a "Standard Bootstrap" option (`value="bootstrap"`).
+- **Populates Themes from Registry**: Fetches `themes.json` (or uses the fallback theme list from `data-themes`), validating each slug, and appends them as `<option>` items.
+- **Synchronizes State**: Automatically selects whichever theme is currently active and binds a `change` event listener that invokes `Bootlegance.set(selectedValue)` when chosen by the user.
+
+#### 4. Persistence & Server Contract
+When `Bootlegance.set(name)` is called (or a theme is picked in the UI):
+- Sets the `theme` cookie with `Path=/; Max-Age=31536000; SameSite=Lax` (and `Secure` if served over HTTPS).
+- Updates the DOM stylesheet immediately.
+- Fires a custom DOM event: `bootlegance:change` with `{ detail: { theme: name } }`.
+- **Server Endpoint Mode (Optional)**: If `data-endpoint="/theme"` is configured on the script tag, changing themes issues a redirect to the server endpoint with `?theme=...&redirect=...` so server-rendered applications can set the cookie and avoid flash of unstyled content (FOUC).
+
+---
+
+### Controlling the Picker & Themes with `data-*` Attributes
+
+All UI elements and theme switcher configurations are controlled via declarative `data-*` attributes:
+
+#### 1. Showing or Hiding the Theme Selector (Picker)
+- **To show the theme selector**: Simply include an element with the `data-bootlegance-picker` attribute anywhere in your HTML. You can use any container element — such as a `<div>`, `<span>`, or `<nav>`:
+  ```html
+  <!-- Block container (takes full container width by default) -->
+  <div data-bootlegance-picker></div>
+
+  <!-- Inline container for navbars, toolbars, or headers -->
+  <span data-bootlegance-picker data-picker-class="form-select form-select-sm w-auto d-inline-block"></span>
+  ```
+  `bootlegance.js` matches the `[data-bootlegance-picker]` attribute selector and renders the theme `<select>` dropdown inside the container.
+- **To not show it**: Just omit `[data-bootlegance-picker]` completely! `bootlegance.js` will still manage the theme stylesheets, cookies, query parameters, font size, and light/dark modes behind the scenes, running headlessly without rendering any selector UI.
+
+#### 2. Customizing Picker Styling & Width via Data Attributes
+By default, Bootstrap's `.form-select` is styled as `display: block` with `width: 100%`. You can customize the styling, size, and width of the generated `<select>` using `data-picker-class`:
+
+- **Compact auto-width dropdown** (e.g. for navbars or toolbars):
+  ```html
+  <span data-bootlegance-picker data-picker-class="form-select form-select-sm w-auto"></span>
+  ```
+- **Custom sized block dropdown**:
+  ```html
+  <div data-bootlegance-picker data-picker-class="form-select form-select-lg"></div>
+  ```
+
+#### 3. Restricting or Specifying Which Themes are Available
+On the `<script>` tag loading `bootlegance.js`:
+- **`data-themes`**: Restricts or pre-specifies which themes should be available in the dropdown (comma-separated list of theme slugs):
+  ```html
+  <script src="bootlegance.js"
+          data-themes="dracula,nord,catppuccin,solarized"
+          data-default-theme="nord"></script>
+  ```
+  When specified, only those themes (plus the "Standard Bootstrap" option) will be listed in the picker.
+- **Omitted `data-themes`**: If `data-themes` is omitted, the script automatically fetches the full catalog of themes from `themes.json`.
+
+#### 4. Summary of Available `data-*` Attributes
+
+##### UI Element Attributes
+
+| Attribute | Elements | Description | Example |
+|---|---|---|---|
+| `data-bootlegance-picker` | `<div>`, `<span>`, or any container element | Mount point for auto-generated theme `<select>` dropdown | `<span data-bootlegance-picker></span>` |
+| `data-picker-class` | Container with `data-bootlegance-picker` | Custom CSS classes applied to generated `<select>` (e.g. `w-auto`, `form-select-sm`) | `data-picker-class="form-select form-select-sm w-auto"` |
+| `data-bootlegance-mode` | `<button>` | Toggles light/dark mode (`"light"`, `"dark"`, or `"auto"`) | `<button data-bootlegance-mode="dark">Dark</button>` |
+| `data-bootlegance-font-size` | `<button>` | Accessibility font size control (`"up"`, `"down"`, or `"reset"`) | `<button data-bootlegance-font-size="up">A+</button>` |
+| `data-bootlegance-font-size-value` | `<span>` / element | Displays current zoom percentage (e.g. `100%`) | `<span data-bootlegance-font-size-value>100%</span>` |
+
+##### `<script>` Tag Configuration Attributes
+
+| Attribute | Description | Default | Example |
+|---|---|---|---|
+| `data-default-theme` | Fallback theme if no cookie or query param is found | `vanguard` | `data-default-theme="dracula"` |
+| `data-themes` | Comma-separated list of theme slugs to include in picker | Full catalog from `themes.json` | `data-themes="dracula,nord,catppuccin"` |
+| `data-endpoint` | Server endpoint URL for server-side redirection mode | `null` (client-side swap) | `data-endpoint="/theme"` |
+| `data-base-url` | Override base CDN or asset URL for themes and `themes.json` | Auto-detected from script `src` | `data-base-url="https://cdn.example.com/"` |
+| `data-mode-storage-key` | `localStorage` key for light/dark mode persistence | `cf-theme` | `data-mode-storage-key="my-mode"` |
+| `data-mode-attribute` | Attribute on `<html>` for light/dark mode | `data-bs-theme` | `data-mode-attribute="data-bs-theme"` |
+| `data-font-size-storage-key` | `localStorage` key for font size persistence | `cf-font-size` | `data-font-size-storage-key="my-font-size"` |
+
+### Auto-UI Controls Example
 
 ```html
-<!-- Theme picker dropdown container -->
-<div data-bootlegance-picker></div>
+<!-- Theme picker dropdown container with custom styling -->
+<div data-bootlegance-picker data-picker-class="form-select form-select-sm"></div>
 
 <!-- Mode toggles -->
 <button data-bootlegance-mode="light" class="btn btn-outline-secondary">Light</button>
@@ -90,31 +185,9 @@ You can automatically render a theme picker `<select>` dropdown and wire light/d
 <button data-bootlegance-font-size="reset" class="btn btn-outline-secondary">Reset</button>
 
 <script src="https://cdn.jsdelivr.net/gh/lesichkovm/bootlegance@latest/bootlegance.js"
-        data-default-theme="vanguard"></script>
+        data-themes="dracula,nord,catppuccin,solarized"
+        data-default-theme="nord"></script>
 ```
-
-### Configuration Attributes
-
-The script tag accepts optional attributes:
-
-| Attribute | Description | Default |
-|---|---|---|
-| `data-default-theme` | Fallback theme if no cookie or query param is found | `vanguard` |
-| `data-endpoint` | Server endpoint URL (e.g. `/theme`) for server-side redirection mode | `null` (client-side swap) |
-| `data-base-url` | Override base CDN or asset URL for themes and `themes.json` | Auto-detected from script `src` |
-| `data-themes` | Comma-separated list of fallback theme slugs | (Fetched from `themes.json`) |
-| `data-mode-storage-key` | `localStorage` key for light/dark mode persistence | `cf-theme` |
-| `data-mode-attribute` | Attribute on `<html>` for light/dark mode | `data-bs-theme` |
-| `data-font-size-storage-key` | `localStorage` key for font size persistence | `cf-font-size` |
-
-### Theme Resolution Priority
-
-1. `?theme=` URL query parameter (e.g. `https://example.com/?theme=dracula`, or `?theme=bootstrap` / `?theme=none` for standard Bootstrap)
-2. `theme` cookie
-3. `data-default-theme` attribute on the script tag (e.g. `data-default-theme="bootstrap"`)
-4. Built-in default theme (`vanguard`)
-
-Theme names are validated against `^[a-z0-9-]+$`. The theme picker dropdown (`[data-bootlegance-picker]`) also provides a built-in "Standard Bootstrap" option to remove the theme stylesheet and display default Bootstrap styling.
 
 ### JavaScript API
 
