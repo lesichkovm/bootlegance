@@ -110,18 +110,28 @@ When `Bootlegance.set(name)` is called (or a theme is picked in the UI):
 All UI elements and theme switcher configurations are controlled via declarative `data-*` attributes:
 
 #### 1. Showing or Hiding the Theme Selector (Picker)
-- **To show the theme selector**: Simply include an element with the `data-bootlegance-picker` attribute anywhere in your HTML:
+- **To show the theme selector**: Simply include an element with the `data-bootlegance-picker` attribute anywhere in your HTML. You can use any container element — such as a `<div>`, `<span>`, or `<nav>`:
   ```html
+  <!-- Block container (takes full container width by default) -->
   <div data-bootlegance-picker></div>
-  ```
-  `bootlegance.js` will automatically detect this attribute and render the theme `<select>` dropdown inside it.
-- **To not show it**: Just omit `<div data-bootlegance-picker></div>` completely! `bootlegance.js` will still manage the theme stylesheets, cookies, query parameters, font size, and light/dark modes behind the scenes, running headlessly without rendering any selector UI.
 
-#### 2. Customizing Picker Styling via Data Attributes
-You can pass custom CSS classes to the generated `<select>` element using `data-picker-class`:
-```html
-<div data-bootlegance-picker data-picker-class="form-select form-select-sm custom-picker"></div>
-```
+  <!-- Inline container for navbars, toolbars, or headers -->
+  <span data-bootlegance-picker data-picker-class="form-select form-select-sm w-auto d-inline-block"></span>
+  ```
+  `bootlegance.js` matches the `[data-bootlegance-picker]` attribute selector and renders the theme `<select>` dropdown inside the container.
+- **To not show it**: Just omit `[data-bootlegance-picker]` completely! `bootlegance.js` will still manage the theme stylesheets, cookies, query parameters, font size, and light/dark modes behind the scenes, running headlessly without rendering any selector UI.
+
+#### 2. Customizing Picker Styling & Width via Data Attributes
+By default, Bootstrap's `.form-select` is styled as `display: block` with `width: 100%`. You can customize the styling, size, and width of the generated `<select>` using `data-picker-class`:
+
+- **Compact auto-width dropdown** (e.g. for navbars or toolbars):
+  ```html
+  <span data-bootlegance-picker data-picker-class="form-select form-select-sm w-auto"></span>
+  ```
+- **Custom sized block dropdown**:
+  ```html
+  <div data-bootlegance-picker data-picker-class="form-select form-select-lg"></div>
+  ```
 
 #### 3. Restricting or Specifying Which Themes are Available
 On the `<script>` tag loading `bootlegance.js`:
@@ -140,8 +150,8 @@ On the `<script>` tag loading `bootlegance.js`:
 
 | Attribute | Elements | Description | Example |
 |---|---|---|---|
-| `data-bootlegance-picker` | `<div>` / container | Mount point for auto-generated theme `<select>` dropdown | `<div data-bootlegance-picker></div>` |
-| `data-picker-class` | Container with `data-bootlegance-picker` | Custom CSS class applied to the generated `<select>` | `data-picker-class="form-select form-select-sm"` |
+| `data-bootlegance-picker` | `<div>`, `<span>`, or any container element | Mount point for auto-generated theme `<select>` dropdown | `<span data-bootlegance-picker></span>` |
+| `data-picker-class` | Container with `data-bootlegance-picker` | Custom CSS classes applied to generated `<select>` (e.g. `w-auto`, `form-select-sm`) | `data-picker-class="form-select form-select-sm w-auto"` |
 | `data-bootlegance-mode` | `<button>` | Toggles light/dark mode (`"light"`, `"dark"`, or `"auto"`) | `<button data-bootlegance-mode="dark">Dark</button>` |
 | `data-bootlegance-font-size` | `<button>` | Accessibility font size control (`"up"`, `"down"`, or `"reset"`) | `<button data-bootlegance-font-size="up">A+</button>` |
 | `data-bootlegance-font-size-value` | `<span>` / element | Displays current zoom percentage (e.g. `100%`) | `<span data-bootlegance-font-size-value>100%</span>` |
