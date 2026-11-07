@@ -32,6 +32,32 @@
   --cerulean-gray-900: #212529;
   --cerulean-black: #000;
 
+  --cerulean-grad-primary: linear-gradient(#50b3eb, var(--cerulean-cyan) 60%, #2c9ad9);
+  --cerulean-grad-primary-hover: linear-gradient(#2fa4e7, #2d9cdb 60%, #288bc4);
+  --cerulean-grad-primary-active: linear-gradient(#2683b9, #2683b9 60%, #2173a3);
+  --cerulean-grad-secondary: linear-gradient(#eef0f2, var(--cerulean-gray-200) 60%, #dbdee1);
+  --cerulean-grad-secondary-hover: linear-gradient(#e9ecef, #dde0e3 60%, #c6c9cb);
+  --cerulean-grad-secondary-active: linear-gradient(#babdbf, #babdbf 60%, #a3a5a7);
+  --cerulean-grad-success: linear-gradient(#89b657, var(--cerulean-green) 60%, #6c9e36);
+  --cerulean-grad-success-hover: linear-gradient(#73a839, #6da036 60%, #629031);
+  --cerulean-grad-success-active: linear-gradient(#5c862e, #5c862e 60%, #517628);
+  --cerulean-grad-info: linear-gradient(#055caa, var(--cerulean-blue) 60%, #03386c);
+  --cerulean-grad-info-hover: linear-gradient(#033c73, #03396d 60%, #033362);
+  --cerulean-grad-info-active: linear-gradient(#02305c, #02305c 60%, #022a51);
+  --cerulean-grad-warning: linear-gradient(#f16b17, var(--cerulean-yellow) 60%, #cf5100);
+  --cerulean-grad-warning-hover: linear-gradient(#dd5600, #d25200 60%, #bc4900);
+  --cerulean-grad-warning-active: linear-gradient(#b14500, #b14500 60%, #9b3c00);
+  --cerulean-grad-danger: linear-gradient(#d63c41, var(--cerulean-red) 60%, #bb1a20);
+  --cerulean-grad-danger-hover: linear-gradient(#c71c22, #bd1b20 60%, #a9181d);
+  --cerulean-grad-danger-active: linear-gradient(#9f161b, #9f161b 60%, #8b1418);
+  --cerulean-grad-light: linear-gradient(#f9fafb, var(--cerulean-gray-100) 60%, #e9eaeb);
+  --cerulean-grad-light-hover: linear-gradient(#f8f9fa, #ecedee 60%, #d3d4d5);
+  --cerulean-grad-light-active: linear-gradient(#c6c7c8, #c6c7c8 60%, #aeaeaf);
+  --cerulean-grad-dark: linear-gradient(#545a5f, var(--cerulean-gray-800) 60%, #31373c);
+  --cerulean-grad-dark-hover: linear-gradient(#343a40, #31373d 60%, #2c3136);
+  --cerulean-grad-dark-active: linear-gradient(#2a2e33, #2a2e33 60%, #24292d);
+  --cerulean-grad-navbar-dark: linear-gradient(#495159, var(--cerulean-gray-800) 60%, #31373c);
+
   /* Bootstrap Color Palette Overrides */
   --bs-primary: var(--cerulean-cyan);
   --bs-primary-rgb: 47, 164, 231;
@@ -157,27 +183,27 @@
 }
 
 .navbar.bg-primary {
-  background-image: linear-gradient(#50b3eb, #2fa4e7 60%, #2c9ad9);
+  background-image: var(--cerulean-grad-primary);
 }
 
 .navbar.bg-success {
-  background-image: linear-gradient(#89b657, #73a839 60%, #6c9e36);
+  background-image: var(--cerulean-grad-success);
 }
 
 .navbar.bg-info {
-  background-image: linear-gradient(#055caa, #033c73 60%, #03386c);
+  background-image: var(--cerulean-grad-info);
 }
 
 .navbar.bg-warning {
-  background-image: linear-gradient(#f16b17, #dd5600 60%, #cf5100);
+  background-image: var(--cerulean-grad-warning);
 }
 
 .navbar.bg-danger {
-  background-image: linear-gradient(#d63c41, #c71c22 60%, #bb1a20);
+  background-image: var(--cerulean-grad-danger);
 }
 
 .navbar.bg-dark {
-  background-image: linear-gradient(#495159, #343a40 60%, #31373c);
+  background-image: var(--cerulean-grad-navbar-dark);
 }
 
 /* --------------------------------------------------------------------------
@@ -189,140 +215,140 @@
 
 .btn-secondary,
 .btn-outline-secondary {
-  color: #495057;
+  color: var(--cerulean-gray-700);
 }
 
 .btn-primary {
   --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: #2fa4e7;
-  background-image: linear-gradient(#50b3eb, #2fa4e7 60%, #2c9ad9);
+  --bs-btn-border-color: var(--cerulean-cyan);
+  background-image: var(--cerulean-grad-primary);
 }
 
 .btn-primary:hover {
-  background-image: linear-gradient(#2fa4e7, #2d9cdb 60%, #288bc4);
+  background-image: var(--cerulean-grad-primary-hover);
 }
 
 .btn-primary:active,
 .btn-check:checked + .btn-primary {
-  background-image: linear-gradient(#2683b9, #2683b9 60%, #2173a3);
+  background-image: var(--cerulean-grad-primary-active);
 }
 
 .btn-secondary {
   --bs-btn-bg: var(--bs-secondary);
-  --bs-btn-border-color: #dee2e6;
-  background-image: linear-gradient(#eef0f2, #e9ecef 60%, #dbdee1);
+  --bs-btn-border-color: var(--cerulean-gray-300);
+  background-image: var(--cerulean-grad-secondary);
 }
 
 .btn-secondary:hover {
-  background-image: linear-gradient(#e9ecef, #dde0e3 60%, #c6c9cb);
+  background-image: var(--cerulean-grad-secondary-hover);
 }
 
 .btn-secondary:active,
 .btn-check:checked + .btn-secondary {
-  background-image: linear-gradient(#babdbf, #babdbf 60%, #a3a5a7);
+  background-image: var(--cerulean-grad-secondary-active);
 }
 
 .btn-success {
   --bs-btn-bg: var(--bs-success);
-  --bs-btn-border-color: #73a839;
-  background-image: linear-gradient(#89b657, #73a839 60%, #6c9e36);
+  --bs-btn-border-color: var(--cerulean-green);
+  background-image: var(--cerulean-grad-success);
 }
 
 .btn-success:hover {
-  background-image: linear-gradient(#73a839, #6da036 60%, #629031);
+  background-image: var(--cerulean-grad-success-hover);
 }
 
 .btn-success:active,
 .btn-check:checked + .btn-success {
-  background-image: linear-gradient(#5c862e, #5c862e 60%, #517628);
+  background-image: var(--cerulean-grad-success-active);
 }
 
 .btn-info {
   --bs-btn-bg: var(--bs-info);
-  --bs-btn-border-color: #033c73;
+  --bs-btn-border-color: var(--cerulean-blue);
   color: var(--bs-white);
-  background-image: linear-gradient(#055caa, #033c73 60%, #03386c);
+  background-image: var(--cerulean-grad-info);
 }
 
 .btn-info:hover {
   color: var(--bs-white);
-  background-image: linear-gradient(#033c73, #03396d 60%, #033362);
+  background-image: var(--cerulean-grad-info-hover);
 }
 
 .btn-info:active,
 .btn-check:checked + .btn-info {
   color: var(--bs-white);
-  background-image: linear-gradient(#02305c, #02305c 60%, #022a51);
+  background-image: var(--cerulean-grad-info-active);
 }
 
 .btn-warning {
   --bs-btn-bg: var(--bs-warning);
-  --bs-btn-border-color: #dd5600;
+  --bs-btn-border-color: var(--cerulean-yellow);
   color: var(--bs-white);
-  background-image: linear-gradient(#f16b17, #dd5600 60%, #cf5100);
+  background-image: var(--cerulean-grad-warning);
 }
 
 .btn-warning:hover {
   color: var(--bs-white);
-  background-image: linear-gradient(#dd5600, #d25200 60%, #bc4900);
+  background-image: var(--cerulean-grad-warning-hover);
 }
 
 .btn-warning:active,
 .btn-check:checked + .btn-warning {
   color: var(--bs-white);
-  background-image: linear-gradient(#b14500, #b14500 60%, #9b3c00);
+  background-image: var(--cerulean-grad-warning-active);
 }
 
 .btn-danger {
   --bs-btn-bg: var(--bs-danger);
-  --bs-btn-border-color: #c71c22;
-  background-image: linear-gradient(#d63c41, #c71c22 60%, #bb1a20);
+  --bs-btn-border-color: var(--cerulean-red);
+  background-image: var(--cerulean-grad-danger);
 }
 
 .btn-danger:hover {
-  background-image: linear-gradient(#c71c22, #bd1b20 60%, #a9181d);
+  background-image: var(--cerulean-grad-danger-hover);
 }
 
 .btn-danger:active,
 .btn-check:checked + .btn-danger {
-  background-image: linear-gradient(#9f161b, #9f161b 60%, #8b1418);
+  background-image: var(--cerulean-grad-danger-active);
 }
 
 .btn-light {
   --bs-btn-bg: var(--bs-light);
-  --bs-btn-border-color: #dee2e6;
-  background-image: linear-gradient(#f9fafb, #f8f9fa 60%, #e9eaeb);
+  --bs-btn-border-color: var(--cerulean-gray-300);
+  background-image: var(--cerulean-grad-light);
 }
 
 .btn-light:hover {
-  background-image: linear-gradient(#f8f9fa, #ecedee 60%, #d3d4d5);
+  background-image: var(--cerulean-grad-light-hover);
 }
 
 .btn-light:active,
 .btn-check:checked + .btn-light {
-  background-image: linear-gradient(#c6c7c8, #c6c7c8 60%, #aeaeaf);
+  background-image: var(--cerulean-grad-light-active);
 }
 
 .btn-dark {
   --bs-btn-bg: var(--bs-dark);
-  --bs-btn-border-color: #343a40;
-  background-image: linear-gradient(#545a5f, #343a40 60%, #31373c);
+  --bs-btn-border-color: var(--cerulean-gray-800);
+  background-image: var(--cerulean-grad-dark);
 }
 
 .btn-dark:hover {
-  background-image: linear-gradient(#343a40, #31373d 60%, #2c3136);
+  background-image: var(--cerulean-grad-dark-hover);
 }
 
 .btn-dark:active,
 .btn-check:checked + .btn-dark {
-  background-image: linear-gradient(#2a2e33, #2a2e33 60%, #24292d);
+  background-image: var(--cerulean-grad-dark-active);
 }
 
 /* --------------------------------------------------------------------------
    5. Typography, Headings & Containers
    -------------------------------------------------------------------------- */
 .text-secondary {
-  color: #868e96 !important;
+  color: var(--cerulean-gray-600) !important;
 }
 
 .bg-primary h1, .bg-primary .h1,
@@ -365,7 +391,7 @@
 }
 
 .dropdown-menu .dropdown-header {
-  color: #868e96;
+  color: var(--cerulean-gray-600);
 }
 
 .dropdown-item:hover,
@@ -376,7 +402,7 @@
 
 .badge.bg-secondary,
 .badge.bg-light {
-  color: #343a40;
+  color: var(--cerulean-gray-800);
 }
 
 .table-primary,

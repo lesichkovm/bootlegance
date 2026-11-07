@@ -34,6 +34,39 @@
   --sl-gray-900: #2d2d2d;
   --sl-black: #000;
 
+  --sl-grad-primary: linear-gradient(#7191b3, var(--sl-blue) 50%, #3f658f);
+  --sl-grad-primary-hover: var(--sl-grad-primary-hover);
+  --sl-grad-secondary: linear-gradient(#b1b1b1, var(--sl-gray-500) 50%, #8d8d8d);
+  --sl-grad-secondary-hover: var(--sl-grad-secondary-hover);
+  --sl-grad-success: linear-gradient(#6bc756, var(--sl-green) 50%, #37a71e);
+  --sl-grad-success-hover: var(--sl-grad-success-hover);
+  --sl-grad-info: linear-gradient(#64b1f6, var(--sl-cyan) 50%, #2f8de0);
+  --sl-grad-info-hover: var(--sl-grad-info-hover);
+  --sl-grad-warning: linear-gradient(#de963d, var(--sl-yellow) 50%, #c36c00);
+  --sl-grad-warning-hover: var(--sl-grad-warning-hover);
+  --sl-grad-danger: linear-gradient(#d93f3d, var(--sl-red) 50%, #bd0200);
+  --sl-grad-danger-hover: var(--sl-grad-danger-hover);
+  --sl-grad-light: linear-gradient(#f2f2f2, var(--sl-gray-200) 50%, #dbdbdb);
+  --sl-grad-light-hover: var(--sl-grad-light-hover);
+  --sl-grad-dark: linear-gradient(#646464, var(--sl-gray-800) 50%, #2f2f2f);
+  --sl-grad-dark-hover: var(--sl-grad-dark-hover);
+  --sl-primary-border: #36587c;
+  --sl-primary-hover-border: #325172;
+  --sl-secondary-border: #7a7a7a;
+  --sl-secondary-hover-border: #717171;
+  --sl-success-border: #30911a;
+  --sl-success-hover-border: #2c8618;
+  --sl-info-border: #297ac2;
+  --sl-info-hover-border: #2671b3;
+  --sl-warning-border: #aa5e00;
+  --sl-warning-hover-border: #9c5600;
+  --sl-danger-border: #a40200;
+  --sl-danger-hover-border: #970200;
+  --sl-light-border: #bebebe;
+  --sl-light-hover-border: #afafaf;
+  --sl-dark-border: #292929;
+  --sl-dark-hover-border: #262626;
+
   /* Bootstrap Color Palette Overrides */
   --bs-primary: var(--sl-blue);
   --bs-primary-rgb: 68, 110, 155;
@@ -195,43 +228,43 @@
 }
 
 .navbar.bg-primary {
-  background-image: linear-gradient(#7191b3, #446e9b 50%, #3f658f);
-  border: 1px solid #36587c;
+  background-image: var(--sl-grad-primary);
+  border: 1px solid var(--sl-primary-border);
 }
 
 .navbar.bg-secondary {
-  background-image: linear-gradient(#b1b1b1, #999 50%, #8d8d8d);
-  border: 1px solid #7a7a7a;
+  background-image: var(--sl-grad-secondary);
+  border: 1px solid var(--sl-secondary-border);
 }
 
 .navbar.bg-success {
-  background-image: linear-gradient(#6bc756, #3cb521 50%, #37a71e);
-  border: 1px solid #30911a;
+  background-image: var(--sl-grad-success);
+  border: 1px solid var(--sl-success-border);
 }
 
 .navbar.bg-info {
-  background-image: linear-gradient(#64b1f6, #3399f3 50%, #2f8de0);
-  border: 1px solid #297ac2;
+  background-image: var(--sl-grad-info);
+  border: 1px solid var(--sl-info-border);
 }
 
 .navbar.bg-warning {
-  background-image: linear-gradient(#de963d, #d47500 50%, #c36c00);
-  border: 1px solid #aa5e00;
+  background-image: var(--sl-grad-warning);
+  border: 1px solid var(--sl-warning-border);
 }
 
 .navbar.bg-danger {
-  background-image: linear-gradient(#d93f3d, #cd0200 50%, #bd0200);
-  border: 1px solid #a40200;
+  background-image: var(--sl-grad-danger);
+  border: 1px solid var(--sl-danger-border);
 }
 
 .navbar.bg-light {
-  background-image: linear-gradient(#f2f2f2, #eee 50%, #dbdbdb);
-  border: 1px solid #bebebe;
+  background-image: var(--sl-grad-light);
+  border: 1px solid var(--sl-light-border);
 }
 
 .navbar.bg-dark {
-  background-image: linear-gradient(#646464, #333 50%, #2f2f2f);
-  border: 1px solid #292929;
+  background-image: var(--sl-grad-dark);
+  border: 1px solid var(--sl-dark-border);
 }
 
 .navbar.bg-light .nav-link,
@@ -264,106 +297,106 @@
 
 .btn-primary {
   --bs-btn-bg: var(--bs-primary);
-  background-image: linear-gradient(#7191b3, #446e9b 50%, #3f658f);
+  background-image: var(--sl-grad-primary);
   filter: none;
-  border: 1px solid #36587c;
+  border: 1px solid var(--sl-primary-border);
 }
 
 .btn-primary:not(.disabled):hover {
-  background-image: linear-gradient(#6d8aaa, #3f658f 50%, #3a5d84);
+  background-image: var(--sl-grad-primary-hover);
   filter: none;
-  border: 1px solid #325172;
+  border: 1px solid var(--sl-primary-hover-border);
 }
 
 .btn-secondary {
   --bs-btn-bg: var(--bs-secondary);
-  background-image: linear-gradient(#b1b1b1, #999 50%, #8d8d8d);
+  background-image: var(--sl-grad-secondary);
   filter: none;
-  border: 1px solid #7a7a7a;
+  border: 1px solid var(--sl-secondary-border);
 }
 
 .btn-secondary:not(.disabled):hover {
-  background-image: linear-gradient(#a8a8a8, #8d8d8d 50%, #828282);
+  background-image: var(--sl-grad-secondary-hover);
   filter: none;
-  border: 1px solid #717171;
+  border: 1px solid var(--sl-secondary-hover-border);
 }
 
 .btn-success {
   --bs-btn-bg: var(--bs-success);
-  background-image: linear-gradient(#6bc756, #3cb521 50%, #37a71e);
+  background-image: var(--sl-grad-success);
   filter: none;
-  border: 1px solid #30911a;
+  border: 1px solid var(--sl-success-border);
 }
 
 .btn-success:not(.disabled):hover {
-  background-image: linear-gradient(#67bc54, #37a71e 50%, #339a1c);
+  background-image: var(--sl-grad-success-hover);
   filter: none;
-  border: 1px solid #2c8618;
+  border: 1px solid var(--sl-success-hover-border);
 }
 
 .btn-info {
   --bs-btn-bg: var(--bs-info);
-  background-image: linear-gradient(#64b1f6, #3399f3 50%, #2f8de0);
+  background-image: var(--sl-grad-info);
   filter: none;
-  border: 1px solid #297ac2;
+  border: 1px solid var(--sl-info-border);
 }
 
 .btn-info:not(.disabled):hover {
-  background-image: linear-gradient(#61a8e7, #2f8de0 50%, #2b82ce);
+  background-image: var(--sl-grad-info-hover);
   filter: none;
-  border: 1px solid #2671b3;
+  border: 1px solid var(--sl-info-hover-border);
 }
 
 .btn-warning {
   --bs-btn-bg: var(--bs-warning);
-  background-image: linear-gradient(#de963d, #d47500 50%, #c36c00);
+  background-image: var(--sl-grad-warning);
   filter: none;
-  border: 1px solid #aa5e00;
+  border: 1px solid var(--sl-warning-border);
 }
 
 .btn-warning:not(.disabled):hover {
-  background-image: linear-gradient(#d18f3d, #c36c00 50%, #b36300);
+  background-image: var(--sl-grad-warning-hover);
   filter: none;
-  border: 1px solid #9c5600;
+  border: 1px solid var(--sl-warning-hover-border);
 }
 
 .btn-danger {
   --bs-btn-bg: var(--bs-danger);
-  background-image: linear-gradient(#d93f3d, #cd0200 50%, #bd0200);
+  background-image: var(--sl-grad-danger);
   filter: none;
-  border: 1px solid #a40200;
+  border: 1px solid var(--sl-danger-border);
 }
 
 .btn-danger:not(.disabled):hover {
-  background-image: linear-gradient(#cd3f3d, #bd0200 50%, #ae0200);
+  background-image: var(--sl-grad-danger-hover);
   filter: none;
-  border: 1px solid #970200;
+  border: 1px solid var(--sl-danger-hover-border);
 }
 
 .btn-light {
   --bs-btn-bg: var(--bs-light);
-  background-image: linear-gradient(#f2f2f2, #eee 50%, #dbdbdb);
+  background-image: var(--sl-grad-light);
   filter: none;
-  border: 1px solid #bebebe;
+  border: 1px solid var(--sl-light-border);
 }
 
 .btn-light:not(.disabled):hover {
-  background-image: linear-gradient(#e4e4e4, #dbdbdb 50%, #c9c9c9);
+  background-image: var(--sl-grad-light-hover);
   filter: none;
-  border: 1px solid #afafaf;
+  border: 1px solid var(--sl-light-hover-border);
 }
 
 .btn-dark {
   --bs-btn-bg: var(--bs-dark);
-  background-image: linear-gradient(#646464, #333 50%, #2f2f2f);
+  background-image: var(--sl-grad-dark);
   filter: none;
-  border: 1px solid #292929;
+  border: 1px solid var(--sl-dark-border);
 }
 
 .btn-dark:not(.disabled):hover {
-  background-image: linear-gradient(#616161, #2f2f2f 50%, #2b2b2b);
+  background-image: var(--sl-grad-dark-hover);
   filter: none;
-  border: 1px solid #262626;
+  border: 1px solid var(--sl-dark-hover-border);
 }
 
 /* --------------------------------------------------------------------------

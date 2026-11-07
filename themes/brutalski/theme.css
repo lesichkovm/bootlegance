@@ -29,6 +29,9 @@
   --cf-bg: #f8fafc;
   --cf-cyan: #22d3ee;
   --cf-amber: #fbbf24;
+  --cf-surface-dark: #1e293b;
+  --cf-surface-raised: #334155;
+  --cf-progress-track: #e2e8f0;
   --cf-shadow: 4px 4px 0px 0px var(--cf-black);
   --cf-shadow-lg: 8px 8px 0px 0px var(--cf-black);
 }
@@ -211,7 +214,7 @@ h1, h2, h3, h4, h5, h6,
 .progress {
   border: 3px solid var(--cf-black);
   border-radius: 8px;
-  background-color: #e2e8f0;
+  background-color: var(--cf-progress-track);
   box-shadow: 2px 2px 0px var(--cf-black);
   overflow: hidden;
   height: 24px;
@@ -485,30 +488,30 @@ h1, h2, h3, h4, h5, h6,
 }
 
 [data-bs-theme="dark"] body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--cf-black);
+  color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .card {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .card-header,
 [data-bs-theme="dark"] .card-footer {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .cf-footer {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .form-control {
-  background-color: #1e293b;
-  color: #f8fafc;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  color: var(--cf-bg);
+  border-color: var(--cf-bg);
   box-shadow: 4px 4px 0px rgba(248, 250, 252, 0.1);
 }
 
@@ -517,115 +520,115 @@ h1, h2, h3, h4, h5, h6,
 }
 
 [data-bs-theme="dark"] .btn-outline-dark {
-  color: #f8fafc;
-  border-color: #f8fafc;
+  color: var(--cf-bg);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn-outline-dark:hover {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: var(--cf-bg);
+  color: var(--cf-black);
 }
 
 [data-bs-theme="dark"] .page-link {
-  color: #f8fafc;
-  border-color: #f8fafc;
-  background-color: #1e293b;
+  color: var(--cf-bg);
+  border-color: var(--cf-bg);
+  background-color: var(--cf-surface-dark);
 }
 
 [data-bs-theme="dark"] .page-link:hover {
-  background-color: #f8fafc;
-  color: #0f172a;
-  border-color: #f8fafc;
+  background-color: var(--cf-bg);
+  color: var(--cf-black);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .page-item.active .page-link {
   background-color: var(--bs-primary);
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
   color: var(--bs-white);
 }
 
 [data-bs-theme="dark"] .page-item.disabled .page-link {
-  color: #64748b;
-  border-color: #334155;
-  background-color: #1e293b;
+  color: var(--cf-slate);
+  border-color: var(--cf-surface-raised);
+  background-color: var(--cf-surface-dark);
 }
 
 [data-bs-theme="dark"] .page-link:focus {
-  box-shadow: 4px 4px 0px #f8fafc;
-  border-color: #f8fafc;
+  box-shadow: 4px 4px 0px var(--cf-bg);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .dropdown-menu {
-  background-color: #1e293b;
-  border-color: #f8fafc;
-  box-shadow: 4px 4px 0px #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
+  box-shadow: 4px 4px 0px var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .dropdown-item {
-  color: #f8fafc;
+  color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .dropdown-item:hover {
-  background-color: #334155;
+  background-color: var(--cf-surface-raised);
 }
 
 [data-bs-theme="dark"] .accordion {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .accordion-item {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .accordion-button {
-  color: #f8fafc;
+  color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .accordion-button:focus {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .accordion-button:not(.collapsed) {
   background-color: rgba(99, 102, 241, 0.2);
-  color: #6366f1;
+  color: var(--bs-primary);
 }
 
 [data-bs-theme="dark"] .toast {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .toast-header {
-  background-color: #1e293b;
-  border-color: #f8fafc;
-  color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
+  color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .offcanvas {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .offcanvas-header {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .popover {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .popover-header {
-  background-color: #1e293b;
-  border-color: #f8fafc;
-  color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
+  color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .tooltip-inner {
-  border-color: #f8fafc;
-  background-color: #1e293b;
-  color: #f8fafc;
-  box-shadow: 2px 2px 0px #f8fafc;
+  border-color: var(--cf-bg);
+  background-color: var(--cf-surface-dark);
+  color: var(--cf-bg);
+  box-shadow: 2px 2px 0px var(--cf-bg);
 }
 
 /* --------------------------------------------------------------------------
@@ -637,41 +640,41 @@ h1, h2, h3, h4, h5, h6,
 /* Buttons — border + shadow visibility. .btn-dark flips to a light button
    because its bg is var(--cf-black) (dark) which is invisible on a dark page. */
 [data-bs-theme="dark"] .btn {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn:hover {
-  box-shadow: 8px 8px 0px #f8fafc;
-  border-color: #f8fafc;
+  box-shadow: 8px 8px 0px var(--cf-bg);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn:active,
 [data-bs-theme="dark"] .btn:focus {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn-primary,
 [data-bs-theme="dark"] .btn-primary:hover {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn-dark,
 [data-bs-theme="dark"] .btn-dark:hover {
-  background-color: #f8fafc;
-  border-color: #f8fafc;
-  color: #0f172a;
+  background-color: var(--cf-bg);
+  border-color: var(--cf-bg);
+  color: var(--cf-black);
 }
 
 [data-bs-theme="dark"] .btn-dark:hover {
-  background-color: #e2e8f0;
+  background-color: var(--cf-progress-track);
 }
 
 [data-bs-theme="dark"] .btn-sm {
-  box-shadow: 3px 3px 0px #f8fafc;
+  box-shadow: 3px 3px 0px var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .btn-sm:hover {
-  box-shadow: 6px 6px 0px #f8fafc;
+  box-shadow: 6px 6px 0px var(--cf-bg);
 }
 
 /* Tables — borders were dark-on-dark. Bootstrap 5.3 handles table bg/color
@@ -680,77 +683,77 @@ h1, h2, h3, h4, h5, h6,
 [data-bs-theme="dark"] .table thead th,
 [data-bs-theme="dark"] .table td,
 [data-bs-theme="dark"] .table th {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 /* Modal — border + bg. Bootstrap dark handles text color. */
 [data-bs-theme="dark"] .modal-content {
-  background-color: #1e293b;
-  border-color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .modal-header {
-  border-bottom-color: #f8fafc;
+  border-bottom-color: var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .modal-footer {
-  border-top-color: #f8fafc;
+  border-top-color: var(--cf-bg);
 }
 
 /* List group — border + bg + text. */
 [data-bs-theme="dark"] .list-group-item {
-  background-color: #1e293b;
-  border-color: #f8fafc;
-  color: #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
+  color: var(--cf-bg);
 }
 
 /* Alert — border visibility (shadow auto via --cf-shadow remap). */
 [data-bs-theme="dark"] .alert {
-  border-color: #f8fafc;
+  border-color: var(--cf-bg);
 }
 
 /* Progress — border + bg + shadow (shadow uses literal var, not the remap). */
 [data-bs-theme="dark"] .progress {
-  background-color: #334155;
-  border-color: #f8fafc;
-  box-shadow: 2px 2px 0px #f8fafc;
+  background-color: var(--cf-surface-raised);
+  border-color: var(--cf-bg);
+  box-shadow: 2px 2px 0px var(--cf-bg);
 }
 
 /* Navbar toggler — border + shadow (literal var). */
 [data-bs-theme="dark"] .navbar-toggler {
-  border-color: #f8fafc;
-  box-shadow: 2px 2px 0px #f8fafc;
+  border-color: var(--cf-bg);
+  box-shadow: 2px 2px 0px var(--cf-bg);
 }
 
 /* Brand icon — border + shadow (literal var). */
 [data-bs-theme="dark"] .brand-icon {
-  border-color: #f8fafc;
-  box-shadow: 4px 4px 0px #f8fafc;
+  border-color: var(--cf-bg);
+  box-shadow: 4px 4px 0px var(--cf-bg);
 }
 
 /* Dropdown divider — border-top uses literal var. */
 [data-bs-theme="dark"] .dropdown-divider {
-  border-top-color: #f8fafc;
+  border-top-color: var(--cf-bg);
 }
 
 /* Form control focus — shadow + border + bg (literal var). */
 [data-bs-theme="dark"] .form-control:focus {
-  background-color: #1e293b;
-  border-color: #f8fafc;
-  box-shadow: 4px 4px 0px #f8fafc;
+  background-color: var(--cf-surface-dark);
+  border-color: var(--cf-bg);
+  box-shadow: 4px 4px 0px var(--cf-bg);
 }
 
 [data-bs-theme="dark"] .form-control-lg:focus {
-  box-shadow: 6px 6px 0px #f8fafc;
+  box-shadow: 6px 6px 0px var(--cf-bg);
 }
 
 /* Card hover — shadow uses literal var(--cf-black). */
 [data-bs-theme="dark"] .card:hover {
-  box-shadow: 10px 10px 0px #f8fafc;
+  box-shadow: 10px 10px 0px var(--cf-bg);
 }
 
 /* Footer — top shadow uses literal var(--cf-black); bg/border already
    overridden above, this completes it. */
 [data-bs-theme="dark"] .cf-footer {
-  box-shadow: 0px -4px 0px #f8fafc;
+  box-shadow: 0px -4px 0px var(--cf-bg);
 }

@@ -34,6 +34,26 @@
   --simplex-green: #469408;
   --simplex-teal: #20c997;
   --simplex-cyan: #029acf;
+  --simplex-red-start: #db301d;
+  --simplex-red-end: #cc210e;
+  --simplex-red-border: #bd1e0d;
+  --simplex-green-start: #519a17;
+  --simplex-green-end: #428b08;
+  --simplex-green-border: #3d8107;
+  --simplex-cyan-start: #11a0d2;
+  --simplex-cyan-end: #0291c3;
+  --simplex-cyan-border: #0286b4;
+  --simplex-orange-start: #db8a2c;
+  --simplex-orange-end: #cc7b1d;
+  --simplex-orange-border: #bd721b;
+  --simplex-purple-start: #a152a5;
+  --simplex-purple-end: #924395;
+  --simplex-purple-border: #873e8a;
+  --simplex-dark-start: #434648;
+  --simplex-dark-end: #343738;
+  --simplex-dark-border: #303234;
+  --simplex-light-end: #f0f0f0;
+  --simplex-light-border: #dedede;
 
   /* Bootstrap Color Palette Overrides */
   --bs-primary: var(--simplex-red);
@@ -222,15 +242,15 @@ label {
 }
 
 .navbar.bg-primary {
-  border-color: #bd1e0d !important;
+  border-color: var(--simplex-red-border) !important;
 }
 
 .navbar.bg-dark {
-  border-color: #303234 !important;
+  border-color: var(--simplex-dark-border) !important;
 }
 
 .navbar.bg-light {
-  border-color: #dedede;
+  border-color: var(--simplex-light-border);
 }
 
 [data-bs-theme="dark"] .navbar.bg-light {
@@ -243,19 +263,19 @@ label {
 .btn-primary,
 .btn-primary:hover {
   --bs-btn-bg: var(--bs-primary);
-  background-image: linear-gradient(#db301d, #d9230f 6%, #cc210e);
+  background-image: linear-gradient(var(--simplex-red-start), var(--simplex-red) 6%, var(--simplex-red-end));
   filter: none;
-  border: 1px solid #bd1e0d;
+  border: 1px solid var(--simplex-red-border);
 }
 
 .btn-secondary,
 .btn-secondary:hover {
   --bs-btn-bg: var(--bs-secondary);
-  --bs-btn-color: #212529;
-  color: #212529;
-  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, #f0f0f0);
+  --bs-btn-color: var(--simplex-gray-900);
+  color: var(--simplex-gray-900);
+  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, var(--simplex-light-end));
   filter: none;
-  border: 1px solid #dedede;
+  border: 1px solid var(--simplex-light-border);
 }
 
 .btn-secondary:focus,
@@ -267,51 +287,51 @@ label {
 .btn-success,
 .btn-success:hover {
   --bs-btn-bg: var(--bs-success);
-  background-image: linear-gradient(#519a17, #469408 6%, #428b08);
+  background-image: linear-gradient(var(--simplex-green-start), var(--simplex-green) 6%, var(--simplex-green-end));
   filter: none;
-  border: 1px solid #3d8107;
+  border: 1px solid var(--simplex-green-border);
 }
 
 .btn-info,
 .btn-info:hover {
   --bs-btn-bg: var(--bs-info);
-  background-image: linear-gradient(#11a0d2, #029acf 6%, #0291c3);
+  background-image: linear-gradient(var(--simplex-cyan-start), var(--simplex-cyan) 6%, var(--simplex-cyan-end));
   filter: none;
-  border: 1px solid #0286b4;
+  border: 1px solid var(--simplex-cyan-border);
 }
 
 .btn-warning,
 .btn-warning:hover {
   --bs-btn-bg: var(--bs-warning);
-  background-image: linear-gradient(#db8a2c, #d9831f 6%, #cc7b1d);
+  background-image: linear-gradient(var(--simplex-orange-start), var(--simplex-orange) 6%, var(--simplex-orange-end));
   filter: none;
-  border: 1px solid #bd721b;
+  border: 1px solid var(--simplex-orange-border);
 }
 
 .btn-danger,
 .btn-danger:hover {
   --bs-btn-bg: var(--bs-danger);
-  background-image: linear-gradient(#a152a5, #9b479f 6%, #924395);
+  background-image: linear-gradient(var(--simplex-purple-start), var(--simplex-purple) 6%, var(--simplex-purple-end));
   filter: none;
-  border: 1px solid #873e8a;
+  border: 1px solid var(--simplex-purple-border);
 }
 
 .btn-dark,
 .btn-dark:hover {
   --bs-btn-bg: var(--bs-dark);
-  background-image: linear-gradient(#434648, #373a3c 6%, #343738);
+  background-image: linear-gradient(var(--simplex-dark-start), var(--simplex-gray-800) 6%, var(--simplex-dark-end));
   filter: none;
-  border: 1px solid #303234;
+  border: 1px solid var(--simplex-dark-border);
 }
 
 .btn-light,
 .btn-light:hover {
   --bs-btn-bg: var(--bs-light);
-  --bs-btn-color: #212529;
-  color: #212529;
-  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, #f0f0f0);
+  --bs-btn-color: var(--simplex-gray-900);
+  color: var(--simplex-gray-900);
+  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, var(--simplex-light-end));
   filter: none;
-  border: 1px solid #dedede;
+  border: 1px solid var(--simplex-light-border);
 }
 
 .btn-outline-secondary {
@@ -341,7 +361,7 @@ label {
    6. Navs, Pagination, Breadcrumb Overrides
    -------------------------------------------------------------------------- */
 .breadcrumb {
-  border: 1px solid #dedede;
+  border: 1px solid var(--simplex-light-border);
 }
 
 [data-bs-theme="dark"] .breadcrumb {

@@ -34,6 +34,14 @@
   --lumen-yellow-hover: #e06c00;
   --lumen-red: #ff4136;
   --lumen-red-hover: #e61c10;
+  --lumen-blue-border: #127ba3;
+  --lumen-gray-border: #d6d6d6;
+  --lumen-green-border: #24a428;
+  --lumen-cyan-border: #69b6d4;
+  --lumen-yellow-border: #e67818;
+  --lumen-red-border: #e63a31;
+  --lumen-dark-border: #4a4a4a;
+  --lumen-light-border: #dddddd;
 
   /* Bootstrap Color Palette Overrides */
   --bs-primary: var(--lumen-blue);
@@ -189,14 +197,14 @@
   border-width: 0 1px 4px 1px;
 }
 
-.navbar.bg-primary { border-color: #127ba3; }
-.navbar.bg-secondary { border-color: #d6d6d6; }
-.navbar.bg-success { border-color: #24a428; }
-.navbar.bg-info { border-color: #69b6d4; }
-.navbar.bg-warning { border-color: #e67818; }
-.navbar.bg-danger { border-color: #e63a31; }
-.navbar.bg-dark { border-color: #4a4a4a; }
-.navbar.bg-light { border-color: #dddddd; }
+.navbar.bg-primary { border-color: var(--lumen-blue-border); }
+.navbar.bg-secondary { border-color: var(--lumen-gray-border); }
+.navbar.bg-success { border-color: var(--lumen-green-border); }
+.navbar.bg-info { border-color: var(--lumen-cyan-border); }
+.navbar.bg-warning { border-color: var(--lumen-yellow-border); }
+.navbar.bg-danger { border-color: var(--lumen-red-border); }
+.navbar.bg-dark { border-color: var(--lumen-dark-border); }
+.navbar.bg-light { border-color: var(--lumen-light-border); }
 
 /* --------------------------------------------------------------------------
    3. Buttons
@@ -221,72 +229,72 @@
 
 .btn-primary {
   --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: #127ba3;
+  --bs-btn-border-color: var(--lumen-blue-border);
   --bs-btn-hover-bg: var(--bs-primary);
-  --bs-btn-hover-border-color: #127ba3;
+  --bs-btn-hover-border-color: var(--lumen-blue-border);
   --bs-btn-active-bg: var(--bs-primary);
-  --bs-btn-active-border-color: #127ba3;
+  --bs-btn-active-border-color: var(--lumen-blue-border);
 }
 
 .btn-secondary {
   --bs-btn-bg: var(--bs-secondary);
-  --bs-btn-border-color: #d8d8d8;
+  --bs-btn-border-color: var(--lumen-gray-border);
   --bs-btn-color: var(--lumen-gray-800);
   --bs-btn-hover-bg: var(--bs-secondary);
-  --bs-btn-hover-border-color: #d8d8d8;
+  --bs-btn-hover-border-color: var(--lumen-gray-border);
   --bs-btn-active-bg: var(--bs-secondary);
-  --bs-btn-active-border-color: #d8d8d8;
+  --bs-btn-active-border-color: var(--lumen-gray-border);
 }
 
 .btn-success {
   --bs-btn-bg: var(--bs-success);
-  --bs-btn-border-color: #24a428;
+  --bs-btn-border-color: var(--lumen-green-border);
   --bs-btn-hover-bg: var(--bs-success);
-  --bs-btn-hover-border-color: #24a428;
+  --bs-btn-hover-border-color: var(--lumen-green-border);
   --bs-btn-active-bg: var(--bs-success);
-  --bs-btn-active-border-color: #24a428;
+  --bs-btn-active-border-color: var(--lumen-green-border);
 }
 
 .btn-info {
   --bs-btn-bg: var(--bs-info);
-  --bs-btn-border-color: #69b6d4;
+  --bs-btn-border-color: var(--lumen-cyan-border);
   --bs-btn-color: #fff;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--bs-info);
-  --bs-btn-hover-border-color: #69b6d4;
+  --bs-btn-hover-border-color: var(--lumen-cyan-border);
   --bs-btn-active-bg: var(--bs-info);
-  --bs-btn-active-border-color: #69b6d4;
+  --bs-btn-active-border-color: var(--lumen-cyan-border);
 }
 
 .btn-warning {
   --bs-btn-bg: var(--bs-warning);
-  --bs-btn-border-color: #e67818;
+  --bs-btn-border-color: var(--lumen-yellow-border);
   --bs-btn-color: #fff;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--bs-warning);
-  --bs-btn-hover-border-color: #e67818;
+  --bs-btn-hover-border-color: var(--lumen-yellow-border);
   --bs-btn-active-bg: var(--bs-warning);
-  --bs-btn-active-border-color: #e67818;
+  --bs-btn-active-border-color: var(--lumen-yellow-border);
 }
 
 .btn-danger {
   --bs-btn-bg: var(--bs-danger);
-  --bs-btn-border-color: #e63a31;
+  --bs-btn-border-color: var(--lumen-red-border);
   --bs-btn-hover-bg: var(--bs-danger);
-  --bs-btn-hover-border-color: #e63a31;
+  --bs-btn-hover-border-color: var(--lumen-red-border);
   --bs-btn-active-bg: var(--bs-danger);
-  --bs-btn-active-border-color: #e63a31;
+  --bs-btn-active-border-color: var(--lumen-red-border);
 }
 
 .btn-light {
   --bs-btn-bg: var(--bs-light);
-  --bs-btn-border-color: #dedede;
+  --bs-btn-border-color: var(--lumen-light-border);
   --bs-btn-color: var(--lumen-gray-800);
 }
 
 .btn-dark {
   --bs-btn-bg: var(--bs-dark);
-  --bs-btn-border-color: #4a4a4a;
+  --bs-btn-border-color: var(--lumen-dark-border);
 }
 
 .form-control {
@@ -309,14 +317,14 @@
   text-decoration: underline;
 }
 
-.alert-primary { background-color: var(--bs-primary); border-color: #127ba3; }
-.alert-secondary { background-color: var(--bs-secondary); border-color: #d8d8d8; color: var(--bs-body-color); }
-.alert-success { background-color: var(--bs-success); border-color: #24a428; }
-.alert-info { background-color: var(--bs-info); border-color: #69b6d4; }
-.alert-warning { background-color: var(--bs-warning); border-color: #e67818; }
-.alert-danger { background-color: var(--bs-danger); border-color: #e63a31; }
-.alert-dark { background-color: var(--bs-dark); border-color: #4a4a4a; }
-.alert-light { background-color: var(--bs-light); border-color: #dedede; color: var(--bs-body-color); }
+.alert-primary { background-color: var(--bs-primary); border-color: var(--lumen-blue-border); }
+.alert-secondary { background-color: var(--bs-secondary); border-color: var(--lumen-gray-border); color: var(--bs-body-color); }
+.alert-success { background-color: var(--bs-success); border-color: var(--lumen-green-border); }
+.alert-info { background-color: var(--bs-info); border-color: var(--lumen-cyan-border); }
+.alert-warning { background-color: var(--bs-warning); border-color: var(--lumen-yellow-border); }
+.alert-danger { background-color: var(--bs-danger); border-color: var(--lumen-red-border); }
+.alert-dark { background-color: var(--bs-dark); border-color: var(--lumen-dark-border); }
+.alert-light { background-color: var(--bs-light); border-color: var(--lumen-light-border); color: var(--bs-body-color); }
 .alert-secondary a, .alert-secondary .alert-link,
 .alert-light a, .alert-light .alert-link { color: var(--bs-body-color); }
 
