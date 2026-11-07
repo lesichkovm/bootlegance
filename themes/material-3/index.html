@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                 </ul>
-                <button class="btn btn-secondary btn-sm" id="theme-toggle">Toggle Dark/Light</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" id="theme-toggle">Switch to dark</button>
             </div>
         </div>
     </nav>
@@ -50,6 +50,41 @@
     </div>
 
     <div class="container pb-5">
+
+        <!-- 1. Navbar variants -->
+        <section id="SectionNavbar">
+            <h2 class="section-title">1. Navbar Variants</h2>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded mb-3">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Light</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg bg-dark rounded mb-3" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Dark</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg bg-primary rounded mb-3" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Primary</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
 
         <!-- 2. Buttons -->
         <section id="SectionButtons">
@@ -153,6 +188,26 @@
                 <div class="col-md-6">
                     <label for="customRange" class="form-label">Slider</label>
                     <input type="range" class="form-range" id="customRange">
+                </div>
+            </div>
+            <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="material3Float" placeholder="name@example.com">
+                        <label for="material3Float">Email address</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="material3Color">Color picker</label>
+                    <input type="color" class="form-control form-control-color mb-3" id="material3Color" value="#0d6efd">
+                    <label class="form-label">Validation states</label>
+                    <input type="text" class="form-control is-valid mb-2" value="Correct value">
+                    <input type="text" class="form-control is-invalid" value="Incorrect value">
+                    <div class="invalid-feedback">Please provide a valid input.</div>
                 </div>
             </div>
         </section>
@@ -346,5 +401,19 @@
 
     });
 </script>
+
+    <!-- theme-toggle label sync -->
+    <script>
+    (function () {
+        var b = document.getElementById('theme-toggle');
+        if (!b) return;
+        var u = function () {
+            b.textContent = document.documentElement.getAttribute('data-bs-theme') === 'dark'
+                ? 'Switch to light' : 'Switch to dark';
+        };
+        b.addEventListener('click', u);
+        u();
+    })();
+    </script>
 </body>
 </html>

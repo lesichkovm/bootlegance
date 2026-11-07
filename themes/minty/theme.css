@@ -238,11 +238,11 @@ legend {
    -------------------------------------------------------------------------- */
 .btn {
   font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn:hover {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-primary {
@@ -364,7 +364,7 @@ legend {
 }
 
 .breadcrumb a:hover {
-  color: #fff;
+  color: var(--bs-white);
   text-decoration: none;
 }
 
@@ -373,7 +373,7 @@ legend {
    -------------------------------------------------------------------------- */
 .alert a,
 .alert .alert-link {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .alert-light,
@@ -383,7 +383,7 @@ legend {
 }
 
 .badge {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .badge.bg-light {

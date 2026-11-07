@@ -100,7 +100,7 @@ a {
 
 a:hover {
   background-color: var(--bs-primary);
-  color: #ffffff !important;
+  color: var(--bs-white) !important;
 }
 
 /* --------------------------------------------------------------------------

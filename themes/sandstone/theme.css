@@ -400,7 +400,7 @@ input:focus,
 [data-bs-theme="dark"] .nav-tabs .nav-link.active {
   background-color: var(--bs-body-bg);
   border-color: var(--bs-border-color) var(--bs-border-color) var(--bs-body-bg);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 [data-bs-theme="dark"] .nav-pills .nav-link {
@@ -411,7 +411,7 @@ input:focus,
 [data-bs-theme="dark"] .nav-pills .nav-link:hover {
   background-color: var(--sandstone-gray-800);
   border-color: var(--bs-border-color);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .breadcrumb {
@@ -443,13 +443,13 @@ input:focus,
    8. Alerts Overrides (Solid backgrounds, white text, underlined links)
    -------------------------------------------------------------------------- */
 .alert {
-  color: #fff;
+  color: var(--bs-white);
   border: none;
 }
 
 .alert a,
 .alert .alert-link {
-  color: #fff;
+  color: var(--bs-white);
   text-decoration: underline;
 }
 

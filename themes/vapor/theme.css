@@ -277,14 +277,14 @@ hr {
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
   background-color: #270e4d;
-  color: #fff;
+  color: var(--bs-white);
   border-width: 0;
 }
 
 [data-bs-theme="dark"] .form-control:focus,
 [data-bs-theme="dark"] .form-select:focus {
   background-color: #270e4d;
-  color: #fff;
+  color: var(--bs-white);
   box-shadow: 0 0 2px rgba(111, 66, 193, 0.9), 0 0 4px rgba(111, 66, 193, 0.4), 0 0 1rem rgba(111, 66, 193, 0.3);
 }
 
@@ -299,7 +299,7 @@ hr {
 }
 
 .alert {
-  color: #fff;
+  color: var(--bs-white);
   border: none;
   box-shadow: 0 0 2rem rgba(255, 255, 255, 0.15), 0 0 4rem rgba(0, 0, 0, 0.2);
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
@@ -307,7 +307,7 @@ hr {
 
 .alert .alert-link,
 .alert a {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .alert-primary { background-color: var(--bs-primary); box-shadow: 0 0 1.5rem rgba(111, 66, 193, 0.4); }
@@ -350,7 +350,7 @@ hr {
 .pagination .page-item.active .page-link {
   background-color: var(--bs-secondary);
   border-color: var(--bs-secondary);
-  color: #fff;
+  color: var(--bs-white);
   box-shadow: 0 0 2px rgba(234, 57, 184, 0.9), 0 0 4px rgba(234, 57, 184, 0.4), 0 0 1rem rgba(234, 57, 184, 0.3);
 }
 

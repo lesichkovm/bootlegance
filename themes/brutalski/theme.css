@@ -99,25 +99,25 @@ h1, h2, h3, h4, h5, h6,
 .btn-primary {
   background-color: var(--cf-indigo);
   border-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-primary:hover {
   background-color: var(--cf-indigo);
   border-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-dark {
   background-color: var(--cf-black);
   border-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-dark:hover {
   background-color: var(--cf-black);
   border-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-outline-dark {
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6,
 
 .btn-outline-dark:hover {
   background-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
   border-color: var(--cf-black);
 }
 
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6,
 .card {
   border: 3px solid var(--cf-black);
   box-shadow: var(--cf-shadow-lg);
-  background-color: #fff;
+  background-color: var(--bs-white);
   transition: all 0.2s ease;
   border-radius: 0;
 }
@@ -158,12 +158,12 @@ h1, h2, h3, h4, h5, h6,
 
 .card-header {
   border-bottom: 3px solid var(--cf-black);
-  background-color: #fff;
+  background-color: var(--bs-white);
 }
 
 .card-footer {
   border-top: 3px solid var(--cf-black);
-  background-color: #fff;
+  background-color: var(--bs-white);
 }
 
 /* --------------------------------------------------------------------------
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 4px 4px 0px var(--cf-black);
   transform: translate(-1px, -1px);
   border-color: var(--cf-black);
-  background-color: #fff;
+  background-color: var(--bs-white);
 }
 
 .form-control-lg {
@@ -338,7 +338,7 @@ h1, h2, h3, h4, h5, h6,
 
 .page-link:hover {
   background-color: var(--cf-black);
-  color: #fff;
+  color: var(--bs-white);
   border-color: var(--cf-black);
 }
 
@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 /* --------------------------------------------------------------------------
@@ -417,12 +417,12 @@ h1, h2, h3, h4, h5, h6,
   border: 3px solid var(--cf-black);
   box-shadow: var(--cf-shadow);
   border-radius: 0;
-  background-color: #fff;
+  background-color: var(--bs-white);
 }
 
 .toast-header {
   border-bottom: 2px solid var(--cf-black);
-  background-color: #fff;
+  background-color: var(--bs-white);
   color: var(--cf-black);
 }
 
@@ -457,14 +457,14 @@ h1, h2, h3, h4, h5, h6,
 
 .popover-header {
   border-bottom: 2px solid var(--cf-black);
-  background-color: #fff;
+  background-color: var(--bs-white);
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .cf-footer {
   border-top: 3px solid var(--cf-black);
-  background: #fff;
+  background: var(--bs-white);
   box-shadow: 0px -4px 0px var(--cf-black);
 }
 
@@ -541,7 +541,7 @@ h1, h2, h3, h4, h5, h6,
 [data-bs-theme="dark"] .page-item.active .page-link {
   background-color: var(--bs-primary);
   border-color: #f8fafc;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 [data-bs-theme="dark"] .page-item.disabled .page-link {

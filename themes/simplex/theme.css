@@ -253,7 +253,7 @@ label {
   --bs-btn-bg: var(--bs-secondary);
   --bs-btn-color: #212529;
   color: #212529;
-  background-image: linear-gradient(#ffffff, #ffffff 6%, #f0f0f0);
+  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, #f0f0f0);
   filter: none;
   border: 1px solid #dedede;
 }
@@ -309,7 +309,7 @@ label {
   --bs-btn-bg: var(--bs-light);
   --bs-btn-color: #212529;
   color: #212529;
-  background-image: linear-gradient(#ffffff, #ffffff 6%, #f0f0f0);
+  background-image: linear-gradient(var(--bs-white), var(--bs-white) 6%, #f0f0f0);
   filter: none;
   border: 1px solid #dedede;
 }
@@ -320,7 +320,7 @@ label {
 }
 
 .btn-outline-secondary:hover {
-  color: #fff;
+  color: var(--bs-white);
   background-color: var(--simplex-gray-400);
 }
 

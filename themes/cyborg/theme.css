@@ -281,7 +281,7 @@ legend {
 
 .navbar.bg-light {
   background-color: var(--cyborg-gray-600) !important;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 /* --------------------------------------------------------------------------
@@ -377,14 +377,14 @@ legend {
    -------------------------------------------------------------------------- */
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
-  background-color: #fff;
+  background-color: var(--bs-white);
   color: #212529;
   border: 0;
 }
 
 [data-bs-theme="dark"] .form-control:focus,
 [data-bs-theme="dark"] .form-select:focus {
-  background-color: #fff;
+  background-color: var(--bs-white);
   color: #212529;
 }
 
@@ -395,13 +395,13 @@ legend {
 }
 
 [data-bs-theme="dark"] .input-group-text {
-  color: #fff;
+  color: var(--bs-white);
   background-color: var(--cyborg-gray-700);
   border: 0;
 }
 
 [data-bs-theme="dark"] .form-check-input {
-  background-color: #fff;
+  background-color: var(--bs-white);
   border: none;
 }
 
@@ -415,7 +415,7 @@ legend {
    -------------------------------------------------------------------------- */
 .nav-tabs .nav-link,
 .nav-pills .nav-link {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .nav-tabs .nav-link:hover,
@@ -426,7 +426,7 @@ legend {
 .nav-tabs .nav-link.active,
 .nav-pills .nav-link.active {
   background-color: var(--bs-primary);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .breadcrumb {
@@ -436,7 +436,7 @@ legend {
 }
 
 .breadcrumb a {
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .pagination a:hover {
@@ -447,13 +447,13 @@ legend {
    7. Alerts & Badges
    -------------------------------------------------------------------------- */
 .alert {
-  color: #fff;
+  color: var(--bs-white);
   border: none;
 }
 
 .alert a,
 .alert .alert-link {
-  color: #fff;
+  color: var(--bs-white);
   text-decoration: underline;
 }
 
@@ -464,8 +464,8 @@ legend {
 .alert-warning { background-color: var(--bs-warning); }
 .alert-danger { background-color: var(--bs-danger); }
 .alert-light { background-color: var(--bs-light); }
-.alert-dark { background-color: var(--bs-dark); color: #000; }
-.alert-dark a, .alert-dark .alert-link { color: #000; }
+.alert-dark { background-color: var(--bs-dark); color: var(--bs-black); }
+.alert-dark a, .alert-dark .alert-link { color: var(--bs-black); }
 
 .badge.bg-dark {
   color: #212529;

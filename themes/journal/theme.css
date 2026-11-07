@@ -246,28 +246,28 @@ h6, .h6 {
   --bs-btn-bg: var(--bs-secondary);
   --bs-btn-border-color: var(--bs-secondary);
   --bs-btn-color: #fff;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {
   --bs-btn-color: #fff;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-warning {
   --bs-btn-bg: var(--bs-warning);
   --bs-btn-border-color: var(--bs-warning);
   --bs-btn-color: #fff;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:active {
   --bs-btn-color: #fff;
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .btn-success {

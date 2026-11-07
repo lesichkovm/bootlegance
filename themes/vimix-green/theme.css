@@ -866,10 +866,10 @@ hr {
 
 .badge.bg-primary { background-color: var(--vix-accent); color: var(--vix-on-accent); }
 .badge.bg-secondary { background-color: var(--vix-gray); }
-.badge.bg-success { background-color: var(--vix-green); color: #ffffff; }
-.badge.bg-danger { background-color: var(--vix-red); color: #ffffff; }
+.badge.bg-success { background-color: var(--vix-green); color: var(--bs-white); }
+.badge.bg-danger { background-color: var(--vix-red); color: var(--bs-white); }
 .badge.bg-warning { background-color: var(--vix-yellow); color: var(--vix-ink); }
-.badge.bg-info { background-color: var(--vix-teal); color: #ffffff; }
+.badge.bg-info { background-color: var(--vix-teal); color: var(--bs-white); }
 .badge.bg-light { background-color: var(--vix-surface-muted-2); color: var(--vix-ink); }
 .badge.bg-dark { background-color: var(--vix-ink); color: var(--bs-body-bg); }
 
@@ -1172,7 +1172,7 @@ hr {
   height: 8px;
   border-radius: 50%;
   border: none;
-  background-color: #ffffff;
+  background-color: var(--bs-white);
   opacity: 0.5;
 }
 
@@ -1185,7 +1185,7 @@ hr {
 }
 
 .placeholder-wave {
-  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-image: linear-gradient(130deg, var(--bs-black) 55%, rgba(var(--bs-black-rgb), 0.75) 75%, var(--bs-black) 95%);
   mask-size: 200% 100%;
 }
 

@@ -147,7 +147,7 @@ a:hover {
   --bs-btn-active-bg: var(--sn-orange-primary-hover);
   --bs-btn-active-border-color: var(--sn-orange-primary-hover);
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
-  color: #ffffff;
+  color: var(--bs-white);
 }
 
 [data-bs-theme="dark"] .btn-primary {
@@ -155,7 +155,7 @@ a:hover {
   --bs-btn-hover-border-color: var(--sn-orange-dark-hover);
   --bs-btn-active-bg: var(--sn-orange-dark-hover);
   --bs-btn-active-border-color: var(--sn-orange-dark-hover);
-  color: #ffffff;
+  color: var(--bs-white);
 }
 
 .btn-secondary {
@@ -163,7 +163,7 @@ a:hover {
   --bs-btn-border-color: var(--bs-secondary);
   --bs-btn-hover-bg: var(--sn-amber-secondary-hover);
   --bs-btn-hover-border-color: var(--sn-amber-secondary-hover);
-  color: #ffffff;
+  color: var(--bs-white);
 }
 
 .btn-outline-primary {

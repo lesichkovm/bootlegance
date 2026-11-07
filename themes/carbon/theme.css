@@ -173,7 +173,7 @@ label {
 }
 
 .navbar .nav-link.active {
-  color: #fff !important;
+  color: var(--bs-white) !important;
 }
 
 .navbar .nav-link.active::after {

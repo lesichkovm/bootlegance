@@ -762,7 +762,7 @@ hr {
 
 .nav-pills .nav-link.active {
   background-color: var(--bs-primary);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .breadcrumb {
@@ -894,7 +894,7 @@ hr {
 .list-group-item.active {
   background-color: var(--bs-primary);
   border-color: var(--bs-primary);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .list-group-item-primary {
@@ -1008,7 +1008,7 @@ hr {
 .dropdown-item:active,
 .dropdown-item:hover {
   background-color: var(--bs-primary);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 .dropdown-divider {
@@ -1208,7 +1208,7 @@ hr {
   height: 8px;
   border-radius: 50%;
   border: none;
-  background-color: #fff;
+  background-color: var(--bs-white);
   opacity: 0.5;
 }
 
@@ -1226,7 +1226,7 @@ hr {
 }
 
 .placeholder-wave {
-  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-image: linear-gradient(130deg, var(--bs-black) 55%, rgba(var(--bs-black-rgb), 0.75) 75%, var(--bs-black) 95%);
   mask-size: 200% 100%;
 }
 

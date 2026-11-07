@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-contrast="normal" data-density="regular">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +59,7 @@
                 </ul>
                 <div class="d-flex gap-2">
                     <button class="btn btn-light btn-sm" id="contrast-toggle" aria-pressed="false">High Contrast</button>
-                    <button class="btn btn-primary btn-sm" id="theme-toggle">Dark Mode</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="theme-toggle">Switch to dark</button>
                 </div>
             </div>
         </div>
@@ -1201,5 +1201,19 @@
 
     });
 </script>
+
+    <!-- theme-toggle label sync -->
+    <script>
+    (function () {
+        var b = document.getElementById('theme-toggle');
+        if (!b) return;
+        var u = function () {
+            b.textContent = document.documentElement.getAttribute('data-bs-theme') === 'dark'
+                ? 'Switch to light' : 'Switch to dark';
+        };
+        b.addEventListener('click', u);
+        u();
+    })();
+    </script>
 </body>
 </html>

@@ -155,7 +155,7 @@ a:hover {
 }
 
 [data-bs-theme="dark"] .btn-secondary {
-  color: #0d0221;
+  color: var(--bs-dark);
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }

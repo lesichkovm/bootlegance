@@ -211,21 +211,21 @@ a:hover {
   *::before,
   *::after {
     background: transparent !important;
-    color: #000000 !important;
+    color: var(--bs-black) !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
   body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+    background-color: var(--bs-white) !important;
+    color: var(--bs-black) !important;
     font-size: 11pt;
     line-height: 1.5;
   }
 
   a, a:visited {
     text-decoration: underline !important;
-    color: #000000 !important;
+    color: var(--bs-black) !important;
   }
 
   a[href^="http"]:after {
@@ -272,13 +272,13 @@ a:hover {
 
   .table td,
   .table th {
-    background-color: #ffffff !important;
+    background-color: var(--bs-white) !important;
   }
 
   .card,
   .alert,
   .list-group-item {
-    border: 1pt solid #000000 !important;
+    border: 1pt solid var(--bs-black) !important;
     page-break-inside: avoid;
     break-inside: avoid;
   }

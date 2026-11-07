@@ -297,7 +297,7 @@
    4. Alerts & Indicators
    -------------------------------------------------------------------------- */
 .alert {
-  color: #fff;
+  color: var(--bs-white);
   border-style: solid;
   border-width: 0 1px 4px 1px;
 }
@@ -305,7 +305,7 @@
 .alert a,
 .alert .alert-link {
   font-weight: 400;
-  color: #fff;
+  color: var(--bs-white);
   text-decoration: underline;
 }
 

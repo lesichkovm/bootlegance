@@ -1047,11 +1047,11 @@ hr {
 }
 
 .badge.bg-primary { background-color: var(--orchis-accent); color: var(--orchis-on-accent); }
-.badge.bg-secondary { background-color: var(--orchis-slate); color: #ffffff; }
-.badge.bg-success { background-color: var(--orchis-green); color: #ffffff; }
-.badge.bg-danger { background-color: var(--orchis-red); color: #ffffff; }
+.badge.bg-secondary { background-color: var(--orchis-slate); color: var(--bs-white); }
+.badge.bg-success { background-color: var(--orchis-green); color: var(--bs-white); }
+.badge.bg-danger { background-color: var(--orchis-red); color: var(--bs-white); }
 .badge.bg-warning { background-color: var(--orchis-yellow); color: var(--orchis-ink-strong); }
-.badge.bg-info { background-color: var(--orchis-cyan); color: #ffffff; }
+.badge.bg-info { background-color: var(--orchis-cyan); color: var(--bs-white); }
 .badge.bg-light { background-color: var(--orchis-surface-alt); color: var(--orchis-ink); border: 1px solid var(--orchis-hairline); }
 .badge.bg-dark { background-color: var(--orchis-ink); color: var(--orchis-bg); }
 
@@ -1291,7 +1291,7 @@ hr {
   height: 0.5rem;
   border-radius: var(--orchis-radius-pill);
   border: none;
-  background-color: #ffffff;
+  background-color: var(--bs-white);
   opacity: 0.45;
 }
 
@@ -1304,7 +1304,7 @@ hr {
 }
 
 .placeholder-wave {
-  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.75) 75%, #000 95%);
+  mask-image: linear-gradient(130deg, var(--bs-black) 55%, rgba(var(--bs-black-rgb), 0.75) 75%, var(--bs-black) 95%);
   mask-size: 200% 100%;
 }
 

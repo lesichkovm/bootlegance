@@ -145,8 +145,8 @@ body {
 
 .form-control, .form-select {
   border-radius: 0 !important;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--w98-surface-light);
+  color: var(--w98-foreground);
   border-top: 2px solid var(--w98-surface-dark) !important;
   border-left: 2px solid var(--w98-surface-dark) !important;
   border-right: 2px solid var(--w98-surface-light) !important;
@@ -157,8 +157,8 @@ body {
 
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
-  background-color: #101010;
-  color: #ffffff;
+  background-color: var(--w98-bg);
+  color: var(--w98-foreground);
 }
 
 .navbar {

@@ -107,16 +107,16 @@ body {
 /* Classic Mac Window & Double Border Elements */
 .card, .modal-content, .dropdown-menu {
   background-color: var(--mac-surface);
-  border: 2px solid #000000 !important;
+  border: 2px solid var(--bs-black) !important;
   border-radius: 0 !important;
-  box-shadow: 2px 2px 0px #000000;
+  box-shadow: 2px 2px 0px var(--bs-black);
 }
 
 [data-bs-theme="dark"] .card,
 [data-bs-theme="dark"] .modal-content,
 [data-bs-theme="dark"] .dropdown-menu {
-  border: 2px solid #ffffff !important;
-  box-shadow: 2px 2px 0px #ffffff;
+  border: 2px solid var(--bs-white) !important;
+  box-shadow: 2px 2px 0px var(--bs-white);
 }
 
 .btn {
@@ -126,13 +126,13 @@ body {
   font-weight: bold;
   font-size: 11px;
   padding: 3px 12px;
-  border: 2px solid #000000 !important;
-  box-shadow: 1px 1px 0px #000000;
+  border: 2px solid var(--bs-black) !important;
+  box-shadow: 1px 1px 0px var(--bs-black);
 }
 
 [data-bs-theme="dark"] .btn {
-  border-color: #ffffff !important;
-  box-shadow: 1px 1px 0px #ffffff;
+  border-color: var(--bs-white) !important;
+  box-shadow: 1px 1px 0px var(--bs-white);
 }
 
 .btn-primary {
@@ -142,9 +142,9 @@ body {
 
 .form-control, .form-select {
   border-radius: 0 !important;
-  background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000 !important;
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+  border: 2px solid var(--bs-black) !important;
   font-size: 12px;
   padding: 3px 6px;
 }
@@ -152,23 +152,23 @@ body {
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
   background-color: #1a1a1a;
-  color: #ffffff;
-  border-color: #ffffff !important;
+  color: var(--bs-white);
+  border-color: var(--bs-white) !important;
 }
 
 .navbar {
   background-color: var(--mac-surface) !important;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid var(--bs-black);
 }
 
 [data-bs-theme="dark"] .navbar {
-  border-bottom-color: #ffffff;
+  border-bottom-color: var(--bs-white);
 }
 
 .card-header {
   background-color: var(--mac-surface-dark);
-  color: #ffffff;
+  color: var(--bs-white);
   font-weight: bold;
   padding: 3px 6px;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid var(--bs-black);
 }

@@ -32,6 +32,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Cosmo                 | `cosmo`               | Available |
 | Cyborg                | `cyborg`              | Available |
 | Cyberpunk / Synthwave '84 | `cyberpunk`           | Available |
+| Darkly                | `darkly`              | Available |
 | Dracula               | `dracula`             | Available |
 | Dracula Soft          | `dracula-soft`        | Available |
 | Editorial / Paper     | `editorial`           | Available |
@@ -88,6 +89,7 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 | Terminal / CRT        | `terminal`            | Available |
 | Tokyo Night           | `tokyo-night`         | Available |
 | Vanguard              | `vanguard`            | Available |
+| Vapor                 | `vapor`               | Available |
 | Vimix                 | `vimix`               | Available |
 | Vimix Dark            | `vimix-dark`          | Available |
 | Vimix Green           | `vimix-green`         | Available |
@@ -213,6 +215,6 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 - [ ] All 19 preview sections render correctly in `index.html`
 - [ ] Light mode and dark mode (`data-bs-theme="dark"`) both look intentional
 - [ ] Exactly two modes — no palette variants inside the theme
+- [ ] Preview renders with default presentation (no `data-panels`/`data-density`/`data-contrast` attributes on `<html>`)
 - [ ] No Bootstrap source files are bundled or committed
-- [ ] Theme slug directory name is lowercase and hyphenated| Darkly |  | Available | Flatly in night mode (Bootswatch port) |
-| Vapor |  | Available | Cyberpunk synthwave with neon glow (Bootswatch port) |
+- [ ] Theme slug directory name is lowercase and hyphenated

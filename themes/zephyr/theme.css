@@ -423,7 +423,7 @@ thead th {
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: var(--bs-primary);
-  color: #fff;
+  color: var(--bs-white);
 }
 
 /* --------------------------------------------------------------------------
