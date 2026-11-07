@@ -208,6 +208,53 @@ def run_tests(port):
 
         print("  Passed!")
 
+        print("Test 11: Standard Bootstrap theme removal and persistence")
+        # Go to clean page with default vanguard
+        context.clear_cookies()
+        page.goto(f"http://localhost:{port}/tests/test_page.html")
+        page.wait_for_selector("[data-bootlegance-picker] select option", state="attached")
+        assert page.locator("#bootlegance-theme").count() == 1
+
+        # Select Standard Bootstrap in the dropdown
+        page.select_option("[data-bootlegance-picker] select", "bootstrap")
+        assert page.evaluate("Bootlegance.current()") == "bootstrap"
+        # The #bootlegance-theme link element must be completely removed from DOM
+        assert page.locator("#bootlegance-theme").count() == 0, "#bootlegance-theme should be removed for standard bootstrap"
+
+        # Check cookie value
+        cookies = context.cookies()
+        theme_cookie = next(c for c in cookies if c["name"] == "theme")
+        assert theme_cookie["value"] == "bootstrap", f"Expected cookie bootstrap, got {theme_cookie['value']}"
+
+        # Reload page and verify standard bootstrap persists from cookie without injecting theme css
+        page.reload()
+        page.wait_for_selector("[data-bootlegance-picker] select", state="attached")
+        assert page.locator("#bootlegance-theme").count() == 0, "#bootlegance-theme should remain absent after reload"
+        assert page.evaluate("Bootlegance.current()") == "bootstrap"
+        selected_val = page.locator("[data-bootlegance-picker] select").input_value()
+        assert selected_val == "bootstrap", f"Expected bootstrap selected in UI dropdown, got {selected_val}"
+
+        # Switch back to another theme
+        page.evaluate("Bootlegance.set('cyberpunk')")
+        assert page.locator("#bootlegance-theme").count() == 1
+        assert "themes/cyberpunk/theme.css" in page.locator("#bootlegance-theme").get_attribute("href")
+
+        # Test Bootlegance.removeTheme() API
+        page.evaluate("Bootlegance.removeTheme()")
+        assert page.locator("#bootlegance-theme").count() == 0
+        assert page.evaluate("Bootlegance.current()") == "bootstrap"
+
+        # Query param ?theme=none or ?theme=bootstrap
+        page.goto(f"http://localhost:{port}/tests/test_page.html?theme=none")
+        assert page.locator("#bootlegance-theme").count() == 0
+        assert page.evaluate("Bootlegance.current()") == "bootstrap"
+
+        page.goto(f"http://localhost:{port}/tests/test_page.html?theme=bootstrap")
+        assert page.locator("#bootlegance-theme").count() == 0
+        assert page.evaluate("Bootlegance.current()") == "bootstrap"
+
+        print("  Passed!")
+
         browser.close()
 
 def main():

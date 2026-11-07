@@ -109,12 +109,12 @@ The script tag accepts optional attributes:
 
 ### Theme Resolution Priority
 
-1. `?theme=` URL query parameter (e.g. `https://example.com/?theme=dracula`)
+1. `?theme=` URL query parameter (e.g. `https://example.com/?theme=dracula`, or `?theme=bootstrap` / `?theme=none` for standard Bootstrap)
 2. `theme` cookie
-3. `data-default-theme` attribute on the script tag
+3. `data-default-theme` attribute on the script tag (e.g. `data-default-theme="bootstrap"`)
 4. Built-in default theme (`vanguard`)
 
-Theme names are validated against `^[a-z0-9-]+$`.
+Theme names are validated against `^[a-z0-9-]+$`. The theme picker dropdown (`[data-bootlegance-picker]`) also provides a built-in "Standard Bootstrap" option to remove the theme stylesheet and display default Bootstrap styling.
 
 ### JavaScript API
 
@@ -129,6 +129,9 @@ console.log(Bootlegance.current());
 
 // Switch to a new theme
 Bootlegance.set('dracula');
+
+// Revert to standard Bootstrap (removes theme CSS)
+Bootlegance.removeTheme(); // or Bootlegance.set('bootstrap'), Bootlegance.set('none')
 
 // Get stylesheet URL for a theme
 console.log(Bootlegance.url('dracula'));

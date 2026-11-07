@@ -17,6 +17,8 @@
   var THEME_NAME_REGEX = /^[a-z0-9-]+$/;
   var DEFAULT_THEME = 'vanguard';
   var COOKIE_NAME = 'theme';
+  var BOOTSTRAP_THEME = 'bootstrap';
+  var BOOTSTRAP_LABEL = 'Standard Bootstrap';
   var DEFAULT_MODE_KEY = 'cf-theme';
   var DEFAULT_MODE_ATTR = 'data-bs-theme';
   var LINK_ELEMENT_ID = 'bootlegance-theme';
@@ -26,8 +28,19 @@
   var MAX_FONT_SIZE = 200;
   var DEFAULT_FONT_SIZE = 100;
 
+  function isBootstrapTheme(name) {
+    return name === '' || name === 'bootstrap' || name === 'none' || name === 'default';
+  }
+
   function isValidThemeName(name) {
-    return typeof name === 'string' && THEME_NAME_REGEX.test(name);
+    return typeof name === 'string' && (isBootstrapTheme(name) || THEME_NAME_REGEX.test(name));
+  }
+
+  function normalizeThemeName(name) {
+    if (isBootstrapTheme(name)) {
+      return BOOTSTRAP_THEME;
+    }
+    return name;
   }
 
   function getScriptElement() {
@@ -120,7 +133,7 @@
     var rawList = initialThemesAttr.split(',');
     for (var i = 0; i < rawList.length; i++) {
       var t = rawList[i].trim();
-      if (isValidThemeName(t) && themeList.indexOf(t) === -1) {
+      if (isValidThemeName(t) && !isBootstrapTheme(t) && themeList.indexOf(t) === -1) {
         themeList.push(t);
       }
     }
@@ -129,19 +142,19 @@
   function resolveTheme() {
     // 1. ?theme= query param
     var queryVal = getQueryParam('theme');
-    if (isValidThemeName(queryVal)) {
-      return queryVal;
+    if (queryVal !== null && isValidThemeName(queryVal)) {
+      return normalizeThemeName(queryVal);
     }
 
     // 2. theme cookie
     var cookieVal = parseCookie(COOKIE_NAME);
-    if (isValidThemeName(cookieVal)) {
-      return cookieVal;
+    if (cookieVal !== null && isValidThemeName(cookieVal)) {
+      return normalizeThemeName(cookieVal);
     }
 
     // 3. data-default-theme attribute
-    if (isValidThemeName(defaultThemeAttr)) {
-      return defaultThemeAttr;
+    if (defaultThemeAttr !== null && isValidThemeName(defaultThemeAttr)) {
+      return normalizeThemeName(defaultThemeAttr);
     }
 
     // 4. built-in default 'vanguard'
@@ -149,6 +162,9 @@
   }
 
   function themeUrl(name) {
+    if (isBootstrapTheme(name)) {
+      return '';
+    }
     if (!isValidThemeName(name)) {
       name = DEFAULT_THEME;
     }
@@ -162,8 +178,15 @@
   function applyCss(name) {
     if (typeof document === 'undefined') return;
     var linkEl = document.getElementById(LINK_ELEMENT_ID);
-    var href = themeUrl(name);
 
+    if (isBootstrapTheme(name)) {
+      if (linkEl) {
+        linkEl.parentNode && linkEl.parentNode.removeChild(linkEl);
+      }
+      return;
+    }
+
+    var href = themeUrl(name);
     if (!linkEl) {
       linkEl = document.createElement('link');
       linkEl.id = LINK_ELEMENT_ID;
@@ -367,9 +390,20 @@
         });
       }
 
-      // Populate options if list changed or options empty
-      if (themeList.length > 0 && select.options.length !== themeList.length) {
+      // Populate options if list changed or options empty (+1 for Standard Bootstrap)
+      var expectedOptionCount = themeList.length > 0 ? themeList.length + 1 : 0;
+      if (themeList.length > 0 && select.options.length !== expectedOptionCount) {
         select.innerHTML = '';
+
+        // Standard Bootstrap option (no custom theme stylesheet)
+        var defaultOpt = document.createElement('option');
+        defaultOpt.value = BOOTSTRAP_THEME;
+        defaultOpt.textContent = BOOTSTRAP_LABEL;
+        if (currentTheme === BOOTSTRAP_THEME) {
+          defaultOpt.selected = true;
+        }
+        select.appendChild(defaultOpt);
+
         for (var j = 0; j < themeList.length; j++) {
           var t = themeList[j];
           var opt = document.createElement('option');
@@ -462,7 +496,7 @@
         if (Array.isArray(data)) {
           var validated = [];
           for (var i = 0; i < data.length; i++) {
-            if (isValidThemeName(data[i])) {
+            if (isValidThemeName(data[i]) && !isBootstrapTheme(data[i])) {
               validated.push(data[i]);
             }
           }
@@ -483,6 +517,8 @@
       console.warn('[Bootlegance] Invalid theme name: ' + name);
       return;
     }
+
+    name = normalizeThemeName(name);
 
     currentTheme = name;
     setCookie(COOKIE_NAME, name);
@@ -513,6 +549,12 @@
       return currentTheme;
     },
     set: setTheme,
+    removeTheme: function () {
+      setTheme(BOOTSTRAP_THEME);
+    },
+    clearTheme: function () {
+      setTheme(BOOTSTRAP_THEME);
+    },
     url: themeUrl,
     setMode: setMode,
     getMode: getMode,
@@ -529,10 +571,12 @@
       if (opts.modeAttribute !== undefined) modeAttribute = opts.modeAttribute;
       if (opts.fontSizeStorageKey !== undefined) fontSizeStorageKey = opts.fontSizeStorageKey;
       if (Array.isArray(opts.themes)) {
-        themeList = opts.themes.filter(isValidThemeName);
+        themeList = opts.themes.filter(function (t) {
+          return isValidThemeName(t) && !isBootstrapTheme(t);
+        });
         Bootlegance.themes = themeList;
       }
-      if (opts.defaultTheme && isValidThemeName(opts.defaultTheme)) {
+      if (opts.defaultTheme !== undefined && isValidThemeName(opts.defaultTheme)) {
         defaultThemeAttr = opts.defaultTheme;
       }
       var resolved = resolveTheme();
