@@ -34,6 +34,8 @@
   --minty-gray-700: #5a5a5a;
   --minty-gray-800: #343a40;
   --minty-gray-900: #212529;
+  --minty-btn-light-hover-bg: #d3d4d5;
+  --minty-btn-light-hover-border: #c6c7c8;
   --minty-black: #000;
 
   /* Bootstrap Color Palette Overrides */
@@ -313,8 +315,8 @@ legend {
 
 .btn-light:hover {
   color: var(--minty-gray-700);
-  background-color: #d3d4d5;
-  border-color: #c6c7c8;
+  background-color: var(--minty-btn-light-hover-bg);
+  border-color: var(--minty-btn-light-hover-border);
 }
 
 .btn-dark {

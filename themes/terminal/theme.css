@@ -134,7 +134,7 @@ a:hover {
 }
 
 [data-bs-theme="dark"] .btn-primary {
-  color: #0c100d;
+  color: var(--term-green-dark);
   background-color: var(--term-green);
   border-color: var(--term-green);
   box-shadow: 0 0 8px rgba(0, 255, 102, 0.4);

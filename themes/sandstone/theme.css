@@ -25,6 +25,7 @@
   --sandstone-black: #000;
 
   --sandstone-blue: #325d88;
+  --sandstone-blue-light: #99aec4;
   --sandstone-indigo: #6610f2;
   --sandstone-purple: #6f42c1;
   --sandstone-pink: #e83e8c;
@@ -334,7 +335,7 @@ input:focus,
 .form-control:focus,
 .form-select:focus {
   box-shadow: none;
-  border-color: #99aec4;
+  border-color: var(--sandstone-blue-light);
 }
 
 /* --------------------------------------------------------------------------

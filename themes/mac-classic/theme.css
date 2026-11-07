@@ -151,7 +151,7 @@ body {
 
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
-  background-color: #1a1a1a;
+  background-color: var(--mac-bg);
   color: var(--bs-white);
   border-color: var(--bs-white) !important;
 }

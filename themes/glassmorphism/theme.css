@@ -17,6 +17,7 @@
   --glass-surface-light: rgba(255, 255, 255, 0.65);
   --glass-border-light: rgba(255, 255, 255, 0.5);
   --glass-text-light: #0f172a;
+  --glass-bg-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
 
   /* Bootstrap Primary Overrides (Light Mode) */
   --bs-primary: var(--glass-primary);
@@ -61,7 +62,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%) fixed;
+  background: var(--glass-bg-gradient) fixed;
   min-height: 100vh;
 }
 
@@ -82,11 +83,12 @@ body {
   --bs-dark: #090d16;
 
   --bs-navbar-bg: rgba(15, 23, 42, 0.6);
+  --glass-bg-gradient-dark: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0f172a 100%);
   --bs-focus-ring-color: rgba(129, 140, 248, 0.4);
 }
 
 [data-bs-theme="dark"] body {
-  background: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0f172a 100%) fixed;
+  background: var(--glass-bg-gradient-dark) fixed;
 }
 
 /* --------------------------------------------------------------------------

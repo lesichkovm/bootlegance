@@ -275,7 +275,7 @@ legend {
 }
 
 .navbar.bg-dark {
-  background-color: #060606 !important;
+  background-color: var(--bs-body-bg) !important;
   border: 1px solid var(--bs-border-color);
 }
 
@@ -378,14 +378,14 @@ legend {
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
   background-color: var(--bs-white);
-  color: #212529;
+  color: var(--cyborg-gray-900);
   border: 0;
 }
 
 [data-bs-theme="dark"] .form-control:focus,
 [data-bs-theme="dark"] .form-select:focus {
   background-color: var(--bs-white);
-  color: #212529;
+  color: var(--cyborg-gray-900);
 }
 
 [data-bs-theme="dark"] .form-control:disabled,
@@ -468,7 +468,7 @@ legend {
 .alert-dark a, .alert-dark .alert-link { color: var(--bs-black); }
 
 .badge.bg-dark {
-  color: #212529;
+  color: var(--cyborg-gray-900);
 }
 
 .tooltip {

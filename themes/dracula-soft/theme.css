@@ -42,6 +42,7 @@
   --dr-surface-raised: #2f313d;
   --dr-surface-raised-rgb: 47, 49, 61;
   --dr-border: #3a3d4c;
+  --dr-selection-light: #d7d6e0;
   --dr-border-soft: rgba(248, 248, 242, 0.08);
   --dr-fg: #e6e6ea;
   --dr-fg-rgb: 230, 230, 234;
@@ -133,7 +134,7 @@
 }
 
 ::selection {
-  background-color: #3a3d4c;
+  background-color: var(--dr-border);
   color: var(--dr-foreground);
 }
 
@@ -1192,7 +1193,7 @@ pre.dr-code .dr-op { color: var(--dr-pink); }
    Tokens that assume a dark foreground are re-pointed for the light style.
    -------------------------------------------------------------------------- */
 [data-bs-theme="light"] ::selection {
-  background-color: #d7d6e0;
+  background-color: var(--dr-selection-light);
   color: var(--dr-background);
 }
 
