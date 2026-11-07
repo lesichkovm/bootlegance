@@ -12,6 +12,8 @@
   --bs-tertiary-bg: #444;
 
   --bs-primary: #375a7f;
+  --dk-success-hover: #00d69f;
+  --dk-success-deep: #007054;
   --bs-primary-rgb: 55, 90, 127;
   --bs-secondary: #444;
   --bs-secondary-rgb: 68, 68, 68;
@@ -220,26 +222,26 @@
 [data-bs-theme="dark"] .form-control,
 [data-bs-theme="dark"] .form-select {
   background-color: var(--bs-white);
-  color: #303030;
-  border-color: #222;
+  color: var(--bs-dark);
+  border-color: var(--bs-body-bg);
 }
 
 [data-bs-theme="dark"] .form-control:focus,
 [data-bs-theme="dark"] .form-select:focus {
   background-color: var(--bs-white);
-  color: #303030;
-  border-color: #375a7f;
+  color: var(--bs-dark);
+  border-color: var(--bs-primary);
   box-shadow: 0 0 0 0.25rem rgba(55, 90, 127, 0.25);
 }
 
 [data-bs-theme="dark"] .form-control::placeholder {
-  color: #888;
+  color: var(--bs-tertiary-color);
 }
 
 [data-bs-theme="dark"] .input-group-text {
-  background-color: #444;
-  color: #adb5bd;
-  border-color: #444;
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-secondary-color);
+  border-color: var(--bs-tertiary-bg);
 }
 
 [data-bs-theme="dark"] .form-check-input {
@@ -248,8 +250,8 @@
 }
 
 [data-bs-theme="dark"] .form-check-input:checked {
-  background-color: #375a7f;
-  border-color: #375a7f;
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
 }
 
 .navbar {
@@ -288,19 +290,19 @@
 
 .pagination .page-link:hover {
   color: var(--bs-white);
-  background-color: #00d69f;
+  background-color: var(--dk-success-hover);
   text-decoration: none;
 }
 
 .pagination .page-item.active .page-link {
   color: var(--bs-white);
-  background-color: #00d69f;
+  background-color: var(--dk-success-hover);
   border: none;
 }
 
 .pagination .page-item.disabled .page-link {
   color: var(--bs-white);
-  background-color: #007054;
+  background-color: var(--dk-success-deep);
   opacity: 0.65;
 }
 
@@ -321,5 +323,5 @@
 .alert-info { background-color: var(--bs-info); }
 .alert-warning { background-color: var(--bs-warning); }
 .alert-danger { background-color: var(--bs-danger); }
-.alert-light { background-color: var(--bs-light); color: #303030; }
+.alert-light { background-color: var(--bs-light); color: var(--bs-dark); }
 .alert-dark { background-color: var(--bs-dark); }
