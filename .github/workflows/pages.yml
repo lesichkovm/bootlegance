@@ -31,6 +31,8 @@ jobs:
           mkdir -p _site
           cp -R docs/. _site/
           cp -R themes _site/themes
+          cp index.html _site/index.html
+          cp 404.html _site/404.html
           cp bootlegance.js _site/bootlegance.js
           if [ -f bootlegance.min.js ]; then cp bootlegance.min.js _site/bootlegance.min.js; fi
           cp themes.json _site/themes.json

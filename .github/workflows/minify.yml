@@ -35,8 +35,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain bootlegance.min.js docs/bootlegance.min.js docs/bootlegance.js)" ]; then
-            git add bootlegance.min.js docs/bootlegance.min.js docs/bootlegance.js
+          if [ -n "$(git status --porcelain bootlegance.min.js)" ]; then
+            git add bootlegance.min.js
             git commit -m "Minify CDN script to bootlegance.min.js [skip ci]"
             git push
           else

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Minifies bootlegance.js to bootlegance.min.js at repository root and docs/.
+ * Minifies bootlegance.js to bootlegance.min.js at repository root.
  * Can be run with Node.js directly (`node scripts/minify.js`).
  * Uses terser CLI via child_process or npx terser fallback.
  */
@@ -12,7 +12,6 @@ const path = require('path');
 const repoRoot = path.resolve(__dirname, '..');
 const sourceFile = path.join(repoRoot, 'bootlegance.js');
 const rootMinFile = path.join(repoRoot, 'bootlegance.min.js');
-const docsMinFile = path.join(repoRoot, 'docs', 'bootlegance.min.js');
 
 if (!fs.existsSync(sourceFile)) {
   console.error(`Error: Source file ${sourceFile} does not exist.`);
@@ -58,19 +57,6 @@ try {
   // Write to repository root
   fs.writeFileSync(rootMinFile, finalOutput, 'utf8');
   console.log(`Wrote minified script to ${rootMinFile} (${fs.statSync(rootMinFile).size} bytes)`);
-
-  // Mirror to docs/ if docs directory exists
-  const docsDir = path.join(repoRoot, 'docs');
-  if (fs.existsSync(docsDir)) {
-    fs.writeFileSync(docsMinFile, finalOutput, 'utf8');
-    console.log(`Mirrored minified script to ${docsMinFile}`);
-  }
-
-  // Also make sure docs/bootlegance.js stays synchronized with bootlegance.js
-  const docsSourceFile = path.join(docsDir, 'bootlegance.js');
-  if (fs.existsSync(docsDir)) {
-    fs.copyFileSync(sourceFile, docsSourceFile);
-  }
 
   console.log('Minification completed successfully.');
 } catch (err) {

@@ -12,7 +12,16 @@ Bootlegance is a collection of drop-in CSS themes for Bootstrap 5.3+. Each theme
 /themes/{theme-slug}/
     theme.css       ← The theme stylesheet
     index.html      ← Interactive HTML preview page
+/docs
+    CNAME           ← GitHub Pages custom domain (only file kept here)
 ```
+
+The repo root is the single source of truth. The Pages workflow
+(`.github/workflows/pages.yml`) assembles `_site/` at deploy time: it copies
+`docs/` (which must contain only `CNAME`), then overlays `index.html`,
+`404.html`, `bootlegance.js`, `bootlegance.min.js`, `themes.json`, `demo.html`,
+`screenshot-demo.png`, and `themes/` from root. Do NOT add copies of root files
+to `docs/` — they will drift.
 
 ### Theme Slugs
 
