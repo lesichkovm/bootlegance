@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Yaru Bootstrap 6 Theme (alpha)
+   Auto-ported from the v5 token declarations; component-level overrides
+   from the v5 theme.css may still need manual porting.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+  --bs-primary-base: #E95420;
+  --bs-primary-fg: #E95420;
+  --bs-primary-fg-emphasis: light-dark(#E95420, #E95420);
+  --bs-primary-bg: light-dark(#E95420, #E95420);
+  --bs-primary-bg-subtle: light-dark(color-mix(in oklab, #E95420, transparent 85%), color-mix(in oklab, #E95420, transparent 85%));
+  --bs-primary-bg-muted: light-dark(color-mix(in oklab, #E95420, #E95420 10%), color-mix(in oklab, #E95420, #E95420 12%));
+  --bs-primary-border: light-dark(#E95420, #E95420);
+  --bs-primary-focus-ring: color-mix(in oklab, #E95420, transparent 75%);
+  --bs-primary-contrast: var(--bs-white);
+
+  --bs-secondary-base: #77216F;
+  --bs-secondary-fg: #77216F;
+  --bs-secondary-fg-emphasis: light-dark(#77216F, #77216F);
+  --bs-secondary-bg: light-dark(#77216F, #9b3d97);
+  --bs-secondary-bg-subtle: light-dark(color-mix(in oklab, #77216F, transparent 85%), color-mix(in oklab, #77216F, transparent 85%));
+  --bs-secondary-bg-muted: light-dark(color-mix(in oklab, #77216F, #77216F 10%), color-mix(in oklab, #9b3d97, #9b3d97 12%));
+  --bs-secondary-border: light-dark(#77216F, #77216F);
+  --bs-secondary-focus-ring: color-mix(in oklab, #77216F, transparent 75%);
+  --bs-secondary-contrast: var(--bs-white);
+
+  --bs-accent-base: #E95420;
+  --bs-accent-fg: #E95420;
+  --bs-accent-fg-emphasis: light-dark(#E95420, #E95420);
+  --bs-accent-bg: light-dark(#E95420, #E95420);
+  --bs-accent-bg-subtle: light-dark(color-mix(in oklab, #E95420, transparent 85%), color-mix(in oklab, #E95420, transparent 85%));
+  --bs-accent-bg-muted: light-dark(color-mix(in oklab, #E95420, #E95420 10%), color-mix(in oklab, #E95420, #E95420 12%));
+  --bs-accent-border: light-dark(#E95420, #E95420);
+  --bs-accent-focus-ring: color-mix(in oklab, #E95420, transparent 75%);
+  --bs-accent-contrast: var(--bs-white);
+
+  --bs-success-base: #0e8420;
+  --bs-success-fg: #0e8420;
+  --bs-success-fg-emphasis: light-dark(#0e8420, #0e8420);
+  --bs-success-bg: light-dark(#0e8420, #0e8420);
+  --bs-success-bg-subtle: light-dark(color-mix(in oklab, #0e8420, transparent 85%), color-mix(in oklab, #0e8420, transparent 85%));
+  --bs-success-bg-muted: light-dark(color-mix(in oklab, #0e8420, #0e8420 10%), color-mix(in oklab, #0e8420, #0e8420 12%));
+  --bs-success-border: light-dark(#0e8420, #0e8420);
+  --bs-success-focus-ring: color-mix(in oklab, #0e8420, transparent 75%);
+  --bs-success-contrast: var(--bs-white);
+
+  --bs-info-base: #18b0b0;
+  --bs-info-fg: #18b0b0;
+  --bs-info-fg-emphasis: light-dark(#18b0b0, #18b0b0);
+  --bs-info-bg: light-dark(#18b0b0, #18b0b0);
+  --bs-info-bg-subtle: light-dark(color-mix(in oklab, #18b0b0, transparent 85%), color-mix(in oklab, #18b0b0, transparent 85%));
+  --bs-info-bg-muted: light-dark(color-mix(in oklab, #18b0b0, #18b0b0 10%), color-mix(in oklab, #18b0b0, #18b0b0 12%));
+  --bs-info-border: light-dark(#18b0b0, #18b0b0);
+  --bs-info-focus-ring: color-mix(in oklab, #18b0b0, transparent 75%);
+  --bs-info-contrast: var(--bs-white);
+
+  --bs-warning-base: #f4a100;
+  --bs-warning-fg: #f4a100;
+  --bs-warning-fg-emphasis: light-dark(#f4a100, #f4a100);
+  --bs-warning-bg: light-dark(#f4a100, #f4a100);
+  --bs-warning-bg-subtle: light-dark(color-mix(in oklab, #f4a100, transparent 85%), color-mix(in oklab, #f4a100, transparent 85%));
+  --bs-warning-bg-muted: light-dark(color-mix(in oklab, #f4a100, #f4a100 10%), color-mix(in oklab, #f4a100, #f4a100 12%));
+  --bs-warning-border: light-dark(#f4a100, #f4a100);
+  --bs-warning-focus-ring: color-mix(in oklab, #f4a100, transparent 75%);
+  --bs-warning-contrast: var(--bs-white);
+
+  --bs-danger-base: #c7162b;
+  --bs-danger-fg: #c7162b;
+  --bs-danger-fg-emphasis: light-dark(#c7162b, #c7162b);
+  --bs-danger-bg: light-dark(#c7162b, #c7162b);
+  --bs-danger-bg-subtle: light-dark(color-mix(in oklab, #c7162b, transparent 85%), color-mix(in oklab, #c7162b, transparent 85%));
+  --bs-danger-bg-muted: light-dark(color-mix(in oklab, #c7162b, #c7162b 10%), color-mix(in oklab, #c7162b, #c7162b 12%));
+  --bs-danger-border: light-dark(#c7162b, #c7162b);
+  --bs-danger-focus-ring: color-mix(in oklab, #c7162b, transparent 75%);
+  --bs-danger-contrast: var(--bs-white);
+
+  --bs-inverse-base: #1e1e1e;
+  --bs-inverse-fg: #1e1e1e;
+  --bs-inverse-fg-emphasis: light-dark(#1e1e1e, #1e1e1e);
+  --bs-inverse-bg: light-dark(#1e1e1e, #1e1e1e);
+  --bs-inverse-bg-subtle: light-dark(color-mix(in oklab, #1e1e1e, transparent 85%), color-mix(in oklab, #1e1e1e, transparent 85%));
+  --bs-inverse-bg-muted: light-dark(color-mix(in oklab, #1e1e1e, #1e1e1e 10%), color-mix(in oklab, #1e1e1e, #1e1e1e 12%));
+  --bs-inverse-border: light-dark(#1e1e1e, #1e1e1e);
+  --bs-inverse-focus-ring: color-mix(in oklab, #1e1e1e, transparent 75%);
+  --bs-inverse-contrast: var(--bs-white);
+  /* Body & surfaces */
+  
+  --bs-fg-body: light-dark(#2e2e2e, #e0ddd8);
+  --bs-bg-body: light-dark(#f6f5f4, #1e1e1e);
+  --bs-bg-1: light-dark(#f6f5f4, #f6f5f4);
+  --bs-bg-2: light-dark(#ffffff, #2d2d2d);
+  --bs-border-color: light-dark(#d8d6d3, #3d3d3d);
+
+  --bs-radius-1: 6px;
+  --bs-radius-2: 6px;
+  --bs-radius-3: 6px;
+  --bs-radius-4: 6px;
+  --bs-radius-5: 6px;
+  --bs-radius-6: 6px;
+  --bs-radius-7: 6px;
+  --bs-radius-8: 6px;
+  --bs-radius-9: 6px;
+
+  --bs-link-color: light-dark(#1e1e1e, #1e1e1e);
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: light-dark(#1e1e1e, #1e1e1e);
+}
+
+/* plain x close icon (matches Bootlegance v6 convention) */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* colored header band on solid bg-* cards */
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}

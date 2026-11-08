@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Spacelab Bootstrap 6 Theme (alpha)
+   Auto-ported from the v5 token declarations; component-level overrides
+   from the v5 theme.css may still need manual porting.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --bs-primary-base: #446e9b;
+  --bs-primary-fg: #1b2c3e;
+  --bs-primary-fg-emphasis: light-dark(#1b2c3e, #8fa8c3);
+  --bs-primary-bg: light-dark(#446e9b, #446e9b);
+  --bs-primary-bg-subtle: light-dark(#dae2eb, #0e161f);
+  --bs-primary-bg-muted: light-dark(color-mix(in oklab, #dae2eb, #446e9b 10%), color-mix(in oklab, #0e161f, #446e9b 12%));
+  --bs-primary-border: light-dark(#b4c5d7, #29425d);
+  --bs-primary-focus-ring: color-mix(in oklab, #446e9b, transparent 75%);
+  --bs-primary-contrast: var(--bs-white);
+
+  --bs-secondary-base: #999;
+  --bs-secondary-fg: #3d3d3d;
+  --bs-secondary-fg-emphasis: light-dark(#3d3d3d, #c2c2c2);
+  --bs-secondary-bg: light-dark(#999, #999);
+  --bs-secondary-bg-subtle: light-dark(#ebebeb, #1f1f1f);
+  --bs-secondary-bg-muted: light-dark(color-mix(in oklab, #ebebeb, #999 10%), color-mix(in oklab, #1f1f1f, #999 12%));
+  --bs-secondary-border: light-dark(#d6d6d6, #5c5c5c);
+  --bs-secondary-focus-ring: color-mix(in oklab, #999, transparent 75%);
+  --bs-secondary-contrast: var(--bs-white);
+
+  --bs-accent-base: #446e9b;
+  --bs-accent-fg: #1b2c3e;
+  --bs-accent-fg-emphasis: light-dark(#1b2c3e, #8fa8c3);
+  --bs-accent-bg: light-dark(#446e9b, #446e9b);
+  --bs-accent-bg-subtle: light-dark(#dae2eb, #0e161f);
+  --bs-accent-bg-muted: light-dark(color-mix(in oklab, #dae2eb, #446e9b 10%), color-mix(in oklab, #0e161f, #446e9b 12%));
+  --bs-accent-border: light-dark(#b4c5d7, #29425d);
+  --bs-accent-focus-ring: color-mix(in oklab, #446e9b, transparent 75%);
+  --bs-accent-contrast: var(--bs-white);
+
+  --bs-success-base: #3cb521;
+  --bs-success-fg: #18480d;
+  --bs-success-fg-emphasis: light-dark(#18480d, #8ad37a);
+  --bs-success-bg: light-dark(#3cb521, #3cb521);
+  --bs-success-bg-subtle: light-dark(#d8f0d3, #0c2407);
+  --bs-success-bg-muted: light-dark(color-mix(in oklab, #d8f0d3, #3cb521 10%), color-mix(in oklab, #0c2407, #3cb521 12%));
+  --bs-success-border: light-dark(#b1e1a6, #246d14);
+  --bs-success-focus-ring: color-mix(in oklab, #3cb521, transparent 75%);
+  --bs-success-contrast: var(--bs-white);
+
+  --bs-info-base: #3399f3;
+  --bs-info-fg: #143d61;
+  --bs-info-fg-emphasis: light-dark(#143d61, #85c2f8);
+  --bs-info-bg: light-dark(#3399f3, #3399f3);
+  --bs-info-bg-subtle: light-dark(#d6ebfd, #0a1f31);
+  --bs-info-bg-muted: light-dark(color-mix(in oklab, #d6ebfd, #3399f3 10%), color-mix(in oklab, #0a1f31, #3399f3 12%));
+  --bs-info-border: light-dark(#add6fb, #1f5c92);
+  --bs-info-focus-ring: color-mix(in oklab, #3399f3, transparent 75%);
+  --bs-info-contrast: var(--bs-white);
+
+  --bs-warning-base: #d47500;
+  --bs-warning-fg: #552f00;
+  --bs-warning-fg-emphasis: light-dark(#552f00, #e5ac66);
+  --bs-warning-bg: light-dark(#d47500, #d47500);
+  --bs-warning-bg-subtle: light-dark(#f7e3cc, #2b1700);
+  --bs-warning-bg-muted: light-dark(color-mix(in oklab, #f7e3cc, #d47500 10%), color-mix(in oklab, #2b1700, #d47500 12%));
+  --bs-warning-border: light-dark(#eec899, #7f4600);
+  --bs-warning-focus-ring: color-mix(in oklab, #d47500, transparent 75%);
+  --bs-warning-contrast: var(--bs-white);
+
+  --bs-danger-base: #cd0200;
+  --bs-danger-fg: #520100;
+  --bs-danger-fg-emphasis: light-dark(#520100, #e16766);
+  --bs-danger-bg: light-dark(#cd0200, #cd0200);
+  --bs-danger-bg-subtle: light-dark(#f5cccc, #290000);
+  --bs-danger-bg-muted: light-dark(color-mix(in oklab, #f5cccc, #cd0200 10%), color-mix(in oklab, #290000, #cd0200 12%));
+  --bs-danger-border: light-dark(#eb9a99, #7b0100);
+  --bs-danger-focus-ring: color-mix(in oklab, #cd0200, transparent 75%);
+  --bs-danger-contrast: var(--bs-white);
+
+  --bs-inverse-base: #333;
+  --bs-inverse-fg: #495057;
+  --bs-inverse-fg-emphasis: light-dark(#495057, #dee2e6);
+  --bs-inverse-bg: light-dark(#333, #333);
+  --bs-inverse-bg-subtle: light-dark(#ced4da, #181818);
+  --bs-inverse-bg-muted: light-dark(color-mix(in oklab, #ced4da, #333 10%), color-mix(in oklab, #181818, #333 12%));
+  --bs-inverse-border: light-dark(#adb5bd, #373b3e);
+  --bs-inverse-focus-ring: color-mix(in oklab, #333, transparent 75%);
+  --bs-inverse-contrast: var(--bs-white);
+  /* Body & surfaces */
+  --bs-body-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-fg-body: light-dark(#777, #dee2e6);
+  --bs-bg-body: light-dark(#fff, #2d2d2d);
+  --bs-bg-1: light-dark(#fff, #333333);
+  --bs-bg-2: light-dark(#f8f9fa, #303030);
+  --bs-border-color: light-dark(#dee2e6, #444444);
+
+  --bs-radius-1: 0.375rem;
+  --bs-radius-2: 0.375rem;
+  --bs-radius-3: 0.375rem;
+  --bs-radius-4: 0.375rem;
+  --bs-radius-5: 0.375rem;
+  --bs-radius-6: 0.375rem;
+  --bs-radius-7: 0.375rem;
+  --bs-radius-8: 0.375rem;
+  --bs-radius-9: 0.375rem;
+
+  --bs-link-color: light-dark(#3399f3, #85c2f8);
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: light-dark(#297ac2, #add6fb);
+}
+
+/* plain x close icon (matches Bootlegance v6 convention) */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* colored header band on solid bg-* cards */
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}

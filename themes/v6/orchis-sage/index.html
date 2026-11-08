@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootlegance — Orchis Sage (Bootstrap 6)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Orchis Sage Theme CSS -->
+    <link href="theme.css" rel="stylesheet">
+    <style>
+        body { padding-top: 56px; }
+        .section-title { margin-top: 4rem; margin-bottom: 2rem; border-bottom: 1px solid var(--bs-border-color); padding-bottom: 0.5rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--bs-primary-base); }
+        .hero { padding: 4rem 0; background-color: var(--bs-bg-2); border-bottom: 1px solid var(--bs-border-color); }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar lg:navbar-expand fixed-top bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fg-white" href="../../../v6/index.html">
+                <strong>ORCHIS SAGE</strong>
+            </a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active fg-white" href="../../../v6/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fg-white" href="#SectionButtons">Buttons</a></li>
+                <li class="nav-item"><a class="nav-link fg-white" href="#SectionCards">Cards</a></li>
+                <li class="nav-item">
+                    <button class="nav-link fg-white" type="button" data-bs-toggle="menu">More</button>
+                    <div class="menu">
+                        <a class="menu-item" href="#SectionTypography">Typography</a>
+                        <a class="menu-item" href="#SectionNavs">Navs</a>
+                        <a class="menu-item" href="#SectionAlerts">Alerts</a>
+                        <a class="menu-item" href="#SectionBadges">Badges</a>
+                        <a class="menu-item" href="#SectionProgress">Progress</a>
+                        <a class="menu-item" href="#SectionList-groups">List groups</a>
+                        <a class="menu-item" href="#SectionAccordions">Accordions</a>
+                        <a class="menu-item" href="#SectionCarousel">Carousel</a>
+                        <a class="menu-item" href="#SectionModals">Modals</a>
+                        <a class="menu-item" href="#SectionOffcanvas">Offcanvas</a>
+                        <a class="menu-item" href="#SectionPopovers">Popovers</a>
+                        <a class="menu-item" href="#SectionToasts">Toasts</a>
+                        <a class="menu-item" href="#SectionPlaceholders">Placeholders</a>
+                        <a class="menu-item" href="#SectionMisc">Misc</a>
+                        <hr class="menu-divider">
+                        <a class="menu-item" href="#SectionV6">New in v6</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <button type="button" class="btn-outline theme-secondary btn-sm fg-white" id="theme-toggle">Switch to dark</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="SectionHero">
+        <div class="container">
+            <header class="hero text-center">
+                <h1 class="fs-4xl">Orchis Sage Theme</h1>
+                <p class="fs-lg">A lead paragraph set at a larger size for introductory content Bootstrap 6 alpha.</p>
+            </header>
+        </div>
+    </section>
+
+    <div class="container pb-12">
+
+        <!-- 1. Navbar variants -->
+        <section id="SectionNavbar">
+            <div class="container">
+            <h2 class="section-title">Navbar example</h2>
+            <nav class="navbar lg:navbar-expand bg-2 mb-1">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Light Variant</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p class="small fg-secondary mb-5">Neutral surface — uses <code>bg-2</code>; adapts to the page theme.</p>
+
+            <nav class="navbar lg:navbar-expand bg-inverse mb-1" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand fg-white">Dark Variant</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p class="small fg-secondary mb-5">Dark variant — pinned to dark mode regardless of the page theme.</p>
+
+            <nav class="navbar lg:navbar-expand bg-primary mb-1" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand fg-white">Primary Variant</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p class="small fg-secondary mb-5">Primary variant — accent background, pinned to dark mode.</p>
+
+            <nav class="navbar lg:navbar-expand bg-body mb-1">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Adaptive</span>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p class="small fg-secondary mb-7">Adaptive — <code>bg-body</code>, no <code>data-bs-theme</code>; inherits the page context.</p>
+        </section>
+
+        <!-- 2. Buttons -->
+        <section id="SectionButtons">
+            <h2 class="section-title">Buttons & Button Groups</h2>
+            <div class="d-flex flex-wrap gap-3 mb-7">
+                <button class="btn-solid theme-primary">Primary</button>
+                <button class="btn-solid theme-secondary">Secondary</button>
+                <button class="btn-solid theme-success">Success</button>
+                <button class="btn-solid theme-danger">Danger</button>
+                <button class="btn-solid theme-warning">Warning</button>
+                <button class="btn-solid theme-info">Info</button>
+                <button class="btn-solid theme-accent">Accent</button>
+                <button class="btn-solid theme-inverse">Inverse</button>
+                <button class="btn-link">Link</button>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mb-7">
+                <button class="btn-outline theme-primary">Primary</button>
+                <button class="btn-outline theme-secondary">Secondary</button>
+                <button class="btn-outline theme-success">Success</button>
+                <button class="btn-outline theme-danger">Danger</button>
+                <button class="btn-outline theme-warning">Warning</button>
+                <button class="btn-outline theme-info">Info</button>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mb-7">
+                <button class="btn-subtle theme-primary">Subtle primary</button>
+                <button class="btn-subtle theme-secondary">Subtle secondary</button>
+                <button class="btn-subtle theme-success">Subtle success</button>
+                <button class="btn-subtle theme-danger">Subtle danger</button>
+                <button class="btn-text theme-primary">Text primary</button>
+                <button class="btn-text theme-secondary">Text secondary</button>
+                <button class="btn-styled theme-primary">Styled primary</button>
+                <button class="btn-styled theme-success">Styled success</button>
+            </div>
+            <p class="small fg-secondary mb-7">All six v6 button variants — <code>btn-solid</code>, <code>btn-outline</code>, <code>btn-subtle</code>, <code>btn-text</code>, <code>btn-styled</code>, <code>btn-link</code> — each composed with a <code>theme-*</code> key.</p>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn-solid theme-primary">Left</button>
+                <button type="button" class="btn-solid theme-primary">Middle</button>
+                <button type="button" class="btn-solid theme-primary">Right</button>
+            </div>
+            <div class="mt-5">
+                <button class="btn-solid theme-primary btn-lg">Large button</button>
+                <button class="btn-solid theme-primary btn-sm">Small button</button>
+            </div>
+            <div class="d-flex gap-3 align-items-center mt-5">
+                <button class="btn-icon" type="button" aria-label="Generic icon button">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/></svg>
+                </button>
+                <button class="btn-solid theme-primary btn-icon" type="button" aria-label="Confirm">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                </button>
+                <button class="btn-outline theme-secondary btn-icon" type="button" aria-label="Settings">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.5 1.5M11.5 11.5 13 13M13 3l-1.5 1.5M4.5 11.5 3 13"/></svg>
+                </button>
+                <button class="btn-subtle theme-warning btn-icon" type="button" aria-label="Warning">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-9.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 5.5zM8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                </button>
+            </div>
+            <p class="small fg-secondary mt-3"><code>btn-icon</code> — square icon-only buttons; compose with any button variant + <code>theme-*</code>.</p>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="SectionTypography">
+            <div class="container">
+            <h2 class="section-title">Typography example</h2>
+            <div class="row">
+                <div class="md:col-6">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+                <div class="md:col-6">
+                    <p class="fs-5xl fw-light">Display</p>
+                    <p class="fs-lg">This is a lead paragraph. It stands out from regular text.</p>
+                    <p>Regular body text using the Lato font stack. <mark>Highlighted text</mark>, <u>underlined text</u>, and <strong>bold text</strong>.</p>
+                    <p><a href="#">Standard link</a> and <a href="#" class="fg-secondary">Secondary link</a>.</p>
+                    <blockquote class="blockquote">
+                      <p>A well-known quote, contained in a blockquote element.</p>
+                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tables -->
+        <section id="SectionTables">
+            <div class="container">
+            <h2 class="section-title">Tables example</h2>
+            <table class="table table-striped table-hover border">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Forms -->
+        <section id="SectionForms">
+            <div class="container">
+            <h2 class="section-title">Forms example</h2>
+            <div class="row">
+                <div class="md:col-6">
+                    <div class="mb-5">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" value="password">
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Select Menu</label>
+                        <select class="form-control">
+                            <option selected>Open this select menu</option>
+                            <option value="1">Ubuntu 24.04 LTS</option>
+                            <option value="2">Ubuntu 22.04 LTS</option>
+                        </select>
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Floating labels</label>
+                        <div class="form-floating mb-5">
+                          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Color picker</label>
+                        <input type="color" class="form-control form-control-color" value="#E95420">
+                    </div>
+                </div>
+                <div class="md:col-6">
+                    <div class="mb-5">
+                        <div class="form-field">
+                            <input type="checkbox" id="checkDefault" class="check" checked>
+                            <label for="checkDefault">Checked checkbox</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="radio" name="flexRadioDefault" id="radioDefault" class="radio" checked>
+                            <label for="radioDefault">Default radio</label>
+                        </div>
+                        <div class="form-field mt-3">
+                            <div class="switch">
+                                <input type="checkbox" id="switchDefault" role="switch" switch checked>
+                            </div>
+                            <label for="switchDefault">Default switch</label>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Range</label>
+                        <div class="form-range">
+                            <input type="range" class="form-range-input">
+                        </div>
+                    </div>
+                    <div class="input-group mb-5">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">Validation States</label>
+                        <input type="text" class="form-control is-valid mb-3" value="Correct value">
+                        <input type="text" class="form-control is-invalid" value="Incorrect value">
+                        <div class="invalid-feedback">Please provide a valid input.</div>
+                        <div class="mt-5">
+                            <label class="form-label">Input sizes</label>
+                            <input type="text" class="form-control form-control-lg mb-3" placeholder="form-control-lg">
+                            <input type="text" class="form-control mb-3" placeholder="default">
+                            <input type="text" class="form-control form-control-sm" placeholder="form-control-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Navs, Tabs, etc -->
+        <section id="SectionNavs">
+            <h2 class="section-title">Navs, Tabs & Pagination</h2>
+            <ul class="nav nav-tabs mb-7">
+              <li class="nav-item"><a class="nav-link active" href="#">Active Tab</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+            </ul>
+            <ul class="nav nav-pills mb-7">
+              <li class="nav-item"><a class="nav-link active" href="#">Active Pill</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            </ul>
+            <div class="d-flex gap-7 mb-7">
+                <ul class="nav nav-underline">
+                  <li class="nav-item"><a class="nav-link active" href="#">Active Underline</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                  <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                </ul>
+                <div class="nav nav-pills nav-pills-vertical">
+                  <button class="nav-link active" type="button">Vertical 1</button>
+                  <button class="nav-link" type="button">Vertical 2</button>
+                  <button class="nav-link" type="button">Vertical 3</button>
+                </div>
+            </div>
+            <p class="small fg-secondary mb-7"><code>nav-underline</code> alongside <code>nav-pills-vertical</code>.</p>
+            <ul class="nav nav-tabs mb-5" id="demoTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#demo-home" type="button" role="tab">Home</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#demo-profile" type="button" role="tab">Profile</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#demo-contact" type="button" role="tab">Contact</button>
+              </li>
+            </ul>
+            <div class="tab-content mb-7">
+              <div class="tab-pane show active" id="demo-home" role="tabpanel" tabindex="0">
+                <p>Tab plugin content — the <strong>Home</strong> pane. Switch tabs to verify styling.</p>
+              </div>
+              <div class="tab-pane" id="demo-profile" role="tabpanel" tabindex="0">
+                <p>Tab plugin content — the <strong>Profile</strong> pane.</p>
+              </div>
+              <div class="tab-pane" id="demo-contact" role="tabpanel" tabindex="0">
+                <p>Tab plugin content — the <strong>Contact</strong> pane.</p>
+              </div>
+            </div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Home</a></li>
+                <li class="breadcrumb-divider"></li>
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Library</a></li>
+                <li class="breadcrumb-divider"></li>
+                <li class="breadcrumb-item"><a class="breadcrumb-link active" href="#">Data</a></li>
+              </ol>
+            </nav>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+            <div class="d-flex gap-5 align-items-center flex-wrap mt-5">
+              <ul class="pagination pagination-lg mb-0">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+              </ul>
+              <ul class="pagination pagination-sm mb-0">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+              </ul>
+            </div>
+            <p class="small fg-secondary mt-3">Pagination sizes — <code>pagination-lg</code> and <code>pagination-sm</code>.</p>
+        </section>
+
+        <!-- 7. Alerts -->
+        <section id="SectionAlerts">
+            <div class="container">
+            <h2 class="section-title">Alerts example</h2>
+            <div class="alert theme-primary" role="alert">
+                <p>A simple primary alert — check it out!</p>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert theme-accent" role="alert"><p>A simple accent alert — check it out!</p></div>
+            <div class="alert theme-success" role="alert"><p>A simple success alert — check it out!</p></div>
+            <div class="alert theme-danger" role="alert"><p>A simple danger alert — check it out!</p></div>
+            <div class="alert theme-warning" role="alert"><p>A simple warning alert — check it out!</p></div>
+            <div class="alert theme-info" role="alert"><p>A simple info alert — check it out!</p></div>
+            <div class="alert theme-inverse" role="alert"><p>A simple inverse alert — check it out!</p></div>
+            <div class="alert theme-secondary" role="alert"><p>A simple secondary alert — check it out!</p></div>
+            <p class="small fg-secondary mt-3 mb-5">All eight v6 theme keys — All eight v6 theme keys rendered as subtle fills with themed borders.</p>
+            <div class="alert theme-primary" role="alert"><p>A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-accent" role="alert"><p>A simple accent alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-success" role="alert"><p>A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-danger" role="alert"><p>A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-warning" role="alert"><p>A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-info" role="alert"><p>A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-inverse" role="alert"><p>A simple inverse alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <div class="alert theme-secondary" role="alert"><p>A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</p></div>
+            <p class="small fg-secondary mt-3">Same theme keys with <code>alert-link</code> — links inherit the alert's foreground and are underlined.</p>
+        </section>
+
+        <!-- 8. Badges -->
+        <section id="SectionBadges">
+            <div class="container">
+            <h2 class="section-title">Badges example</h2>
+            <div class="d-flex flex-wrap gap-3 align-items-center mb-1">
+                <span class="badge theme-primary">Primary</span>
+                <span class="badge theme-secondary">Secondary</span>
+                <span class="badge theme-success">Success</span>
+                <span class="badge theme-danger">Danger</span>
+                <span class="badge theme-warning">Warning</span>
+                <span class="badge theme-info">Info</span>
+                <span class="badge theme-accent">Accent</span>
+                <span class="badge theme-inverse">Inverse</span>
+            </div>
+            <p class="small fg-secondary mb-5">Theme variants — the eight Bootstrap 6 theme keys.</p>
+            <div class="d-flex flex-wrap gap-3 align-items-center mb-1">
+                <span class="badge rounded-pill theme-primary">Primary</span>
+                <span class="badge rounded-pill theme-secondary">Secondary</span>
+                <span class="badge rounded-pill theme-success">Success</span>
+                <span class="badge rounded-pill theme-danger">Danger</span>
+                <span class="badge rounded-pill theme-warning">Warning</span>
+                <span class="badge rounded-pill theme-info">Info</span>
+                <span class="badge rounded-pill theme-accent">Accent</span>
+                <span class="badge rounded-pill theme-inverse">Inverse</span>
+            </div>
+            <p class="small fg-secondary mb-5">Pill variants — same theme keys with <code>rounded-pill</code> ends.</p>
+            <button type="button" class="btn-solid theme-primary position-relative">
+                Inbox
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill theme-danger">
+                    99+
+                </span>
+            </button>
+            <p class="small fg-secondary mt-3">Positioned badge — notification count inside a button via <code>position-relative</code>.</p>
+            </div>
+        </section>
+
+        <!-- 9. Progress & Spinners -->
+        <section id="SectionProgress">
+            <h2 class="section-title">Progress & Spinners</h2>
+            <div class="progress mb-5">
+              <div class="progress-bar" style="width: 25%"></div>
+            </div>
+            <div class="progress mb-5">
+              <div class="progress-bar bg-success" style="width: 50%"></div>
+            </div>
+            <div class="progress mb-5">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+            </div>
+            <div class="d-flex gap-5 align-items-center mt-7">
+                <div class="spinner-border fg-primary" role="status"></div>
+                <div class="spinner-border fg-secondary" role="status"></div>
+                <div class="spinner-grow fg-success" role="status"></div>
+                <div class="spinner-grow fg-danger" role="status"></div>
+            </div>
+        </section>
+
+        <!-- 10. List Groups -->
+        <section id="SectionList-groups">
+            <h2 class="section-title">List Groups</h2>
+            <div class="row">
+                <div class="md:col-6">
+                    <ul class="list-group">
+                      <li class="list-group-item active">An active item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item disabled">A disabled item</li>
+                    </ul>
+                </div>
+                <div class="md:col-6">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action active">Linked active item</a>
+                      <a href="#" class="list-group-item list-group-item-action">Linked item</a>
+                      <a href="#" class="list-group-item list-group-item-action">Linked item</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Cards -->
+        <section id="SectionCards">
+            <div class="container">
+            <h2 class="section-title">Cards example</h2>
+            <div class="row">
+                <div class="md:col-4">
+                    <div class="card bg-primary fg-contrast-primary mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Primary card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary fg-contrast-secondary mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Secondary card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-accent fg-contrast-accent mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Accent card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-success fg-contrast-success mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Success card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-danger fg-contrast-danger mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Danger card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-warning fg-contrast-warning mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Warning card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-info fg-contrast-info mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Info card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-inverse fg-contrast-inverse mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Inverse card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <p class="small fg-secondary mb-5">Solid cards — <code>bg-*</code> + <code>fg-contrast-*</code> per theme key.</p>
+                </div>
+                <div class="md:col-4">
+                    <div class="card border-primary mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Primary card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-secondary mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Secondary card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-accent mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Accent card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-success mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Success card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-danger mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Danger card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-warning mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Warning card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-info mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Info card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card border-inverse mb-5">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Inverse card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <p class="small fg-secondary mb-5">Border cards — <code>border-*</code> per theme key, neutral body.</p>
+                </div>
+                <div class="md:col-4">
+                    <div class="card mb-5">
+                        <h4 class="card-header">Card header</h4>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <h6 class="card-subtitle fg-secondary">Support card subtitle</h6>
+                        </div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 318 180'%3E%3Crect width='318' height='180' fill='%23868e96'/%3E%3Ctext x='50%25' y='50%25' fill='%23dee2e6' font-size='22' text-anchor='middle' dominant-baseline='middle'%3EImage cap%3C/text%3E%3C/svg%3E" class="card-img-top" alt="Image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#">Card link</a>
+                            <a href="#">Another link</a>
+                        </div>
+                        <div class="card-footer fg-secondary">2 days ago</div>
+                    </div>
+                    <p class="small fg-secondary mb-5">Feature card — header, subtitle, image cap, flush list group, links, and footer.</p>
+                    <div class="card card-translucent mb-5">
+                        <div class="card-body">
+                          <h5 class="card-title">Translucent</h5>
+                          <p class="card-text"><code>card-translucent</code> — frosted-glass background.</p>
+                        </div>
+                    </div>
+                    <div class="card text-center mb-5">
+                        <div class="card-header">Centered</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Text center card</h5>
+                          <p class="card-text">Centered content via <code>text-center</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 mb-5">
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-primary">
+                        <div class="card-body">
+                          <h5 class="card-title">Primary</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-secondary">
+                        <div class="card-body">
+                          <h5 class="card-title">Secondary</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-accent">
+                        <div class="card-body">
+                          <h5 class="card-title">Accent</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-success">
+                        <div class="card-body">
+                          <h5 class="card-title">Success</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-danger">
+                        <div class="card-body">
+                          <h5 class="card-title">Danger</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-warning">
+                        <div class="card-body">
+                          <h5 class="card-title">Warning</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-info">
+                        <div class="card-body">
+                          <h5 class="card-title">Info</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-3">
+                    <div class="card card-subtle theme-inverse">
+                        <div class="card-body">
+                          <h5 class="card-title">Inverse</h5>
+                          <p class="card-text">Subtle themed card.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="small fg-secondary mb-5"><code>card-subtle</code> across all eight theme keys.</p>
+            <div class="row">
+                <div class="md:col-8">
+                    <div class="card card-row">
+                        <div class="card-header">Row Header</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Horizontal card</h5>
+                          <p class="card-text"><code>card-row</code> lays the card out horizontally — header/media on one side, body on the other.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- 12. Accordions -->
+        <section id="SectionAccordions">
+            <div class="container">
+            <h2 class="section-title">Accordions example</h2>
+            <div class="accordion">
+              <details class="accordion-item" name="accordionExample" open>
+                <summary class="accordion-header">
+                  Accordion Item #1
+                  <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It is shown by default.
+                </div>
+              </details>
+              <details class="accordion-item" name="accordionExample">
+                <summary class="accordion-header">
+                  Accordion Item #2
+                  <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-body">
+                  Content for the second accordion item.
+                </div>
+              </details>
+            </div>
+        </section>
+
+        <!-- 13. Carousel -->
+        <section id="SectionCarousel">
+            <div class="container">
+            <h2 class="section-title">Carousel example</h2>
+            <div id="carouselExample" class="carousel bg-inverse rounded" data-bs-autoplay="true">
+              <div class="carousel-inner">
+                <div class="carousel-item active p-12 text-center fg-white">
+                  <h3>First slide label</h3>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+                <div class="carousel-item p-12 text-center fg-white">
+                  <h3>Second slide label</h3>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-overlay">
+                <button class="btn-icon" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-icon-prev"></span>
+                </button>
+                <button class="btn-icon" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-icon-next"></span>
+                </button>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              </div>
+            </div>
+            <p class="small fg-secondary mt-3">Scroll-snap carousel — controls are composed <code>btn-icon</code> + <code>carousel-icon-*</code> glyphs inside <code>carousel-overlay</code>; indicators sit below.</p>
+        </section>
+
+        <!-- 14. Dialogs (was Modals) -->
+        <section id="SectionModals">
+            <div class="container">
+            <h2 class="section-title">Dialogs example</h2>
+            <button type="button" class="btn-solid theme-primary" data-bs-toggle="dialog" data-bs-target="#exampleDialog">
+              Launch demo dialog
+            </button>
+            <dialog class="dialog" id="exampleDialog">
+              <div class="dialog-header">
+                <h5 class="dialog-title">Dialog title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+              </div>
+              <div class="dialog-body">
+                ...
+              </div>
+              <div class="dialog-footer">
+                <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog">Close</button>
+                <button type="button" class="btn-solid theme-primary">Save changes</button>
+              </div>
+            </dialog>
+            <p class="small fg-secondary mt-3 mb-3">Native <code>&lt;dialog&gt;</code> element — no <code>.modal-dialog</code>/<code>.modal-content</code> wrappers; backdrop is the native <code>::backdrop</code>.</p>
+            <div class="d-flex gap-3 flex-wrap">
+                <button type="button" class="btn-solid theme-secondary" data-bs-toggle="dialog" data-bs-target="#dialogSm">Small dialog</button>
+                <button type="button" class="btn-solid theme-secondary" data-bs-toggle="dialog" data-bs-target="#dialogStatic">Static backdrop</button>
+            </div>
+            <p class="small fg-secondary mt-3">Sizes via <code>dialog-sm</code>/<code>lg</code>/<code>xl</code>/<code>fullscreen</code>; <code>data-bs-backdrop="static"</code> blocks backdrop dismissal.</p>
+            <dialog class="dialog dialog-sm" id="dialogSm">
+              <div class="dialog-header">
+                <h5 class="dialog-title">Small dialog</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+              </div>
+              <div class="dialog-body">Compact dialog via <code>.dialog-sm</code>.</div>
+            </dialog>
+            <dialog class="dialog" id="dialogStatic" data-bs-backdrop="static">
+              <div class="dialog-header">
+                <h5 class="dialog-title">Static backdrop</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+              </div>
+              <div class="dialog-body">Clicking the backdrop will not close this dialog.</div>
+              <div class="dialog-footer">
+                <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog">Close</button>
+              </div>
+            </dialog>
+        </section>
+
+        <!-- 15. Drawers (was Offcanvas) -->
+        <section id="SectionOffcanvas">
+            <div class="container">
+            <h2 class="section-title">Drawers example</h2>
+            <button class="btn-solid theme-primary" type="button" data-bs-toggle="drawer" data-bs-target="#drawerExample">
+              Open Drawer
+            </button>
+            <dialog class="drawer drawer-start" id="drawerExample">
+              <div class="drawer-header">
+                <h5 class="drawer-title">Drawer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+              </div>
+              <div class="drawer-body">
+                <div>
+                  Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                </div>
+              </div>
+            </dialog>
+            <p class="small fg-secondary mt-3 mb-3">Drawers are native <code>&lt;dialog&gt;</code> elements — must be <code>&lt;dialog class="drawer"&gt;</code>, a renamed <code>&lt;div&gt;</code> does not work.</p>
+            <div class="d-flex gap-3 flex-wrap">
+                <button class="btn-solid theme-secondary" type="button" data-bs-toggle="drawer" data-bs-target="#drawerEnd">End drawer</button>
+                <button class="btn-solid theme-secondary" type="button" data-bs-toggle="drawer" data-bs-target="#drawerTop">Top drawer</button>
+            </div>
+            <p class="small fg-secondary mt-3">Directions: <code>drawer-start</code> / <code>drawer-end</code> / <code>drawer-top</code> / <code>drawer-bottom</code>.</p>
+            <dialog class="drawer drawer-end" id="drawerEnd">
+              <div class="drawer-header">
+                <h5 class="drawer-title">End drawer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+              </div>
+              <div class="drawer-body">Slides in from the inline end (right in LTR).</div>
+            </dialog>
+            <dialog class="drawer drawer-top" id="drawerTop">
+              <div class="drawer-header">
+                <h5 class="drawer-title">Top drawer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+              </div>
+              <div class="drawer-body">Slides down from the top edge.</div>
+            </dialog>
+        </section>
+
+        <!-- 16. Popovers & Tooltips -->
+        <section id="SectionPopovers">
+            <h2 class="section-title">Popovers & Tooltips</h2>
+            <div class="d-flex gap-3">
+                <button type="button" class="btn-solid theme-danger btn-lg" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+                <button type="button" class="btn-solid theme-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                  Tooltip on top
+                </button>
+            </div>
+        </section>
+
+        <!-- 17. Toasts -->
+        <section id="SectionToasts">
+            <div class="container">
+            <h2 class="section-title">Toasts example</h2>
+            <div class="toast show" role="alert">
+              <div class="toast-header">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Hello, world! This is a toast message.
+              </div>
+            </div>
+        </section>
+
+        <!-- 18. Placeholders -->
+        <section id="SectionPlaceholders">
+            <div class="container">
+            <h2 class="section-title">Placeholders example</h2>
+            <div class="card" aria-hidden="true" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title placeholder-wave">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-wave">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a href="#" tabindex="-1" class="btn-solid theme-primary disabled placeholder col-6"></a>
+              </div>
+            </div>
+        </section>
+
+        <!-- 19. Misc -->
+        <section id="SectionMisc">
+            <div class="container">
+            <h2 class="section-title">Misc example</h2>
+            <div class="d-flex gap-5 align-items-center">
+                <div>
+                  <button class="btn-solid theme-secondary" type="button" data-bs-toggle="menu">
+                    Menu button
+                  </button>
+                  <div class="menu">
+                    <div class="menu-header">Section label</div>
+                    <a class="menu-item" href="#">Action</a>
+                    <a class="menu-item" href="#">Another action</a>
+                    <hr class="menu-divider">
+                    <a class="menu-item" href="#">Separated action</a>
+                  </div>
+                </div>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            </div>
+        </section>
+
+        <!-- 20. New in Bootstrap 6 -->
+        <section id="SectionV6">
+            <div class="container">
+            <h2 class="section-title">New in Bootstrap 6</h2>
+            <p class="small fg-secondary mb-5">Components new in Bootstrap 6, plus v5-era components not shown above — for complete visual inspection against the theme.</p>
+
+            <h3 class="fs-lg mb-3">Combobox</h3>
+            <div class="mb-7" style="max-width: 22rem;">
+                <button class="form-control combobox-toggle" type="button"
+                        data-bs-toggle="combobox"
+                        data-bs-name="country"
+                        data-bs-placeholder="Pick a country…">
+                    <span class="combobox-value">Pick a country…</span>
+                    <svg class="combobox-caret" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z" fill="currentcolor"/></svg>
+                </button>
+                <div class="menu">
+                    <button class="menu-item" type="button" data-bs-value="us">United States</button>
+                    <button class="menu-item selected" type="button" data-bs-value="uk" aria-selected="true">United Kingdom</button>
+                    <button class="menu-item" type="button" data-bs-value="ca">Canada</button>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Chips</h3>
+            <div class="d-flex flex-wrap gap-3 mb-3">
+                <span class="chip">Basic chip</span>
+                <span class="chip theme-primary">Primary</span>
+                <span class="chip theme-primary active">Active primary</span>
+                <span class="chip theme-success">Success</span>
+                <span class="chip theme-success active">Active success</span>
+                <span class="chip">
+                    Dismissible
+                    <button type="button" class="chip-dismiss" aria-label="Remove">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
+                    </button>
+                </span>
+            </div>
+            <div class="form-field mb-7" style="max-width: 28rem;">
+                <label class="form-label" for="skillsInput">Chip input — press Enter to add</label>
+                <div class="chip-input theme-primary" data-bs-chips>
+                    <span class="chip">
+                        JavaScript
+                        <button type="button" class="chip-dismiss" aria-label="Remove">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
+                        </button>
+                    </span>
+                    <span class="chip">TypeScript</span>
+                    <input type="text" class="form-ghost" id="skillsInput" placeholder="Add skill…">
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Datepicker</h3>
+            <div class="form-field mb-7" style="max-width: 22rem;">
+                <label for="v6datepicker" class="form-label">Choose a date (opens on focus)</label>
+                <input type="text" class="form-control" id="v6datepicker" data-bs-toggle="datepicker" autocomplete="off" placeholder="Choose date…">
+            </div>
+
+            <h3 class="fs-lg mb-3">Range — bubble &amp; ticks</h3>
+            <div class="row mb-7">
+                <div class="md:col-6">
+                    <label for="rangeBubble" class="form-label">Value bubble</label>
+                    <div class="form-range" data-bs-bubble>
+                        <input type="range" class="form-range-input" min="0" max="100" value="60" id="rangeBubble">
+                    </div>
+                </div>
+                <div class="md:col-6">
+                    <label for="rangeTicks" class="form-label">Tick marks</label>
+                    <div class="form-range">
+                        <input type="range" class="form-range-input" min="0" max="100" step="25" value="50" list="rangeTicksList" id="rangeTicks">
+                    </div>
+                    <datalist id="rangeTicksList">
+                        <option value="0" label="Cold"></option>
+                        <option value="25"></option>
+                        <option value="50" label="Mild"></option>
+                        <option value="75"></option>
+                        <option value="100" label="Hot"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">OTP input</h3>
+            <div class="d-flex gap-5 align-items-start flex-wrap mb-7">
+                <div class="otp" data-bs-otp data-bs-groups="[3,3]">
+                    <input type="text" class="otp-input" maxlength="6" aria-label="Verification code">
+                </div>
+                <div class="otp otp-connected" data-bs-otp>
+                    <input type="text" class="otp-input" maxlength="4" aria-label="PIN">
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Password strength</h3>
+            <div class="row mb-7">
+                <div class="md:col-6">
+                    <label for="v6password" class="form-label">Password (type to see the meter)</label>
+                    <input type="password" class="form-control" id="v6password" placeholder="Enter password">
+                    <div class="strength" data-bs-strength>
+                        <div class="strength-segment"></div>
+                        <div class="strength-segment"></div>
+                        <div class="strength-segment"></div>
+                        <div class="strength-segment"></div>
+                    </div>
+                    <span class="strength-text"></span>
+                </div>
+                <div class="md:col-6">
+                    <label class="form-label">Static states</label>
+                    <div class="vstack gap-3">
+                        <div class="strength" data-bs-strength="weak">
+                            <div class="strength-segment active"></div>
+                            <div class="strength-segment"></div>
+                            <div class="strength-segment"></div>
+                            <div class="strength-segment"></div>
+                        </div>
+                        <div class="strength" data-bs-strength="good">
+                            <div class="strength-segment active"></div>
+                            <div class="strength-segment active"></div>
+                            <div class="strength-segment active"></div>
+                            <div class="strength-segment"></div>
+                        </div>
+                        <div class="strength-bar" data-bs-strength="strong"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Avatars</h3>
+            <div class="d-flex gap-3 align-items-center mb-3">
+                <span class="avatar">AB</span>
+                <span class="avatar theme-primary">CD</span>
+                <span class="avatar theme-success">EF</span>
+                <span class="avatar theme-danger">GH</span>
+                <span class="avatar avatar-subtle theme-warning">IJ</span>
+                <span class="avatar avatar-subtle theme-info">KL</span>
+                <span class="avatar theme-inverse">MN</span>
+            </div>
+            <div class="d-flex gap-3 align-items-center mb-3">
+                <span class="avatar avatar-xs theme-primary">XS</span>
+                <span class="avatar avatar-sm theme-primary">SM</span>
+                <span class="avatar theme-primary">MD</span>
+                <span class="avatar avatar-lg theme-primary">LG</span>
+                <span class="avatar avatar-xl theme-primary">XL</span>
+                <span class="avatar">
+                    <img class="avatar-img" src="https://github.com/mdo.png" alt="mdo">
+                    <span class="avatar-status status-online" role="img" aria-label="Online"></span>
+                </span>
+                <span class="avatar">
+                    <img class="avatar-img" src="https://github.com/mdo.png" alt="mdo">
+                    <span class="avatar-status status-busy" role="img" aria-label="Busy"></span>
+                </span>
+            </div>
+            <div class="avatar-stack mb-7">
+                <span class="avatar theme-primary">AB</span>
+                <span class="avatar theme-success">CD</span>
+                <span class="avatar theme-danger">EF</span>
+                <span class="avatar theme-warning">GH</span>
+            </div>
+
+            <h3 class="fs-lg mb-3">Nav overflow</h3>
+            <p class="small fg-secondary mb-3">Resize the window — extra items collapse into a "More" menu.</p>
+            <div class="nav-overflow mb-7" data-bs-toggle="nav-overflow" style="max-width: 30rem;">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                </ul>
+            </div>
+
+            <h3 class="fs-lg mb-3">Menus with submenus</h3>
+            <div class="mb-7">
+                <button class="btn-solid theme-secondary" type="button" data-bs-toggle="menu" aria-expanded="false">
+                    Menu with submenus
+                </button>
+                <div class="menu">
+                    <div class="submenu">
+                        <button class="menu-item" type="button">File</button>
+                        <div class="menu">
+                            <a class="menu-item" href="#">New</a>
+                            <a class="menu-item" href="#">Open</a>
+                            <a class="menu-item" href="#">Save</a>
+                        </div>
+                    </div>
+                    <div class="submenu">
+                        <button class="menu-item" type="button">Edit</button>
+                        <div class="menu">
+                            <a class="menu-item" href="#">Cut</a>
+                            <a class="menu-item" href="#">Copy</a>
+                            <a class="menu-item" href="#">Paste</a>
+                        </div>
+                    </div>
+                    <hr class="menu-divider">
+                    <a class="menu-item" href="#">Preferences</a>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Stepper</h3>
+            <div class="row mb-7">
+                <div class="md:col-6">
+                    <ol class="stepper">
+                        <li class="stepper-item active">Create account</li>
+                        <li class="stepper-item active">Confirm email</li>
+                        <li class="stepper-item">Update profile</li>
+                        <li class="stepper-item">Finish</li>
+                    </ol>
+                </div>
+                <div class="md:col-6">
+                    <div class="stepper-overflow">
+                        <ol class="stepper stepper-horizontal">
+                            <li class="stepper-item active theme-accent">Cart</li>
+                            <li class="stepper-item active theme-accent">Shipping</li>
+                            <li class="stepper-item">Payment</li>
+                            <li class="stepper-item">Confirm</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Toggler</h3>
+            <div class="d-flex gap-3 flex-column align-items-start mb-7">
+                <button class="btn-solid theme-primary" data-bs-toggle="toggler" data-bs-target="#togglerDemo">Toggle <code>bg-2</code> on the box</button>
+                <div id="togglerDemo" class="w-100 p-5 rounded border" data-bs-value="bg-2" data-bs-attribute="class">
+                    Click the button to toggle the <code>bg-2</code> class on this element — pure data-attribute behavior, no custom JS.
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Form adorn</h3>
+            <div class="row mb-7">
+                <div class="md:col-6 vstack gap-3">
+                    <label class="form-control form-adorn">
+                        <div class="form-adorn-icon" aria-hidden="true">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                        </div>
+                        <input type="search" class="form-ghost" placeholder="Search…">
+                    </label>
+                    <label class="form-control form-adorn form-adorn-end">
+                        <div class="form-adorn-icon" aria-hidden="true">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/></svg>
+                        </div>
+                        <input type="email" class="form-ghost" placeholder="you@example.com">
+                    </label>
+                </div>
+                <div class="md:col-6 vstack gap-3">
+                    <label class="form-control form-adorn">
+                        <span class="form-adorn-text" aria-hidden="true">$</span>
+                        <input type="text" class="form-ghost" placeholder="0.00">
+                    </label>
+                    <label class="form-control form-adorn">
+                        <span class="form-adorn-text" aria-hidden="true">https://</span>
+                        <input type="text" class="form-ghost" placeholder="example.com">
+                    </label>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">Collapse</h3>
+            <div class="mb-7">
+                <p class="d-inline-flex gap-3">
+                    <button class="btn-solid theme-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDemo" aria-expanded="false" aria-controls="collapseDemo">
+                        Toggle collapse
+                    </button>
+                    <button class="btn-solid theme-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthDemo" aria-expanded="false" aria-controls="collapseWidthDemo">
+                        Toggle horizontal
+                    </button>
+                </p>
+                <div class="collapse" id="collapseDemo">
+                    <div class="card card-body" style="max-width: 28rem;">
+                        Vertical collapse content — revealed via the Collapse plugin.
+                    </div>
+                </div>
+                <div class="mt-5" style="min-height: 120px;">
+                    <div class="collapse collapse-horizontal" id="collapseWidthDemo">
+                        <div class="card card-body" style="width: 300px;">
+                            Horizontal collapse — transitions inline size.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fs-lg mb-3">ScrollSpy</h3>
+            <p class="small fg-secondary mb-3">Scroll inside the box — the pills track the visible heading.</p>
+            <nav id="scrollspy-nav" class="navbar bg-1 px-5 mb-5 rounded-2">
+                <span class="navbar-brand">Spy</span>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link" href="#spy1">First</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#spy2">Second</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#spy3">Third</a></li>
+                </ul>
+            </nav>
+            <div class="bg-1 p-5 rounded-2 mb-7" style="height: 200px; overflow-y: scroll;" data-bs-spy="scroll" data-bs-target="#scrollspy-nav" data-bs-smooth-scroll="true" tabindex="0">
+                <h4 id="spy1">First heading</h4>
+                <p>Placeholder content for scrollspy — scroll to see the active nav link change as each heading crosses the activation line.</p>
+                <h4 id="spy2">Second heading</h4>
+                <p>More placeholder content for scrollspy. IntersectionObserver drives detection in v6 — no scroll-position polling.</p>
+                <h4 id="spy3">Third heading</h4>
+                <p>Final placeholder block. At the bottom of the container the last section activates even if it never reaches the line.</p>
+            </div>
+
+            <h3 class="fs-lg mb-3">Prose</h3>
+            <div class="prose border rounded-3 p-5 max-w-100 mb-7">
+                <h4>Rich typography, zero classes</h4>
+                <p>The <code>.prose</code> wrapper styles long-form content — headings, lists, quotes, and inline elements — without per-element classes. Useful for Markdown-rendered content.</p>
+                <blockquote>
+                    <p>Documentation is a love letter that you write to your future self.</p>
+                </blockquote>
+                <ul>
+                    <li>Normalized spacing for lists</li>
+                    <li>Styled <code>code</code>, <mark>mark</mark>, and other inline elements</li>
+                    <li><a href="#">Links inside prose</a></li>
+                </ul>
+            </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap 6 JS bundle — ESM-only -->
+    <script type="module">
+        import { Popover, Tooltip } from 'https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js';
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const syncLabel = () => {
+            themeToggle.textContent = html.getAttribute('data-bs-theme') === 'dark' ? 'Switch to light' : 'Switch to dark';
+        };
+        themeToggle.addEventListener('click', () => {
+            html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
+            syncLabel();
+        });
+        syncLabel();
+
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new Popover(el));
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new Tooltip(el));
+    </script>
+
+    <footer class="mt-12 py-7 border-top">
+        <div class="container text-center">
+            <p>&copy; 2026 Bootlegance — Orchis Sage Theme (Bootstrap 6 alpha)</p>
+            <p><a href="../../../v6/index.html">Back to Catalogue</a></p>
+        </div>
+    </footer>
+</body>
+</html>

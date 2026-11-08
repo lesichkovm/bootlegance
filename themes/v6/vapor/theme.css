@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Vapor Bootstrap 6 Theme (alpha)
+   Auto-ported from the v5 token declarations; component-level overrides
+   from the v5 theme.css may still need manual porting.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+:root {
+  --bs-primary-base: #6f42c1;
+  --bs-primary-fg: #6f42c1;
+  --bs-primary-fg-emphasis: light-dark(#6f42c1, #6f42c1);
+  --bs-primary-bg: light-dark(#6f42c1, #6f42c1);
+  --bs-primary-bg-subtle: light-dark(color-mix(in oklab, #6f42c1, transparent 85%), color-mix(in oklab, #6f42c1, transparent 85%));
+  --bs-primary-bg-muted: light-dark(color-mix(in oklab, #6f42c1, #6f42c1 10%), color-mix(in oklab, #6f42c1, #6f42c1 12%));
+  --bs-primary-border: light-dark(#6f42c1, #6f42c1);
+  --bs-primary-focus-ring: color-mix(in oklab, #6f42c1, transparent 75%);
+  --bs-primary-contrast: var(--bs-white);
+
+  --bs-secondary-base: #ea39b8;
+  --bs-secondary-fg: #ea39b8;
+  --bs-secondary-fg-emphasis: light-dark(#ea39b8, #ea39b8);
+  --bs-secondary-bg: light-dark(#ea39b8, #ea39b8);
+  --bs-secondary-bg-subtle: light-dark(color-mix(in oklab, #ea39b8, transparent 85%), color-mix(in oklab, #ea39b8, transparent 85%));
+  --bs-secondary-bg-muted: light-dark(color-mix(in oklab, #ea39b8, #ea39b8 10%), color-mix(in oklab, #ea39b8, #ea39b8 12%));
+  --bs-secondary-border: light-dark(#ea39b8, #ea39b8);
+  --bs-secondary-focus-ring: color-mix(in oklab, #ea39b8, transparent 75%);
+  --bs-secondary-contrast: var(--bs-white);
+
+  --bs-accent-base: #6f42c1;
+  --bs-accent-fg: #6f42c1;
+  --bs-accent-fg-emphasis: light-dark(#6f42c1, #6f42c1);
+  --bs-accent-bg: light-dark(#6f42c1, #6f42c1);
+  --bs-accent-bg-subtle: light-dark(color-mix(in oklab, #6f42c1, transparent 85%), color-mix(in oklab, #6f42c1, transparent 85%));
+  --bs-accent-bg-muted: light-dark(color-mix(in oklab, #6f42c1, #6f42c1 10%), color-mix(in oklab, #6f42c1, #6f42c1 12%));
+  --bs-accent-border: light-dark(#6f42c1, #6f42c1);
+  --bs-accent-focus-ring: color-mix(in oklab, #6f42c1, transparent 75%);
+  --bs-accent-contrast: var(--bs-white);
+
+  --bs-success-base: #20c970;
+  --bs-success-fg: #20c970;
+  --bs-success-fg-emphasis: light-dark(#20c970, #20c970);
+  --bs-success-bg: light-dark(#20c970, #3cf281);
+  --bs-success-bg-subtle: light-dark(color-mix(in oklab, #20c970, transparent 85%), color-mix(in oklab, #20c970, transparent 85%));
+  --bs-success-bg-muted: light-dark(color-mix(in oklab, #20c970, #20c970 10%), color-mix(in oklab, #3cf281, #3cf281 12%));
+  --bs-success-border: light-dark(#20c970, #20c970);
+  --bs-success-focus-ring: color-mix(in oklab, #20c970, transparent 75%);
+  --bs-success-contrast: var(--bs-white);
+
+  --bs-info-base: #0d8de3;
+  --bs-info-fg: #0d8de3;
+  --bs-info-fg-emphasis: light-dark(#0d8de3, #0d8de3);
+  --bs-info-bg: light-dark(#0d8de3, #1ba2f6);
+  --bs-info-bg-subtle: light-dark(color-mix(in oklab, #0d8de3, transparent 85%), color-mix(in oklab, #0d8de3, transparent 85%));
+  --bs-info-bg-muted: light-dark(color-mix(in oklab, #0d8de3, #0d8de3 10%), color-mix(in oklab, #1ba2f6, #1ba2f6 12%));
+  --bs-info-border: light-dark(#0d8de3, #0d8de3);
+  --bs-info-focus-ring: color-mix(in oklab, #0d8de3, transparent 75%);
+  --bs-info-contrast: var(--bs-white);
+
+  --bs-warning-base: #e09b00;
+  --bs-warning-fg: #e09b00;
+  --bs-warning-fg-emphasis: light-dark(#e09b00, #e09b00);
+  --bs-warning-bg: light-dark(#e09b00, #ffc107);
+  --bs-warning-bg-subtle: light-dark(color-mix(in oklab, #e09b00, transparent 85%), color-mix(in oklab, #e09b00, transparent 85%));
+  --bs-warning-bg-muted: light-dark(color-mix(in oklab, #e09b00, #e09b00 10%), color-mix(in oklab, #ffc107, #ffc107 12%));
+  --bs-warning-border: light-dark(#e09b00, #e09b00);
+  --bs-warning-focus-ring: color-mix(in oklab, #e09b00, transparent 75%);
+  --bs-warning-contrast: var(--bs-white);
+
+  --bs-danger-base: #d93843;
+  --bs-danger-fg: #d93843;
+  --bs-danger-fg-emphasis: light-dark(#d93843, #d93843);
+  --bs-danger-bg: light-dark(#d93843, #e44c55);
+  --bs-danger-bg-subtle: light-dark(color-mix(in oklab, #d93843, transparent 85%), color-mix(in oklab, #d93843, transparent 85%));
+  --bs-danger-bg-muted: light-dark(color-mix(in oklab, #d93843, #d93843 10%), color-mix(in oklab, #e44c55, #e44c55 12%));
+  --bs-danger-border: light-dark(#d93843, #d93843);
+  --bs-danger-focus-ring: color-mix(in oklab, #d93843, transparent 75%);
+  --bs-danger-contrast: var(--bs-white);
+
+  --bs-inverse-base: #170229;
+  --bs-inverse-fg: #170229;
+  --bs-inverse-fg-emphasis: light-dark(#170229, #170229);
+  --bs-inverse-bg: light-dark(#170229, #170229);
+  --bs-inverse-bg-subtle: light-dark(color-mix(in oklab, #170229, transparent 85%), color-mix(in oklab, #170229, transparent 85%));
+  --bs-inverse-bg-muted: light-dark(color-mix(in oklab, #170229, #170229 10%), color-mix(in oklab, #170229, #170229 12%));
+  --bs-inverse-border: light-dark(#170229, #170229);
+  --bs-inverse-focus-ring: color-mix(in oklab, #170229, transparent 75%);
+  --bs-inverse-contrast: var(--bs-white);
+  /* Body & surfaces */
+  --bs-body-font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-fg-body: light-dark(#2b1152, #32fbe2);
+  --bs-bg-body: light-dark(#f9f6fc, #1a0933);
+  --bs-bg-1: light-dark(#f9f6fc, #270e4d);
+  --bs-bg-2: light-dark(#e1d7f0, #210c40);
+  --bs-border-color: light-dark(#d1c4e9, rgba(111, 66, 193, 0.4));
+
+  --bs-radius-1: 0.15rem;
+  --bs-radius-2: 0.15rem;
+  --bs-radius-3: 0.15rem;
+  --bs-radius-4: 0.15rem;
+  --bs-radius-5: 0.15rem;
+  --bs-radius-6: 0.15rem;
+  --bs-radius-7: 0.15rem;
+  --bs-radius-8: 0.15rem;
+  --bs-radius-9: 0.15rem;
+
+  --bs-link-color: light-dark(#6f42c1, #32fbe2);
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: light-dark(#ea39b8, #ea39b8);
+}
+
+/* plain x close icon (matches Bootlegance v6 convention) */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* colored header band on solid bg-* cards */
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}

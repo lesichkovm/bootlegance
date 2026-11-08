@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Dracula Bootstrap 6 Theme (alpha)
+   Auto-ported from the v5 token declarations; component-level overrides
+   from the v5 theme.css may still need manual porting.
+   Include AFTER bootstrap.min.css.
+   ========================================================================== */
+
+
+
+:root {
+  --bs-primary-base: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
+  --bs-primary-fg: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
+  --bs-primary-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-primary-bg: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-primary-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 85%));
+  --bs-primary-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)) 12%));
+  --bs-primary-border: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-primary-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 75%);
+  --bs-primary-contrast: var(--bs-white);
+
+  --bs-secondary-base: #6a6f9a;
+  --bs-secondary-fg: #6a6f9a;
+  --bs-secondary-fg-emphasis: light-dark(#6a6f9a, #6a6f9a);
+  --bs-secondary-bg: light-dark(#6a6f9a, #6a6f9a);
+  --bs-secondary-bg-subtle: light-dark(color-mix(in oklab, #6a6f9a, transparent 85%), color-mix(in oklab, #6a6f9a, transparent 85%));
+  --bs-secondary-bg-muted: light-dark(color-mix(in oklab, #6a6f9a, #6a6f9a 10%), color-mix(in oklab, #6a6f9a, #6a6f9a 12%));
+  --bs-secondary-border: light-dark(#6a6f9a, #6a6f9a);
+  --bs-secondary-focus-ring: color-mix(in oklab, #6a6f9a, transparent 75%);
+  --bs-secondary-contrast: var(--bs-white);
+
+  --bs-accent-base: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
+  --bs-accent-fg: color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background));
+  --bs-accent-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-accent-bg: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-accent-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 85%));
+  --bs-accent-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)) 12%));
+  --bs-accent-border: light-dark(color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)));
+  --bs-accent-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-purple) 62%, var(--dr-background)), transparent 75%);
+  --bs-accent-contrast: var(--bs-white);
+
+  --bs-success-base: color-mix(in srgb, var(--dr-green) 62%, var(--dr-background));
+  --bs-success-fg: color-mix(in srgb, var(--dr-green) 62%, var(--dr-background));
+  --bs-success-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)));
+  --bs-success-bg: light-dark(color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)));
+  --bs-success-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), transparent 85%));
+  --bs-success-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)) 12%));
+  --bs-success-border: light-dark(color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)));
+  --bs-success-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-green) 62%, var(--dr-background)), transparent 75%);
+  --bs-success-contrast: var(--bs-white);
+
+  --bs-info-base: color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background));
+  --bs-info-fg: color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background));
+  --bs-info-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)));
+  --bs-info-bg: light-dark(color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)));
+  --bs-info-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), transparent 85%));
+  --bs-info-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)) 12%));
+  --bs-info-border: light-dark(color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)));
+  --bs-info-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), transparent 75%);
+  --bs-info-contrast: var(--bs-white);
+
+  --bs-warning-base: color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background));
+  --bs-warning-fg: color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background));
+  --bs-warning-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)));
+  --bs-warning-bg: light-dark(color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)));
+  --bs-warning-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), transparent 85%));
+  --bs-warning-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)) 12%));
+  --bs-warning-border: light-dark(color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)));
+  --bs-warning-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-orange) 62%, var(--dr-background)), transparent 75%);
+  --bs-warning-contrast: var(--bs-white);
+
+  --bs-danger-base: color-mix(in srgb, var(--dr-red) 62%, var(--dr-background));
+  --bs-danger-fg: color-mix(in srgb, var(--dr-red) 62%, var(--dr-background));
+  --bs-danger-fg-emphasis: light-dark(color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)));
+  --bs-danger-bg: light-dark(color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)));
+  --bs-danger-bg-subtle: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), transparent 85%), color-mix(in oklab, color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), transparent 85%));
+  --bs-danger-bg-muted: light-dark(color-mix(in oklab, color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)) 10%), color-mix(in oklab, color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)) 12%));
+  --bs-danger-border: light-dark(color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)));
+  --bs-danger-focus-ring: color-mix(in oklab, color-mix(in srgb, var(--dr-red) 62%, var(--dr-background)), transparent 75%);
+  --bs-danger-contrast: var(--bs-white);
+
+  --bs-inverse-base: #282a36;
+  --bs-inverse-fg: #282a36;
+  --bs-inverse-fg-emphasis: light-dark(#282a36, #282a36);
+  --bs-inverse-bg: light-dark(#282a36, #282a36);
+  --bs-inverse-bg-subtle: light-dark(color-mix(in oklab, #282a36, transparent 85%), color-mix(in oklab, #282a36, transparent 85%));
+  --bs-inverse-bg-muted: light-dark(color-mix(in oklab, #282a36, #282a36 10%), color-mix(in oklab, #282a36, #282a36 12%));
+  --bs-inverse-border: light-dark(#282a36, #282a36);
+  --bs-inverse-focus-ring: color-mix(in oklab, #282a36, transparent 75%);
+  --bs-inverse-contrast: var(--bs-white);
+  /* Body & surfaces */
+  
+  --bs-fg-body: light-dark(#3a3d4f, #3a3d4f);
+  --bs-bg-body: light-dark(#f8f8f2, #f8f8f2);
+  --bs-bg-1: light-dark(#f8f8f2, #ffffff);
+  --bs-bg-2: light-dark(#ffffff, #ffffff);
+  --bs-border-color: light-dark(#d6d6de, #d6d6de);
+
+  --bs-radius-1: 0.25rem;
+  --bs-radius-2: 0.25rem;
+  --bs-radius-3: 0.25rem;
+  --bs-radius-4: 0.25rem;
+  --bs-radius-5: 0.25rem;
+  --bs-radius-6: 0.25rem;
+  --bs-radius-7: 0.25rem;
+  --bs-radius-8: 0.25rem;
+  --bs-radius-9: 0.25rem;
+
+  --bs-link-color: light-dark(color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)), color-mix(in srgb, var(--dr-cyan) 58%, var(--dr-background)));
+  --bs-link-decoration: none;
+  --bs-link-hover-color: light-dark(color-mix(in srgb, var(--dr-pink) 62%, var(--dr-background)), color-mix(in srgb, var(--dr-pink) 62%, var(--dr-background)));
+}
+
+/* plain x close icon (matches Bootlegance v6 convention) */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* colored header band on solid bg-* cards */
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}
