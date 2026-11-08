@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Yeti Bootstrap 6 Theme (alpha)
+   Port of Bootswatch Yeti — Icy, cool blue with a friendly, clean foundation.
+   Include AFTER bootstrap.min.css.
+   Bootstrap 6 notes:
+   - No --bs-*-rgb vars; per-color *-rgb tokens are gone.
+   - Color variants are driven by --bs-{key}-* token sets consumed via
+     .theme-{key} classes.
+   - Mode-aware values use light-dark() instead of a dark override block.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. Palette tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Yeti Color Tokens */
+  --yeti-blue: #008cba;
+  --yeti-blue-hover: #007095;
+  --yeti-blue-shade: #007ea7;
+  --yeti-gray-100: #f8f9fa;
+  --yeti-gray-200: #eee;
+  --yeti-gray-300: #dee2e6;
+  --yeti-gray-400: #ccc;
+  --yeti-gray-500: #adb5bd;
+  --yeti-gray-600: #888;
+  --yeti-gray-700: #495057;
+  --yeti-gray-800: #333;
+  --yeti-gray-900: #222;
+  --yeti-white: #fff;
+  --yeti-black: #000;
+
+  --yeti-green: #43ac6a;
+  --yeti-green-hover: #368a55;
+  --yeti-cyan: #5bc0de;
+  --yeti-cyan-hover: #499ab2;
+  --yeti-yellow: #e99002;
+  --yeti-yellow-hover: #ba7302;
+  --yeti-red: #f04124;
+  --yeti-red-hover: #c0341d;
+
+  --yeti-dark-bg: #222;
+  --yeti-dark-surface: #2b2b2b;
+  --yeti-dark-surface-subtle: #333;
+  --yeti-dark-border: #495057;
+  --yeti-focus-border: #80c6dd;
+
+  /* Bootstrap 6 theme-key token sets */
+  --bs-primary-base: var(--yeti-blue);
+  --bs-primary-fg: var(--yeti-blue);
+  --bs-primary-fg-emphasis: light-dark(#00384a, #66bad6);
+  --bs-primary-bg: var(--yeti-blue);
+  --bs-primary-bg-subtle: light-dark(#cce8f1, #001c25);
+  --bs-primary-bg-muted: light-dark(#e6f4f9, #00242f);
+  --bs-primary-border: light-dark(#99d1e3, #005470);
+  --bs-primary-focus-ring: color-mix(in oklab, var(--yeti-blue), transparent 75%);
+  --bs-primary-contrast: var(--yeti-white);
+
+  --bs-secondary-base: var(--yeti-gray-500);
+  --bs-secondary-fg: var(--yeti-gray-700);
+  --bs-secondary-fg-emphasis: light-dark(#5f5f5f, whitesmoke);
+  --bs-secondary-bg: var(--yeti-gray-200);
+  --bs-secondary-bg-subtle: light-dark(#fcfcfc, #303030);
+  --bs-secondary-bg-muted: light-dark(#f4f4f4, #383838);
+  --bs-secondary-border: light-dark(#e0e0e0, #8f8f8f);
+  --bs-secondary-focus-ring: color-mix(in oklab, var(--yeti-gray-500), transparent 75%);
+  --bs-secondary-contrast: var(--yeti-gray-900);
+
+  --bs-accent-base: var(--yeti-cyan);
+  --bs-accent-fg: var(--yeti-cyan);
+  --bs-accent-fg-emphasis: light-dark(#244d59, #9dd9eb);
+  --bs-accent-bg: var(--yeti-cyan);
+  --bs-accent-bg-subtle: light-dark(#def2f8, #12262c);
+  --bs-accent-bg-muted: light-dark(#eaf7fc, #1a343d);
+  --bs-accent-border: light-dark(#bde6f2, #377385);
+  --bs-accent-focus-ring: color-mix(in oklab, var(--yeti-cyan), transparent 75%);
+  --bs-accent-contrast: var(--yeti-white);
+
+  --bs-success-base: var(--yeti-green);
+  --bs-success-fg: var(--yeti-green);
+  --bs-success-fg-emphasis: light-dark(#1b452a, #8ecda6);
+  --bs-success-bg: var(--yeti-green);
+  --bs-success-bg-subtle: light-dark(#d9eee1, #0d2215);
+  --bs-success-bg-muted: light-dark(#e7f4ec, #14321e);
+  --bs-success-border: light-dark(#b4dec3, #286740);
+  --bs-success-focus-ring: color-mix(in oklab, var(--yeti-green), transparent 75%);
+  --bs-success-contrast: var(--yeti-white);
+
+  --bs-info-base: var(--yeti-cyan);
+  --bs-info-fg: var(--yeti-cyan);
+  --bs-info-fg-emphasis: light-dark(#244d59, #9dd9eb);
+  --bs-info-bg: var(--yeti-cyan);
+  --bs-info-bg-subtle: light-dark(#def2f8, #12262c);
+  --bs-info-bg-muted: light-dark(#eaf7fc, #1a343d);
+  --bs-info-border: light-dark(#bde6f2, #377385);
+  --bs-info-focus-ring: color-mix(in oklab, var(--yeti-cyan), transparent 75%);
+  --bs-info-contrast: var(--yeti-white);
+
+  --bs-warning-base: var(--yeti-yellow);
+  --bs-warning-fg: var(--yeti-yellow);
+  --bs-warning-fg-emphasis: light-dark(#5d3a01, #f2bc67);
+  --bs-warning-bg: var(--yeti-yellow);
+  --bs-warning-bg-subtle: light-dark(#fbe9cc, #2f1d00);
+  --bs-warning-bg-muted: light-dark(#fdf3e0, #452b00);
+  --bs-warning-border: light-dark(#f6d39a, #8c5601);
+  --bs-warning-focus-ring: color-mix(in oklab, var(--yeti-yellow), transparent 75%);
+  --bs-warning-contrast: var(--yeti-white);
+
+  --bs-danger-base: var(--yeti-red);
+  --bs-danger-fg: var(--yeti-red);
+  --bs-danger-fg-emphasis: light-dark(#601a0e, #f68d7c);
+  --bs-danger-bg: var(--yeti-red);
+  --bs-danger-bg-subtle: light-dark(#fcd9d3, #300d07);
+  --bs-danger-bg-muted: light-dark(#fde6e1, #45140b);
+  --bs-danger-border: light-dark(#f9b3a7, #902716);
+  --bs-danger-focus-ring: color-mix(in oklab, var(--yeti-red), transparent 75%);
+  --bs-danger-contrast: var(--yeti-white);
+
+  --bs-inverse-base: var(--yeti-gray-800);
+  --bs-inverse-fg: var(--yeti-gray-800);
+  --bs-inverse-fg-emphasis: light-dark(var(--yeti-gray-700), var(--yeti-gray-300));
+  --bs-inverse-bg: var(--yeti-gray-800);
+  --bs-inverse-bg-subtle: light-dark(var(--yeti-gray-400), #1a1a1a);
+  --bs-inverse-bg-muted: light-dark(var(--yeti-gray-300), #262626);
+  --bs-inverse-border: light-dark(var(--yeti-gray-500), var(--yeti-gray-800));
+  --bs-inverse-focus-ring: color-mix(in oklab, var(--yeti-gray-800), transparent 75%);
+  --bs-inverse-contrast: var(--yeti-white);
+
+  /* Body & surfaces */
+  --bs-body-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-fg-body: light-dark(var(--yeti-gray-900), var(--yeti-gray-300));
+  --bs-bg-body: light-dark(var(--yeti-white), var(--yeti-dark-bg));
+  --bs-bg-1: light-dark(var(--yeti-white), var(--yeti-dark-surface));
+  --bs-bg-2: light-dark(var(--yeti-gray-100), var(--yeti-dark-surface-subtle));
+  --bs-border-color: light-dark(var(--yeti-gray-300), var(--yeti-dark-border));
+
+  /* Square corners — yeti is edge-to-edge */
+  --bs-radius-1: 0;
+  --bs-radius-2: 0;
+  --bs-radius-3: 0;
+  --bs-radius-4: 0;
+  --bs-radius-5: 0;
+  --bs-radius-6: 0;
+  --bs-radius-7: 0;
+  --bs-radius-8: 0;
+  --bs-radius-9: 0;
+
+  /* Links — yeti underlines them */
+  --bs-link-color: light-dark(var(--yeti-blue), #66bad6);
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: light-dark(var(--yeti-blue-hover), #85c8de);
+
+  /* Navbar */
+  --bs-navbar-bg: light-dark(var(--yeti-gray-200), var(--yeti-dark-surface-subtle));
+  --bs-navbar-color: light-dark(rgba(0, 0, 0, 0.65), rgba(255, 255, 255, 0.7));
+  --bs-navbar-hover-color: light-dark(rgba(0, 0, 0, 0.8), #fff);
+  --bs-navbar-active-color: light-dark(#000, #fff);
+  --bs-navbar-brand-color: light-dark(#000, #fff);
+  --bs-navbar-brand-hover-color: light-dark(#000, #fff);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography — light-weight headings and body details
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a { text-decoration: underline; }
+
+.blockquote-footer {
+  color: var(--yeti-gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons
+   -------------------------------------------------------------------------- */
+.btn-solid, .btn-outline, .btn-subtle, .btn-text, .btn-styled, .btn-link {
+  --bs-btn-font-weight: 300;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-padding-y: 0.375rem;
+}
+
+/* yeti's secondary is a light button with dark text and a visible edge */
+.btn-outline.theme-secondary {
+  --bs-btn-color: var(--yeti-blue);
+}
+
+/* v6's default close icon is a filled squircle; yeti uses a plain × */
+.btn-close {
+  --bs-btn-close-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* --------------------------------------------------------------------------
+   4. Alerts & Indicators — subtle (default) style, small and light
+   -------------------------------------------------------------------------- */
+.alert {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+.alert a,
+.alert .alert-link {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.badge {
+  font-weight: 300;
+  --bs-badge-padding-x: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables & Forms
+   -------------------------------------------------------------------------- */
+table { font-size: 0.875rem; }
+
+label, .form-label, .form-text {
+  font-size: 0.875rem;
+}
+
+.form-control:focus {
+  border-color: var(--yeti-focus-border);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navs, Breadcrumbs, Pagination
+   -------------------------------------------------------------------------- */
+.menu-item {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.breadcrumb {
+  --bs-breadcrumb-font-size: 0.875rem;
+  --bs-breadcrumb-padding-x: 0.75rem;
+  --bs-breadcrumb-padding-y: 0.375rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.pagination {
+  font-weight: 300;
+  --bs-pagination-color: var(--yeti-gray-600);
+  --bs-pagination-active-bg: var(--bs-primary-bg);
+  --bs-pagination-active-border-color: #0079a1;
+  --bs-pagination-disabled-color: var(--yeti-gray-400);
+  --bs-pagination-border-color: transparent;
+}
+.pagination .page-link {
+  margin-right: 0.1em;
+  margin-left: 0.1em;
+}
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+  text-decoration: none;
+}
+.pagination .page-item.disabled .page-link {
+  border-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   7. Cards & List Group
+   -------------------------------------------------------------------------- */
+.list-group { font-size: 0.875rem; font-weight: 300; }
+.list-group-item.disabled,
+.list-group-item:disabled {
+  background-color: var(--bs-secondary-bg-subtle);
+}
+
+.card[class*="bg-"] > .card-header {
+  background-color: inherit;
+}
