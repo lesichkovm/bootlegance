@@ -53,6 +53,14 @@ document.documentElement.setAttribute('data-bs-theme', 'dark');
 
 ## Reusable Theme Switcher (`bootlegance.js`)
 
+> **⚠️ Do NOT hand-roll your own theme UI.** Do not create a `<select>` listing
+> themes, do not fetch `themes.json` yourself, and do not write JS that toggles
+> `data-bs-theme` or swaps theme `<link>`s. Load `bootlegance.js` and use the
+> declarative `data-bootlegance-*` attributes below — the script wires up the
+> theme picker, light/dark mode, font-size controls, cookie/localStorage
+> persistence, and query-param overrides for you. See `demo.html` for the
+> canonical "Theme Settings" dropdown pattern.
+
 Bootlegance includes a dependency-free vanilla JavaScript script (`bootlegance.js`) that manages theme loading, cookie persistence, query parameter overrides, light/dark mode toggling, accessible font size scaling (increase / decrease / reset), and optional automatic UI wiring.
 
 ![Bootlegance Theme Switcher Demo](screenshot-demo.png)
@@ -93,7 +101,7 @@ Once the active theme is determined:
 If your markup contains an element with the `data-bootlegance-picker` attribute (such as `<div data-bootlegance-picker></div>`):
 - **Creates `<select>`**: It automatically creates a Bootstrap `<select class="form-select">` inside the container if one doesn't exist.
 - **Standard Bootstrap Option**: Prepends a "Standard Bootstrap" option (`value="bootstrap"`).
-- **Populates Themes from Registry**: Fetches `themes.json` (or uses the fallback theme list from `data-themes`), validating each slug, and appends them as `<option>` items.
+- **Populates Themes from Registry**: Fetches `themes.json` (or uses the fallback theme list from `data-themes`), validating each entry, and appends them as `<option>` items. The manifest is a list of `{ "slug": "...", "name": "..." }` objects — the option `value` is the slug and the visible label is the friendly `name`. Plain slug-string entries are also accepted (the slug is then used as the label).
 - **Synchronizes State**: Automatically selects whichever theme is currently active and binds a `change` event listener that invokes `Bootlegance.set(selectedValue)` when chosen by the user.
 
 #### 4. Persistence & Server Contract
@@ -310,7 +318,7 @@ Before publishing or releasing a new version, run the manifest generator to upda
 ./scripts/generate-themes-json
 ```
 
-This updates `themes.json` at the repo root with all available theme directories containing a `theme.css`.
+This updates `themes.json` at the repo root with all available theme directories containing a `theme.css`. Each entry is `{ "slug": "...", "name": "..." }` — the display name is extracted from the theme's `index.html` `<title>` (`Bootlegance — {Name}`), with a title-cased slug as fallback.
 
 ## Available Themes
 

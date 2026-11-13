@@ -208,6 +208,36 @@ The theme CSS is always loaded **after** Bootstrap so overrides apply correctly.
 
 ---
 
+## Integrating the Theme Switcher (IMPORTANT for AI agents)
+
+When asked to add a theme picker / dark-mode toggle / theme settings UI to any
+page in this repo, **always use `bootlegance.js` and its declarative
+`data-bootlegance-*` attributes. NEVER hand-roll:**
+
+- ❌ a `<select>` or dropdown listing theme names (hardcoded or fetched from
+  `themes.json`) — use `<div data-bootlegance-picker></div>` instead; the
+  script generates and populates the `<select>`
+- ❌ custom JS toggling `data-bs-theme` on `<html>` — use
+  `<button data-bootlegance-mode="light|dark|auto">`
+- ❌ custom JS swapping theme `<link>` stylesheets — `bootlegance.js` injects
+  and manages `<link id="bootlegance-theme">` itself
+- ❌ custom persistence — cookies (`theme`) and `localStorage` (mode, font
+  size) are handled by the script
+
+Canonical markup: copy the "Theme Settings" dropdown from `demo.html`
+(palette-icon button → dropdown containing `[data-bootlegance-picker]`,
+`[data-bootlegance-mode]` buttons, and `[data-bootlegance-font-size]`
+controls). Load it with:
+
+```html
+<script src="bootlegance.js" data-default-theme="orchis-sage"></script>
+```
+
+Full attribute reference: README.md → "Controlling the Picker & Themes with
+`data-*` Attributes".
+
+---
+
 ## Coding Conventions
 
 - Use CSS custom properties only — no hardcoded hex values in selectors

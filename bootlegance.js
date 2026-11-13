@@ -128,6 +128,43 @@
   var currentTheme = DEFAULT_THEME;
   var currentFontSize = DEFAULT_FONT_SIZE;
   var themeList = [];
+  var themeNames = {}; // slug -> display name (populated from themes.json or init options)
+
+  // Accepts a slug string or a {slug, name} manifest entry; returns the slug if valid
+  function themeEntrySlug(entry) {
+    var slug = (typeof entry === 'string') ? entry : (entry && entry.slug);
+    if (typeof slug === 'string' && isValidThemeName(slug) && !isBootstrapTheme(slug)) {
+      return slug;
+    }
+    return null;
+  }
+
+  function themeEntryName(entry) {
+    if (entry && typeof entry === 'object' && typeof entry.name === 'string' && entry.name) {
+      return entry.name;
+    }
+    return null;
+  }
+
+  // Normalizes a mixed array of slug strings / {slug, name} entries into
+  // themeList (slugs) + themeNames (slug -> label)
+  function setThemeEntries(entries) {
+    var validated = [];
+    var names = {};
+    for (var i = 0; i < entries.length; i++) {
+      var slug = themeEntrySlug(entries[i]);
+      if (slug && validated.indexOf(slug) === -1) {
+        validated.push(slug);
+        var name = themeEntryName(entries[i]);
+        if (name) {
+          names[slug] = name;
+        }
+      }
+    }
+    themeList = validated;
+    themeNames = names;
+    Bootlegance.themes = themeList;
+  }
 
   if (initialThemesAttr) {
     var rawList = initialThemesAttr.split(',');
@@ -408,7 +445,7 @@
           var t = themeList[j];
           var opt = document.createElement('option');
           opt.value = t;
-          opt.textContent = t;
+          opt.textContent = themeNames[t] || t;
           if (t === currentTheme) {
             opt.selected = true;
           }
@@ -494,15 +531,8 @@
       })
       .then(function (data) {
         if (Array.isArray(data)) {
-          var validated = [];
-          for (var i = 0; i < data.length; i++) {
-            if (isValidThemeName(data[i]) && !isBootstrapTheme(data[i])) {
-              validated.push(data[i]);
-            }
-          }
-          if (validated.length > 0) {
-            themeList = validated;
-            Bootlegance.themes = themeList;
+          setThemeEntries(data);
+          if (themeList.length > 0) {
             updateAutoUI();
           }
         }
@@ -571,10 +601,7 @@
       if (opts.modeAttribute !== undefined) modeAttribute = opts.modeAttribute;
       if (opts.fontSizeStorageKey !== undefined) fontSizeStorageKey = opts.fontSizeStorageKey;
       if (Array.isArray(opts.themes)) {
-        themeList = opts.themes.filter(function (t) {
-          return isValidThemeName(t) && !isBootstrapTheme(t);
-        });
-        Bootlegance.themes = themeList;
+        setThemeEntries(opts.themes);
       }
       if (opts.defaultTheme !== undefined && isValidThemeName(opts.defaultTheme)) {
         defaultThemeAttr = opts.defaultTheme;

@@ -1,89 +1,350 @@
 [
-  "adwaita",
-  "ant-design",
-  "ayu",
-  "brutalski",
-  "carbon",
-  "catppuccin",
-  "catppuccin-frappe",
-  "catppuccin-macchiato",
-  "cerulean",
-  "civic",
-  "cosmo",
-  "cyberpunk",
-  "cyborg",
-  "darkly",
-  "dracula",
-  "dracula-soft",
-  "editorial",
-  "everforest",
-  "flatly",
-  "fluent",
-  "forest",
-  "github-primer",
-  "glassmorphism",
-  "gruvbox",
-  "high-contrast",
-  "journal",
-  "kanagawa",
-  "kde-breeze",
-  "litera",
-  "lumen",
-  "lux",
-  "mac-classic",
-  "materia",
-  "material-3",
-  "midnight",
-  "minty",
-  "morph",
-  "neo-brutalism",
-  "night-owl",
-  "nord",
-  "nord-aurora",
-  "nord-frost",
-  "ocean",
-  "one-dark",
-  "orchis",
-  "orchis-cyan",
-  "orchis-green",
-  "orchis-orange",
-  "orchis-pink",
-  "orchis-purple",
-  "orchis-red",
-  "orchis-sage",
-  "orchis-slate",
-  "orchis-yellow",
-  "pantheon",
-  "print-optimized",
-  "quartz",
-  "rose-pine",
-  "sandstone",
-  "seneca",
-  "sepia",
-  "simplex",
-  "slate",
-  "solarized",
-  "spacelab",
-  "sunrise",
-  "superhero",
-  "swiss",
-  "terminal",
-  "tokyo-night",
-  "vanguard",
-  "vapor",
-  "vimix",
-  "vimix-dark",
-  "vimix-green",
-  "vimix-orange",
-  "vimix-pink",
-  "vimix-purple",
-  "vimix-red",
-  "vimix-teal",
-  "vimix-yellow",
-  "whitehall",
-  "whitesur",
-  "win98",
-  "yaru",
-  "yeti",
-  "zephyr"
+  {
+    "slug": "adwaita",
+    "name": "Adwaita"
+  },
+  {
+    "slug": "ant-design",
+    "name": "Ant Design"
+  },
+  {
+    "slug": "ayu",
+    "name": "Ayu"
+  },
+  {
+    "slug": "brutalski",
+    "name": "Brutalski"
+  },
+  {
+    "slug": "carbon",
+    "name": "Carbon"
+  },
+  {
+    "slug": "catppuccin",
+    "name": "Catppuccin Mocha"
+  },
+  {
+    "slug": "catppuccin-frappe",
+    "name": "Catppuccin Frappé"
+  },
+  {
+    "slug": "catppuccin-macchiato",
+    "name": "Catppuccin Macchiato"
+  },
+  {
+    "slug": "cerulean",
+    "name": "Cerulean"
+  },
+  {
+    "slug": "civic",
+    "name": "Civic"
+  },
+  {
+    "slug": "cosmo",
+    "name": "Cosmo"
+  },
+  {
+    "slug": "cyberpunk",
+    "name": "Cyberpunk / Synthwave '84"
+  },
+  {
+    "slug": "cyborg",
+    "name": "Cyborg"
+  },
+  {
+    "slug": "darkly",
+    "name": "Darkly"
+  },
+  {
+    "slug": "dracula",
+    "name": "Dracula"
+  },
+  {
+    "slug": "dracula-soft",
+    "name": "Dracula Soft"
+  },
+  {
+    "slug": "editorial",
+    "name": "Editorial / Paper"
+  },
+  {
+    "slug": "everforest",
+    "name": "Everforest"
+  },
+  {
+    "slug": "flatly",
+    "name": "Flatly"
+  },
+  {
+    "slug": "fluent",
+    "name": "Fluent (Windows 11)"
+  },
+  {
+    "slug": "forest",
+    "name": "Forest"
+  },
+  {
+    "slug": "github-primer",
+    "name": "GitHub Primer"
+  },
+  {
+    "slug": "glassmorphism",
+    "name": "Glassmorphism"
+  },
+  {
+    "slug": "gruvbox",
+    "name": "Gruvbox"
+  },
+  {
+    "slug": "high-contrast",
+    "name": "High Contrast"
+  },
+  {
+    "slug": "journal",
+    "name": "Journal"
+  },
+  {
+    "slug": "kanagawa",
+    "name": "Kanagawa"
+  },
+  {
+    "slug": "kde-breeze",
+    "name": "KDE Breeze"
+  },
+  {
+    "slug": "litera",
+    "name": "Litera"
+  },
+  {
+    "slug": "lumen",
+    "name": "Lumen"
+  },
+  {
+    "slug": "lux",
+    "name": "Lux"
+  },
+  {
+    "slug": "mac-classic",
+    "name": "Classic Mac OS"
+  },
+  {
+    "slug": "materia",
+    "name": "Materia"
+  },
+  {
+    "slug": "material-3",
+    "name": "Material Design 3"
+  },
+  {
+    "slug": "midnight",
+    "name": "Midnight"
+  },
+  {
+    "slug": "minty",
+    "name": "Minty"
+  },
+  {
+    "slug": "morph",
+    "name": "Morph"
+  },
+  {
+    "slug": "neo-brutalism",
+    "name": "Neo-brutalism (soft)"
+  },
+  {
+    "slug": "night-owl",
+    "name": "Night Owl"
+  },
+  {
+    "slug": "nord",
+    "name": "Nord"
+  },
+  {
+    "slug": "nord-aurora",
+    "name": "Nord Aurora"
+  },
+  {
+    "slug": "nord-frost",
+    "name": "Nord Frost"
+  },
+  {
+    "slug": "ocean",
+    "name": "Ocean"
+  },
+  {
+    "slug": "one-dark",
+    "name": "One Dark"
+  },
+  {
+    "slug": "orchis",
+    "name": "Orchis"
+  },
+  {
+    "slug": "orchis-cyan",
+    "name": "Orchis Cyan"
+  },
+  {
+    "slug": "orchis-green",
+    "name": "Orchis Green"
+  },
+  {
+    "slug": "orchis-orange",
+    "name": "Orchis Orange"
+  },
+  {
+    "slug": "orchis-pink",
+    "name": "Orchis Pink"
+  },
+  {
+    "slug": "orchis-purple",
+    "name": "Orchis Purple"
+  },
+  {
+    "slug": "orchis-red",
+    "name": "Orchis Red"
+  },
+  {
+    "slug": "orchis-sage",
+    "name": "Orchis Sage"
+  },
+  {
+    "slug": "orchis-slate",
+    "name": "Orchis Slate"
+  },
+  {
+    "slug": "orchis-yellow",
+    "name": "Orchis Yellow"
+  },
+  {
+    "slug": "pantheon",
+    "name": "Pantheon (elementary OS)"
+  },
+  {
+    "slug": "print-optimized",
+    "name": "Print-Optimized"
+  },
+  {
+    "slug": "quartz",
+    "name": "Quartz"
+  },
+  {
+    "slug": "rose-pine",
+    "name": "Rosé Pine"
+  },
+  {
+    "slug": "sandstone",
+    "name": "Sandstone"
+  },
+  {
+    "slug": "seneca",
+    "name": "Seneca"
+  },
+  {
+    "slug": "sepia",
+    "name": "Sepia / Reading mode"
+  },
+  {
+    "slug": "simplex",
+    "name": "Simplex"
+  },
+  {
+    "slug": "slate",
+    "name": "Slate"
+  },
+  {
+    "slug": "solarized",
+    "name": "Solarized"
+  },
+  {
+    "slug": "spacelab",
+    "name": "Spacelab"
+  },
+  {
+    "slug": "sunrise",
+    "name": "Sunrise"
+  },
+  {
+    "slug": "superhero",
+    "name": "Superhero"
+  },
+  {
+    "slug": "swiss",
+    "name": "Swiss / International Style"
+  },
+  {
+    "slug": "terminal",
+    "name": "Terminal / CRT"
+  },
+  {
+    "slug": "tokyo-night",
+    "name": "Tokyo Night"
+  },
+  {
+    "slug": "vanguard",
+    "name": "Vanguard"
+  },
+  {
+    "slug": "vapor",
+    "name": "Vapor"
+  },
+  {
+    "slug": "vimix",
+    "name": "Vimix"
+  },
+  {
+    "slug": "vimix-dark",
+    "name": "Vimix Dark"
+  },
+  {
+    "slug": "vimix-green",
+    "name": "Vimix Green"
+  },
+  {
+    "slug": "vimix-orange",
+    "name": "Vimix Orange"
+  },
+  {
+    "slug": "vimix-pink",
+    "name": "Vimix Pink"
+  },
+  {
+    "slug": "vimix-purple",
+    "name": "Vimix Purple"
+  },
+  {
+    "slug": "vimix-red",
+    "name": "Vimix Red"
+  },
+  {
+    "slug": "vimix-teal",
+    "name": "Vimix Teal"
+  },
+  {
+    "slug": "vimix-yellow",
+    "name": "Vimix Yellow"
+  },
+  {
+    "slug": "whitehall",
+    "name": "Whitehall"
+  },
+  {
+    "slug": "whitesur",
+    "name": "WhiteSur"
+  },
+  {
+    "slug": "win98",
+    "name": "Windows 98"
+  },
+  {
+    "slug": "yaru",
+    "name": "Yaru"
+  },
+  {
+    "slug": "yeti",
+    "name": "Yeti"
+  },
+  {
+    "slug": "zephyr",
+    "name": "Zephyr"
+  }
 ]
